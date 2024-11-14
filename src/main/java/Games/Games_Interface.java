@@ -20,8 +20,9 @@ abstract class Games_Interface {
     public abstract void setAvailability (boolean available);
     public abstract int getGameID ();
     public abstract String getGameTitle ();
-    public abstract String getameDescription ();
+    public abstract String getGameDescription ();
     public abstract double getGamePrice ();
+    public abstract List<String> getGenreList ();
     public abstract boolean isAvailable ();
     
 

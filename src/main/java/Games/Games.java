@@ -56,7 +56,7 @@ public class Games extends Games_Interface {
         return gameTitle;
     }
 
-    public String getameDescription () {
+    public String getGameDescription () {
         return gameDescription;
     }
 
