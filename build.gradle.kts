@@ -25,6 +25,14 @@ tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
 
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType<JavaCompile> { // Well this shit Suppress Deprecation Warnings
+    options.compilerArgs.add("-Xlint:-deprecation")
+}
+
 application {
     mainModule = "User_Interface"
     mainClass.set("User_Interface.ApplicationRunner")
