@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `games`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `games` (
-  `gameID` int(11) NOT NULL,
-  `gameTitle` varchar(255) DEFAULT NULL,
-  `gameReleaseDate` varchar(50) DEFAULT NULL,
-  `gameDescription` text DEFAULT NULL,
-  `gamePrice` double DEFAULT NULL,
-  `genre` text DEFAULT NULL,
-  `isAvailable` int(11) DEFAULT 0,
-  `gamePictureURL` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`gameID`)
+                         `gameID` int(11) NOT NULL,
+                         `gameTitle` varchar(255) DEFAULT NULL,
+                         `gameReleaseDate` varchar(50) DEFAULT NULL,
+                         `gameDescription` text DEFAULT NULL,
+                         `gamePrice` double DEFAULT NULL,
+                         `genre` text DEFAULT NULL,
+                         `isAvailable` int(11) DEFAULT 0,
+                         `gamePictureURL` varchar(255) DEFAULT NULL,
+                         PRIMARY KEY (`gameID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-17 22:38:56
+-- Dump completed on 2024-11-17 23:13:45
