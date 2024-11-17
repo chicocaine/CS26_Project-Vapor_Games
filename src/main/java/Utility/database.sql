@@ -11,9 +11,11 @@ CREATE TABLE users (
 CREATE TABLE games (
     gameID INT PRIMARY KEY AUTO_INCREMENT,
     gameTitle TEXT NOT NULL,
+    gameReleaseDate TEXT NOT NULL,
     description TEXT NOT NULL,
     price DECIMAL(7, 2) NOT NULL,
-    available BOOLEAN NOT NULL
+    available BOOLEAN NOT NULL,
+    pictureURL TEXT
 );
 
 CREATE TABLE genres (
@@ -24,9 +26,9 @@ CREATE TABLE genres (
 CREATE TABLE genre_games (
     gameID INT NOT NULL,
     genreID INT NOT NULL,
-    FOREIGN KEY (gameID) REFERENCES games(gameID),
-    FOREIGN KEY (genreID) REFERENCES genres(genreID),
-    PRIMARY(gameID, genreID)
+    PRIMARY KEY (gameID, genreID),
+    FOREIGN KEY (gameID) REFERENCES games(gameID) ON DELETE CASCADE,
+    FOREIGN KEY (genreID) REFERENCES genres(genreID) ON DELETE CASCADE
 );
 
 CREATE TABLE libraries (
@@ -35,12 +37,6 @@ CREATE TABLE libraries (
     FOREIGN KEY (gameID) REFERENCES games(gameID),
     FOREIGN KEY (userID) REFERENCES genres(userID),
     PRIMARY(gameID, userID)
-);
-
-CREATE TABLE carts (
-    cartID INT PRIMARY KEY AUTO_INCREMENT,
-    userID INT NOT NULL,
-    FOREIGN KEY (userID) REFERENCES users(userID)
 );
 
 CREATE TABLE cart_games (
