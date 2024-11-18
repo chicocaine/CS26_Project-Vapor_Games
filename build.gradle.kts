@@ -14,57 +14,30 @@ repositories {
     mavenCentral()
 }
 
-val junitVersion = "5.9.1" // Add this line to define the version
+val junitVersion = "5.9.1"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
 
-tasks.processResources {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-tasks.withType<JavaCompile> { // Well this shit Suppress Deprecation Warnings
-    options.compilerArgs.add("-Xlint:-deprecation")
-}
-
 application {
     mainModule = "User_Interface"
-    mainClass.set("User_Interface.ApplicationRunner")
-
-    applicationDefaultJvmArgs = listOf(
-        "--module-path", "${projectDir}/path/to/javafx-sdk-17.0.6/lib",
-        "--add-modules", "javafx.controls,javafx.fxml,javafx.web,javafx.swing,javafx.media"
-    )
+    mainClass.set("User_Interface.VGMainProgramApplication")
 }
 
 javafx {
-    version = "17.0.6"  // Adjust this to match the version in dependencies
-    modules = listOf(
-        "javafx.controls",
-        "javafx.fxml",
-        "javafx.web",
-        "javafx.swing",
-        "javafx.media"
-    )
+    version = "22"
+    modules = listOf("javafx.controls", "javafx.fxml", "javafx.web", "javafx.swing", "javafx.media")
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:$junitVersion"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation("com.zaxxer:HikariCP:6.2.0")
 
-    implementation("mysql:mysql-connector-java:8.0.33")
-    implementation("com.zaxxer:HikariCP:5.0.1")
-
-    implementation("org.openjfx:javafx-controls:19")
-    implementation("org.openjfx:javafx-fxml:19")
-
-    // JavaFX-related libraries
     implementation("org.controlsfx:controlsfx:11.1.2")
     implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
         exclude(group = "org.openjfx")
@@ -82,29 +55,31 @@ dependencies {
         exclude(group = "org.jetbrains.kotlin")
     }
 
-    // Kotlin standard library
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks.test {
     useJUnitPlatform()
 }
 
+tasks.named<ProcessResources>("processResources") {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 sourceSets {
     main {
         java.srcDir("src/main/java")
-        kotlin.srcDir("src/main/kotlin")
-        resources.srcDir("src/main/resources")
+        resources.srcDirs("src/main/resources")
     }
 }
 
-
-
 jlink {
-    imageZip = file("${project.buildDir}/distributions/app-${javafx.platform.classifier}.zip")
+    imageZip = file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
     options = listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages")
     launcher {
         name = "app"
     }
 }
-
