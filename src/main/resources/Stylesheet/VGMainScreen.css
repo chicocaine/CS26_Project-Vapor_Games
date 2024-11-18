@@ -32,6 +32,16 @@
     -fx-font-size: 12px;
 }
 
+.TNB_Selection-Button {
+    -fx-text-fill: #A5A5AA;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+}
+
+.TNB_Selection-Button:hover {
+    -fx-text-fill: #D7D3D3;
+}
+
 @font-face {
     -font-family: 'Sora Regular';
     src: url('Fonts/Sora-Regular.ttf')

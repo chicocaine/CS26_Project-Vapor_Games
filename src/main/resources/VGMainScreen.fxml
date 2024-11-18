@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1080.0" stylesheets="@Stylesheet/VGMainScreen.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1080.0" stylesheets="@Stylesheet/VGMainScreen.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.VGMainScreenController">
    <children>
       <Pane fx:id="leftNavigationBar_Pane" layoutX="30.0" layoutY="40.0" styleClass="LeftNagivationBar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="893.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -71,6 +71,22 @@
                         <Image url="@Image/ReturnIcon.png" />
                      </image>
                   </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="BrowsePane_Button" layoutX="474.0" layoutY="29.0" prefHeight="17.0" prefWidth="83.0">
+               <children>
+                  <Label alignment="CENTER" layoutY="-4.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button" text="Browse" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="DiscoverButton_Pane" layoutX="383.0" layoutY="29.0" prefHeight="17.0" prefWidth="83.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="-5.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button" text="Discover" />
                </children>
                <cursor>
                   <Cursor fx:constant="HAND" />

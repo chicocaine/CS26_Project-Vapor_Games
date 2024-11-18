@@ -10,6 +10,12 @@ import javafx.scene.control.TextField;
 public class VGMainScreenController {
 
     @FXML
+    private Pane BrowsePane_Button;
+
+    @FXML
+    private Pane DiscoverButton_Pane;
+
+    @FXML
     private HBox LibraryButton;
 
     @FXML
