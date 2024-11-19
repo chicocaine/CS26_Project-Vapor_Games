@@ -1,7 +1,7 @@
 package User_Interface;
 
 import javafx.fxml.FXML;
-import javafx.stage.Stage;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.HBox;
 import javafx.scene.image.ImageView;
@@ -10,7 +10,19 @@ import javafx.scene.control.TextField;
 public class VGMainScreenController {
 
     @FXML
+    private ImageView AccountDropDown_Image;
+
+    @FXML
+    private ImageView AccountPicture_Image;
+
+    @FXML
+    private Label AccountUser_Label;
+
+    @FXML
     private Pane BrowsePane_Button;
+
+    @FXML
+    private Pane CartButton_Pane;
 
     @FXML
     private Pane DiscoverButton_Pane;

@@ -42,6 +42,17 @@
     -fx-text-fill: #D7D3D3;
 }
 
+.TNB_UserAccount-Button {
+    -fx-text-fill: #9747FF;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+    -fx-font-weight: Bold;
+}
+
+.TNB_UserAccount-Button:hover {
+    -fx-text-fill: #A5A5AA;
+}
+
 @font-face {
     -font-family: 'Sora Regular';
     src: url('Fonts/Sora-Regular.ttf')
