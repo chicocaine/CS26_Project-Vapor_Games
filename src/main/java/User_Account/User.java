@@ -1,6 +1,6 @@
 package User_Account;
 
-public class User extends User_Interface {
+public class User {
 
     private int userID;
     private String username;

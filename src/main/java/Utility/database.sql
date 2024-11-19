@@ -34,16 +34,16 @@ CREATE TABLE genre_games (
 CREATE TABLE libraries (
     gameID INT NOT NULL,
     userID INT NOT NULL,
-    FOREIGN KEY (gameID) REFERENCES games(gameID),
-    FOREIGN KEY (userID) REFERENCES genres(userID),
+    FOREIGN KEY (gameID) REFERENCES games(gameID) ON DELETE CASCADE,
+    FOREIGN KEY (userID) REFERENCES genres(userID) ON DELETE CASCADE,
     PRIMARY(gameID, userID)
 );
 
 CREATE TABLE cart_games (
     cartID INT NOT NULL,
     gameID INT NOT NULL,
-    FOREIGN KEY (gameID) REFERENCES games(gameID),
-    FOREIGN KEY (cartID) REFERENCES genres(cartID),
+    FOREIGN KEY (gameID) REFERENCES games(gameID) ON DELETE CASCADE,
+    FOREIGN KEY (cartID) REFERENCES genres(cartID) ON DELETE CASCADE,
     PRIMARY(gameID, cartID)
 );
 

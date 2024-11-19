@@ -12,6 +12,8 @@ import Utility.DBConnectionPool;
 
 public class GamesManager {
 
+    public GamesManager () {}
+
     private ArrayList<Games> game_list;
 
     public void GamesLoader () {

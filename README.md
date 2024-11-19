@@ -59,3 +59,7 @@ I also made the sql tho there is no database connection yet.
 FML it's 23:46 || 13/11/2024
 
 --> chico
+
+--------------------------------------------------------------------------------------------------------------------------
+
+ \connect root@HoyoWorld.serv.gs:3306

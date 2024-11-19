@@ -37,6 +37,7 @@ javafx {
 
 dependencies {
     implementation("com.zaxxer:HikariCP:6.2.0")
+    implementation("org.mindrot:jbcrypt:0.4")
 
     implementation("org.controlsfx:controlsfx:11.1.2")
     implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
