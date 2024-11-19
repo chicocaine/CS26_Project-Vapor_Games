@@ -1,0 +1,48 @@
+.LeftNagivationBar {
+    -fx-background-color: #050106 ;
+}
+
+.TopNavigationBar {
+    -fx-background-color: #050106 ;
+}
+
+.MainContent {
+    -fx-background-color: #181819;
+}
+
+.LNB_SelectionText {
+    -fx-text-fill: #C8C8C8;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+}
+
+.LNB_SelectionHBox:hover {
+    -fx-background-color: #383737;
+    -fx-background-radius: 7 7 7 7;
+}
+
+.TNB_SearchBar {
+    -fx-background-color: #181819;
+}
+
+.TNB_SearchBar-TF {
+    -fx-background-color: #181819;
+    -fx-text-fill: #A5A5AA;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 12px;
+}
+
+.TNB_Selection-Button {
+    -fx-text-fill: #A5A5AA;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+}
+
+.TNB_Selection-Button:hover {
+    -fx-text-fill: #D7D3D3;
+}
+
+@font-face {
+    -font-family: 'Sora Regular';
+    src: url('Fonts/Sora-Regular.ttf')
+}
