@@ -92,6 +92,39 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Pane>
+            <Pane fx:id="CartButton_Pane" layoutX="616.0" layoutY="30.0" prefHeight="17.0" prefWidth="83.0">
+               <children>
+                  <Label alignment="CENTER" layoutY="-4.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button" text="Cart" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <HBox alignment="CENTER" layoutX="715.0" layoutY="20.0" prefHeight="36.0">
+               <children>
+                  <Pane prefHeight="36.0" prefWidth="36.0">
+                     <children>
+                        <ImageView fx:id="AccountPicture_Image" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/ProfileTestPicture.png" />
+                           </image></ImageView>
+                     </children>
+                  </Pane>
+                  <Label fx:id="AccountUser_Label" alignment="CENTER" prefHeight="36.0" prefWidth="83.0" styleClass="TNB_UserAccount-Button" text="march">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="AccountDropDown_Image" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/AccountDropIcon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </Pane>
       <Pane fx:id="MainContent_Pane" layoutX="847.0" layoutY="527.0" styleClass="MainContent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0" />
