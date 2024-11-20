@@ -1,4 +1,4 @@
-package User_Account;
+package Accounts;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -94,11 +94,97 @@ public class UserManager {
         } else {
             System.out.println("Authentication failed. Unable to remove user.");
         }
+    }
+    
+    public boolean checkUsernameExists(String username) {
+        try (Connection conn = DBConnectionPool.getConnection()) {
+            String query = "SELECT userID FROM users WHERE username = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace(); 
+        }
+        return false;
     }    
 
-    public void updateUser() {
-        // don't see why we need to implement this
-    }
+    public class UserUpdates {
 
+        public UserUpdates() {}
+    
+        public void updatePassword(User user, String newPassword) {
+            int userID = user.getUserID();
+            String query = "UPDATE users SET password = ? WHERE userID = ?";
+    
+            try (Connection conn = DBConnectionPool.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(query)) {
+                
+                String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+                
+                stmt.setString(1, hashedPassword);
+                stmt.setInt(2, userID);
+    
+                int rowsAffected = stmt.executeUpdate();
+    
+                if (rowsAffected > 0) {
+                    System.out.println("Password updated successfully.");
+                } else {
+                    System.out.println("Failed to update password. User may not exist.");
+                }
+    
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    
+        public void updateWalletBalance(User user, double newWalletBalance) {
+            int userID = user.getUserID();
+            String query = "UPDATE users SET wallet = ? WHERE userID = ?";
+    
+            try (Connection conn = DBConnectionPool.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(query)) {
+    
+                stmt.setDouble(1, newWalletBalance);
+                stmt.setInt(2, userID);
+    
+                int rowsAffected = stmt.executeUpdate();
+    
+                if (rowsAffected > 0) {
+                    System.out.println("Wallet balance updated successfully.");
+                } else {
+                    System.out.println("Failed to update wallet balance. User may not exist.");
+                }
+    
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    
+        // Method to update the user's name
+        public void updateName(User user, String newName) {
+            int userID = user.getUserID();
+            String query = "UPDATE users SET name = ? WHERE userID = ?";
+    
+            try (Connection conn = DBConnectionPool.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(query)) {
+    
+                stmt.setString(1, newName);
+                stmt.setInt(2, userID);
+    
+                int rowsAffected = stmt.executeUpdate();
+    
+                if (rowsAffected > 0) {
+                    System.out.println("Name updated successfully.");
+                } else {
+                    System.out.println("Failed to update name. User may not exist.");
+                }
+    
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     
 }

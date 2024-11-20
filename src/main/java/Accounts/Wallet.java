@@ -1,4 +1,4 @@
-package User_Account;
+package Accounts;
 
 public class Wallet { // don't know how this works honestly
 
