@@ -17,6 +17,9 @@ public class VGStorePageController {
     private Pane GameGenreTags_Pane;
 
     @FXML
+    private Label GamePrice_Label;
+
+    @FXML
     private Label StoreGameDescription_Label;
 
     @FXML

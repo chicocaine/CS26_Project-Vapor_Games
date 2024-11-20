@@ -42,7 +42,7 @@
       <Pane layoutX="631.0" layoutY="438.0" prefHeight="125.0" prefWidth="250.0">
          <children>
             <Label styleClass="GameTransactionPrice-Label" text="₱" />
-            <Label layoutX="19.0" prefHeight="25.0" prefWidth="231.0" styleClass="GameTransactionPrice-Label" text="400.00" />
+            <Label fx:id="GamePrice_Label" layoutX="19.0" prefHeight="25.0" prefWidth="231.0" styleClass="GameTransactionPrice-Label" text="400.00" />
             <Pane fx:id="GameBuyNowButton_Pane" layoutY="25.0" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Pane">
                <children>
                   <Label alignment="CENTER" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Label" text="Buy Now" />

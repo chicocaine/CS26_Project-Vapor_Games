@@ -36,6 +36,8 @@ javafx {
 }
 
 dependencies {
+    implementation("org.mindrot:jbcrypt:0.4")
+
     implementation("com.zaxxer:HikariCP:6.2.0")
     implementation("org.mindrot:jbcrypt:0.4")
 
