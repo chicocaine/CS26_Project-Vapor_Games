@@ -40,18 +40,18 @@ CREATE TABLE libraries (
 );
 
 CREATE TABLE cart_games (
-    cartID INT NOT NULL,
+    userID INT NOT NULL,
     gameID INT NOT NULL,
+    PRIMARY KEY(gameID, userID),
     FOREIGN KEY (gameID) REFERENCES games(gameID) ON DELETE CASCADE,
-    FOREIGN KEY (cartID) REFERENCES genres(cartID) ON DELETE CASCADE,
-    PRIMARY(gameID, cartID)
+    FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE
 );
 
 CREATE TABLE transactions (
     transactionID INT PRIMARY KEY AUTO_INCREMENT,
     userID INT NOT NULL,
-    cartID INT NOT NULL,
+    transaction_date TEXT NOT NULL,
     transaction_amount DECIMAL(7, 2) NOT NULL,
-    FOREIGN KEY (gameID) REFERENCES games(gameID),
-    FOREIGN KEY (cartID) REFERENCES genres(cartID)
+    FOREIGN KEY (userID) REFERENCES users(userID)
 );
+
