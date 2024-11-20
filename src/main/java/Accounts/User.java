@@ -1,11 +1,18 @@
-package User_Account;
+package Accounts;
 
-public class User {
+public class User extends Account_Interface{
 
     private int userID;
     private String username;
     private Wallet wallet;
     private String name;
+
+    public User (int userID, String username, double wallet, String name) {
+        setUserID(userID);
+        setUserName(username);
+        setWallet(new Wallet(wallet));
+        setName(name);
+    }
 
     public void setUserID(int userID) {
         this.userID = userID;
