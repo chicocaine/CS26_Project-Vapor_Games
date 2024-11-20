@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.mindrot.jbcrypt.BCrypt;
+//import org.mindrot.jbcrypt.BCrypt;
 import Utility.DBConnectionPool;
 
 public class UserManager {
@@ -22,9 +22,9 @@ public class UserManager {
             if (rs.next()) {
                 String hashedPassword = rs.getString("password");
 
-                if (BCrypt.checkpw(password, hashedPassword)) {
-                    return true;
-                }
+                //if (BCrypt.checkpw(password, hashedPassword)) {
+                    //return true;
+                //}
             }
         } catch (SQLException e) {
             e.printStackTrace(); 
@@ -46,8 +46,8 @@ public class UserManager {
                     double wallet = rs.getDouble("wallet");
                     String name = rs.getString("name");
     
-                    User user = new User(userID, retrievedUsername, wallet, name);
-                    return user;
+                    //User user = new User(userID, retrievedUsername, wallet, name);
+                    //return user;
                 }
             } catch (SQLException e) {
                 e.printStackTrace(); 
@@ -57,12 +57,12 @@ public class UserManager {
     }
 
     public void registerUser(String username, String password, String name, double wallet) {
-        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt()); // Hash the password
+        //String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt()); // Hash the password
         try (Connection conn = DBConnectionPool.getConnection()) {
             String query = "INSERT INTO users (username, password, name, wallet) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, username);
-            stmt.setString(2, hashedPassword);
+            //stmt.setString(2, hashedPassword);
             stmt.setString(3, name);
             stmt.setDouble(4, wallet);
             stmt.executeUpdate();
