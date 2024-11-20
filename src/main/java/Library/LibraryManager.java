@@ -138,8 +138,5 @@ public class LibraryManager {
     public boolean isGameOwned (User user, Games game) { // what is the point of this one?
         return true;
     } 
-
-    public String checkGameStatus (User user, Games game) { // don't know what this means
-        return null;
-    }
+    
 }
