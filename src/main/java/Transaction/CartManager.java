@@ -14,7 +14,7 @@ import Utility.DBConnectionPool;
 public class CartManager {
 
     private ArrayList<Games> cart = new ArrayList<>();
-    
+        
     public CartManager () {}
 
     public void addToCart(User user, Games game) {
@@ -156,6 +156,14 @@ public class CartManager {
     public ArrayList<Games> getCart (User user) {
         loadCart(user);
         return this.cart;
+    }
+
+    public double getTotalPrice (ArrayList<Games> game_list) {
+        double total_price = 0;
+        for (Games x : game_list) {
+            total_price += x.getGamePrice();
+        }
+        return total_price;
     }
 
 }

@@ -1,5 +1,7 @@
 package Accounts;
 
+import Accounts.UserManager.UserUpdates;
+
 public class User extends Account_Interface{
 
     private int userID;
@@ -46,4 +48,8 @@ public class User extends Account_Interface{
         return name;
     }
     
+    public void updateBalance(double changeOfBalance) {
+        this.wallet.updateBalance(changeOfBalance);
+    }
+
 }

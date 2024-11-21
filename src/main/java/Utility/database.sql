@@ -51,7 +51,7 @@ CREATE TABLE transactions (
     transactionID INT PRIMARY KEY AUTO_INCREMENT,
     userID INT NOT NULL,
     transaction_date TEXT NOT NULL,
+    transaction_games TEXT NOT NULL, -- stringformat (games1(price), games2(price))
     transaction_amount DECIMAL(7, 2) NOT NULL,
     FOREIGN KEY (userID) REFERENCES users(userID)
 );
-

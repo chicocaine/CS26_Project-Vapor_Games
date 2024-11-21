@@ -139,8 +139,7 @@ public class UserManager {
             }
         }
     
-        public void updateWalletBalance(User user, double newWalletBalance) {
-            int userID = user.getUserID();
+        public void updateWalletBalance(int userID, double newWalletBalance) {
             String query = "UPDATE users SET wallet = ? WHERE userID = ?";
     
             try (Connection conn = DBConnectionPool.getConnection();

@@ -8,15 +8,12 @@ public class Wallet { // don't know how this works honestly
         this.balance = initialBalance;
     }
 
-    public void addFunds (double funds) {
+    public void updateBalance (double funds) {
         this.balance += funds;
     }
 
-    public double checkBalance () { // this can also be called getBalance()
+    public double getBalance () { // this can also be called getBalance()
         return balance;
     }
 
-    public void reduceFunds (double funds) {
-        this.balance -= funds;
-    }
 }
