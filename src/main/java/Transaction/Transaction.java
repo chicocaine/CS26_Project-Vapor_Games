@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 public class Transaction {
-    
+
     CartManager cm = new CartManager();
     private ArrayList<Games> game_list;
     private User user;
@@ -83,5 +83,13 @@ public class Transaction {
         this.transaction_date_time = dt.getDateTime();
 
         return isConfirmed;
+    }
+
+    public User getUser () {
+        return this.user;
+    }
+
+    public String getTransactionDate () {
+        return this.transaction_date_time;
     }
 }
