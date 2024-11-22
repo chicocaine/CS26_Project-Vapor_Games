@@ -20,6 +20,22 @@
     -fx-background-color: #383737;
     -fx-background-radius: 7 7 7 7;
 }
+.LNB_Logout:hover{
+    -fx-background-color: #e32f2f;
+    -fx-background-radius: 7 7 7 7;
+}
+
+.LNB_Logout:hover .label{
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+}
+
+.LNB_LogoutLabel {
+    -fx-text-fill: #A5A5AA;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+}
 
 .TNB_SearchBar {
     -fx-background-color: #181819;

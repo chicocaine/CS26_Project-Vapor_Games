@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
@@ -56,16 +57,65 @@ public class VGMainScreenController {
     private HBox StoreButton;
 
     @FXML
-    private Pane TopNavigationBar_Pane;
-
-    @FXML
-    private Pane leftNavigationBar_Pane;
+    private HBox LogoutButton;
 
     private Pane currentPane;
 
-    @FXML
-    void HandlesClickedButton(MouseEvent event) {
+    boolean isLibraryButtonClicked = false;
+    boolean isStoreButtonClicked = false;
 
+    private void highlightButtonClicked(boolean x, boolean y){
+        if(x && !y){
+            System.out.println("[DEBUG] Library Button is Highlighted");
+            // Set the Library Button to be highlighted.
+
+        } else if (!x && y){
+            System.out.println("[DEBUG] Store Button is Highlighted");
+            // Set the Store Button to be highlighted.
+        } else {
+            System.out.println("[INFO] I Don't know how you get to this.");
+        }
+    }
+
+    @FXML
+    void HandlesClickedButton(@NotNull MouseEvent event) {
+        // Logout Button
+        if(event.getSource() == LogoutButton){
+            System.out.println("[DEBUG] Logout button clicked");
+            System.exit(0);
+
+            // Discover Button
+        } else if (event.getSource() == DiscoverButton_Pane){
+            System.out.println("[DEBUG] Discover button clicked");
+            LoadHomePage();
+            System.out.println("[DEBUG] (LoadHomePage();) Loaded!");
+
+            // Library Button
+        } else if (event.getSource() == LibraryButton){
+            System.out.println("[DEBUG] Library button clicked");
+            isLibraryButtonClicked = true;
+            System.out.println("[DEBUG] isLibraryButtonClicked set to TRUE");
+            isStoreButtonClicked = false;
+            System.out.println("[DEBUG] isStoreButtonClicked set to FALSE");
+            if(!isStoreButtonClicked && isLibraryButtonClicked){
+                highlightButtonClicked(true, false);
+            } else {
+                System.out.println("[INFO] I Don't know how you get to this.");
+            }
+
+            // Store Button
+        } else if (event.getSource() == StoreButton){
+            System.out.println("[DEBUG] Store button clicked");
+            isStoreButtonClicked = true;
+            System.out.println("[DEBUG] isStoreButtonClicked set to TRUE");
+            isLibraryButtonClicked = false;
+            System.out.println("[DEBUG] isLibraryButtonClicked set to FALSE");
+            if(isStoreButtonClicked && !isLibraryButtonClicked){
+                highlightButtonClicked(false, true);
+            } else {
+                System.out.println("[INFO] I Don't know how you get to this.");
+            }
+        }
     }
 
     @FXML
@@ -88,7 +138,6 @@ public class VGMainScreenController {
             }
 
             if (currentPane != null) {
-                // Make the current pane invisible and push it to the history stack
                 currentPane.setVisible(false);
             }
 

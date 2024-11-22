@@ -6,6 +6,7 @@ module User_Interface {
     requires javafx.media;
     requires java.sql;
     requires com.zaxxer.hikari;
+    requires annotations;
     //requires jbcrypt;
 
     opens User_Interface to javafx.fxml;

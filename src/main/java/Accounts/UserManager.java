@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 //import org.mindrot.jbcrypt.BCrypt;
 import Utility.DBConnectionPool;
+//import org.mindrot.jbcrypt.BCrypt;
 
 public class UserManager {
     
@@ -121,9 +122,9 @@ public class UserManager {
             try (Connection conn = DBConnectionPool.getConnection();
                  PreparedStatement stmt = conn.prepareStatement(query)) {
                 
-                String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+                //String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
                 
-                stmt.setString(1, hashedPassword);
+                //stmt.setString(1, hashedPassword);
                 stmt.setInt(2, userID);
     
                 int rowsAffected = stmt.executeUpdate();
