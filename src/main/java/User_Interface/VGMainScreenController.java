@@ -9,7 +9,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
@@ -78,7 +77,7 @@ public class VGMainScreenController {
     }
 
     @FXML
-    void HandlesClickedButton(@NotNull MouseEvent event) {
+    void HandlesClickedButton(MouseEvent event) {
         // Logout Button
         if(event.getSource() == LogoutButton){
             System.out.println("[DEBUG] Logout button clicked");

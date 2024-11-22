@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please....">
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Accounts/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Accounts/UserManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGMainScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGMainScreen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/VGMainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VGMainScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +87,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
     "Kotlin script (Beta).build.gradle.kts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -150,7 +148,7 @@
       <workItem from="1732002926563" duration="9360000" />
       <workItem from="1732026067467" duration="92000" />
       <workItem from="1732097649516" duration="7719000" />
-      <workItem from="1732231104290" duration="3406000" />
+      <workItem from="1732231104290" duration="3585000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -176,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732016202646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please....">
+      <option name="closed" value="true" />
+      <created>1732237100950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732237100950</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +203,7 @@
     <MESSAGE value="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
-    <option name="LAST_COMMIT_MESSAGE" value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
+    <MESSAGE value="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please...." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please...." />
   </component>
 </project>
