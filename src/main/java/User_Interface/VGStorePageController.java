@@ -8,32 +8,66 @@ import javafx.scene.layout.Pane;
 public class VGStorePageController {
 
     @FXML
-    private Pane GameAddToCartButton_Pane;
+    private Label FeaturedGameDescription_Label;
 
     @FXML
-    private Pane GameBuyNowButton_Pane;
+    private Label FeaturedGameSubTitle_Label;
 
     @FXML
-    private Pane GameGenreTags_Pane;
+    private Label FeaturedGameTitle_Label;
 
     @FXML
-    private Label GamePrice_Label;
+    private Label HomePageDiscoverGamePrice_Label;
 
     @FXML
-    private Label StoreGameDescription_Label;
+    private Pane HomePageDiscoverGameTile_Pane;
 
     @FXML
-    private Label StoreGameSubTitle_Label;
+    private Label HomePageDiscoverGameTitle_Label;
 
     @FXML
-    private ImageView StoreGameThumbnail_Image;
+    private ImageView HomePageDiscoverGame_Image;
 
     @FXML
-    private ImageView StorePageGameMainPicture_Image;
+    private Label HomePageFeatureGamePrice_Label;
 
     @FXML
-    private Label StorePageGameTitle_Label;
+    private Pane HomePageFeaturedGameBuyNow_Pane;
 
     @FXML
-    private Pane StorePage_Pane;
+    private Pane HomePageFeaturedGame_Pane;
+
+    @FXML
+    private ImageView HomePageFeaturedGame_Picture;
+
+    @FXML
+    private Label HomePageRecommendedGamePrice_Label;
+
+    @FXML
+    private Pane HomePageRecommendedGameTile_Pane;
+
+    @FXML
+    private Label HomePageRecommendedGameTitle_Label;
+
+    @FXML
+    private ImageView HomePageRecommendedGame_Image;
+
+    @FXML
+    private ImageView HomePageRecommendedGamesThumbnail_Image;
+
+    @FXML
+    private Label HomePageTopSellerGamePrice_Label;
+
+    @FXML
+    private Pane HomePageTopSellerGameTile_Pane;
+
+    @FXML
+    private Label HomePageTopSellerGameTitle_Label;
+
+    @FXML
+    private ImageView HomePageTopSellerGame_Image;
+
+    @FXML
+    private Pane MainPage_Pane;
+
 }

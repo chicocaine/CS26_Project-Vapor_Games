@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please....">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cssdialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please....">
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGGamePageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGLibraryPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/Refresh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGGamePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGLibraryPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/VGGamePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cssdialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Games/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/Games.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGHomePageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGStorePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGStorePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGHomePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGMainScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGMainScreen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGStorePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGStorePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VGLibraryPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGMainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VGMainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGStorePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VGStorePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +66,8 @@
       <list>
         <option value="package-info" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -75,18 +83,15 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/chicocaine/CS26_Project-Vapor_Games.git&quot;,
-    &quot;accountId&quot;: &quot;ddffcc79-b4fe-454d-8090-2cfc851b13e2&quot;
+    &quot;accountId&quot;: &quot;3d24febc-cb48-4557-97ab-54c578c8b592&quot;
   }
 }</component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2p13zwKnnJOjwPYOsJgrGiqS0Vc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -96,13 +101,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
-    "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
     "Kotlin script (Beta).build.gradle.kts.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -119,9 +121,6 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ],
     "kotlin-gradle-user-dirs": [
       "C:\\Users\\Hanazono Archive\\.gradle"
     ]
@@ -130,6 +129,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
+      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
@@ -138,30 +138,11 @@
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\FXML" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="VGMainProgramApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="User_Interface.VGMainProgramApplication" />
-      <module name="CS26_Project-Vapor_Games.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="User_Interface.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.VGMainProgramApplication" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19072.14" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19072.14" />
       </set>
     </attachedChunks>
   </component>
@@ -180,8 +161,6 @@
       <workItem from="1732002926563" duration="9360000" />
       <workItem from="1732026067467" duration="92000" />
       <workItem from="1732097649516" duration="7719000" />
-      <workItem from="1732231104290" duration="3585000" />
-      <workItem from="1732336766964" duration="4484000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -207,15 +186,7 @@
       <option name="project" value="LOCAL" />
       <updated>1732016202646</updated>
     </task>
-    <task id="LOCAL-00004" summary="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please....">
-      <option name="closed" value="true" />
-      <created>1732237100950</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1732237100950</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +207,17 @@
     <MESSAGE value="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
-    <MESSAGE value="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please...." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please...." />
+    <option name="LAST_COMMIT_MESSAGE" value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

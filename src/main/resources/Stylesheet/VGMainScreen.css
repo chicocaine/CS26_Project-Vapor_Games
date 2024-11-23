@@ -20,6 +20,12 @@
     -fx-background-color: #383737;
     -fx-background-radius: 7 7 7 7;
 }
+
+.LNB_SelectionHBoxHighlighted {
+    -fx-background-color: #383737;
+    -fx-background-radius: 7 7 7 7;
+}
+
 .LNB_Logout:hover{
     -fx-background-color: #e32f2f;
     -fx-background-radius: 7 7 7 7;
