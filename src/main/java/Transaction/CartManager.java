@@ -88,9 +88,9 @@ public class CartManager {
             e.printStackTrace();
         }
     }
-    
 
-    public void loadCart (User user) {
+
+    public void loadCart(User user) {
         int userID = user.getUserID();
         String query = """
             SELECT 
@@ -100,7 +100,8 @@ public class CartManager {
                 g.description,
                 g.price,
                 g.available,
-                g.pictureURL,
+                giCard.imageURL AS cardImageURL,
+                giShowcase.imageURL AS showcaseImageURL,
                 gen.genreName AS genreName
             FROM 
                 cart_games c
@@ -110,18 +111,22 @@ public class CartManager {
                 genre_games gg ON g.gameID = gg.gameID
             LEFT JOIN 
                 genres gen ON gg.genreID = gen.genreID
+            LEFT JOIN 
+                game_images giCard ON g.gameID = giCard.gameID AND giCard.imageType = 'CARD'
+            LEFT JOIN 
+                game_images giShowcase ON g.gameID = giShowcase.gameID AND giShowcase.imageType = 'SHOWCASE'
             WHERE 
-                c.userID = ?;
+                c.userID = ?
         """;
-    
+
         try (Connection connection = DBConnectionPool.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
-            
+
             statement.setInt(1, userID); // Bind the userID parameter
-            
+
             try (ResultSet resultSet = statement.executeQuery()) {
                 HashMap<Integer, Games> gamesMap = new HashMap<>();
-    
+
                 while (resultSet.next()) {
                     int gameID = resultSet.getInt("gameID");
                     String title = resultSet.getString("gameTitle");
@@ -129,21 +134,37 @@ public class CartManager {
                     String description = resultSet.getString("description");
                     double price = resultSet.getDouble("price");
                     boolean isAvailable = resultSet.getBoolean("available");
-                    String pictureURL = resultSet.getString("pictureURL");
+                    String cardImageURL = resultSet.getString("cardImageURL");
+                    String showcaseImageURL = resultSet.getString("showcaseImageURL");
                     String genreName = resultSet.getString("genreName");
-    
-                    Games game = gamesMap.getOrDefault(gameID,
-                            new Games(gameID, title, releaseDate, description, price, new ArrayList<>(), isAvailable, pictureURL));
-    
+
+                    // Retrieve or create the game object
+                    Games game = gamesMap.getOrDefault(gameID, new Games(
+                            gameID,
+                            title,
+                            releaseDate,
+                            description,
+                            price,
+                            new ArrayList<>(),
+                            isAvailable,
+                            cardImageURL,
+                            new ArrayList<>()
+                    ));
+
                     // Add the genre if it's not null
                     if (genreName != null) {
                         game.getGenreList().add(genreName);
                     }
-    
+
+                    // Add the showcase image if it's not null
+                    if (showcaseImageURL != null && !game.getShowcaseImagesURL().contains(showcaseImageURL)) {
+                        game.getShowcaseImagesURL().add(showcaseImageURL);
+                    }
+
                     // Put the game object back into the map
                     gamesMap.put(gameID, game);
                 }
-    
+
                 // Convert the map values to a list of Games
                 ArrayList<Games> gamesList = new ArrayList<>(gamesMap.values());
                 this.cart = gamesList;

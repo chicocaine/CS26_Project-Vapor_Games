@@ -1063,7 +1063,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </collation>
     <schema id="288" parent="1" name="VaporGames">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-11-23.07:23:36</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-11-23.08:00:30</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="information_schema">
@@ -1103,211 +1103,342 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="299" parent="288" name="game_images">
+    <table id="299" parent="288" name="cart_games">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="288" name="games">
+    <table id="300" parent="288" name="game_images">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="288" name="genre_games">
+    <table id="301" parent="288" name="games">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="288" name="genres">
+    <table id="302" parent="288" name="genre_games">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="303" parent="288" name="users">
+    <table id="303" parent="288" name="genres">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="304" parent="299" name="imageID">
+    <table id="304" parent="288" name="libraries">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="305" parent="288" name="transactions">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="306" parent="288" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="307" parent="299" name="userID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="308" parent="299" name="gameID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="309" parent="299" name="cart_games_ibfk_2">
+      <ColNames>userID</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>userID</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="310" parent="299" name="cart_games_ibfk_1">
+      <ColNames>gameID</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>gameID</RefColNames>
+      <RefTableName>games</RefTableName>
+    </foreign-key>
+    <index id="311" parent="299" name="PRIMARY">
+      <ColNames>gameID
+userID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="312" parent="299" name="userID">
+      <ColNames>userID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="313" parent="299" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="314" parent="300" name="imageID">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="305" parent="299" name="gameID">
+    <column id="315" parent="300" name="gameID">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="306" parent="299" name="imageURL">
+    <column id="316" parent="300" name="imageURL">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="307" parent="299" name="imageType">
+    <column id="317" parent="300" name="imageType">
       <DasType>enum(&apos;CARD&apos;, &apos;SHOWCASE&apos;)|0e</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="308" parent="299" name="game_images_ibfk_1">
+    <foreign-key id="318" parent="300" name="game_images_ibfk_1">
       <ColNames>gameID</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>gameID</RefColNames>
       <RefTableName>games</RefTableName>
     </foreign-key>
-    <index id="309" parent="299" name="PRIMARY">
+    <index id="319" parent="300" name="PRIMARY">
       <ColNames>imageID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="310" parent="299" name="gameID">
+    <index id="320" parent="300" name="gameID">
       <ColNames>gameID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="311" parent="299" name="PRIMARY">
+    <key id="321" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="312" parent="300" name="gameID">
+    <column id="322" parent="301" name="gameID">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="313" parent="300" name="gameTitle">
+    <column id="323" parent="301" name="gameTitle">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="314" parent="300" name="gameReleaseDate">
+    <column id="324" parent="301" name="gameReleaseDate">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="315" parent="300" name="description">
+    <column id="325" parent="301" name="description">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="316" parent="300" name="price">
+    <column id="326" parent="301" name="price">
       <DasType>decimal(7,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="317" parent="300" name="available">
+    <column id="327" parent="301" name="available">
       <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="318" parent="300" name="PRIMARY">
+    <index id="328" parent="301" name="PRIMARY">
       <ColNames>gameID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="319" parent="300" name="PRIMARY">
+    <key id="329" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="320" parent="301" name="gameID">
+    <column id="330" parent="302" name="gameID">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="321" parent="301" name="genreID">
+    <column id="331" parent="302" name="genreID">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="322" parent="301" name="genre_games_ibfk_1">
+    <foreign-key id="332" parent="302" name="genre_games_ibfk_1">
       <ColNames>gameID</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>gameID</RefColNames>
       <RefTableName>games</RefTableName>
     </foreign-key>
-    <foreign-key id="323" parent="301" name="genre_games_ibfk_2">
+    <foreign-key id="333" parent="302" name="genre_games_ibfk_2">
       <ColNames>genreID</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>genreID</RefColNames>
       <RefTableName>genres</RefTableName>
     </foreign-key>
-    <index id="324" parent="301" name="PRIMARY">
+    <index id="334" parent="302" name="PRIMARY">
       <ColNames>gameID
 genreID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="325" parent="301" name="genreID">
+    <index id="335" parent="302" name="genreID">
       <ColNames>genreID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="326" parent="301" name="PRIMARY">
+    <key id="336" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="327" parent="302" name="genreID">
+    <column id="337" parent="303" name="genreID">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="328" parent="302" name="genreName">
+    <column id="338" parent="303" name="genreName">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="329" parent="302" name="PRIMARY">
+    <index id="339" parent="303" name="PRIMARY">
       <ColNames>genreID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="330" parent="302" name="PRIMARY">
+    <key id="340" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="331" parent="303" name="userID">
+    <column id="341" parent="304" name="gameID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="342" parent="304" name="userID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="343" parent="304" name="libraries_ibfk_1">
+      <ColNames>gameID</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>gameID</RefColNames>
+      <RefTableName>games</RefTableName>
+    </foreign-key>
+    <foreign-key id="344" parent="304" name="libraries_ibfk_2">
+      <ColNames>userID</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>userID</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="345" parent="304" name="PRIMARY">
+      <ColNames>gameID
+userID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="346" parent="304" name="userID">
+      <ColNames>userID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="347" parent="304" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="348" parent="305" name="transactionID">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="332" parent="303" name="username">
+    <column id="349" parent="305" name="userID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="350" parent="305" name="transaction_date">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="351" parent="305" name="transaction_games">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="352" parent="305" name="transaction_amount">
+      <DasType>decimal(7,2 digit)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="353" parent="305" name="transactions_ibfk_1">
+      <ColNames>userID</ColNames>
+      <RefColNames>userID</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="354" parent="305" name="PRIMARY">
+      <ColNames>transactionID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="355" parent="305" name="userID">
+      <ColNames>userID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="356" parent="305" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="357" parent="306" name="userID">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="358" parent="306" name="username">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="333" parent="303" name="wallet">
+    <column id="359" parent="306" name="wallet">
       <DasType>decimal(7,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="334" parent="303" name="name">
+    <column id="360" parent="306" name="name">
       <DasType>text|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="335" parent="303" name="password">
+    <column id="361" parent="306" name="password">
       <DasType>char(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="336" parent="303" name="pfpURL">
+    <column id="362" parent="306" name="pfpURL">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
-    <index id="337" parent="303" name="PRIMARY">
+    <index id="363" parent="306" name="PRIMARY">
       <ColNames>userID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="338" parent="303" name="username">
+    <index id="364" parent="306" name="username">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="339" parent="303" name="PRIMARY">
+    <key id="365" parent="306" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="340" parent="303" name="username">
+    <key id="366" parent="306" name="username">
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
   </database-model>
