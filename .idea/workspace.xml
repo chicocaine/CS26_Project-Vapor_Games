@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Fourth Installment of My JavaFX, Added Small Functions&#10;&#10;set the JDK to 22 Zulu Community Please....">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cssdialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Games/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/Games.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/database.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +78,9 @@
     &quot;accountId&quot;: &quot;ddffcc79-b4fe-454d-8090-2cfc851b13e2&quot;
   }
 }</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -90,6 +99,7 @@
     "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
     "Kotlin script (Beta).build.gradle.kts.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
@@ -109,6 +119,9 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
     "kotlin-gradle-user-dirs": [
       "C:\\Users\\Hanazono Archive\\.gradle"
     ]
@@ -125,11 +138,30 @@
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\FXML" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="VGMainProgramApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="User_Interface.VGMainProgramApplication" />
+      <module name="CS26_Project-Vapor_Games.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="User_Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.VGMainProgramApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -149,6 +181,7 @@
       <workItem from="1732026067467" duration="92000" />
       <workItem from="1732097649516" duration="7719000" />
       <workItem from="1732231104290" duration="3585000" />
+      <workItem from="1732336766964" duration="4484000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import Utility.DBConnectionPool;
@@ -25,14 +26,19 @@ public class GamesManager {
                 g.description,
                 g.price,
                 g.available,
-                g.pictureURL,
+                img.imageURL AS pictureURL,
+                img.imageType AS imageType,
                 gen.genreName AS genreName
             FROM 
                 games g
             LEFT JOIN 
                 genre_games gg ON g.gameID = gg.gameID
             LEFT JOIN 
-                genres gen ON gg.genreID = gen.genreID;
+                genres gen ON gg.genreID = gen.genreID
+            LEFT JOIN 
+                game_images img ON g.gameID = img.gameID
+            ORDER BY 
+                g.gameID, img.imageType;
         """;
 
         try (Connection connection = DBConnectionPool.getConnection();
@@ -48,11 +54,23 @@ public class GamesManager {
                 String description = resultSet.getString("description");
                 double price = resultSet.getDouble("price");
                 boolean isAvailable = resultSet.getBoolean("available");
-                String pictureURL = resultSet.getString("pictureURL");
+                String imageType = resultSet.getString("imageType");
+                String imageURL = resultSet.getString("pictureURL");
                 String genreName = resultSet.getString("genreName");
 
+                // Retrieve or initialize the Games object
                 Games game = gamesMap.getOrDefault(gameID,
-                        new Games(gameID, title, releaseDate, description, price, new ArrayList<>(), isAvailable, pictureURL));
+                        new Games(gameID, title, releaseDate, description, price, new ArrayList<>(), isAvailable, null, new ArrayList<>()));
+
+                // Set the card image URL if it's a CARD image
+                if ("CARD".equalsIgnoreCase(imageType) && imageURL != null) {
+                    game.setCardImageURL(imageURL);
+                }
+
+                // Add to showcase images if it's a SHOWCASE image
+                if ("SHOWCASE".equalsIgnoreCase(imageType) && imageURL != null) {
+                    game.getShowcaseImagesURL().add(imageURL);
+                }
 
                 // Add the genre if it's not null
                 if (genreName != null) {
@@ -64,7 +82,8 @@ public class GamesManager {
             }
 
             // Convert the map values to a list of Games
-            ArrayList<Games> gamesList = new ArrayList<>(gamesMap.values());
+            ArrayList<Games> gamesList;
+            gamesList = new ArrayList<>(gamesMap.values());
             this.game_list = gamesList;
 
         } catch (SQLException e) {
@@ -78,38 +97,84 @@ public class GamesManager {
 
     public Games searchGames(String gameTitle) {
         String query = """
-            SELECT g.gameID, g.gameTitle, g.gameReleaseDate, g.description, g.price, g.available, g.pictureURL, 
-                GROUP_CONCAT(ge.genreName) AS genres
-            FROM games g
-            JOIN genre_games gg ON g.gameID = gg.gameID
-            JOIN genres ge ON gg.genreID = ge.genreID
-            WHERE g.gameTitle = ?
-            GROUP BY g.gameID
+            SELECT 
+                g.gameID, 
+                g.gameTitle, 
+                g.gameReleaseDate, 
+                g.description, 
+                g.price, 
+                g.available, 
+                img.imageURL, 
+                img.imageType, 
+                GROUP_CONCAT(DISTINCT ge.genreName) AS genres
+            FROM 
+                games g
+            LEFT JOIN 
+                genre_games gg ON g.gameID = gg.gameID
+            LEFT JOIN 
+                genres ge ON gg.genreID = ge.genreID
+            LEFT JOIN 
+                game_images img ON g.gameID = img.gameID
+            WHERE 
+                g.gameTitle = ?
+            GROUP BY 
+                g.gameID, img.imageURL, img.imageType
         """;
 
         Games queriedGame = null;
+        HashSet<String> genres = new HashSet<>();
+        String cardImageURL = null;
+        ArrayList<String> showcaseImagesURL = new ArrayList<>();
 
         try (Connection connection = DBConnectionPool.getConnection();
-            PreparedStatement statement = connection.prepareStatement(query)) {
+             PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, gameTitle);
 
             try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    queriedGame = new Games(
-                        resultSet.getInt("gameID"),
-                        resultSet.getString("gameTitle"),
-                        resultSet.getString("gameReleaseDate"),
-                        resultSet.getString("description"),
-                        resultSet.getDouble("price"),
-                        new ArrayList<>(List.of(resultSet.getString("genres").split(","))),
-                        resultSet.getBoolean("available"),
-                        resultSet.getString("pictureURL")
-                    );
+                while (resultSet.next()) {
+                    if (queriedGame == null) {
+                        // Initialize the game object only once
+                        queriedGame = new Games(
+                                resultSet.getInt("gameID"),
+                                resultSet.getString("gameTitle"),
+                                resultSet.getString("gameReleaseDate"),
+                                resultSet.getString("description"),
+                                resultSet.getDouble("price"),
+                                new ArrayList<>(), // Genres to be added later
+                                resultSet.getBoolean("available"),
+                                null, // Card image to be set later
+                                new ArrayList<>() // Showcase images to be added later
+                        );
+                    }
+
+                    // Collect genres
+                    String genreName = resultSet.getString("genres");
+                    if (genreName != null) {
+                        genres.add(genreName);
+                    }
+
+                    // Assign images
+                    String imageType = resultSet.getString("imageType");
+                    String imageURL = resultSet.getString("imageURL");
+                    if (imageType != null && imageURL != null) {
+                        if ("CARD".equalsIgnoreCase(imageType)) {
+                            cardImageURL = imageURL;
+                        } else if ("SHOWCASE".equalsIgnoreCase(imageType)) {
+                            showcaseImagesURL.add(imageURL);
+                        }
+                    }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+
+        // Finalize the queried game data if found
+        if (queriedGame != null) {
+            queriedGame.setGameGenres(new ArrayList<>(genres));
+            queriedGame.setCardImageURL(cardImageURL);
+            queriedGame.setShowcaseImagesURL(showcaseImagesURL);
         }
 
         return queriedGame;
@@ -118,147 +183,271 @@ public class GamesManager {
     public ArrayList<Games> filterByGenre(ArrayList<String> genres) {
         ArrayList<Games> gameList = new ArrayList<>();
         String query = """
-            SELECT g.gameID, g.gameTitle, g.gameReleaseDate, g.description, g.price, g.available, g.pictureURL, 
-                   GROUP_CONCAT(DISTINCT ge.genreName) AS genres
-            FROM games g
-            JOIN genre_games gg ON g.gameID = gg.gameID
-            JOIN genres ge ON gg.genreID = ge.genreID
-            WHERE ge.genreName IN (%s)
-            GROUP BY g.gameID
+            SELECT 
+                g.gameID, 
+                g.gameTitle, 
+                g.gameReleaseDate, 
+                g.description, 
+                g.price, 
+                g.available, 
+                img.imageURL, 
+                img.imageType,
+                GROUP_CONCAT(DISTINCT ge.genreName) AS genres
+            FROM 
+                games g
+            LEFT JOIN 
+                genre_games gg ON g.gameID = gg.gameID
+            LEFT JOIN 
+                genres ge ON gg.genreID = ge.genreID
+            LEFT JOIN 
+                game_images img ON g.gameID = img.gameID
+            WHERE 
+                ge.genreName IN (%s)
+            GROUP BY 
+                g.gameID, img.imageURL, img.imageType
         """;
-    
-        // Generate placeholders for genres (e.g., ?, ?, ?)
+
+        // Generate placeholders for the query (e.g., ?, ?, ?)
         String placeholders = String.join(", ", genres.stream().map(g -> "?").toList());
         query = String.format(query, placeholders);
-    
+
         try (Connection connection = DBConnectionPool.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
-    
+
+            // Set the genre parameters in the query
             for (int i = 0; i < genres.size(); i++) {
                 statement.setString(i + 1, genres.get(i));
             }
-    
+
+            HashMap<Integer, Games> gamesMap = new HashMap<>();
+            HashSet<String> showcaseImages = new HashSet<>();
+
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    Games game = new Games(
-                        resultSet.getInt("gameID"),
-                        resultSet.getString("gameTitle"),
-                        resultSet.getString("gameReleaseDate"),
-                        resultSet.getString("description"),
-                        resultSet.getDouble("price"),
-                        new ArrayList<>(List.of(resultSet.getString("genres").split(","))),
-                        resultSet.getBoolean("available"),
-                        resultSet.getString("pictureURL")
-                    );
-                    gameList.add(game);
+                    int gameID = resultSet.getInt("gameID");
+
+                    Games game = gamesMap.getOrDefault(gameID, new Games(
+                            gameID,
+                            resultSet.getString("gameTitle"),
+                            resultSet.getString("gameReleaseDate"),
+                            resultSet.getString("description"),
+                            resultSet.getDouble("price"),
+                            new ArrayList<>(), // Genres to be populated
+                            resultSet.getBoolean("available"),
+                            null, // Card image to be set
+                            new ArrayList<>() // Showcase images to be added
+                    ));
+
+                    // Populate genres
+                    String genreString = resultSet.getString("genres");
+                    if (genreString != null) {
+                        game.setGameGenres(new ArrayList<>(List.of(genreString.split(","))));
+                    }
+
+                    // Populate images
+                    String imageType = resultSet.getString("imageType");
+                    String imageURL = resultSet.getString("imageURL");
+                    if (imageType != null && imageURL != null) {
+                        if ("CARD".equalsIgnoreCase(imageType)) {
+                            game.setCardImageURL(imageURL);
+                        } else if ("SHOWCASE".equalsIgnoreCase(imageType)) {
+                            showcaseImages.add(imageURL);
+                        }
+                    }
+
+                    game.setShowcaseImagesURL(new ArrayList<>(showcaseImages));
+                    gamesMap.put(gameID, game);
                 }
             }
+
+            gameList = new ArrayList<>(gamesMap.values());
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    
+
         return gameList;
-    }    
+    }
 
     public ArrayList<Games> filterByPriceRange(double minPrice, double maxPrice) {
         ArrayList<Games> gameList = new ArrayList<>();
         String query = """
-            SELECT g.gameID, g.gameTitle, g.gameReleaseDate, g.description, g.price, g.available, g.pictureURL, 
-                   GROUP_CONCAT(DISTINCT ge.genreName) AS genres
-            FROM games g
-            JOIN genre_games gg ON g.gameID = gg.gameID
-            JOIN genres ge ON gg.genreID = ge.genreID
-            WHERE g.price BETWEEN ? AND ?
-            GROUP BY g.gameID
+            SELECT 
+                g.gameID, 
+                g.gameTitle, 
+                g.gameReleaseDate, 
+                g.description, 
+                g.price, 
+                g.available, 
+                img.imageURL, 
+                img.imageType,
+                GROUP_CONCAT(DISTINCT ge.genreName) AS genres
+            FROM 
+                games g
+            LEFT JOIN 
+                genre_games gg ON g.gameID = gg.gameID
+            LEFT JOIN 
+                genres ge ON gg.genreID = ge.genreID
+            LEFT JOIN 
+                game_images img ON g.gameID = img.gameID
+            WHERE 
+                g.price BETWEEN ? AND ?
+            GROUP BY 
+                g.gameID, img.imageURL, img.imageType
         """;
-    
+
         try (Connection connection = DBConnectionPool.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
-    
+
             statement.setDouble(1, minPrice);
             statement.setDouble(2, maxPrice);
-    
+
+            HashMap<Integer, Games> gamesMap = new HashMap<>();
+            HashSet<String> showcaseImages = new HashSet<>();
+
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    Games game = new Games(
-                        resultSet.getInt("gameID"),
-                        resultSet.getString("gameTitle"),
-                        resultSet.getString("gameReleaseDate"),
-                        resultSet.getString("description"),
-                        resultSet.getDouble("price"),
-                        new ArrayList<>(List.of(resultSet.getString("genres").split(","))),
-                        resultSet.getBoolean("available"),
-                        resultSet.getString("pictureURL")
-                    );
-                    gameList.add(game);
+                    int gameID = resultSet.getInt("gameID");
+
+                    Games game = gamesMap.getOrDefault(gameID, new Games(
+                            gameID,
+                            resultSet.getString("gameTitle"),
+                            resultSet.getString("gameReleaseDate"),
+                            resultSet.getString("description"),
+                            resultSet.getDouble("price"),
+                            new ArrayList<>(), // Genres to be populated
+                            resultSet.getBoolean("available"),
+                            null, // Card image to be set
+                            new ArrayList<>() // Showcase images to be added
+                    ));
+
+                    // Populate genres
+                    String genreString = resultSet.getString("genres");
+                    if (genreString != null) {
+                        game.setGameGenres(new ArrayList<>(List.of(genreString.split(","))));
+                    }
+
+                    // Populate images
+                    String imageType = resultSet.getString("imageType");
+                    String imageURL = resultSet.getString("imageURL");
+                    if (imageType != null && imageURL != null) {
+                        if ("CARD".equalsIgnoreCase(imageType)) {
+                            game.setCardImageURL(imageURL);
+                        } else if ("SHOWCASE".equalsIgnoreCase(imageType)) {
+                            showcaseImages.add(imageURL);
+                        }
+                    }
+
+                    game.setShowcaseImagesURL(new ArrayList<>(showcaseImages));
+                    gamesMap.put(gameID, game);
                 }
             }
+
+            gameList = new ArrayList<>(gamesMap.values());
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    
-        return gameList;
-    }    
 
-    public void addGame(Games game) { // add game to database
+        return gameList;
+    }
+
+    public void addGame(Games game) { // Add game to the database
         String insertGameQuery = """
-            INSERT INTO games (gameTitle, gameReleaseDate, description, price, available, pictureURL)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """;
+        INSERT INTO games (gameTitle, gameReleaseDate, description, price, available)
+        VALUES (?, ?, ?, ?, ?)
+    """;
 
         String insertGenreQuery = """
-            INSERT INTO genre_games (gameID, genreID)
-            VALUES (?, (SELECT genreID FROM genres WHERE genreName = ?))
-        """;
+        INSERT INTO genre_games (gameID, genreID)
+        VALUES (?, (SELECT genreID FROM genres WHERE genreName = ?))
+    """;
 
-        String getGameID = """
-            SELECT gameID FROM games WHERE gameTitle = ?;    
-        """;
+        String insertImageQuery = """
+        INSERT INTO game_images (gameID, imageURL, imageType)
+        VALUES (?, ?, ?)
+    """;
 
-        int gameID_add = -1;
+        String getGameIDQuery = """
+        SELECT gameID FROM games WHERE gameTitle = ?
+    """;
+
+        int gameID = -1;
 
         try (Connection connection = DBConnectionPool.getConnection()) {
-            // Insert game details
-            try (PreparedStatement gameStatement = connection.prepareStatement(insertGameQuery)) {
-                gameStatement.setString(1, game.getGameTitle());
-                gameStatement.setString(2, game.getGameReleaseDate());
-                gameStatement.setString(3, game.getGameDescription());
-                gameStatement.setDouble(4, game.getGamePrice());
-                gameStatement.setBoolean(5, game.isAvailable());
-                gameStatement.setString(6, game.getGamePictureURL());
+            // Enable transactions to ensure atomicity
+            connection.setAutoCommit(false);
 
-                int rowsAffected = gameStatement.executeUpdate();
-                System.out.printf("Inserted %d row(s) into Games table.%n", rowsAffected);
-            }
+            try {
+                // Insert game details
+                try (PreparedStatement gameStatement = connection.prepareStatement(insertGameQuery)) {
+                    gameStatement.setString(1, game.getGameTitle());
+                    gameStatement.setString(2, game.getGameReleaseDate());
+                    gameStatement.setString(3, game.getGameDescription());
+                    gameStatement.setDouble(4, game.getGamePrice());
+                    gameStatement.setBoolean(5, game.isAvailable());
 
-            // Get gameID of recently added game
-            try (PreparedStatement gameIDStatement = connection.prepareStatement(getGameID)) {
-                gameIDStatement.setString(1, game.getGameTitle());
-                ResultSet resultSet = gameIDStatement.executeQuery();
-                if (resultSet.next()) { // Move cursor to the first row
-                    gameID_add = resultSet.getInt("gameID");
-                } else {
-                    throw new SQLException("No gameID found for the gameTitle: " + game.getGameTitle());
+                    int rowsAffected = gameStatement.executeUpdate();
+                    System.out.printf("Inserted %d row(s) into Games table.%n", rowsAffected);
                 }
-            }
 
-            // Insert genres for the game
-            try (PreparedStatement genreStatement = connection.prepareStatement(insertGenreQuery)) {
-                for (String genre : game.getGenreList()) {
-                    genreStatement.setInt(1, gameID_add);
-                    genreStatement.setString(2, genre);
-                    genreStatement.addBatch(); // Add to batch for optimization
+                // Get gameID of recently added game
+                try (PreparedStatement gameIDStatement = connection.prepareStatement(getGameIDQuery)) {
+                    gameIDStatement.setString(1, game.getGameTitle());
+                    try (ResultSet resultSet = gameIDStatement.executeQuery()) {
+                        if (resultSet.next()) {
+                            gameID = resultSet.getInt("gameID");
+                        } else {
+                            throw new SQLException("No gameID found for the gameTitle: " + game.getGameTitle());
+                        }
+                    }
                 }
-                int[] rowsAffected = genreStatement.executeBatch();
-                System.out.printf("Inserted %d row(s) into Genre_Games table.%n", rowsAffected.length);
+
+                // Insert genres for the game
+                try (PreparedStatement genreStatement = connection.prepareStatement(insertGenreQuery)) {
+                    for (String genre : game.getGenreList()) {
+                        genreStatement.setInt(1, gameID);
+                        genreStatement.setString(2, genre);
+                        genreStatement.addBatch(); // Add to batch for optimization
+                    }
+                    int[] rowsAffected = genreStatement.executeBatch();
+                    System.out.printf("Inserted %d row(s) into Genre_Games table.%n", rowsAffected.length);
+                }
+
+                // Insert images for the game
+                try (PreparedStatement imageStatement = connection.prepareStatement(insertImageQuery)) {
+                    // Insert card image
+                    imageStatement.setInt(1, gameID);
+                    imageStatement.setString(2, game.getCardImageURL());
+                    imageStatement.setString(3, "CARD");
+                    imageStatement.addBatch();
+
+                    // Insert showcase images
+                    for (String imageURL : game.getShowcaseImagesURL()) {
+                        imageStatement.setInt(1, gameID);
+                        imageStatement.setString(2, imageURL);
+                        imageStatement.setString(3, "SHOWCASE");
+                        imageStatement.addBatch();
+                    }
+                    int[] rowsAffected = imageStatement.executeBatch();
+                    System.out.printf("Inserted %d row(s) into Game_Images table.%n", rowsAffected.length);
+                }
+
+                // Commit transaction
+                connection.commit();
+            } catch (SQLException e) {
+                // Roll back transaction if any error occurs
+                connection.rollback();
+                e.printStackTrace();
+                System.err.println("Error adding the game to the database. Changes rolled back.");
+            } finally {
+                connection.setAutoCommit(true); // Reset auto-commit mode
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println("Error adding the game to the database.");
+            System.err.println("Database connection error.");
         }
     }
-    
+
     public void removeGame(Games game) {
         String deleteGameQuery = "DELETE FROM Games WHERE gameID = ?";
 

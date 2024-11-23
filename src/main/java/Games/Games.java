@@ -11,13 +11,14 @@ public class Games {
     private double gamePrice;
     private boolean isAvailable;
     private ArrayList<String> genre;
-    private String gamePictureURL;
+    private String cardImageURL;
+    private ArrayList<String> showcaseImagesURL;
 
     public Games () {
         // empty constructor
     }
 
-    public Games (int gameID, String gameTitle, String gameReleaseDate, String gameDescription, double gamePrice, ArrayList<String> genre, boolean isAvailable, String gamePictureURL) {
+    public Games (int gameID, String gameTitle, String gameReleaseDate, String gameDescription, double gamePrice, ArrayList<String> genre, boolean isAvailable, String cardImageURL, ArrayList<String> showcaseImagesURL) {
         this.gameID = gameID;
         this.gameTitle = gameTitle;
         this.gameReleaseDate = gameReleaseDate;
@@ -25,7 +26,8 @@ public class Games {
         this.gamePrice = gamePrice;
         this.genre = genre;
         this.isAvailable = isAvailable;
-        this.gamePictureURL = gamePictureURL;
+        this.cardImageURL = cardImageURL;
+        this.showcaseImagesURL = showcaseImagesURL;
     }
 
     public void setGameID (int gameID) {
@@ -56,8 +58,12 @@ public class Games {
         this.isAvailable = available; 
     }
 
-    public void setGamePictureURL (String gamePictureURL) {
-        this.gamePictureURL = gamePictureURL;
+    public void setCardImageURL (String cardImageURL) {
+        this.cardImageURL = cardImageURL;
+    }
+    
+    public void setShowcaseImagesURL (ArrayList<String> showcaseImagesURL) {
+        this.showcaseImagesURL = showcaseImagesURL;
     }
 
     public int getGameID () {
@@ -88,8 +94,12 @@ public class Games {
         return isAvailable;
     }
     
-    public String getGamePictureURL () {
-        return gamePictureURL;
+    public String getCardImageURL () {
+        return cardImageURL;
+    }
+
+    public ArrayList<String> getShowcaseImagesURL () {
+        return showcaseImagesURL;
     }
 
     @Override
@@ -102,7 +112,8 @@ public class Games {
                 ", gamePrice=" + gamePrice +
                 ", genres=" + genre +
                 ", isAvailable=" + isAvailable +
-                ", gamePictureURL='" + gamePictureURL + '\'' +
+                ", cardImageURL='" + cardImageURL +
+                ", showcaseImagesURL='" + showcaseImagesURL + '\'' +
                 '}';
     }
 

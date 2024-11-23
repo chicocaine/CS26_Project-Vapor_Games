@@ -5,7 +5,8 @@ CREATE TABLE users (
     username VARCHAR(20) UNIQUE NOT NULL,
     wallet DECIMAL(7, 2) NOT NULL,
     name TEXT,
-    password CHAR(64) NOT NULL
+    password CHAR(64) NOT NULL,
+    pfpURL TEXT
 );
 
 CREATE TABLE games (
@@ -14,8 +15,7 @@ CREATE TABLE games (
     gameReleaseDate TEXT NOT NULL,
     description TEXT NOT NULL,
     price DECIMAL(7, 2) NOT NULL,
-    available BOOLEAN NOT NULL,
-    pictureURL TEXT
+    available BOOLEAN NOT NULL
 );
 
 CREATE TABLE genres (
@@ -29,6 +29,14 @@ CREATE TABLE genre_games (
     PRIMARY KEY (gameID, genreID),
     FOREIGN KEY (gameID) REFERENCES games(gameID) ON DELETE CASCADE,
     FOREIGN KEY (genreID) REFERENCES genres(genreID) ON DELETE CASCADE
+);
+
+CREATE TABLE game_images (
+    imageID INT PRIMARY KEY AUTO_INCREMENT,
+    gameID INT NOT NULL,
+    imageURL TEXT NOT NULL,
+    imageType ENUM('CARD', 'SHOWCASE') NOT NULL,
+    FOREIGN KEY (gameID) REFERENCES games(gameID) ON DELETE CASCADE
 );
 
 CREATE TABLE libraries (
