@@ -1,61 +1,109 @@
-.StorePage-Background {
+/* Style for the ScrollPane */
+.scroll-pane {
+    -fx-background-color: #181819; /* Background color of the ScrollPane */
+}
+
+/* Style for the ScrollPane content */
+.scroll-pane .viewport {
+    -fx-background-color: #181819; /* Background color of the content area */
+}
+
+/* Style for the vertical scroll bar */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #181819; /* Background color of the vertical scrollbar */
+}
+
+/* Style for the horizontal scroll bar */
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #181819; /* Background color of the horizontal scrollbar */
+}
+
+/* Style for the scrollbar thumb */
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #282C44; /* Thumb color (the draggable part of the scrollbar) */
+}
+
+/* Style for the scrollbar track */
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: #181819; /* Background color of the TextArea */
+    -fx-border-color: #181819;      /* Border color */
+    -fx-border-width: 1;             /* Border thickness */
+    -fx-border-style: solid;
+}
+
+
+.HomePage-Background {
     -fx-background-color: #181819;
 }
 
-.GameTitle-Label {
-    -fx-text-fill: #FEFEFE;
+.HomePage-Label {
+    -fx-font-family: 'Sora Bold';
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.HomePageFeaturedGameTitle_Label {
     -fx-font-family: 'Sora Bold';
     -fx-font-size: 36px;
-    -fx-font-weight: bold; /* Ensures the text is bold */
-}
-
-.GameSubTitle-Label {
-    -fx-text-fill: #FEFEFE;
-    -fx-font-family: 'Sora Regular';
-    -fx-font-size: 14px;
-}
-
-.GameDescription-Label {
-    -fx-text-fill: #FEFEFE;
-    -fx-font-family: 'Sora Regular';
-    -fx-font-size: 16px;
-}
-
-.GameGenre-Label {
-    -fx-text-fill: #A5A5AA;
-    -fx-font-family: 'Sora Regular';
-    -fx-font-size: 14px;
-    -fx-padding: 0 5 0 5;
     -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
 }
 
-.GameTransactionPrice-Label {
-    -fx-text-fill: #FEFEFE;
+.HomePageFeaturedGameSubTitle_Label {
     -fx-font-family: 'Sora Regular';
-    -fx-font-size: 16px;
-    -fx-padding: 0 5 0 5;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
 }
 
-.GameTransactionBuyNow-Pane {
+.HomePageFeaturedGameDescription_Label {
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.HomePageFeaturedGameTransaction_Pane {
+    -fx-background-color: #ffffff;
+}
+
+.HomePageFeaturedGameTransaction_Pane:hover {
     -fx-background-color: #9747FF;
 }
 
-.GameTransactionBuyNow-Label {
-    -fx-text-fill: #FEFEFE;
-    -fx-font-family: 'Sora Bold';
-    -fx-font-size: 20px;
-    -fx-font-weight: bold; /* Ensures the text is bold */
+
+.HomePageFeaturedGameTransactionBuyNowButton_Label {
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
 }
 
-.GameTransactionAddToCart-Pane {
-    -fx-background-color: #383737;
+.HomePageFeaturedGameTransactionPrice_Label {
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
 }
 
-.GameTransactionAddToCart-Label {
-    -fx-text-fill: #FEFEFE;
+.HomePageRecommendedGameTitle_Label {
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.HomePageRecommendedGameTile_Pane:hover {
+    -fx-background-color: #9747FF;
+    -fx-background-radius: 5;
+}
+
+.HomePageDiscoverGameTitle_Label {
     -fx-font-family: 'Sora Bold';
-    -fx-font-size: 20px;
-    -fx-font-weight: bold; /* Ensures the text is bold */
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: Bold;
+}
+
+.HomePageDiscoverGameTile_Pane:hover {
+    -fx-background-color: #9747FF;
+    -fx-background-radius: 5;
 }
 
 @font-face {

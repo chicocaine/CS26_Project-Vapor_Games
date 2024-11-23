@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class VGMainScreenController {
+
     private Stage stage;
 
     public void setStage(Stage stage) {
@@ -20,110 +21,97 @@ public class VGMainScreenController {
     }
 
     @FXML
-    private ImageView AccountDropDown_Image;
-
-    @FXML
-    private ImageView AccountPicture_Image;
+    private ImageView AccountDropDown_Image, AccountPicture_Image, SearchButton_Button;
 
     @FXML
     private Label AccountUser_Label;
 
     @FXML
-    private Pane BrowsePane_Button;
+    private Pane BrowsePane_Button, CartButton_Pane, DiscoverButton_Pane, MainContent_Pane, ReturnButton_Pane, LogoutButton;
 
     @FXML
-    private Pane CartButton_Pane;
-
-    @FXML
-    private Pane DiscoverButton_Pane;
-
-    @FXML
-    private HBox LibraryButton;
-
-    @FXML
-    private Pane MainContent_Pane;
-
-    @FXML
-    private Pane ReturnButton_Pane;
-
-    @FXML
-    private ImageView SearchButton_Button;
+    private HBox LibraryButton, StoreButton;
 
     @FXML
     private TextField SearchField_TextField;
 
-    @FXML
-    private HBox StoreButton;
-
-    @FXML
-    private HBox LogoutButton;
-
     private Pane currentPane;
 
-    boolean isLibraryButtonClicked = false;
-    boolean isStoreButtonClicked = false;
+    private boolean isLibraryButtonClicked = false;
+    private boolean isStoreButtonClicked = true; // Default to StoreButton
 
-    private void highlightButtonClicked(boolean x, boolean y){
-        if(x && !y){
-            System.out.println("[DEBUG] Library Button is Highlighted");
-            // Set the Library Button to be highlighted.
-
-        } else if (!x && y){
-            System.out.println("[DEBUG] Store Button is Highlighted");
-            // Set the Store Button to be highlighted.
-        } else {
-            System.out.println("[INFO] I Don't know how you get to this.");
-        }
+    @FXML
+    public void initialize() {
+        // Set the initial page and highlight
+        LoadHomePage();
+        highlightSelectedButton(LibraryButton, StoreButton, false, true);
     }
 
     @FXML
     void HandlesClickedButton(MouseEvent event) {
-        // Logout Button
-        if(event.getSource() == LogoutButton){
-            System.out.println("[DEBUG] Logout button clicked");
-            System.exit(0);
+        Object source = event.getSource();
 
-            // Discover Button
-        } else if (event.getSource() == DiscoverButton_Pane){
-            System.out.println("[DEBUG] Discover button clicked");
-            LoadHomePage();
-            System.out.println("[DEBUG] (LoadHomePage();) Loaded!");
-
-            // Library Button
-        } else if (event.getSource() == LibraryButton){
-            System.out.println("[DEBUG] Library button clicked");
-            isLibraryButtonClicked = true;
-            System.out.println("[DEBUG] isLibraryButtonClicked set to TRUE");
-            isStoreButtonClicked = false;
-            System.out.println("[DEBUG] isStoreButtonClicked set to FALSE");
-            if(!isStoreButtonClicked && isLibraryButtonClicked){
-                highlightButtonClicked(true, false);
-            } else {
-                System.out.println("[INFO] I Don't know how you get to this.");
-            }
-
-            // Store Button
-        } else if (event.getSource() == StoreButton){
-            System.out.println("[DEBUG] Store button clicked");
-            isStoreButtonClicked = true;
-            System.out.println("[DEBUG] isStoreButtonClicked set to TRUE");
-            isLibraryButtonClicked = false;
-            System.out.println("[DEBUG] isLibraryButtonClicked set to FALSE");
-            if(isStoreButtonClicked && !isLibraryButtonClicked){
-                highlightButtonClicked(false, true);
-            } else {
-                System.out.println("[INFO] I Don't know how you get to this.");
-            }
+        if (source == LogoutButton) {
+            handleLogout();
+        } else if (source == DiscoverButton_Pane) {
+            System.out.println("Nothing In Placed");
+        } else if (source == LibraryButton) {
+            handleLibraryButton();
+        } else if (source == StoreButton) {
+            handleStoreButton();
         }
     }
 
-    @FXML
-    public void initialize() {
-        LoadHomePage();
+    private void handleLogout() {
+        System.out.println("[DEBUG] Logout button clicked.");
+        try {
+            // Perform any cleanup tasks before exiting, if necessary
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Logout operation failed.");
+        }
+    }
+
+    private void handleLibraryButton() {
+        if (!isLibraryButtonClicked) {
+            System.out.println("[DEBUG] Library button clicked.");
+            toggleButtonState(true, false);
+            highlightSelectedButton(LibraryButton, StoreButton, true, false);
+            LoadLibraryPage(); // Load the library page regardless of whether it's already loaded
+        }
+    }
+
+    private void handleStoreButton() {
+        if (!isStoreButtonClicked) {
+            System.out.println("[DEBUG] Store button clicked.");
+            toggleButtonState(false, true);
+            highlightSelectedButton(LibraryButton, StoreButton, false, true);
+            LoadHomePage(); // Load the home page when Store is clicked
+        }
+    }
+
+    private void toggleButtonState(boolean libraryState, boolean storeState) {
+        isLibraryButtonClicked = libraryState;
+        isStoreButtonClicked = storeState;
+    }
+
+    private void highlightSelectedButton(HBox library, HBox store, boolean isLibrary, boolean isStore) {
+        if (isLibrary) {
+            library.getStyleClass().add("LNB_SelectionHBoxHighlighted");
+            store.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
+        } else if (isStore) {
+            store.getStyleClass().add("LNB_SelectionHBoxHighlighted");
+            library.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
+        }
     }
 
     private void LoadHomePage() {
-        loadPane("/VGHomePage.fxml");
+        loadPane("/VGStorePage.fxml");
+    }
+
+    private void LoadLibraryPage() {
+        loadPane("/VGLibraryPage.fxml");
     }
 
     private void loadPane(String fxmlFile) {
@@ -131,22 +119,18 @@ public class VGMainScreenController {
             FXMLLoader fxmlLoader = new FXMLLoader(VGMainProgramApplication.class.getResource(fxmlFile));
             Pane newPane = fxmlLoader.load();
 
-            if (currentPane != null && currentPane.getId().equals(newPane.getId())) {
-                System.out.println("[DEBUG]: The same pane is already loaded.");
-                return;
-            }
-
+            // No need to check if the pane is the same
             if (currentPane != null) {
-                currentPane.setVisible(false);
+                MainContent_Pane.getChildren().remove(currentPane); // Ensure previous pane is removed
             }
 
             MainContent_Pane.getChildren().add(newPane);
             currentPane = newPane;
-            currentPane.setVisible(true);
 
+            System.out.println("[DEBUG] Loaded pane: " + fxmlFile);
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("[ERROR]: Failed to load the pane.");
+            System.out.println("[ERROR] Failed to load pane: " + fxmlFile);
         }
     }
 }
