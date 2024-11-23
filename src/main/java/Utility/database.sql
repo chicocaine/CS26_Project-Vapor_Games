@@ -6,7 +6,7 @@ CREATE TABLE users (
     wallet DECIMAL(7, 2) NOT NULL,
     name TEXT,
     password CHAR(64) NOT NULL,
-    pfpURL TEXT
+    pfpURL VARCHAR(255)
 );
 
 CREATE TABLE games (

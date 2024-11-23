@@ -12,7 +12,7 @@ public class Wallet { // don't know how this works honestly
         this.balance += funds;
     }
 
-    public double getBalance () { // this can also be called getBalance()
+    public double getBalance () {
         return balance;
     }
 

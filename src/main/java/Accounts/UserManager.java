@@ -1,13 +1,15 @@
 package Accounts;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-//import org.mindrot.jbcrypt.BCrypt;
 import Utility.DBConnectionPool;
-//import org.mindrot.jbcrypt.BCrypt;
+import Utility.ProfilePictureUtility;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class UserManager {
     
@@ -23,9 +25,9 @@ public class UserManager {
             if (rs.next()) {
                 String hashedPassword = rs.getString("password");
 
-                //if (BCrypt.checkpw(password, hashedPassword)) {
-                    //return true;
-                //}
+                if (BCrypt.checkpw(password, hashedPassword)) {
+                    return true;
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace(); 
@@ -36,39 +38,60 @@ public class UserManager {
     public User loadUserSession(String username, String password) {
         if (userAuth(username, password)) {
             try (Connection conn = DBConnectionPool.getConnection()) {
-                String query = "SELECT userID, username, wallet, name FROM users WHERE username = ?";
+                // Update query to include the pfpURL field (profile picture URL)
+                String query = "SELECT userID, username, wallet, name, pfpURL FROM users WHERE username = ?";
                 PreparedStatement stmt = conn.prepareStatement(query);
                 stmt.setString(1, username);
                 ResultSet rs = stmt.executeQuery();
-    
+
+                // If a user is found, create and return the User object
                 if (rs.next()) {
                     int userID = rs.getInt("userID");
                     String retrievedUsername = rs.getString("username");
                     double wallet = rs.getDouble("wallet");
                     String name = rs.getString("name");
-    
-                    //User user = new User(userID, retrievedUsername, wallet, name);
-                    //return user;
+                    String pfpURL = rs.getString("pfpURL");  // Retrieve the profile picture URL (UUID or path)
+
+                    // Create a new User object and return it
+                    return new User(userID, retrievedUsername, wallet, name, pfpURL);
                 }
             } catch (SQLException e) {
-                e.printStackTrace(); 
+                e.printStackTrace();
             }
         }
         return null;
     }
 
-    public void registerUser(String username, String password, String name, double wallet) {
-        //String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt()); // Hash the password
-        try (Connection conn = DBConnectionPool.getConnection()) {
-            String query = "INSERT INTO users (username, password, name, wallet) VALUES (?, ?, ?, ?)";
-            PreparedStatement stmt = conn.prepareStatement(query);
+    // Register a new user
+    public void registerUser(String username, String password, String name, double wallet, File photoFile) {
+        final String localdir = "uploads/profile_pics";
+        ProfilePictureUtility pfpu = new ProfilePictureUtility();
+        String pfpURL = null;
+
+        try {
+            pfpURL = pfpu.saveProfilePicture(photoFile, localdir);
+        } catch (IOException e) {
+            throw new RuntimeException("Error saving profile picture: " + e.getMessage(), e);
+        }
+
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
+        String query = "INSERT INTO users (username, password, name, wallet, pfpURL) VALUES (?, ?, ?, ?, ?)";
+
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
             stmt.setString(1, username);
-            //stmt.setString(2, hashedPassword);
+            stmt.setString(2, hashedPassword);
             stmt.setString(3, name);
             stmt.setDouble(4, wallet);
+            stmt.setString(5, pfpURL);
+
             stmt.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new RuntimeException("Error saving user to the database: " + e.getMessage(), e);
         }
     }
 
@@ -122,9 +145,9 @@ public class UserManager {
             try (Connection conn = DBConnectionPool.getConnection();
                  PreparedStatement stmt = conn.prepareStatement(query)) {
                 
-                //String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
-                
-                //stmt.setString(1, hashedPassword);
+                String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+
+                stmt.setString(1, hashedPassword);
                 stmt.setInt(2, userID);
     
                 int rowsAffected = stmt.executeUpdate();
@@ -161,8 +184,7 @@ public class UserManager {
                 e.printStackTrace();
             }
         }
-    
-        // Method to update the user's name
+
         public void updateName(User user, String newName) {
             int userID = user.getUserID();
             String query = "UPDATE users SET name = ? WHERE userID = ?";
@@ -185,6 +207,60 @@ public class UserManager {
                 e.printStackTrace();
             }
         }
+
+        public boolean updateProfilePicture(int userID, File newPhotoFile) {
+            final String localDir = "uploads/profile_pics";  // Directory where photos are saved
+            ProfilePictureUtility pfpu = new ProfilePictureUtility();
+
+            String newPfpURL = null;
+            try {
+                newPfpURL = pfpu.saveProfilePicture(newPhotoFile, localDir);
+            } catch (IOException e) {
+                throw new RuntimeException("Error saving profile picture: " + e.getMessage(), e);
+            }
+
+            String updateQuery = "UPDATE users SET pfpURL = ? WHERE userID = ?";
+
+            try (Connection conn = DBConnectionPool.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(updateQuery)) {
+
+                stmt.setString(1, newPfpURL);
+                stmt.setInt(2, userID);
+
+                int rowsUpdated = stmt.executeUpdate();
+
+                if (rowsUpdated > 0) {
+                    deleteOldProfilePicture(userID);
+                    return true;
+                } else {
+                    return false;
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+        private void deleteOldProfilePicture(int userID) {
+            String selectQuery = "SELECT pfpURL FROM users WHERE userID = ?";
+
+            try (Connection conn = DBConnectionPool.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(selectQuery)) {
+
+                stmt.setInt(1, userID);
+                ResultSet rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    String oldPfpURL = rs.getString("pfpURL");
+                    File oldFile = new File("uploads/profile_pics/" + oldPfpURL);
+                    if (oldFile.exists() && oldFile.isFile()) {
+                        oldFile.delete();
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
-    
 }
