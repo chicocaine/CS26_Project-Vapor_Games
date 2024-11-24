@@ -9,28 +9,30 @@ import java.sql.SQLException;
 
 import Utility.DBConnectionPool;
 import Utility.ProfilePictureUtility;
-import org.mindrot.jbcrypt.BCrypt;
+import Utility.PasswordManager;
 
 public class UserManager {
     
     public UserManager () {}
 
     public boolean userAuth(String username, String password) {
-        try (Connection conn = DBConnectionPool.getConnection();) {
+
+        try (Connection conn = DBConnectionPool.getConnection()) {
             String query = "SELECT password FROM users WHERE username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
-            
+
             if (rs.next()) {
                 String hashedPassword = rs.getString("password");
-
-                if (BCrypt.checkpw(password, hashedPassword)) {
+                PasswordManager pwm = new PasswordManager();
+                boolean isValid = pwm.verifyPassword(password, hashedPassword);
+                if (isValid) {
                     return true;
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); 
+            e.printStackTrace();
         }
         return false;
     }
@@ -38,21 +40,20 @@ public class UserManager {
     public User loadUserSession(String username, String password) {
         if (userAuth(username, password)) {
             try (Connection conn = DBConnectionPool.getConnection()) {
-                // Update query to include the pfpURL field (profile picture URL)
+
                 String query = "SELECT userID, username, wallet, name, pfpURL FROM users WHERE username = ?";
                 PreparedStatement stmt = conn.prepareStatement(query);
                 stmt.setString(1, username);
                 ResultSet rs = stmt.executeQuery();
 
-                // If a user is found, create and return the User object
+
                 if (rs.next()) {
                     int userID = rs.getInt("userID");
                     String retrievedUsername = rs.getString("username");
                     double wallet = rs.getDouble("wallet");
                     String name = rs.getString("name");
-                    String pfpURL = rs.getString("pfpURL");  // Retrieve the profile picture URL (UUID or path)
+                    String pfpURL = rs.getString("pfpURL");
 
-                    // Create a new User object and return it
                     return new User(userID, retrievedUsername, wallet, name, pfpURL);
                 }
             } catch (SQLException e) {
@@ -66,6 +67,7 @@ public class UserManager {
     public void registerUser(String username, String password, String name, double wallet, File photoFile) {
         final String localdir = "uploads/profile_pics";
         ProfilePictureUtility pfpu = new ProfilePictureUtility();
+        PasswordManager pwm = new PasswordManager();
         String pfpURL = null;
 
         try {
@@ -74,7 +76,7 @@ public class UserManager {
             throw new RuntimeException("Error saving profile picture: " + e.getMessage(), e);
         }
 
-        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+        String hashedPassword = pwm.hashPassword(password);
 
         String query = "INSERT INTO users (username, password, name, wallet, pfpURL) VALUES (?, ?, ?, ?, ?)";
 
@@ -141,11 +143,12 @@ public class UserManager {
         public void updatePassword(User user, String newPassword) {
             int userID = user.getUserID();
             String query = "UPDATE users SET password = ? WHERE userID = ?";
-    
+            PasswordManager pwm = new PasswordManager();
+
             try (Connection conn = DBConnectionPool.getConnection();
                  PreparedStatement stmt = conn.prepareStatement(query)) {
-                
-                String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+
+                String hashedPassword = pwm.hashPassword(newPassword);
 
                 stmt.setString(1, hashedPassword);
                 stmt.setInt(2, userID);
