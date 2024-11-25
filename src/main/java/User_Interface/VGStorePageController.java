@@ -49,18 +49,11 @@ public class VGStorePageController {
     @FXML
     private HBox TopSeller_HBox;
 
-    private VGMainScreenController mainScreenController;
-
-    public void setMainScreenController(VGMainScreenController controller) {
-        this.mainScreenController = controller;
-    }
-
     private List<Game> discoverGamesList = new ArrayList<>();
     private List<Game> recommendedGamesList = new ArrayList<>();
     private List<Game> topSellerGamesList = new ArrayList<>();
 
     public void initialize() {
-        loadGamePage();
         initializeGameLists();
         populateGameTiles(DiscoverSomethingNew_HBox, discoverGamesList);
         populateGameTiles(Recommended_HBox, recommendedGamesList);
@@ -76,22 +69,13 @@ public class VGStorePageController {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGGameTile.fxml"));
                 Pane gameTilePane = loader.load();
                 VGGameTileController tileController = loader.getController();
-                tileController.setMainScreenController(mainScreenController); // Set the controller reference
+
                 tileController.setGameDetails(game);
                 hbox.getChildren().add(gameTilePane);
             } catch (IOException e) {
                 e.printStackTrace();
                 System.out.println("[ERROR] Failed to load game tile.");
             }
-        }
-    }
-
-    private void loadGamePage() {
-        if (mainScreenController != null) {
-            System.out.println("[DEBUG] Loading VGGamePage from VGStorePage");
-            mainScreenController.loadPane("/VGGamePage.fxml");
-        } else {
-            System.out.println("[ERROR] MainScreenController not set!");
         }
     }
 

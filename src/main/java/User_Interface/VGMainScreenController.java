@@ -1,19 +1,18 @@
 package User_Interface;
 
-import Model.Game;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.HBox;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.animation.FadeTransition;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -22,10 +21,6 @@ import java.util.Optional;
 public class VGMainScreenController {
 
     private Stage stage;
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
 
     @FXML
     private ImageView AccountDropDown_Image, AccountPicture_Image, SearchButton_Button;
@@ -46,6 +41,10 @@ public class VGMainScreenController {
 
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     @FXML
     public void initialize() {
@@ -74,7 +73,6 @@ public class VGMainScreenController {
     }
 
     private void handleLogout() {
-        System.out.println("[DEBUG] Logout button clicked.");
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
         alert.setHeaderText("Are you sure you want to log out?");
@@ -86,7 +84,6 @@ public class VGMainScreenController {
 
     private void handleLibraryButton() {
         if (!isLibraryButtonClicked) {
-            System.out.println("[DEBUG] Library button clicked.");
             toggleButtonState(true, false);
             highlightSelectedButton(LibraryButton, StoreButton, true, false);
             LoadLibraryPage();
@@ -95,7 +92,6 @@ public class VGMainScreenController {
 
     private void handleStoreButton() {
         if (!isStoreButtonClicked) {
-            System.out.println("[DEBUG] Store button clicked.");
             toggleButtonState(false, true);
             highlightSelectedButton(LibraryButton, StoreButton, false, true);
             LoadHomePage();
@@ -110,7 +106,7 @@ public class VGMainScreenController {
     }
 
     private void handleAccountDropdown() {
-        System.out.println("[DEBUG] Account dropdown clicked.");
+        // Add functionality to show account options or settings here
     }
 
     private void performSearch(String query) {
@@ -141,31 +137,19 @@ public class VGMainScreenController {
     }
 
     private void updateAccountInfo() {
-        String username = "march";
+        String username = "march"; // Replace with actual username retrieval logic
         AccountUser_Label.setText(username);
-        String profileImagePath = "/Image/ProfileTestPicture.png";
-        Image profileImage = new Image(profileImagePath);
-        AccountPicture_Image.setImage(profileImage);
-    }
 
-    public void setMainContentPane(Pane newPane) {
-        if (currentPane != null) {
-            MainContent_Pane.getChildren().remove(currentPane);
-        }
-        MainContent_Pane.getChildren().add(newPane);
-        currentPane = newPane;
+        String profileImagePath = "/Image/ProfileTestPicture.png"; // Replace with actual path
+        AccountPicture_Image.setImage(new Image(profileImagePath));
     }
 
     public void loadPane(String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Pane newPane = loader.load();
-
-            // Set the mainScreenController before adding the newPane
-            VGStorePageController storePageController = loader.getController();
-            storePageController.setMainScreenController(this);  // Set the controller here
-
-            setMainContentPane(newPane);
+            MainContent_Pane.getChildren().setAll(newPane);
+            currentPane = newPane;
 
             FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
             fadeIn.setFromValue(0.0);
@@ -174,8 +158,6 @@ public class VGMainScreenController {
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("[ERROR] Failed to load pane: " + fxmlFile);
         }
     }
-
 }

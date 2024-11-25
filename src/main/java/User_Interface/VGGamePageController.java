@@ -38,7 +38,4 @@ public class VGGamePageController {
     @FXML
     private Pane StorePage_Pane;
 
-    public void setGameDetails(Game game) {
-
-    }
 }
