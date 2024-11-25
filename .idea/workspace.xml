@@ -178,7 +178,9 @@
       <workItem from="1732026067467" duration="92000" />
       <workItem from="1732097649516" duration="7719000" />
       <workItem from="1732421041948" duration="933000" />
-      <workItem from="1732422685017" duration="5943000" />
+      <workItem from="1732422685017" duration="7298000" />
+      <workItem from="1732491253303" duration="3403000" />
+      <workItem from="1732523182673" duration="392000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -204,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732016202646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added a password manager to handle password hashing and verification">
+      <option name="closed" value="true" />
+      <created>1732430311268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732430311268</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,16 +235,12 @@
     <MESSAGE value="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="added a password manager to handle password hashing and verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a password manager to handle password hashing and verification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainProgramApplication.java</url>
           <line>61</line>
