@@ -1,24 +1,27 @@
 package User_Interface;
 
+import Model.Game;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.HBox;
-import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class VGMainScreenController {
 
     private Stage stage;
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
 
     @FXML
     private ImageView AccountDropDown_Image, AccountPicture_Image, SearchButton_Button;
@@ -38,13 +41,17 @@ public class VGMainScreenController {
     private Pane currentPane;
 
     private boolean isLibraryButtonClicked = false;
-    private boolean isStoreButtonClicked = true; // Default to StoreButton
+    private boolean isStoreButtonClicked = true;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     @FXML
     public void initialize() {
-        // Set the initial page and highlight
         LoadHomePage();
         highlightSelectedButton(LibraryButton, StoreButton, false, true);
+        updateAccountInfo();
     }
 
     @FXML
@@ -54,41 +61,57 @@ public class VGMainScreenController {
         if (source == LogoutButton) {
             handleLogout();
         } else if (source == DiscoverButton_Pane) {
-            System.out.println("Nothing In Placed");
+            handleStoreButton();
         } else if (source == LibraryButton) {
             handleLibraryButton();
         } else if (source == StoreButton) {
             handleStoreButton();
+        } else if (source == SearchButton_Button) {
+            handleSearchButton();
+        } else if (source == AccountDropDown_Image) {
+            handleAccountDropdown();
         }
     }
 
     private void handleLogout() {
-        System.out.println("[DEBUG] Logout button clicked.");
-        try {
-            // Perform any cleanup tasks before exiting, if necessary
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("Are you sure you want to log out?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
             System.exit(0);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("[ERROR] Logout operation failed.");
         }
     }
 
     private void handleLibraryButton() {
         if (!isLibraryButtonClicked) {
-            System.out.println("[DEBUG] Library button clicked.");
             toggleButtonState(true, false);
             highlightSelectedButton(LibraryButton, StoreButton, true, false);
-            LoadLibraryPage(); // Load the library page regardless of whether it's already loaded
+            LoadLibraryPage();
         }
     }
 
     private void handleStoreButton() {
         if (!isStoreButtonClicked) {
-            System.out.println("[DEBUG] Store button clicked.");
             toggleButtonState(false, true);
             highlightSelectedButton(LibraryButton, StoreButton, false, true);
-            LoadHomePage(); // Load the home page when Store is clicked
+            LoadHomePage();
         }
+    }
+
+    private void handleSearchButton() {
+        String query = SearchField_TextField.getText();
+        if (!query.isEmpty()) {
+            performSearch(query);
+        }
+    }
+
+    private void handleAccountDropdown() {
+        // Add functionality to show account options or settings here
+    }
+
+    private void performSearch(String query) {
+        System.out.println("[DEBUG] Performing search for: " + query);
     }
 
     private void toggleButtonState(boolean libraryState, boolean storeState) {
@@ -114,23 +137,28 @@ public class VGMainScreenController {
         loadPane("/VGLibraryPage.fxml");
     }
 
-    private void loadPane(String fxmlFile) {
+    private void updateAccountInfo() {
+        String username = "march"; // Replace with actual username retrieval logic
+        AccountUser_Label.setText(username);
+
+        String profileImagePath = "/Image/ProfileTestPicture.png"; // Replace with actual path
+        AccountPicture_Image.setImage(new Image(profileImagePath));
+    }
+
+    public void loadPane(String fxmlFile) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(VGMainProgramApplication.class.getResource(fxmlFile));
-            Pane newPane = fxmlLoader.load();
-
-            // No need to check if the pane is the same
-            if (currentPane != null) {
-                MainContent_Pane.getChildren().remove(currentPane); // Ensure previous pane is removed
-            }
-
-            MainContent_Pane.getChildren().add(newPane);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Pane newPane = loader.load();
+            MainContent_Pane.getChildren().setAll(newPane);
             currentPane = newPane;
 
-            System.out.println("[DEBUG] Loaded pane: " + fxmlFile);
+            FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
+            fadeIn.setFromValue(0.0);
+            fadeIn.setToValue(1.0);
+            fadeIn.play();
+
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("[ERROR] Failed to load pane: " + fxmlFile);
         }
     }
 }

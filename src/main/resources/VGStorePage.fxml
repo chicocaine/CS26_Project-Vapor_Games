@@ -81,106 +81,19 @@
                   <Label layoutX="15.0" layoutY="411.0" styleClass="HomePage-Label" text="DISCOVER SOMETHING NEW" />
                   <Pane layoutX="15.0" layoutY="447.0" prefHeight="250.0" prefWidth="848.0">
                      <children>
-                        <HBox prefHeight="240.0" prefWidth="848.0" spacing="2.0">
-                           <children>
-                              <Pane fx:id="HomePageDiscoverGameTile_Pane" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                                 <children>
-                                    <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                       <children>
-                                          <ImageView fx:id="HomePageDiscoverGame_Image" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@Image/SmallTileTestPicture.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Pane>
-                                    <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                       <children>
-                                          <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                          <Label fx:id="HomePageDiscoverGamePrice_Label" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                          <Label fx:id="HomePageDiscoverGameTitle_Label" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                       </children>
-                                    </Pane>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                           </children>
-                        </HBox>
+                        <HBox fx:id="DiscoverSomethingNew_HBox" prefHeight="240.0" prefWidth="848.0" spacing="2.0" />
                      </children>
                   </Pane>
                   <Label layoutX="15.0" layoutY="699.0" styleClass="HomePage-Label" text="TOP SELLER" />
                   <Pane layoutX="15.0" layoutY="735.0" prefHeight="250.0" prefWidth="848.0">
                      <children>
-                        <HBox prefHeight="240.0" prefWidth="848.0" spacing="2.0">
-                           <children>
-                              <Pane fx:id="HomePageTopSellerGameTile_Pane" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                                 <children>
-                                    <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                       <children>
-                                          <ImageView fx:id="HomePageTopSellerGame_Image" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@Image/SmallTileTestPicture.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Pane>
-                                    <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                       <children>
-                                          <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                          <Label fx:id="HomePageTopSellerGamePrice_Label" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                          <Label fx:id="HomePageTopSellerGameTitle_Label" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                       </children>
-                                    </Pane>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                           </children>
-                        </HBox>
+                        <HBox fx:id="TopSeller_HBox" prefHeight="240.0" prefWidth="848.0" spacing="2.0" />
                      </children>
                   </Pane>
                   <Label layoutX="15.0" layoutY="988.0" styleClass="HomePage-Label" text="RECCOMENDED" />
                   <Pane layoutX="15.0" layoutY="1024.0" prefHeight="250.0" prefWidth="848.0">
                      <children>
-                        <HBox prefHeight="240.0" prefWidth="848.0" spacing="2.0">
-                           <children>
-                              <Pane fx:id="HomePageRecommendedGameTile_Pane" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                                 <children>
-                                    <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                       <children>
-                                          <ImageView fx:id="HomePageRecommendedGame_Image" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@Image/SmallTileTestPicture.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Pane>
-                                    <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                       <children>
-                                          <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                          <Label fx:id="HomePageRecommendedGamePrice_Label" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                          <Label fx:id="HomePageRecommendedGameTitle_Label" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                       </children>
-                                    </Pane>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                           </children>
-                        </HBox>
+                        <HBox fx:id="Recommended_HBox" prefHeight="240.0" prefWidth="848.0" spacing="2.0" />
                      </children>
                   </Pane>
                </children>
