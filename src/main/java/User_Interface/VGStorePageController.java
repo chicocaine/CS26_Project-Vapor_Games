@@ -91,6 +91,7 @@ public class VGStorePageController {
         recommendedGamesList.add(new Game("Recommended Game 2", "18.99", "/Image/SmallTileTestPicture.png", "Blank"));
         recommendedGamesList.add(new Game("Recommended Game 3", "22.99", "/Image/SmallTileTestPicture.png", "Blank"));
         recommendedGamesList.add(new Game("Recommended Game 4", "35.99", "/Image/SmallTileTestPicture.png", "Blank"));
+        recommendedGamesList.add(new Game("R34", "3454.99", "/Image/SmallTileTestPicture.png", "Blank"));
 
         topSellerGamesList.add(new Game("Top Seller Game 1", "14.99", "/Image/SmallTileTestPicture.png", "Blank"));
         topSellerGamesList.add(new Game("Top Seller Game 2", "28.99", "/Image/SmallTileTestPicture.png", "Blank"));

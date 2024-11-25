@@ -41,11 +41,10 @@ public class VGGameTileController {
     @FXML
     void HandlesButtonClicked(MouseEvent event) throws IOException {
         if (event.getSource() == GameMediumTile) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("VGMainScreen.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGMainScreen.fxml"));
             Parent root = loader.load();
 
             VGMainScreenController controller = loader.getController();
-
         }
     }
 }

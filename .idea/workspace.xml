@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGGameTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGGameTileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGStorePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGStorePageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +91,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
     "Kotlin script (Beta).build.gradle.kts.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -128,7 +130,20 @@
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\FXML" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.VGMainProgramApplication">
+    <configuration name="DBConnectionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Utility.DBConnectionTest" />
+      <module name="CS26_Project-Vapor_Games.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VGMainProgramApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="User_Interface.VGMainProgramApplication" />
       <module name="CS26_Project-Vapor_Games.main" />
@@ -144,6 +159,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DBConnectionTest" />
         <item itemvalue="Application.VGMainProgramApplication" />
       </list>
     </recent_temporary>
@@ -173,7 +189,7 @@
       <workItem from="1732097649516" duration="7719000" />
       <workItem from="1732421041948" duration="933000" />
       <workItem from="1732422685017" duration="5943000" />
-      <workItem from="1732493041008" duration="19692000" />
+      <workItem from="1732493041008" duration="20140000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -215,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732512229579</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Suffering is still hurts">
+      <option name="closed" value="true" />
+      <created>1732513936629</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732513936629</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
