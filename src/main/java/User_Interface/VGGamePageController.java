@@ -1,5 +1,6 @@
 package User_Interface;
 
+import Model.Game;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -36,4 +37,5 @@ public class VGGamePageController {
 
     @FXML
     private Pane StorePage_Pane;
+
 }

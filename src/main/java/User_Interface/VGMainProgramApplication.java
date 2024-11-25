@@ -41,6 +41,8 @@ public class VGMainProgramApplication extends Application {
         stage.show();
 
         VGMainScreenController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+
 
         // Set up mouse dragging for the window
         scene.setOnMousePressed(this::handleMousePressed);
