@@ -2,11 +2,15 @@ package User_Interface;
 
 import Model.Game;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 
 public class VGGameTileController {
 
@@ -35,8 +39,12 @@ public class VGGameTileController {
     }
 
     @FXML
-    void HandlesButtonClicked(MouseEvent event) {
+    void HandlesButtonClicked(MouseEvent event) throws IOException {
         if (event.getSource() == GameMediumTile) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("VGMainScreen.fxml"));
+            Parent root = loader.load();
+
+            VGMainScreenController controller = loader.getController();
 
         }
     }

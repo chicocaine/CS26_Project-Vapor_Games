@@ -1,5 +1,6 @@
 package User_Interface;
 
+import Model.Game;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 public class VGMainScreenController {
