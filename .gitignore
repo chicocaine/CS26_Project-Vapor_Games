@@ -12,6 +12,7 @@ build/
 .idea/libraries/
 *.xml
 *.iws
+*.xml
 *.iml
 *.ipr
 out/
