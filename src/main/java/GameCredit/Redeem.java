@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Redeem {
 
     public void redeemCode(String code) {
-        String sqlCheck = "SELECT is_redeemed FROM game_credits WHERE code = ?";
-        String sqlUpdate = "UPDATE game_credits SET is_redeemed = TRUE WHERE code = ?";
+        String sqlCheck = "SELECT is_redeemed FROM VaporGames.game_credits WHERE code = ?";
+        String sqlUpdate = "UPDATE VaporGames.game_credits SET is_redeemed = TRUE WHERE code = ?";
 
         try (Connection conn = DBConnectionPool.getConnection();
              PreparedStatement checkStmt = conn.prepareStatement(sqlCheck)) {
@@ -40,7 +40,8 @@ public class Redeem {
             System.err.println("Error processing the redemption: " + e.getMessage());
         }
     }
-/*
+
+    /*
     public static void main(String[] args) {
         Redeem redeem = new Redeem();
         Scanner scanner = new Scanner(System.in);

@@ -6,7 +6,7 @@
       <synchronize>true</synchronize>
       <remarks>Agsoy Server</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://HoyoWorld.serv.gs:3306/VaporGames</jdbc-url>
+      <jdbc-url>jdbc:mysql://HoyoWorld.serv.gs:3306</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
@@ -14,6 +14,41 @@
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="connectTimeout" value="30000" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="test" uuid="079d7285-d523-45e3-ab60-eb73ab9adf2a">
+      <driver-ref>mysql_aurora_aws</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>software.aws.rds.jdbc.mysql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql:aws://HoyoWorld.serv.gs:3306</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.resource.type" value="Deployment" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="connectTimeout" value="30000" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="test1" uuid="e6d308c3-7d37-4dba-af16-25056adcd30e">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://HoyoWorld.serv.gs:3306</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.resource.type" value="Deployment" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="connectTimeout" value="30000" />
+      </driver-properties>
     </data-source>
   </component>
 </project>
