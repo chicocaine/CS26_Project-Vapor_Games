@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Suffering is still hurts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGGameTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGGameTileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGStorePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGStorePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +172,7 @@
       <workItem from="1732097649516" duration="7719000" />
       <workItem from="1732421041948" duration="933000" />
       <workItem from="1732422685017" duration="5943000" />
+      <workItem from="1732587337185" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -233,7 +232,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainProgramApplication.java</url>
           <line>61</line>
-          <properties class="User_Interface.VGMainProgramApplication" method="main">
+          <properties class="User_Interface.VGMainProgramApplication">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
