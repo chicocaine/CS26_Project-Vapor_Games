@@ -3,12 +3,12 @@ package User_Interface;
 import Model.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -28,6 +28,8 @@ public class VGGameTileController {
 
     private Game game;
 
+    private Pane currentPane;
+
     public void setGameDetails(Game game) {
         this.game = game;
         if (game != null) {
@@ -41,10 +43,15 @@ public class VGGameTileController {
     @FXML
     void HandlesButtonClicked(MouseEvent event) throws IOException {
         if (event.getSource() == GameMediumTile) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGMainScreen.fxml"));
-            Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGGamePage.fxml"));
+            Pane mainScreenPane = loader.load();
 
-            VGMainScreenController controller = loader.getController();
+            VGGamePageController mainScreenController = loader.getController();
+
+            mainScreenController.displayGameDetails(game);
+
+            Stage stage = (Stage) GameMediumTile.getScene().getWindow();
+            stage.getScene().setRoot(mainScreenPane);
         }
     }
 }

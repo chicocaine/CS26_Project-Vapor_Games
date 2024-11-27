@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GameCredit/CodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GameCredit/Redeem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGGamePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGGamePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGGameTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGGameTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,12 +68,12 @@
     &quot;assignee&quot;: &quot;HanazonoArchive&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/chicocaine/CS26_Project-Vapor_Games.git&quot;,
-    &quot;accountId&quot;: &quot;3d24febc-cb48-4557-97ab-54c578c8b592&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/chicocaine/CS26_Project-Vapor_Games.git",
+    "accountId": "ddffcc79-b4fe-454d-8090-2cfc851b13e2"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -154,9 +155,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -180,6 +180,7 @@
       <workItem from="1732513274876" duration="478000" />
       <workItem from="1732528907616" duration="4521000" />
       <workItem from="1732535070214" duration="1314000" />
+      <workItem from="1732666493297" duration="1340000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -233,13 +234,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java</url>
-          <line>85</line>
+          <line>83</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainProgramApplication.java</url>
           <line>61</line>
-          <properties class="User_Interface.VGMainProgramApplication" method="main">
+          <properties class="User_Interface.VGMainProgramApplication">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
