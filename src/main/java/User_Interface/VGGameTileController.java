@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -27,9 +26,9 @@ public class VGGameTileController {
     private Pane GameMediumTile;
 
     private Game game;
+    private VGMainScreenController mainController; // Reference to the main screen controller
 
-    private Pane currentPane;
-
+    // Setter for game details
     public void setGameDetails(Game game) {
         this.game = game;
         if (game != null) {
@@ -40,18 +39,28 @@ public class VGGameTileController {
         }
     }
 
+    // Setter for the main controller
+    public void setMainController(VGMainScreenController mainController) {
+        this.mainController = mainController;
+    }
+
     @FXML
     void HandlesButtonClicked(MouseEvent event) throws IOException {
         if (event.getSource() == GameMediumTile) {
+            // Load the VGGamePage.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGGamePage.fxml"));
-            Pane mainScreenPane = loader.load();
+            Pane gamePagePane = loader.load();
 
-            VGGamePageController mainScreenController = loader.getController();
+            // Get the game page controller and pass the game details
+            //VGGamePageController gamePageController = loader.getController();
+            //gamePageController.displayGameDetails(game);
 
-            mainScreenController.displayGameDetails(game);
-
-            Stage stage = (Stage) GameMediumTile.getScene().getWindow();
-            stage.getScene().setRoot(mainScreenPane);
+            // Update the MainContent_Pane via the main controller
+            if (mainController != null) {
+                mainController.setMainContent_Pane(gamePagePane);
+            } else {
+                System.err.println("[ERROR] Main controller reference is null!");
+            }
         }
     }
 }

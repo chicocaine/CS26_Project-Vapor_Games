@@ -7,9 +7,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
+
 import java.io.IOException;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class VGStorePageController {
 
@@ -49,9 +50,12 @@ public class VGStorePageController {
     @FXML
     private HBox TopSeller_HBox;
 
-    private List<Game> discoverGamesList = new ArrayList<>();
-    private List<Game> recommendedGamesList = new ArrayList<>();
-    private List<Game> topSellerGamesList = new ArrayList<>();
+    private final List<Game> discoverGamesList = new ArrayList<>();
+    private final List<Game> recommendedGamesList = new ArrayList<>();
+    private final List<Game> topSellerGamesList = new ArrayList<>();
+
+    // Store references to all VGGameTileController instances
+    private final List<VGGameTileController> gameTileControllers = new ArrayList<>();
 
     public void initialize() {
         initializeGameLists();
@@ -69,6 +73,9 @@ public class VGStorePageController {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGGameTile.fxml"));
                 Pane gameTilePane = loader.load();
                 VGGameTileController tileController = loader.getController();
+
+                // Store the tile controller for future reference
+                gameTileControllers.add(tileController);
 
                 tileController.setGameDetails(game);
                 hbox.getChildren().add(gameTilePane);
@@ -96,5 +103,10 @@ public class VGStorePageController {
         topSellerGamesList.add(new Game("Top Seller Game 1", "14.99", "/Image/SmallTileTestPicture.png", "Blank"));
         topSellerGamesList.add(new Game("Top Seller Game 2", "28.99", "/Image/SmallTileTestPicture.png", "Blank"));
         topSellerGamesList.add(new Game("Top Seller Game 3", "45.99", "/Image/SmallTileTestPicture.png", "Blank"));
+    }
+
+    // Provide access to all tile controllers
+    public List<VGGameTileController> getGameTileControllers() {
+        return gameTileControllers;
     }
 }
