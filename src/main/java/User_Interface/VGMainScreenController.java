@@ -38,11 +38,6 @@ public class VGMainScreenController {
     @FXML
     private TextField SearchField_TextField;
 
-    private Pane currentPane;
-
-    public void getMainContent_Pane (Pane MainContent_Pane){
-
-    }
 
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
@@ -78,7 +73,14 @@ public class VGMainScreenController {
     }
 
     private void handleLogout() {
-
+        System.out.println("[DEBUG] Logout button clicked.");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("Are you sure you want to log out?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            System.exit(0);
+        }
     }
 
     private void handleLibraryButton() {
@@ -147,8 +149,7 @@ public class VGMainScreenController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Pane newPane = loader.load();
-            MainContent_Pane.getChildren().setAll(newPane);
-            currentPane = newPane;
+            setMainContent_Pane(newPane);
 
             FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
             fadeIn.setFromValue(0.0);
@@ -158,5 +159,9 @@ public class VGMainScreenController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setMainContent_Pane(Pane newPane) {
+        this.MainContent_Pane.getChildren().setAll(newPane);
     }
 }

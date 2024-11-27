@@ -28,8 +28,6 @@ public class VGGameTileController {
 
     private Game game;
 
-    private Pane currentPane;
-
     public void setGameDetails(Game game) {
         this.game = game;
         if (game != null) {
@@ -46,9 +44,9 @@ public class VGGameTileController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGGamePage.fxml"));
             Pane mainScreenPane = loader.load();
 
-            VGGamePageController mainScreenController = loader.getController();
+            VGGamePageController GPC = loader.getController();
 
-            mainScreenController.displayGameDetails(game);
+            GPC.displayGameDetails(game);
 
             Stage stage = (Stage) GameMediumTile.getScene().getWindow();
             stage.getScene().setRoot(mainScreenPane);
