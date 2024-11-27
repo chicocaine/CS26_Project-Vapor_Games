@@ -40,6 +40,10 @@ public class VGMainScreenController {
 
     private Pane currentPane;
 
+    public void getMainContent_Pane (Pane MainContent_Pane){
+
+    }
+
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
 
@@ -74,13 +78,7 @@ public class VGMainScreenController {
     }
 
     private void handleLogout() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("Are you sure you want to log out?");
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            System.exit(0);
-        }
+
     }
 
     private void handleLibraryButton() {

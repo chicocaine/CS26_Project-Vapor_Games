@@ -38,4 +38,6 @@ public class VGGamePageController {
     @FXML
     private Pane StorePage_Pane;
 
+    public void displayGameDetails(Game game) {
+    }
 }
