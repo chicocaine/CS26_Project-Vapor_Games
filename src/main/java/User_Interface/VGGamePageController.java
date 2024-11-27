@@ -39,5 +39,6 @@ public class VGGamePageController {
     private Pane StorePage_Pane;
 
     public void displayGameDetails(Game game) {
+
     }
 }

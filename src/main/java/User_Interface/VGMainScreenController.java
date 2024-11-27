@@ -38,7 +38,6 @@ public class VGMainScreenController {
     @FXML
     private TextField SearchField_TextField;
 
-
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
 
@@ -73,7 +72,6 @@ public class VGMainScreenController {
     }
 
     private void handleLogout() {
-        System.out.println("[DEBUG] Logout button clicked.");
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
         alert.setHeaderText("Are you sure you want to log out?");
@@ -130,7 +128,22 @@ public class VGMainScreenController {
     }
 
     private void LoadHomePage() {
-        loadPane("/VGStorePage.fxml");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGStorePage.fxml"));
+            Pane storePagePane = loader.load();
+
+            // Access the controller for the loaded page
+            VGStorePageController storePageController = loader.getController();
+
+            // Assume VGStorePageController provides a list of VGGameTileController instances
+            for (VGGameTileController tileController : storePageController.getGameTileControllers()) {
+                tileController.setMainController(this); // Pass this controller to each tile
+            }
+
+            setMainContent_Pane(storePagePane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void LoadLibraryPage() {
@@ -163,5 +176,9 @@ public class VGMainScreenController {
 
     public void setMainContent_Pane(Pane newPane) {
         this.MainContent_Pane.getChildren().setAll(newPane);
+    }
+
+    public Pane getMainContentPane() {
+        return MainContent_Pane;
     }
 }
