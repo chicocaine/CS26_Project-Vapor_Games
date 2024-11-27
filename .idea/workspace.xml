@@ -5,17 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CreateAccount.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CreateAccountSuccessPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/checkMark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/danger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/eyeForPass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoginSuccessfulPopUP.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SignInErrorPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SignUpErrorPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGCredentials.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
