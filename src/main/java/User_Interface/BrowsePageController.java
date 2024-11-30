@@ -109,4 +109,10 @@ public class BrowsePageController {
     void HandlesGenreClickedButton(MouseEvent event) {
         // Handle genre button click logic here
     }
+
+    public void setSearchQuery(String query) {
+        if (LibrarySearchField_TextField != null) {
+            LibrarySearchField_TextField.setText(query);
+        }
+    }
 }

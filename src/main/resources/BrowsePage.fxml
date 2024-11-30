@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="LibraryContent" stylesheets="@Stylesheet/LibraryPage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.BrowsePageController">
+<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="LibraryContent" stylesheets="@Stylesheet/BrowsePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.BrowsePageController">
    <children>
       <Pane layoutX="693.0" prefHeight="686.0" prefWidth="200.0">
          <children>
