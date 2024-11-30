@@ -207,7 +207,7 @@ public class MainScreenController {
 
         if (currentPane != null) {
             // Fade out the current pane
-            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), currentPane);
+            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.2), currentPane);
             fadeOut.setFromValue(1.0); // Fully visible
             fadeOut.setToValue(0.0);   // Fully transparent
 
@@ -217,7 +217,7 @@ public class MainScreenController {
                 newPane.setOpacity(0.0);  // Set the new pane as invisible initially
 
                 // Fade in the new pane
-                FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
+                FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), newPane);
                 fadeIn.setFromValue(0.0);  // Start fully transparent
                 fadeIn.setToValue(1.0);    // End fully visible
 
@@ -230,7 +230,7 @@ public class MainScreenController {
             MainContent_Pane.getChildren().setAll(newPane);
             newPane.setOpacity(0.0);  // Set the new pane as invisible initially
 
-            FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
+            FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), newPane);
             fadeIn.setFromValue(0.0);  // Start fully transparent
             fadeIn.setToValue(1.0);    // End fully visible
 

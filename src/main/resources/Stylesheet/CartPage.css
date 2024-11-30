@@ -1,0 +1,40 @@
+.background{
+    -fx-background-color: #181819;
+}
+.header{
+    -fx-font-family: 'Sora Bold';
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+/* Style for the ScrollPane */
+.scroll-pane {
+    -fx-background-color: #181819; /* Background color of the ScrollPane */
+}
+
+/* Style for the ScrollPane content */
+.scroll-pane .viewport {
+    -fx-background-color: #181819; /* Background color of the content area */
+}
+
+/* Style for the vertical scroll bar */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #181819; /* Background color of the vertical scrollbar */
+}
+
+/* Style for the horizontal scroll bar */
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #181819; /* Background color of the horizontal scrollbar */
+}
+
+/* Style for the scrollbar thumb */
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #282C44; /* Thumb color (the draggable part of the scrollbar) */
+}
+
+/* Style for the scrollbar track */
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: #181819; /* Background color of the TextArea */
+    -fx-border-color: #181819;      /* Border color */
+    -fx-border-width: 1;             /* Border thickness */
+    -fx-border-style: solid;
+}
