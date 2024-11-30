@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +53,8 @@
       <list>
         <option value="package-info" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -95,9 +95,9 @@
     "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:CodeGenerator.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:LoginController.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor": "Run",
-    "Gradle.CS26_Project-Vapor_Games [:User_Interface.MainProgramApplication.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
     "Kotlin script (Beta).build.gradle.kts.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -106,16 +106,16 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kinne/Downloads/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.web.jar",
+    "last_opened_file_path": "C:/codes/CS26/CS26_Project-Vapor_Games/src/main/resources/Image",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   },
@@ -123,6 +123,9 @@
     "DatabaseDriversLRU": [
       "mysql_aurora_aws",
       "mysql"
+    ],
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\Hanazono Archive\\.gradle"
     ]
   }
 }]]></component>
@@ -143,7 +146,6 @@
     <configuration name="MainProgramApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="User_Interface.MainProgramApplication" />
       <module name="CS26_Project-Vapor_Games.main" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\kinne\Downloads\openjfx-23.0.1_windows-x64_bin-sdk\javafx-sdk-23.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="User_Interface.*" />
@@ -197,6 +199,7 @@
       <workItem from="1732627885738" duration="1498000" />
       <workItem from="1732665563350" duration="218000" />
       <workItem from="1732666460739" duration="1117000" />
+      <workItem from="1732968204278" duration="2366000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -245,5 +248,20 @@
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainProgramApplication.java</url>
+          <line>61</line>
+          <properties class="User_Interface.VGMainProgramApplication">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

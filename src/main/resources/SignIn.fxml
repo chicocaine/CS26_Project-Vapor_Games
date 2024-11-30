@@ -11,22 +11,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="428.0" styleClass="Background" stylesheets="@Stylesheet/VGCredentials.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="428.0" styleClass="Background" stylesheets="@Stylesheet/VGCredentials.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.SignInController">
    <children>
       <Text fill="WHITE" layoutX="55.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="signup" text="Sign in" textAlignment="CENTER" wrappingWidth="317.22" y="86.0">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="55.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="317.22" promptText="Email Address" style="-fx-background-color: #181819; -fx-border-color: #FFFFFF;" styleClass="field" stylesheets="@Stylesheet/VGCredentials.css" />
-      <Button layoutX="55.0" layoutY="377.0" mnemonicParsing="false" prefHeight="45.36" prefWidth="317.22" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="Sign in" textFill="WHITE">
+      <TextField fx:id="inputEmail" layoutX="55.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="317.22" promptText="Email Address" style="-fx-background-color: #181819; -fx-border-color: #FFFFFF;" styleClass="field" stylesheets="@Stylesheet/VGCredentials.css" />
+      <Button fx:id="signIn" layoutX="55.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="45.36" prefWidth="317.22" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="Sign in" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
       <Line endX="292.0" fill="#2c2c2e" layoutX="115.0" layoutY="450.0" startX="-95.0" stroke="#2c2c2e" styleClass="Line" />
       <Text fill="#878787" layoutX="150.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text1" text="Don't have an account? " />
-      <Button layoutX="55.0" layoutY="484.0" mnemonicParsing="false" prefHeight="45.36" prefWidth="317.22" stylesheets="@Stylesheet/VGCredentials.css" text="Register" textFill="WHITE">
+      <Button fx:id="Register" layoutX="55.0" layoutY="484.0" mnemonicParsing="false" prefHeight="45.36" prefWidth="317.22" stylesheets="@Stylesheet/VGCredentials.css" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -35,7 +35,7 @@
             <String fx:value="register" />
          </styleClass>
       </Button>
-      <PasswordField layoutX="55.0" layoutY="232.0" prefHeight="41.0" prefWidth="317.22" promptText="Enter Password" styleClass="field" />
+      <PasswordField fx:id="inputPassword" layoutX="55.0" layoutY="232.0" prefHeight="41.0" prefWidth="317.22" promptText="Enter Password" styleClass="field" />
       <ImageView fitHeight="15.0" fitWidth="19.0" layoutX="343.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/eyeForPass.png" />
