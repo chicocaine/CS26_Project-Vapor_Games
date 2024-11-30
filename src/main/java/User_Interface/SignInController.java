@@ -60,11 +60,11 @@ public class SignInController {
         String email = inputEmail.getText().trim();
         String password = inputPassword.getText().trim();
 
-        boolean test = userManager.userAuth(email,password);
+        boolean test = userManager.userAuth(email, password);
         System.out.println(test);
 
         if (email.isEmpty() || password.isEmpty()) {
-            showAlert("Error", "Email or password cannot be empty.", Alert.AlertType.ERROR);
+            showCustomPopup("/SignUpErrorPopUp.fxml");
             return;
         }
 
@@ -128,5 +128,14 @@ public class SignInController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private void showCustomPopup(String fxmlPath) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Stage popupStage = new Stage();
+        popupStage.setScene(new Scene(loader.load()));
+        popupStage.initStyle(StageStyle.UTILITY);
+        popupStage.setResizable(false);
+        popupStage.show();
     }
 }
