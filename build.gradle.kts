@@ -36,10 +36,9 @@ javafx {
 }
 
 dependencies {
-
+    implementation("mysql:mysql-connector-java:8.0.33")
     implementation("org.slf4j:slf4j-simple:2.0.9")
     implementation("com.zaxxer:HikariCP:6.2.0")
-    implementation("mysql:mysql-connector-java:8.0.28")
 
     implementation("org.controlsfx:controlsfx:11.1.2")
     implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {

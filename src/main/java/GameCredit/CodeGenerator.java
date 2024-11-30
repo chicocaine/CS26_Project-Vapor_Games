@@ -40,7 +40,7 @@ public class CodeGenerator {
     }
 
     private void insertCode(String creditAmount, String code) {
-        String sql = "INSERT INTO game_credits (credit_amount, code) VALUES (?, ?)";
+        String sql = "INSERT INTO VaporGames.game_credits (credit_amount, code) VALUES (?, ?)";
 
         try (Connection conn = DBConnectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

@@ -17,6 +17,7 @@ Download **MySQL Shell** from **MySQL Community Downloads**
 
 Type `\sql` to set the Language to MySQL
 
+
 Type `\connect <user>@<ip-address>:<port>` to connect MySQL Server
 
 **Current Available MySQL Database Information**
