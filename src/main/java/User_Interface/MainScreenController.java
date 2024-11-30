@@ -58,7 +58,7 @@ public class MainScreenController {
         if (source == LogoutButton) {
             handleLogout();
         } else if (source == DiscoverButton_Pane) {
-            handleStoreButton();
+            handleBrowseButton();
         } else if (source == LibraryButton) {
             handleLibraryButton();
         } else if (source == StoreButton) {
@@ -96,6 +96,10 @@ public class MainScreenController {
         }
     }
 
+    private void handleBrowseButton() {
+        LoadBrowsePage();
+    }
+
     private void handleSearchButton() {
         String query = SearchField_TextField.getText();
         if (!query.isEmpty()) {
@@ -130,24 +134,55 @@ public class MainScreenController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/StorePage.fxml"));
             Pane storePagePane = loader.load();
+            setMainContent_Pane(storePagePane);
 
             // Access the controller for the loaded page
             StorePageController storePageController = loader.getController();
 
-            // Assume VGStorePageController provides a list of VGGameTileController instances
             for (GameTileController tileController : storePageController.getGameTileControllers()) {
-                tileController.setMainController(this); // Pass this controller to each tile
+                tileController.setMainController(this);
             }
 
-            setMainContent_Pane(storePagePane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void LoadBrowsePage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BrowsePage.fxml"));
+            Pane browsePagePane = loader.load();
+            setMainContent_Pane(browsePagePane);
+
+            BrowsePageController browsePageController = loader.getController();
+
+            for (MediumGameTileController tileController : browsePageController.getMediumGameTileControllers()) {
+                tileController.setMainController(this);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void LoadLibraryPage() {
-        loadPane("/LibraryPage.fxml");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/LibraryPage.fxml"));
+            Pane libraryPagePane = loader.load();
+            setMainContent_Pane(libraryPagePane);
+
+            LibraryPageController libraryPageController = loader.getController();
+
+            // Instead of trying to get LibraryPageController instances, get MediumGameTileController instances
+            for (MediumGameTileController tileController : libraryPageController.getMediumGameTileControllers()) {
+                tileController.setMainController(this);  // Set the main controller for each tile
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     private void updateAccountInfo() {
         String username = "march"; // Replace with actual username retrieval logic
@@ -162,22 +197,44 @@ public class MainScreenController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Pane newPane = loader.load();
             setMainContent_Pane(newPane);
-
-            FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
-            fadeIn.setFromValue(0.0);
-            fadeIn.setToValue(1.0);
-            fadeIn.play();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void setMainContent_Pane(Pane newPane) {
-        this.MainContent_Pane.getChildren().setAll(newPane);
-    }
+        Pane currentPane = (MainContent_Pane.getChildren().isEmpty()) ? null : (Pane) MainContent_Pane.getChildren().get(0);
 
-    public Pane getMainContentPane() {
-        return MainContent_Pane;
+        if (currentPane != null) {
+            // Fade out the current pane
+            FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), currentPane);
+            fadeOut.setFromValue(1.0); // Fully visible
+            fadeOut.setToValue(0.0);   // Fully transparent
+
+            fadeOut.setOnFinished(event -> {
+                // Remove the current pane and add the new one with opacity set to 0 initially
+                MainContent_Pane.getChildren().setAll(newPane);
+                newPane.setOpacity(0.0);  // Set the new pane as invisible initially
+
+                // Fade in the new pane
+                FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
+                fadeIn.setFromValue(0.0);  // Start fully transparent
+                fadeIn.setToValue(1.0);    // End fully visible
+
+                fadeIn.play();
+            });
+
+            fadeOut.play();
+        } else {
+            // No current pane, directly show the new one with fade-in (initially invisible)
+            MainContent_Pane.getChildren().setAll(newPane);
+            newPane.setOpacity(0.0);  // Set the new pane as invisible initially
+
+            FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), newPane);
+            fadeIn.setFromValue(0.0);  // Start fully transparent
+            fadeIn.setToValue(1.0);    // End fully visible
+
+            fadeIn.play();
+        }
     }
 }

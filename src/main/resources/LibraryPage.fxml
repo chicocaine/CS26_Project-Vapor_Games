@@ -179,7 +179,7 @@
          </children></Pane>
       <ScrollPane prefHeight="686.0" prefWidth="693.0" styleClass="LibraryContent">
          <content>
-            <Pane prefHeight="1300.0" prefWidth="678.0" styleClass="LibraryContent">
+            <Pane prefHeight="1400.0" prefWidth="678.0" styleClass="LibraryContent">
                <children>
                   <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="14.0" prefHeight="53.0">
                      <children>
@@ -197,156 +197,11 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <HBox layoutX="15.0" layoutY="75.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="LibraryGameTile_T1" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                           <children>
-                              <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                 <children>
-                                    <ImageView fx:id="LibraryGameTileThumbnail_T1" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                       <image>
-                                          <Image url="@Image/SmallTileTestPicture.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                              <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                 <children>
-                                    <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                    <Label fx:id="LibraryGameTilePrice_T1" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                    <Label fx:id="LibraryGameTileName_T1" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                 </children>
-                              </Pane>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Pane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="15.0" layoutY="316.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="LibraryGameTile_T2" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                           <children>
-                              <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                 <children>
-                                    <ImageView fx:id="LibraryGameTileThumbnail_T2" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                       <image>
-                                          <Image url="@Image/SmallTileTestPicture.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                              <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                 <children>
-                                    <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                    <Label fx:id="LibraryGamePrice_T2" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                    <Label fx:id="LibraryGameTileName_T2" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                 </children>
-                              </Pane>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Pane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="15.0" layoutY="557.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="LibraryGameTile_T3" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                           <children>
-                              <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                 <children>
-                                    <ImageView fx:id="LibraryGameTileThumbnail_T3" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                       <image>
-                                          <Image url="@Image/SmallTileTestPicture.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                              <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                 <children>
-                                    <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                    <Label fx:id="LibraryGameTilePrice_T3" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                    <Label fx:id="LibraryGameTileName_T3" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                 </children>
-                              </Pane>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Pane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="15.0" layoutY="805.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="LibraryGameTile_T4" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                           <children>
-                              <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                 <children>
-                                    <ImageView fx:id="LibraryGameTileThumbnail_T4" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                       <image>
-                                          <Image url="@Image/SmallTileTestPicture.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                              <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                 <children>
-                                    <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                    <Label fx:id="LibraryGameTilePrice_T4" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                    <Label fx:id="LibraryGameTileName_T4" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                 </children>
-                              </Pane>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Pane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="15.0" layoutY="1046.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="LibraryGameTile_T5" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane">
-                           <children>
-                              <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
-                                 <children>
-                                    <ImageView fx:id="LibraryGameTileThumbnail_T5" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
-                                       <image>
-                                          <Image url="@Image/SmallTileTestPicture.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                              <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
-                                 <children>
-                                    <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-                                    <Label fx:id="LibraryGameTilePrice_T5" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-                                    <Label fx:id="LibraryGameTileName_T5" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
-                                 </children>
-                              </Pane>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Pane>
-                     </children>
-                  </HBox>
+                  <HBox fx:id="HBox1" layoutX="44.0" layoutY="67.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox2" layoutX="44.0" layoutY="329.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox3" layoutX="44.0" layoutY="592.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox4" layoutX="44.0" layoutY="855.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox5" layoutX="44.0" layoutY="1118.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
                </children></Pane>
          </content>
       </ScrollPane>
