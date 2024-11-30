@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Ughhh">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Added Dependencies for IntelliJ IDEA to work with DB connections.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/LibraryPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/ImagePlaceHolder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LibraryPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGGamePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/GamePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGGameTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/GameTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGLibraryPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainProgramApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainProgramApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGMainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/VGStorePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/StorePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGGamePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/GamePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGLibraryPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/LibraryPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGMainScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/MainScreen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGStorePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/StorePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGGamePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GamePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGGameTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GameTile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGLibraryPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrowsePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGMainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VGStorePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/StorePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +116,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Hanazono Archive/IdeaProjects/CS26_Project-Vapor_Games/src/main/resources/Image",
+    "last_opened_file_path": "C:/Users/Hanazono Archive/IdeaProjects/CS26_Project-Vapor_Games/src/main/resources",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -121,8 +137,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources" />
+      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
@@ -130,10 +146,13 @@
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Fonts" />
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\FXML" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="User_Interface" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="VGMainProgramApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="User_Interface.VGMainProgramApplication" />
+    <configuration name="MainProgramApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="User_Interface.MainProgramApplication" />
       <module name="CS26_Project-Vapor_Games.main" />
       <extension name="coverage">
         <pattern>
@@ -180,7 +199,7 @@
       <workItem from="1732528907616" duration="4521000" />
       <workItem from="1732535070214" duration="1314000" />
       <workItem from="1732666493297" duration="5421000" />
-      <workItem from="1732934214723" duration="1307000" />
+      <workItem from="1732934214723" duration="3927000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -222,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732669706088</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Dependencies for IntelliJ IDEA to work with DB connections.">
+      <option name="closed" value="true" />
+      <created>1732935682515</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732935682515</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,15 +271,16 @@
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Ughhh" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ughhh" />
+    <MESSAGE value="Added Dependencies for IntelliJ IDEA to work with DB connections." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Dependencies for IntelliJ IDEA to work with DB connections." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/User_Interface/VGMainProgramApplication.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/User_Interface/MainProgramApplication.java</url>
           <line>61</line>
-          <properties class="User_Interface.VGMainProgramApplication">
+          <properties class="User_Interface.MainProgramApplication">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

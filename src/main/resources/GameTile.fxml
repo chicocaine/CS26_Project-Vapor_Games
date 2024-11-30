@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane fx:id="GameMediumTile" onMouseClicked="#HandlesButtonClicked" prefHeight="240.0" prefWidth="140.0" styleClass="GameTile" stylesheets="@Stylesheet/VGStorePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.VGGameTileController">
+<Pane fx:id="GameMediumTile" onMouseClicked="#HandlesButtonClicked" prefHeight="240.0" prefWidth="140.0" styleClass="GameTile" stylesheets="@Stylesheet/StorePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GameTileController">
    <children>
       <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
          <children>

@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
-public class VGGamePageController {
+public class GamePageController {
 
     @FXML
     private Pane GameAddToCartButton_Pane;

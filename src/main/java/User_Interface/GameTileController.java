@@ -11,7 +11,7 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
-public class VGGameTileController {
+public class GameTileController {
 
     @FXML
     private Label HomePageDiscoverGamePrice_Label;
@@ -26,7 +26,7 @@ public class VGGameTileController {
     private Pane GameMediumTile;
 
     private Game game;
-    private VGMainScreenController mainController; // Reference to the main screen controller
+    private MainScreenController mainController; // Reference to the main screen controller
 
     // Setter for game details
     public void setGameDetails(Game game) {
@@ -40,15 +40,15 @@ public class VGGameTileController {
     }
 
     // Setter for the main controller
-    public void setMainController(VGMainScreenController mainController) {
+    public void setMainController(MainScreenController mainController) {
         this.mainController = mainController;
     }
 
     @FXML
     void HandlesButtonClicked(MouseEvent event) throws IOException {
         if (event.getSource() == GameMediumTile) {
-            // Load the VGGamePage.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGGamePage.fxml"));
+            // Load the GamePage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GamePage.fxml"));
             Pane gamePagePane = loader.load();
 
             // Get the game page controller and pass the game details

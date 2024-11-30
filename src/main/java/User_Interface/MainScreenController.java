@@ -1,6 +1,5 @@
 package User_Interface;
 
-import Model.Game;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.Optional;
 
-public class VGMainScreenController {
+public class MainScreenController {
 
     private Stage stage;
 
@@ -129,14 +128,14 @@ public class VGMainScreenController {
 
     private void LoadHomePage() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGStorePage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StorePage.fxml"));
             Pane storePagePane = loader.load();
 
             // Access the controller for the loaded page
-            VGStorePageController storePageController = loader.getController();
+            StorePageController storePageController = loader.getController();
 
             // Assume VGStorePageController provides a list of VGGameTileController instances
-            for (VGGameTileController tileController : storePageController.getGameTileControllers()) {
+            for (GameTileController tileController : storePageController.getGameTileControllers()) {
                 tileController.setMainController(this); // Pass this controller to each tile
             }
 
@@ -147,7 +146,7 @@ public class VGMainScreenController {
     }
 
     private void LoadLibraryPage() {
-        loadPane("/VGLibraryPage.fxml");
+        loadPane("/LibraryPage.fxml");
     }
 
     private void updateAccountInfo() {
