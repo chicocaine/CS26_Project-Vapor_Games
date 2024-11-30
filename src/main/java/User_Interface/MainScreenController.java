@@ -57,7 +57,7 @@ public class MainScreenController {
 
         if (source == LogoutButton) {
             handleLogout();
-        } else if (source == DiscoverButton_Pane) {
+        } else if (source == BrowsePane_Button) {
             handleBrowseButton();
         } else if (source == LibraryButton) {
             handleLibraryButton();
@@ -67,6 +67,10 @@ public class MainScreenController {
             handleSearchButton();
         } else if (source == AccountDropDown_Image) {
             handleAccountDropdown();
+        } else if (source == CartButton_Pane) {
+            handleCartButton();
+        } else if (source == DiscoverButton_Pane) {
+            handleDiscoverButton();
         }
     }
 
@@ -105,6 +109,16 @@ public class MainScreenController {
         if (!query.isEmpty()) {
             performSearch(query);
         }
+    }
+
+    private void handleCartButton() {
+        highlightSelectedButton(LibraryButton, StoreButton, false, true);
+        LoadCartPage();
+    }
+
+    private void handleDiscoverButton() {
+        highlightSelectedButton(LibraryButton, StoreButton, false, true);
+        LoadHomePage();
     }
 
     private void handleAccountDropdown() {
@@ -183,6 +197,18 @@ public class MainScreenController {
         }
     }
 
+    private void LoadCartPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CartPage.fxml"));
+            Pane libraryPagePane = loader.load();
+            setMainContent_Pane(libraryPagePane);
+
+            // No Functions
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void updateAccountInfo() {
         String username = "march"; // Replace with actual username retrieval logic
