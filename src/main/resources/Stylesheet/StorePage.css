@@ -83,6 +83,17 @@
     -fx-text-fill: #ffffff;
 }
 
+.HomePageFeaturedGameTransaction_Pane {
+    -fx-background-color: #FEFEFE;
+    -fx-background-radius: 4;
+}
+
+.HomePageFeaturedGameTransaction_Pane:hover {
+    -fx-background-color: #9747FF;
+    -fx-background-radius: 4;
+}
+
+
 .HomePageRecommendedGameTitle_Label {
     -fx-font-family: 'Sora Regular';
     -fx-font-size: 12px;

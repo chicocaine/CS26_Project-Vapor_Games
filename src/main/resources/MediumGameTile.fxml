@@ -6,12 +6,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane fx:id="GameMediumTile" onMouseClicked="#HandlesButtonClicked" prefHeight="240.0" prefWidth="140.0" styleClass="GameTile" stylesheets="@Stylesheet/VGStorePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.VGGameTileController">
+<Pane fx:id="MediumGameTile" onMouseClicked="#HandlesButtonClicked" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane" stylesheets="@Stylesheet/LibraryPage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.MediumGameTileController">
    <children>
       <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
          <children>
-            <ImageView fx:id="HomePageDiscoverGame_Image" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
+            <ImageView fx:id="MediumGameTile_Image" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
                <image>
                   <Image url="@Image/SmallTileTestPicture.png" />
                </image>
@@ -24,12 +23,9 @@
       <Pane layoutX="5.0" layoutY="197.0" prefHeight="40.0" prefWidth="130.0">
          <children>
             <Label layoutX="1.0" layoutY="19.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="₱" />
-            <Label fx:id="HomePageDiscoverGamePrice_Label" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
-            <Label fx:id="HomePageDiscoverGameTitle_Label" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
+            <Label fx:id="MediumGameTile_Price" layoutX="13.0" layoutY="19.0" prefHeight="20.0" prefWidth="116.0" styleClass="HomePageFeaturedGameTransactionPrice_Label" text="400.00" />
+            <Label fx:id="MediumGameTile_Name" layoutX="2.0" layoutY="2.0" prefHeight="17.0" prefWidth="126.0" styleClass="HomePageDiscoverGameTitle_Label" text="Game Name" />
          </children>
       </Pane>
    </children>
-   <cursor>
-      <Cursor fx:constant="HAND" />
-   </cursor>
 </Pane>

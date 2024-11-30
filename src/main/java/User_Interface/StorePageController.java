@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VGStorePageController {
+public class StorePageController {
 
     @FXML
     private HBox DiscoverSomethingNew_HBox;
@@ -39,9 +39,6 @@ public class VGStorePageController {
     private ImageView HomePageFeaturedGame_Picture;
 
     @FXML
-    private ImageView HomePageRecommendedGamesThumbnail_Image;
-
-    @FXML
     private Pane MainPage_Pane;
 
     @FXML
@@ -55,7 +52,7 @@ public class VGStorePageController {
     private final List<Game> topSellerGamesList = new ArrayList<>();
 
     // Store references to all VGGameTileController instances
-    private final List<VGGameTileController> gameTileControllers = new ArrayList<>();
+    private final List<GameTileController> gameTileControllers = new ArrayList<>();
 
     public void initialize() {
         initializeGameLists();
@@ -67,12 +64,12 @@ public class VGStorePageController {
     private void populateGameTiles(HBox hbox, List<Game> gamesList) {
         hbox.getChildren().clear();
 
-        for (int i = 0; i < Math.min(5, gamesList.size()); i++) {
+        for (int i = 0; i < Math.min(6, gamesList.size()); i++) {
             Game game = gamesList.get(i);
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/VGGameTile.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameTile.fxml"));
                 Pane gameTilePane = loader.load();
-                VGGameTileController tileController = loader.getController();
+                GameTileController tileController = loader.getController();
 
                 // Store the tile controller for future reference
                 gameTileControllers.add(tileController);
@@ -106,7 +103,7 @@ public class VGStorePageController {
     }
 
     // Provide access to all tile controllers
-    public List<VGGameTileController> getGameTileControllers() {
+    public List<GameTileController> getGameTileControllers() {
         return gameTileControllers;
     }
 }

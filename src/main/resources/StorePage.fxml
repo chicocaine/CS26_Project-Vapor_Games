@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -8,20 +7,22 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 
-<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="HomePage-Background" stylesheets="@Stylesheet/VGStorePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.VGStorePageController">
+<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="HomePage-Background" stylesheets="@Stylesheet/StorePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.StorePageController">
    <children>
       <ScrollPane prefHeight="686.0" prefWidth="893.0">
          <content>
             <Pane prefHeight="1300.0" prefWidth="878.0" styleClass="HomePage-Background">
                <children>
-                  <Pane fx:id="HomePageFeaturedGame_Pane" layoutX="15.0" layoutY="40.0" prefHeight="350.0" prefWidth="687.0">
+                  <Pane fx:id="HomePageFeaturedGame_Pane" layoutX="26.0" layoutY="39.0" prefHeight="317.0" prefWidth="825.0">
                      <children>
-                        <ImageView fx:id="HomePageFeaturedGame_Picture" fitHeight="350.0" fitWidth="687.0" pickOnBounds="true">
+                        <ImageView fx:id="HomePageFeaturedGame_Picture" fitHeight="317.0" fitWidth="825.0" pickOnBounds="true">
                            <image>
-                              <Image url="@Image/BigTileTestPicture.png" />
+                              <Image url="@Image/ImagePlaceHolder.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
                         </ImageView>
                         <Label fx:id="FeaturedGameTitle_Label" layoutX="22.0" layoutY="56.0" prefHeight="53.0" prefWidth="450.0" styleClass="HomePageFeaturedGameTitle_Label" text="TERRARIA" />
                         <Label fx:id="FeaturedGameSubTitle_Label" layoutX="22.0" layoutY="102.0" prefHeight="20.0" prefWidth="450.0" styleClass="HomePageFeaturedGameSubTitle_Label" text="Re-Logic" />
@@ -30,7 +31,7 @@
                               <Label fx:id="FeaturedGameDescription_Label" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="450.0" styleClass="HomePageFeaturedGameDescription_Label" text="The very world is at your fingertips as you fight for survival, fortune, and glory. " wrapText="true" />
                            </children>
                         </Pane>
-                        <Pane layoutX="22.0" layoutY="260.0" prefHeight="63.0" prefWidth="125.0">
+                        <Pane layoutX="22.0" layoutY="233.0" prefHeight="63.0" prefWidth="125.0">
                            <children>
                               <Pane fx:id="HomePageFeaturedGameBuyNow_Pane" layoutY="28.0" prefHeight="35.0" prefWidth="125.0" styleClass="HomePageFeaturedGameTransaction_Pane">
                                  <children>
@@ -49,35 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Label layoutX="15.0" layoutY="14.0" styleClass="HomePage-Label" text="FEATURED GAME" />
-                  <Pane layoutX="714.0" layoutY="40.0" prefHeight="350.0" prefWidth="150.0">
-                     <children>
-                        <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="350.0" prefWidth="150.0" scaleShape="false" spacing="10.0">
-                           <children>
-                              <Pane prefHeight="62.0" prefWidth="150.0" styleClass="HomePageRecommendedGameTile_Pane">
-                                 <children>
-                                    <Pane layoutX="4.0" layoutY="3.0" prefHeight="55.0" prefWidth="40.0">
-                                       <children>
-                                          <ImageView fx:id="HomePageRecommendedGamesThumbnail_Image" fitHeight="55.0" fitWidth="40.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@Image/SmallTileTestPicture.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </Pane>
-                                    <Label alignment="CENTER" layoutX="49.0" layoutY="3.0" prefHeight="55.0" prefWidth="96.0" styleClass="HomePageRecommendedGameTitle_Label" text="Terraria" wrapText="true" />
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </VBox>
-                     </children>
-                  </Pane>
+                  <Label layoutX="28.0" layoutY="14.0" styleClass="HomePage-Label" text="FEATURED GAME" />
                   <Label layoutX="15.0" layoutY="411.0" styleClass="HomePage-Label" text="DISCOVER SOMETHING NEW" />
                   <Pane layoutX="15.0" layoutY="447.0" prefHeight="250.0" prefWidth="848.0">
                      <children>

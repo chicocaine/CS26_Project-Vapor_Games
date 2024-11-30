@@ -11,7 +11,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.net.URL;
 
-public class VGMainProgramApplication extends Application {
+public class MainProgramApplication extends Application {
 
     private double xOffset = 0;
     private double yOffset = 0;
@@ -21,7 +21,7 @@ public class VGMainProgramApplication extends Application {
     public void start(Stage stage) throws IOException {
         this.stage = stage;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/VGMainScreen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 760);
         stage.setTitle("Vapor Games");
         stage.setScene(scene);
@@ -40,7 +40,7 @@ public class VGMainProgramApplication extends Application {
 
         stage.show();
 
-        VGMainScreenController controller = fxmlLoader.getController();
+        MainScreenController controller = fxmlLoader.getController();
         controller.setStage(stage);
 
 
