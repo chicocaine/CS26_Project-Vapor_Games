@@ -64,6 +64,7 @@
 
 .RNB_SearchField-TextField {
     -fx-background-color: #2C2C2E;
+    -fx-text-fill: #ffffff;
 }
 
 .SmallCaseText {
