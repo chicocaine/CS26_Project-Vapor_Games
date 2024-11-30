@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Renaming and adding the Browse page">
-      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MediumGameTileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/MediumGameTile.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/BrowsePage.css" afterDir="false" />
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Adding the BrowsePage with Autopopulate the Hbox, both Library and Browse, Added a Transition Functions for more fun...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/LibraryPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/LibraryPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/BrowsePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrowsePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LibraryPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LibraryPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/LibraryPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/LibraryPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +184,7 @@
       <workItem from="1732528907616" duration="4521000" />
       <workItem from="1732535070214" duration="1314000" />
       <workItem from="1732666493297" duration="5421000" />
-      <workItem from="1732934214723" duration="11438000" />
+      <workItem from="1732934214723" duration="13522000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -250,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732938868439</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Adding the BrowsePage with Autopopulate the Hbox, both Library and Browse, Added a Transition Functions for more fun...">
+      <option name="closed" value="true" />
+      <created>1732946370552</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732946370552</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +274,8 @@
     <MESSAGE value="Ughhh" />
     <MESSAGE value="Added Dependencies for IntelliJ IDEA to work with DB connections." />
     <MESSAGE value="Renaming and adding the Browse page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renaming and adding the Browse page" />
+    <MESSAGE value="Adding the BrowsePage with Autopopulate the Hbox, both Library and Browse, Added a Transition Functions for more fun..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the BrowsePage with Autopopulate the Hbox, both Library and Browse, Added a Transition Functions for more fun..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
