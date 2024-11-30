@@ -3,6 +3,7 @@ package Utility;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Base64;
 
 public class PasswordManager {
 
@@ -12,38 +13,66 @@ public class PasswordManager {
     // Hashes a password with a randomly generated salt
     public String hashPassword(String password) {
         try {
-            // Generate a salt
             byte[] salt = generateSalt();
-
-            // Get an instance of the MessageDigest (SHA-256)
             MessageDigest digest = MessageDigest.getInstance(HASH_ALGORITHM);
-
-            // Combine the password and the salt
             digest.update(salt);
-
-            // Hash the password
             byte[] hashedPassword = digest.digest(password.getBytes());
 
-            // Convert the hash to a hexadecimal string
+            // Combine salt and hash as a single string
             StringBuilder hexString = new StringBuilder();
+            for (byte b : salt) {
+                hexString.append(String.format("%02x", b));
+            }
+            hexString.append(":"); // Delimiter between salt and hash
             for (byte b : hashedPassword) {
                 hexString.append(String.format("%02x", b));
             }
 
-            // Return the hex string as the hashed password
             return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Hashing algorithm not found", e);
         }
     }
 
-    // Verifies if the given password matches the hashed one
-    public boolean verifyPassword(String password, String hashedPassword) {
-        // Just a simple implementation; in real-world use, store the salt separately
-        String rehashedPassword = hashPassword(password);
 
-        // Compare the hashed password with the stored one
-        return rehashedPassword.equals(hashedPassword);
+    // Verifies if the given password matches the hashed one
+    public boolean verifyPassword(String password, String storedValue) {
+        try {
+            String[] parts = storedValue.split(":");
+            if (parts.length != 2) {
+                throw new IllegalArgumentException("Invalid stored hash format");
+            }
+
+            // Extract salt
+            byte[] salt = new byte[SALT_LENGTH];
+            for (int i = 0; i < salt.length; i++) {
+                salt[i] = (byte) Integer.parseInt(parts[0].substring(i * 2, (i + 1) * 2), 16);
+            }
+
+            // Hash the input password with the extracted salt
+            MessageDigest digest = MessageDigest.getInstance(HASH_ALGORITHM);
+            digest.update(salt);
+            byte[] hashedPassword = digest.digest(password.getBytes());
+
+            // Convert hashed password to hex string
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hashedPassword) {
+                hexString.append(String.format("%02x", b));
+            }
+
+            // Compare with stored hash
+            return hexString.toString().equals(parts[1]);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Hashing algorithm not found", e);
+        }
+    }
+
+
+    // Hashes a password with the provided salt
+    private byte[] hashWithSalt(String password, byte[] salt) throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance(HASH_ALGORITHM);
+        digest.update(salt);
+        return digest.digest(password.getBytes());
     }
 
     // Generates a random salt
@@ -55,15 +84,14 @@ public class PasswordManager {
     }
 
     public static void main(String[] args) {
+        //PasswordManager pwm = new PasswordManager();
+
         // Example usage
-        // String password = "superSecretPassword123!";
+        //String password = "superSecretPassword123!";
+        //String hashedPassword = pwm.hashPassword(password);
+        //System.out.println("Hashed Password: " + hashedPassword);
 
-        // Hash the password
-        // String hashedPassword = hashPassword(password);
-        // System.out.println("Hashed Password: " + hashedPassword);
-
-        // Verify the password
-        // boolean isValid = verifyPassword(password, hashedPassword);
-        // System.out.println("Password valid: " + isValid);
+        //boolean isValid = pwm.verifyPassword(password, hashedPassword);
+       // System.out.println("Password valid: " + isValid);
     }
 }

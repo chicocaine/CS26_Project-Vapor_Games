@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/sign out.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/CartPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +53,8 @@
       <list>
         <option value="package-info" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,6 +95,7 @@
     "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:CodeGenerator.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:LoginController.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
@@ -199,6 +199,7 @@
       <workItem from="1732627885738" duration="1498000" />
       <workItem from="1732665563350" duration="218000" />
       <workItem from="1732666460739" duration="1117000" />
+      <workItem from="1732968204278" duration="2366000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
