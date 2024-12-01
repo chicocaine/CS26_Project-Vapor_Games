@@ -73,7 +73,7 @@ public class SignUpController {
 
         // Call the userManager to register the new user
         // You can pass a default wallet value (e.g., 0.0) and photo (File can be null for now)
-        File defaultPhoto = new File("C:\\codes\\CS26\\CS26_Project-Vapor_Games\\src\\main\\resources\\Image\\ProfileTestPicture.png"); // You can add logic to handle profile photo upload
+        File defaultPhoto = new File("C:\\Users\\Hanazono Archive\\IdeaProjects\\CS26_Project-Vapor_Games\\src\\main\\resources\\Image\\ProfileTestPicture.png"); // You can add logic to handle profile photo upload
         userManager.registerUser(userName, passwordText, displayNameText, 0.0, defaultPhoto);
 
         // After successful registration, go to the Sign In page
