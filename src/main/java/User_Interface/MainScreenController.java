@@ -240,7 +240,7 @@ public class MainScreenController {
             fadeOut.play();
         } else {
             // No current pane, directly show the new one with fade-in (initially invisible)
-            MainContent_Pane.getChildren().setAll(newPane);
+            MainContent_Pane.getChildren().setAll(newPane)  ;
             newPane.setOpacity(0.0);  // Set the new pane as invisible initially
 
             FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), newPane);

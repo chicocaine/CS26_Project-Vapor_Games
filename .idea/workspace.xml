@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="Added Small functions and Details on the Program, the Search Field in the Top is now working.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/BrowsePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrowsePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/BrowsePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/BrowsePage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +195,8 @@
       <workItem from="1732627885738" duration="1498000" />
       <workItem from="1732665563350" duration="218000" />
       <workItem from="1732666460739" duration="1117000" />
-      <workItem from="1732978408657" duration="2574000" />
+      <workItem from="1732978408657" duration="2999000" />
+      <workItem from="1733025014276" duration="958000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -225,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732016202646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Small functions and Details on the Program, the Search Field in the Top is now working.">
+      <option name="closed" value="true" />
+      <created>1732981198324</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732981198324</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +252,8 @@
     <MESSAGE value="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Added Small functions and Details on the Program, the Search Field in the Top is now working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Small functions and Details on the Program, the Search Field in the Top is now working." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
