@@ -41,6 +41,8 @@ public class MainScreenController {
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
 
+    private boolean isDiscoverPage = false;  // Flag to track the current page state
+
     // === INITIALIZATION & SETUP ===
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -65,8 +67,10 @@ public class MainScreenController {
             handleBrowseButton();  // Handle browsing
         } else if (source == LibraryButton) {
             handleLibraryButton();  // Handle library button click
-        } else if (source == StoreButton || source == DiscoverButton_Pane) {
-            handleStoreButton();  // Handle store button click
+        } else if (source == StoreButton) {
+            handleStoreButton();  // Handle the store button click
+        } else if (source == DiscoverButton_Pane) {
+            handleStoreOrDiscoverButton();  // Handle both store and discover buttons
         } else if (source == SearchButton_Button) {
             handleSearchButton();  // Handle search button click
         } else if (source == AccountDropDown_Image) {
@@ -106,6 +110,7 @@ public class MainScreenController {
         SearchField_TextField.setText("");  // Clear the search field
     }
 
+
     private void handleSearchButton() {
         String query = SearchField_TextField.getText();
         if (!query.isEmpty()) {
@@ -114,7 +119,7 @@ public class MainScreenController {
     }
 
     private void handleAccountDropdown() {
-        // Add functionality for account options dropdown
+        loadAccountPage();
     }
 
     // === HELPER METHODS ===
@@ -135,6 +140,23 @@ public class MainScreenController {
             store.getStyleClass().add("LNB_SelectionHBoxHighlighted");
             library.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
         }
+    }
+
+    private void handleStoreOrDiscoverButton() {
+        if (isDiscoverPage) {
+            // If currently on the discover page, switch to store
+            toggleButtonState(false, true);  // Update button states
+            highlightSelectedButton(LibraryButton, StoreButton, false, true);  // Highlight the StoreButton
+            LoadHomePage();  // Load store page
+        } else {
+            // If currently on the store page, switch to discover
+            toggleButtonState(false, true);  // Set Store to true and Discover to false
+            highlightSelectedButton(LibraryButton, StoreButton, false, true);  // Highlight the Store button
+            LoadHomePage();  // Or load the discover page
+        }
+
+        // Toggle the state to indicate which page is active
+        isDiscoverPage = !isDiscoverPage;  // Toggle the page flag
     }
 
     // === PAGE LOADING METHODS ===
@@ -194,6 +216,19 @@ public class MainScreenController {
         }
     }
 
+    private void loadAccountPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AccountPage.fxml"));
+            Pane accountPagePane = loader.load();
+            setMainContent_Pane(accountPagePane);  // Set the main content to library page
+
+            AccountPageController libraryPageController = loader.getController();
+        } catch (IOException e) {
+            e.printStackTrace();  // Handle potential loading errors
+        }
+    }
+
+
     // === ACCOUNT INFO UPDATE ===
     private void updateAccountInfo() {
         String username = "march";  // Replace with actual username retrieval logic
@@ -240,7 +275,7 @@ public class MainScreenController {
             fadeOut.play();
         } else {
             // No current pane, directly show the new one with fade-in (initially invisible)
-            MainContent_Pane.getChildren().setAll(newPane);
+            MainContent_Pane.getChildren().setAll(newPane)  ;
             newPane.setOpacity(0.0);  // Set the new pane as invisible initially
 
             FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), newPane);

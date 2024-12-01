@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<Pane prefHeight="686.0" prefWidth="893.0" stylesheets="@Stylesheet/AccountPage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.AccountPageController">
+   <children>
+      <Label layoutX="28.0" layoutY="40.0" styleClass="label-ACCOUNT" text="Account" />
+      <Pane layoutX="64.0" layoutY="134.0" prefHeight="153.0" prefWidth="153.0" styleClass="Image-PROFILE_PICTURE">
+         <children>
+            <ImageView fx:id="ProfilePicture_Image" fitHeight="153.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" styleClass="Image-PROFILE_PICTURE">
+               <image>
+                  <Image url="@Image/ProfileTestPicture.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <VBox layoutX="266.0" layoutY="126.0" prefWidth="330.0" spacing="5.0">
+         <children>
+            <Label styleClass="label-ACCOUNT_DETAILS" text="Account Details" />
+            <Label styleClass="label-SMALL" text="user name" />
+            <TextField fx:id="Username_TextField" styleClass="textfield-CHANGEABLE" />
+            <Label styleClass="label-SMALL" text="e-mail" />
+            <TextField fx:id="Email_TextField" styleClass="textfield-CHANGEABLE" />
+         </children>
+      </VBox>
+      <VBox layoutX="266.0" layoutY="338.0" prefWidth="330.0" spacing="5.0">
+         <children>
+            <Label styleClass="label-ACCOUNT_DETAILS" text="Password" />
+            <Label styleClass="label-SMALL" text="old password" />
+            <PasswordField fx:id="OldPassword_TextField" styleClass="textfield-CHANGEABLE" />
+            <Label styleClass="label-SMALL" text="new password" />
+            <PasswordField fx:id="NewPassword_TextField" styleClass="textfield-CHANGEABLE" />
+            <Button fx:id="ChangePassword_Button" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" styleClass="button-CHANGE_PASSWORD" text="change password">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+      <ImageView fx:id="ChangeProfilePicture_Image" fitHeight="24.0" fitWidth="24.0" layoutX="200.0" layoutY="268.0" onMouseClicked="#HandlesButtonClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/ChangeProfilePicButton.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+   <styleClass>
+      <String fx:value="background" />
+      <String fx:value="background" />
+   </styleClass>
+</Pane>
