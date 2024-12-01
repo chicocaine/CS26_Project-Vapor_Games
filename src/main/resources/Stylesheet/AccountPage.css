@@ -1,0 +1,59 @@
+.background {
+    -fx-background-color: #181819;
+}
+
+.label-ACCOUNT {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+.Image-PROFILE_PICTURE {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 76.5;
+}
+
+.label-ACCOUNT_DETAILS {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 23px;
+}
+
+.label-SMALL {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 18px;
+}
+
+.textfield-CHANGEABLE {
+    -fx-background-color: #181819;
+    -fx-border-color: #878787;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 12px;
+}
+
+.button-CHANGE_PASSWORD {
+    -fx-background-color: #181819;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 23px;
+}
+
+.button-CHANGE_PASSWORD:hover {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #181819;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 23px;
+}
+
+@font-face {
+    -font-family: 'Sora Bold';
+    src: url(Fonts/Sora-Bold.ttf);
+}
+
+@font-face {
+    -font-family: 'Sora Regular';
+    src: url('Fonts/Sora-Regular.ttf')
+}

@@ -119,9 +119,6 @@ public class SignInController {
         controller.setStage(stage);
     }
 
-
-
-
     private void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
