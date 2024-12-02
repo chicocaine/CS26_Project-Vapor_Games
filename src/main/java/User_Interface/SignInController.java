@@ -74,7 +74,7 @@ public class SignInController {
         if (user != null) {
             proceedToDashboard(user);
         } else {
-            showAlert("Authentication Failed", "Invalid email or password.", Alert.AlertType.ERROR);
+            showCustomPopup();
         }
     }
 
@@ -115,12 +115,14 @@ public class SignInController {
     }
 
     private void showCustomPopup() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SignUpErrorPopUp.fxml"));
-        Stage popupStage = new Stage();
-        popupStage.setScene(new Scene(loader.load()));
-        popupStage.initStyle(StageStyle.UTILITY);
-        popupStage.setResizable(false);
-        popupStage.show();
+        Stage stage = (Stage) signIn.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SignInErrorPopUp.fxml"));
+        Scene scene = new Scene(loader.load(), 428, 578);
+        stage.setTitle("Vapor Games");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
     private void showCustomPopupWithUser(User user) throws IOException {
         Stage stage = (Stage) signIn.getScene().getWindow();
