@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/LoginUnsuccessful.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/SignUpSuccessful.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SignInErrorPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignInErrorPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CreateAccountSuccessPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CreateAccountSuccessPopUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

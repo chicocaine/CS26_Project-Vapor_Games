@@ -7,14 +7,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="428.0" styleClass="Background" stylesheets="@Stylesheet/VGCredentials.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="428.0" styleClass="Background" stylesheets="@Stylesheet/VGCredentials.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.PopUps.SignUpSuccessful">
    <children>
       <Text fill="WHITE" layoutX="55.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="signup" text="Success!" textAlignment="CENTER" wrappingWidth="317.22" y="86.0">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Text>
-      <Button layoutX="55.0" layoutY="431.0" mnemonicParsing="false" prefHeight="45.36" prefWidth="317.22" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="Continue to Store" textFill="WHITE">
+      <Button fx:id="continueToLogin" layoutX="55.0" layoutY="431.0" mnemonicParsing="false" prefHeight="45.36" prefWidth="317.22" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="Continue to Log In Page" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class SignUpController {
 
@@ -49,14 +50,14 @@ public class SignUpController {
         signUp.setOnAction(event -> {
             try {
                 handleSignUp();
-            } catch (IOException e) {
+            } catch (IOException | URISyntaxException e) {
                 throw new RuntimeException(e);
             }
         });
     }
 
     // Handle user registration (Sign Up)
-    private void handleSignUp() throws IOException {
+    private void handleSignUp() throws IOException, URISyntaxException {
         // Get user input from the form
         String userName = username.getText().trim();
         String displayNameText = displayName.getText().trim();
@@ -65,25 +66,33 @@ public class SignUpController {
         // Validate user input
         if (userName.isEmpty() || displayNameText.isEmpty() || passwordText.isEmpty()) {
             // Show an error message if fields are empty
-            System.out.println("All fields must be filled.");
+            System.out.println("Error: All fields must be filled.");
             return;
         }
 
-        // Optionally, you can add further validation here (like checking if the username already exists)
+        // Check if the username already exists (optional)
+        if (userManager.checkUsernameExists(userName)) { // Assuming userManager has a method `isUsernameTaken`
+            System.out.println("Error: Username already exists. Please choose a different one.");
+            return;
+        }
 
-        // Call the userManager to register the new user
-        // You can pass a default wallet value (e.g., 0.0) and photo (File can be null for now)
-        File defaultPhoto = new File("C:\\Users\\Hanazono Archive\\IdeaProjects\\CS26_Project-Vapor_Games\\src\\main\\resources\\Image\\ProfileTestPicture.png"); // You can add logic to handle profile photo upload
-        userManager.registerUser(userName, passwordText, displayNameText, 0.0, defaultPhoto);
+        // Set default profile photo
+        // Use a relative path for portability
+        File defaultPhoto = new File("C:\\codes\\CS26\\CS26_Project-Vapor_Games\\src\\main\\resources\\Image\\ProfileTestPicture.png");
 
-        // After successful registration, go to the Sign In page
-        Stage stage = (Stage) signUp.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/SignIn.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 428, 578);
-        stage.setTitle("Vapor Games");
-        stage.setScene(scene);
-        stage.setResizable(false);
+        // Register the user
+        try {
+            userManager.registerUser(userName, passwordText, displayNameText, 0.0, defaultPhoto);
+            System.out.println("User registered successfully.");
+
+            // Show success popup
+            successPopup();
+        } catch (Exception e) {
+            System.err.println("Error during user registration: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
+
 
     // Handle the Sign In page redirection
     private void handleSignIn() throws IOException {
@@ -93,5 +102,16 @@ public class SignUpController {
         stage.setTitle("Vapor Games");
         stage.setScene(scene);
         stage.setResizable(false);
+    }
+
+    private void successPopup() throws IOException {
+        Stage stage = (Stage) signIn.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CreateAccountSuccessPopUp.fxml"));
+        Scene scene = new Scene(loader.load(), 428, 578);
+        stage.setTitle("Vapor Games");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 }
