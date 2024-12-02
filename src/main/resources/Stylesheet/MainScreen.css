@@ -65,15 +65,65 @@
 }
 
 .TNB_UserAccount-Button {
-    -fx-text-fill: #9747FF;
+    -fx-text-fill: #ffffff;
     -fx-font-family: 'Sora Regular';
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-font-weight: Bold;
 }
 
 .TNB_UserAccount-Button:hover {
     -fx-text-fill: #A5A5AA;
 }
+
+.menu-button {
+    -fx-font-family: 'Sora Regular';            /* Font family */
+    -fx-font-size: 17px;                 /* Font size */
+    -fx-font-weight: bold;               /* Font weight */
+    -fx-background-color: #050106;       /* Background color */
+    -fx-text-fill: #ffffff;              /* Text color */
+}
+
+.menu-button .context-menu {
+    -fx-translate-x: -130px; /* Adjust the value to shift the menu left */
+    -fx-background-color: #1D1B1D;
+    -fx-text-fill: #ffffff;
+}
+
+.menu-button .context-menu .menu-item{
+    -fx-background-color: transparent; /* Transparent background by default */
+    -fx-padding: 8 15 8 15;            /* Add padding for readability */
+    -fx-font-family: 'Sora Regular';          /* Set font family */
+    -fx-font-size: 14px;               /* Set font size */
+    -fx-text-fill: #ffffff;
+}
+
+.menu-button .arrow {
+    -fx-min-width: 0;
+    -fx-min-height: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+.menu-button .context-menu .menu-item:hover {
+    -fx-background-color: #333333; /* Darker background on hover */
+    -fx-text-fill: #ffffff;        /* Ensure the text stays white */
+}
+
+.menu-button .context-menu .menu-item .label {
+    -fx-text-fill: #ffffff;        /* Ensure the label text stays white */
+}
+
+.Label-MenuItem {
+    -fx-padding: 5 15 5 15;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 14px;
+}
+
+.separator-MenuItem {
+    -fx-padding: 5 15 5 15;
+}
+
 
 @font-face {
     -font-family: 'Sora Regular';

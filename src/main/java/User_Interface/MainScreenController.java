@@ -3,10 +3,7 @@ package User_Interface;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -15,6 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -23,11 +21,15 @@ public class MainScreenController {
     private Stage stage;
 
     // === UI COMPONENTS ===
-    @FXML
-    private ImageView AccountDropDown_Image, AccountPicture_Image, SearchButton_Button;
 
     @FXML
-    private Label AccountUser_Label;
+    private MenuItem AccountDropMenu, WalletDropMenu, TransactionHistoryDropMenu;
+
+    @FXML
+    private ImageView AccountPicture_Image, SearchButton_Button;
+
+    @FXML
+    private Label AccountUser_Label, AccountUserLabelDropMenu;
 
     @FXML
     private Pane BrowsePane_Button, CartButton_Pane, DiscoverButton_Pane, MainContent_Pane, ReturnButton_Pane, LogoutButton;
@@ -73,10 +75,18 @@ public class MainScreenController {
             handleStoreOrDiscoverButton();  // Handle both store and discover buttons
         } else if (source == SearchButton_Button) {
             handleSearchButton();  // Handle search button click
-        } else if (source == AccountDropDown_Image) {
-            handleAccountDropdown();  // Handle account dropdown interaction
         }
     }
+
+    @FXML
+    void HandlesDropMenuAction(ActionEvent event) {
+        if (event.getSource() == AccountDropMenu){
+            handleAccountDropdown();
+        } else if (event.getSource() == WalletDropMenu){
+            handleWalletDropDown();
+        }
+    }
+
 
     // === HANDLE SPECIFIC BUTTON ACTIONS ===
     private void handleLogout() {
@@ -122,6 +132,10 @@ public class MainScreenController {
         loadAccountPage();
     }
 
+    private void handleWalletDropDown(){
+        loadWalletPage();
+    }
+
     // === HELPER METHODS ===
     private void performSearch(String query) {
         handleBrowseButton();  // Handle search by calling browse button handler
@@ -133,14 +147,18 @@ public class MainScreenController {
     }
 
     private void highlightSelectedButton(HBox library, HBox store, boolean isLibrary, boolean isStore) {
+        // Remove the highlight class from both buttons first
+        library.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
+        store.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
+
+        // Now add the highlight class to the selected button
         if (isLibrary) {
             library.getStyleClass().add("LNB_SelectionHBoxHighlighted");
-            store.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
         } else if (isStore) {
             store.getStyleClass().add("LNB_SelectionHBoxHighlighted");
-            library.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
         }
     }
+
 
     private void handleStoreOrDiscoverButton() {
         if (isDiscoverPage) {
@@ -222,9 +240,21 @@ public class MainScreenController {
             Pane accountPagePane = loader.load();
             setMainContent_Pane(accountPagePane);  // Set the main content to library page
 
-            AccountPageController libraryPageController = loader.getController();
+            AccountPageController accountPageController = loader.getController();
         } catch (IOException e) {
             e.printStackTrace();  // Handle potential loading errors
+        }
+    }
+
+    private void loadWalletPage(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/WalletPage.fxml"));
+            Pane walletPagePane = loader.load();
+            setMainContent_Pane(walletPagePane);
+
+            WalletPageController walletPageController = loader.getController();
+        } catch (IOException e){
+            e.printStackTrace();
         }
     }
 
@@ -233,6 +263,7 @@ public class MainScreenController {
     private void updateAccountInfo() {
         String username = "march";  // Replace with actual username retrieval logic
         AccountUser_Label.setText(username);
+        AccountUserLabelDropMenu.setText(username);
 
         String profileImagePath = "/Image/ProfileTestPicture.png";  // Replace with actual image path
         AccountPicture_Image.setImage(new Image(profileImagePath));  // Set profile image
@@ -285,4 +316,6 @@ public class MainScreenController {
             fadeIn.play();
         }
     }
+
+
 }

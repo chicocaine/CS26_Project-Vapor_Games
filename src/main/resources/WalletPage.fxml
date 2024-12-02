@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<Pane prefHeight="686.0" prefWidth="893.0" styleClass="background" stylesheets="@Stylesheet/WalletPage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.WalletPageController">
+   <children>
+      <Label layoutX="28.0" layoutY="34.0" styleClass="label-Header" text="Wallet / Agscoin" />
+      <Label layoutX="66.0" layoutY="89.0" styleClass="label-SubHeader2" text="Input Code" />
+      <TextField fx:id="WalletInputCode_TextField" layoutX="66.0" layoutY="117.0" prefWidth="330.0" promptText="xxxxxxxxxxxxxxxxxxxxxxxx" styleClass="inputCode-TextField" />
+      <Button fx:id="WalletInputCodeButton_Button" layoutX="404.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" prefHeight="29.0" prefWidth="88.0" styleClass="inputCode-Button" text="Continue" />
+      <VBox layoutX="601.0" layoutY="101.0" prefHeight="80.0" prefWidth="266.0" styleClass="balance-VBox">
+         <children>
+            <Pane prefHeight="30.0" styleClass="balance-Pane">
+               <children>
+                  <Label layoutY="1.0" prefHeight="28.0" prefWidth="266.0" styleClass="balance-Label" text="Your Account">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </Pane>
+            <HBox prefHeight="50.0">
+               <children>
+                  <Pane prefHeight="50.0" prefWidth="80.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="80.0" styleClass="balance-Label" text="Balance:" />
+                     </children>
+                  </Pane>
+                  <HBox prefHeight="50.0" prefWidth="186.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="60.0" styleClass="balance-Label" text="AGS" />
+                        <Label fx:id="WalleCurrentAGSCoin_Label" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="126.0" styleClass="balance-Label" text="0.00" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="43.0" layoutY="343.0" styleClass="label-SubHeader2" text="What is AGSCOIN?" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="43.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/Agscoin.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="124.0" layoutY="376.0" styleClass="label-SubHeader3" text="AGSCOIN" />
+      <Label layoutX="124.0" layoutY="405.0" styleClass="label-SubHeader4" text="The Currency of Innovation and Play" />
+      <Label layoutX="43.0" layoutY="434.0" prefHeight="130.0" prefWidth="460.0" styleClass="label-SubHeader5" text="Ags Coin is the official digital currency of Vapor Games, designed to power a vibrant virtual economy where players can purchase in-game assets and unlock premium content. It fosters creativity and enhances engagement by streamlining access to exclusive features. With Ags Coin, players seamlessly immerse themselves in an innovative gaming experience." wrapText="true" />
+   </children>
+</Pane>
