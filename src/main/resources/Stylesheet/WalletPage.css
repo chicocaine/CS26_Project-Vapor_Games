@@ -1,0 +1,78 @@
+.background {
+    -fx-background-color: #1E1E1E;
+}
+
+.label-Header {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-weight: bold;
+    -fx-font-size: 36px;
+}
+
+
+.label-SubHeader2 {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.label-SubHeader3 {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}
+
+.label-SubHeader4 {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.label-SubHeader5 {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 14px;
+}
+
+.inputCode-TextField {
+    -fx-background-color: #1E1E1E;
+    -fx-border-color: #ffffff;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 13px;
+}
+
+.inputCode-Button {
+    -fx-border-radius: 4;
+    -fx-background-color: #9747FF;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.balance-Label {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+    -fx-padding: 0 10 0 10;
+}
+
+.balance-Pane{
+    -fx-background-color: #9747FF;
+    -fx-background-radius: 4 4 0 0;
+}
+
+.balance-VBox {
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 4;
+}
+
+
+@font-face {
+    -font-family: 'Sora Regular';
+    src: url('Fonts/Sora-Regular.ttf')
+}

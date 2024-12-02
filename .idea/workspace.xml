@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainLogin.java" afterDir="false" />
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="well..">
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/WalletPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/Agscoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/WalletPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/WalletPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/sign out.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/signout.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/MainScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/MainScreen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +59,8 @@
       <list>
         <option value="package-info" />
         <option value="FxmlFile" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -96,6 +105,7 @@
     &quot;Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin script (Beta).build.gradle.kts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -113,7 +123,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -140,8 +150,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="MainLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="User_Interface.MainLogin" />
+    <configuration name="MainProgramApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="User_Interface.MainProgramApplication" />
       <module name="CS26_Project-Vapor_Games.main" />
       <extension name="coverage">
         <pattern>
@@ -155,16 +165,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainLogin" />
+        <item itemvalue="Application.MainProgramApplication" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19072.14" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19072.14" />
       </set>
     </attachedChunks>
   </component>
@@ -196,7 +205,9 @@
       <workItem from="1732627885738" duration="1498000" />
       <workItem from="1732665563350" duration="218000" />
       <workItem from="1732666460739" duration="1117000" />
-      <workItem from="1732968204278" duration="2366000" />
+      <workItem from="1732978408657" duration="2574000" />
+      <workItem from="1733143355881" duration="84000" />
+      <workItem from="1733144092046" duration="7527000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -222,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732016202646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="well..">
+      <option name="closed" value="true" />
+      <created>1733031979782</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733031979782</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +263,8 @@
     <MESSAGE value="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="well.." />
+    <option name="LAST_COMMIT_MESSAGE" value="well.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
