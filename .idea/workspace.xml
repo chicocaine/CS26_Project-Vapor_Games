@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/AccountPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/AccountPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/LoginSuccessful.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/LoginSuccessful.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/WalletPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/WalletPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGCredentials.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGCredentials.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/WalletPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/WalletPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

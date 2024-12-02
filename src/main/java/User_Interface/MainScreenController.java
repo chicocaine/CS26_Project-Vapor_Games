@@ -1,5 +1,6 @@
 package User_Interface;
 
+import Accounts.User;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -44,6 +46,17 @@ public class MainScreenController {
     private boolean isStoreButtonClicked = true;
 
     private boolean isDiscoverPage = false;  // Flag to track the current page state
+
+    @FXML
+    private AnchorPane walletPageContainer; // Placeholder for wallet page content
+
+    private User currentUser;
+
+    public void setUser(User user) {
+        this.currentUser = user;
+
+    }
+
 
     // === INITIALIZATION & SETUP ===
     public void setStage(Stage stage) {
@@ -241,22 +254,27 @@ public class MainScreenController {
             setMainContent_Pane(accountPagePane);  // Set the main content to library page
 
             AccountPageController accountPageController = loader.getController();
+            accountPageController.setUserOnProfile(currentUser);
         } catch (IOException e) {
             e.printStackTrace();  // Handle potential loading errors
         }
     }
 
-    private void loadWalletPage(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/WalletPage.fxml"));
-            Pane walletPagePane = loader.load();
-            setMainContent_Pane(walletPagePane);
+    private void loadWalletPage() {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/WalletPage.fxml"));
+        Pane walletPagePane = loader.load();
+        setMainContent_Pane(walletPagePane);
 
-            WalletPageController walletPageController = loader.getController();
-        } catch (IOException e){
-            e.printStackTrace();
-        }
+        WalletPageController walletPageController = loader.getController();
+        System.out.println("Setting user on wallet page" + currentUser.getWallet().getBalance());
+        walletPageController.setUserOnWallet(currentUser);
+        System.out.println("Wallet page loaded successfully.");
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.out.println("[ERROR]: Unable to load WalletPage.fxml");
     }
+}
 
 
     // === ACCOUNT INFO UPDATE ===
@@ -318,4 +336,15 @@ public class MainScreenController {
     }
 
 
+    public void setUserOnDashboard(User user) {
+        AccountUser_Label.setText(user.getUserName());
+        AccountUserLabelDropMenu.setText(user.getUserName());
+        String profileImagePath = user.getPfpURL(); // Assuming User class has a method to get profile image path
+        if (profileImagePath != null && !profileImagePath.isEmpty()) {
+            AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));//test image
+        } else {
+            // Set a default profile image if the user does not have one
+            AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));
+        }
+    }
 }

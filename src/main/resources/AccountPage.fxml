@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<Pane prefHeight="686.0" prefWidth="893.0" stylesheets="@Stylesheet/AccountPage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.AccountPageController">
+<Pane prefHeight="686.0" prefWidth="893.0" stylesheets="@Stylesheet/AccountPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.AccountPageController">
    <children>
       <Label layoutX="28.0" layoutY="40.0" styleClass="label-ACCOUNT" text="Account" />
       <Pane layoutX="64.0" layoutY="134.0" prefHeight="153.0" prefWidth="153.0" styleClass="Image-PROFILE_PICTURE">
@@ -27,10 +26,10 @@
       <VBox layoutX="266.0" layoutY="126.0" prefWidth="330.0" spacing="5.0">
          <children>
             <Label styleClass="label-ACCOUNT_DETAILS" text="Account Details" />
-            <Label styleClass="label-SMALL" text="user name" />
-            <TextField fx:id="Username_TextField" styleClass="textfield-CHANGEABLE" />
-            <Label styleClass="label-SMALL" text="e-mail" />
-            <TextField fx:id="Email_TextField" styleClass="textfield-CHANGEABLE" />
+            <Label styleClass="label-SMALL" text="Username" />
+            <TextField fx:id="Username_TextField" editable="false" styleClass="textfield-CHANGEABLE" />
+            <Label styleClass="label-SMALL" text="Name" />
+            <TextField fx:id="Email_TextField" editable="false" styleClass="textfield-CHANGEABLE" />
          </children>
       </VBox>
       <VBox layoutX="266.0" layoutY="338.0" prefWidth="330.0" spacing="5.0">

@@ -1,5 +1,6 @@
 package User_Interface;
 
+import Accounts.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -64,6 +65,19 @@ public class AccountPageController {
             }
         } else if (event.getSource() == ChangeProfilePicture_Image){
             //Add Functioons Here
+        }
+    }
+    public void setUserOnProfile(User user){
+        if (user.getUserName() != null && user.getName() != null ){
+            Username_TextField.setText(user.getUserName());
+            Email_TextField.setText(user.getName());
+            OldPassword_TextField.setText(OldPassword);
+            NewPassword_TextField.setText(NewPassword);
+        }else {
+            Username_TextField.setText("Username");
+            Email_TextField.setText("Email");
+            OldPassword_TextField.setText("Old Password");
+            NewPassword_TextField.setText("New Password");
         }
     }
 }

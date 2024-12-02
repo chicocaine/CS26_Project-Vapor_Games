@@ -2,6 +2,7 @@ package User_Interface;
 
 import Accounts.User;
 import Accounts.UserManager;
+import User_Interface.PopUps.LoginSuccessful;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -64,15 +65,13 @@ public class SignInController {
         System.out.println(test);
 
         if (email.isEmpty() || password.isEmpty()) {
-            showCustomPopup("/SignUpErrorPopUp.fxml");
+            showCustomPopup();
             return;
         }
 
         User user = userManager.loadUserSession(email, password);
         System.out.println(user);
         if (user != null) {
-            showAlert("Success", "Welcome, " + user.getName() + "!", Alert.AlertType.INFORMATION);
-            // Proceed to the next stage of the application
             proceedToDashboard(user);
         } else {
             showAlert("Authentication Failed", "Invalid email or password.", Alert.AlertType.ERROR);
@@ -91,33 +90,21 @@ public class SignInController {
 
     private void proceedToDashboard(User user) throws IOException {
         Stage stage = (Stage) signIn.getScene().getWindow();
+        stage.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1080, 760);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LoginSuccessfulPopUP.fxml"));
+        Scene scene = new Scene(loader.load(), 428, 578);
+        LoginSuccessful loginController = loader.getController();
+
+        // Pass the User object to the LoginSuccessful controller
+        loginController.setUser(user);
+
         stage.setTitle("Vapor Games");
         stage.setScene(scene);
         stage.setResizable(false);
-
-        // Load the icon
-        URL resourceUrl = getClass().getResource("/Image/icon.jpg");
-        if (resourceUrl != null) {
-            Image iconImage = new Image(resourceUrl.toExternalForm());
-            stage.getIcons().add(iconImage); // Directly add the Image
-        } else {
-            System.out.println("[ERROR]: Icon image not found at the specified path.");
-            System.out.println("Resource URL: " + resourceUrl);
-        }
-
-        // Show the stage
         stage.show();
-
-        // Center the stage on the screen
-        stage.centerOnScreen();
-
-        // Pass the stage to the controller
-        MainScreenController controller = fxmlLoader.getController();
-        controller.setStage(stage);
     }
+
 
     private void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
@@ -127,12 +114,29 @@ public class SignInController {
         alert.showAndWait();
     }
 
-    private void showCustomPopup(String fxmlPath) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+    private void showCustomPopup() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SignUpErrorPopUp.fxml"));
         Stage popupStage = new Stage();
         popupStage.setScene(new Scene(loader.load()));
         popupStage.initStyle(StageStyle.UTILITY);
         popupStage.setResizable(false);
         popupStage.show();
     }
+    private void showCustomPopupWithUser(User user) throws IOException {
+        Stage stage = (Stage) signIn.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LoginSuccessfulPopUP.fxml"));
+        Stage popupStage = new Stage();
+        popupStage.setScene(new Scene(loader.load(), 428, 578));
+        popupStage.initStyle(StageStyle.UTILITY);
+        popupStage.setResizable(false);
+
+        // Pass the user data to the controller
+        LoginSuccessful controller = loader.getController();
+        controller.setUser(user);
+
+        popupStage.show();
+    }
+
 }
+

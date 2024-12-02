@@ -7,7 +7,8 @@ module User_Interface {
     requires java.sql;
     requires com.zaxxer.hikari;
     requires com.gluonhq.attach.audio;
-
+    opens User_Interface.PopUps to javafx.fxml;
     opens User_Interface to javafx.fxml;
     exports User_Interface;
+    exports Accounts;
 }

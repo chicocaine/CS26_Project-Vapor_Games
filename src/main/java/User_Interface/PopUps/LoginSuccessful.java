@@ -2,8 +2,11 @@ package User_Interface.PopUps;
 
 import Accounts.User;
 import User_Interface.MainScreenController;
+import User_Interface.WalletPageController;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -13,40 +16,44 @@ import java.io.IOException;
 import java.net.URL;
 
 public class LoginSuccessful {
+    private User currentUser; // Add a field to store the User object
 
     @FXML
     private Button continueToStore;
 
+    @FXML
+    private void initialize() {
+        continueToStore.setOnAction(event -> {
+            try {
+                proceedToDashboard();
+                System.out.println("continueToStore button clicked");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
 
-    private void proceedToDashboard(User user) throws IOException {
+    public void setUser(User user) {
+        this.currentUser = user;
+        System.out.println("User set in LoginSuccessful: " + currentUser);
+    }
+
+    private void proceedToDashboard() throws IOException {
         Stage stage = (Stage) continueToStore.getScene().getWindow();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 760);
         stage.setTitle("Vapor Games");
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.setResizable(false);
 
-        // Load the icon
-        URL resourceUrl = getClass().getResource("/Image/icon.jpg");
-        if (resourceUrl != null) {
-            Image iconImage = new Image(resourceUrl.toExternalForm());
-            stage.getIcons().add(iconImage); // Directly add the Image
-        } else {
-            System.out.println("[ERROR]: Icon image not found at the specified path.");
-            System.out.println("Resource URL: " + resourceUrl);
-        }
+        MainScreenController mainController = fxmlLoader.getController();
+        mainController.setUserOnDashboard(currentUser);
+        mainController.setUser(currentUser);
 
-        // Show the stage
+
         stage.show();
-
-        // Center the stage on the screen
-        stage.centerOnScreen();
-
-        // Pass the stage to the controller
-        MainScreenController controller = fxmlLoader.getController();
-        controller.setStage(stage);
     }
+
 }
-
-
