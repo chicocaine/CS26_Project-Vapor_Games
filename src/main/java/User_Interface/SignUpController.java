@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -19,6 +20,9 @@ public class SignUpController {
     private TextField displayName;
 
     @FXML
+    private TextField passtxtfield;
+
+    @FXML
     private PasswordField password;
 
     @FXML
@@ -26,6 +30,9 @@ public class SignUpController {
 
     @FXML
     private Button signUp;
+
+    @FXML
+    private ImageView togglePass;
 
     @FXML
     private TextField username;
@@ -38,6 +45,8 @@ public class SignUpController {
 
     @FXML
     private void initialize() {
+        passtxtfield.setVisible(false);
+
         // Attach event listeners to buttons
         signIn.setOnAction(event -> {
             try {
@@ -54,9 +63,16 @@ public class SignUpController {
                 throw new RuntimeException(e);
             }
         });
+        togglePass.setOnMousePressed(event -> {
+            viewPass();
+        });
+        togglePass.setOnMouseReleased(event -> {
+            hidePass();
+        });
     }
 
     // Handle user registration (Sign Up)
+
     private void handleSignUp() throws IOException, URISyntaxException {
         // Get user input from the form
         String userName = username.getText().trim();
@@ -72,7 +88,7 @@ public class SignUpController {
 
         // Check if the username already exists (optional)
         if (userManager.checkUsernameExists(userName)) { // Assuming userManager has a method `isUsernameTaken`
-            System.out.println("Error: Username already exists. Please choose a different one.");
+            failedPopup();
             return;
         }
 
@@ -95,6 +111,7 @@ public class SignUpController {
 
 
     // Handle the Sign In page redirection
+    @FXML
     private void handleSignIn() throws IOException {
         Stage stage = (Stage) signUp.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/SignIn.fxml"));
@@ -114,4 +131,32 @@ public class SignUpController {
         stage.setResizable(false);
         stage.show();
     }
+
+    private void failedPopup() throws IOException {
+        Stage stage = (Stage) signIn.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SignUpErrorPopUp.fxml"));
+        Scene scene = new Scene(loader.load(), 428, 578);
+        stage.setTitle("Vapor Games");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+    private void viewPass(){
+        password.setVisible(false);
+        System.out.println("View Pass CLicked");
+        String pass = password.getText();
+        passtxtfield.setText(pass);
+        passtxtfield.setVisible(true);
+    }
+
+    private void hidePass(){
+        password.setVisible(true);
+        System.out.println("hide Pass CLicked");
+        passtxtfield.setVisible(false);
+
+
+    }
+
+
 }

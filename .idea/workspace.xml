@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/SignUpSuccessful.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/SignUpUnsuccessful.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CreateAccountSuccessPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CreateAccountSuccessPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SignUpErrorPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignUpErrorPopUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +207,9 @@
       <workItem from="1733098959976" duration="175000" />
       <workItem from="1733110661536" duration="566000" />
       <workItem from="1733111382601" duration="216000" />
+      <workItem from="1733191843595" duration="1121000" />
+      <workItem from="1733201486068" duration="4473000" />
+      <workItem from="1733206865275" duration="1863000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -269,6 +275,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/Accounts/User.java</url>
           <line>25</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/User_Interface/SignInController.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

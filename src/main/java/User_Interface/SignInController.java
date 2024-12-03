@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -31,7 +32,13 @@ public class SignInController {
     @FXML
     private Button signIn;
 
+    @FXML
+    private TextField passwordtxtfield;
+
     private UserManager userManager;
+
+    @FXML
+    private ImageView togglePass;
 
     public SignInController() {
         this.userManager = new UserManager();
@@ -39,6 +46,7 @@ public class SignInController {
 
     @FXML
     private void initialize() {
+        passwordtxtfield.setVisible(false);
         // Attach event listeners to buttons
         signIn.setOnAction(event -> {
             try {
@@ -53,6 +61,12 @@ public class SignInController {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        });
+        togglePass.setOnMousePressed(event -> {
+            viewPass();
+        });
+        togglePass.setOnMouseReleased(event -> {
+            hidePass();
         });
     }
 
@@ -79,13 +93,15 @@ public class SignInController {
     }
 
     private void handleRegister() throws IOException {
-        Stage stage = (Stage) signIn.getScene().getWindow();
+        Stage stage = (Stage) inputEmail.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SignUp.fxml"));
+        Scene scene = new Scene(loader.load(), 428, 578);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/SignUp.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 428, 578);
         stage.setTitle("Vapor Games");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.show();
     }
 
     private void proceedToDashboard(User user) throws IOException {
@@ -138,6 +154,22 @@ public class SignInController {
         controller.setUser(user);
 
         popupStage.show();
+    }
+
+    private void viewPass(){
+        inputPassword.setVisible(false);
+        System.out.println("View Pass CLicked");
+        String pass = inputPassword.getText();
+        passwordtxtfield.setText(pass);
+        passwordtxtfield.setVisible(true);
+    }
+
+    private void hidePass(){
+        inputPassword.setVisible(true);
+        System.out.println("hide Pass CLicked");
+        passwordtxtfield.setVisible(false);
+
+
     }
 
 }
