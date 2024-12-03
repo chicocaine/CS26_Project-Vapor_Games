@@ -1,0 +1,13 @@
+=== Game Images ===
+
+===Description===
+This folder contains images for the games.
+There are two types of images: Card and Showcase Images.
+
+Card Images
+-used for the smaller cards
+name format = "<name>_card.png/jpg"
+
+Showacase Images
+-used for the big and landscape image container
+name format = "<name>_showcase.png/jpg"
