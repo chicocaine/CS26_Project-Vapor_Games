@@ -66,6 +66,7 @@ public class MainScreenController {
     }
 
 
+
     // === INITIALIZATION & SETUP ===
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -267,6 +268,8 @@ public class MainScreenController {
 
             AccountPageController accountPageController = loader.getController();
             accountPageController.setUserOnProfile(currentUser);
+            accountPageController.setUser(currentUser);
+            System.out.println("sets user: " + currentUser);
         } catch (IOException e) {
             e.printStackTrace();  // Handle potential loading errors
         }

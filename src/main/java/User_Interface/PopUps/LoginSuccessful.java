@@ -1,6 +1,7 @@
 package User_Interface.PopUps;
 
 import Accounts.User;
+import User_Interface.AccountPageController;
 import User_Interface.MainScreenController;
 import User_Interface.WalletPageController;
 import javafx.application.Platform;

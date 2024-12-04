@@ -1,6 +1,7 @@
 package User_Interface;
 
 import Accounts.User;
+import Utility.PasswordManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -32,6 +33,21 @@ public class AccountPageController {
 
     @FXML
     private TextField Username_TextField;
+    MainScreenController mainScreenController = new MainScreenController();
+
+    private User currentUser;
+
+    public void setUser(User user) {
+        this.currentUser = user;
+        initializeUserData();
+    }
+
+    private void initializeUserData() {
+        if (currentUser != null) {
+            Username_TextField.setText(currentUser.getUserName());
+            Email_TextField.setText(currentUser.getName());
+        }
+    }
 
     @FXML
     private boolean areFieldsNotEmpty() {
@@ -54,25 +70,36 @@ public class AccountPageController {
 
     @FXML
     void HandlesButtonClicked(MouseEvent event) {
-        if(event.getSource() == ChangePassword_Button){
+        if (event.getSource() == ChangePassword_Button) {
             if (areFieldsNotEmpty()) {
                 Username = Username_TextField.getText();
                 Email = Email_TextField.getText();
                 OldPassword = OldPassword_TextField.getText();
                 NewPassword = NewPassword_TextField.getText();
+
+
+
+                if (currentUser != null) {
+                    verifyPassChange(currentUser);
+                } else {
+                    showAlert("Error", "Unable to retrieve user. Please try again.", Alert.AlertType.ERROR);
+                }
             } else {
                 showAlert("Empty Input Box", "Missing or Empty Input Box", Alert.AlertType.ERROR);
             }
-        } else if (event.getSource() == ChangeProfilePicture_Image){
-            //Add Functioons Here
+        } else if (event.getSource() == ChangeProfilePicture_Image) {
+            // Add functionality for profile picture change
         }
     }
+
+
     public void setUserOnProfile(User user){
+
         if (user.getUserName() != null && user.getName() != null ){
             Username_TextField.setText(user.getUserName());
             Email_TextField.setText(user.getName());
-            OldPassword_TextField.setText(OldPassword);
-            NewPassword_TextField.setText(NewPassword);
+            OldPassword_TextField.setText("");
+
         }else {
             Username_TextField.setText("Username");
             Email_TextField.setText("Email");
@@ -80,4 +107,29 @@ public class AccountPageController {
             NewPassword_TextField.setText("New Password");
         }
     }
+    public void verifyPassChange(User user) {
+        PasswordManager manager = new PasswordManager();
+        String storedPassword = manager.getStoredPassword(user.getUserName());
+
+        if (manager.verifyPassword(OldPassword, storedPassword)) {
+            String newHashedPassword = manager.updatePassword(OldPassword, storedPassword, NewPassword);
+
+            if (newHashedPassword != null) {
+                // Update password in the database
+                boolean isUpdated = manager.updatePasswordInDatabase(user.getUserName(), newHashedPassword);
+
+                if (isUpdated) {
+                    showAlert("Password Changed", "Password has been changed successfully.", Alert.AlertType.INFORMATION);
+                } else {
+                    showAlert("Password Change Failed", "Failed to update password in the database.", Alert.AlertType.ERROR);
+                }
+            } else {
+                showAlert("Password Change Failed", "Old password does not match.", Alert.AlertType.ERROR);
+            }
+        } else {
+            showAlert("Password Change Failed", "Old password does not match.", Alert.AlertType.ERROR);
+        }
+    }
+
+
 }

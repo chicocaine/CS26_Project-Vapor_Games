@@ -38,14 +38,14 @@
     -fx-background-color: #181819;
     -fx-text-fill: #ffffff;
     -fx-font-family: 'Sora Regular';
-    -fx-font-size: 23px;
+    -fx-font-size: 16px;
 }
 
 .button-CHANGE_PASSWORD:hover {
     -fx-background-color: #ffffff;
     -fx-text-fill: #181819;
     -fx-font-family: 'Sora Regular';
-    -fx-font-size: 23px;
+    -fx-font-size: 16px;
 }
 
 @font-face {

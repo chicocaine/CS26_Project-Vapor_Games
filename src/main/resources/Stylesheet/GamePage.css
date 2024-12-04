@@ -67,3 +67,14 @@
     -font-family: 'Sora Regular';
     src: url('Fonts/Sora-Regular.ttf')
 }
+
+.genrePanel{
+    -fx-background-color: #383737;
+    -fx-border-radius: 2px;
+}
+
+.genreLabel{
+    -font-family: 'Sora Bold';
+    -fx-font-size: 12;
+    -fx-text-fill: #FEFEFE;
+}
