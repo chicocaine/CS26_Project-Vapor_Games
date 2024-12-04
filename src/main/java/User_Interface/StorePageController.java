@@ -1,5 +1,7 @@
 package User_Interface;
 
+import Games.Games;
+import Games.GamesManager;
 import Model.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -84,23 +86,46 @@ public class StorePageController {
     }
 
     private void initializeGameLists() {
-//        discoverGamesList.add(new Game("Game 1", "10.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        discoverGamesList.add(new Game("Game 2", "20.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        discoverGamesList.add(new Game("Game 3", "15.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        discoverGamesList.add(new Game("Game 4", "25.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        discoverGamesList.add(new Game("Game 5", "30.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        discoverGamesList.add(new Game("Game 6", "40.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//
-//        recommendedGamesList.add(new Game("Recommended Game 1", "12.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        recommendedGamesList.add(new Game("Recommended Game 2", "18.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        recommendedGamesList.add(new Game("Recommended Game 3", "22.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        recommendedGamesList.add(new Game("Recommended Game 4", "35.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        recommendedGamesList.add(new Game("R34", "3454.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//
-//        topSellerGamesList.add(new Game("Top Seller Game 1", "14.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        topSellerGamesList.add(new Game("Top Seller Game 2", "28.99", "/Image/SmallTileTestPicture.png", "Blank"));
-//        topSellerGamesList.add(new Game("Top Seller Game 3", "45.99", "/Image/SmallTileTestPicture.png", "Blank"));
+        GamesManager loader = new GamesManager();
+        ArrayList<Games> allGames = loader.getAllGames();
+
+        if (allGames == null || allGames.isEmpty()) {
+            System.err.println("[ERROR] GamesManager returned null or no games available.");
+            return; // Exit to avoid further issues
+        }
+
+        for (int i = 0; i < allGames.size(); i++) {
+            Games game = allGames.get(i);
+
+            // Categorize games based on indices or attributes
+            //change pa later wtf para dynamic
+            if (i % 3 == 0) {
+                discoverGamesList.add(convertToGame(game)); // Convert to your Game model
+            } else if (i % 3 == 1) {
+                recommendedGamesList.add(convertToGame(game));
+            } else {
+                topSellerGamesList.add(convertToGame(game));
+            }
+        }
     }
+
+
+    private Game convertToGame(Games games) {
+        return new Game(
+                games.getGameTitle(),
+                String.format("%.2f", games.getGamePrice()),
+                games.getCardImageURL(),
+                games.getGameDescription()
+        );
+    }
+//    public void setGameDetails(Game game) {
+//        // Assuming the FXML file for the tile has the corresponding elements
+//        gameTitleLabel.setText(game.getTitle());
+//        gamePriceLabel.setText("₱" + game.getPrice());
+//        gameImageView.setImage(new Image(game.getImagePath())); // Load image
+//        gameDescriptionLabel.setText(game.getDescription());
+//    }
+
 
     // Provide access to all tile controllers
     public List<GameTileController> getGameTileControllers() {

@@ -12,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -48,6 +49,15 @@ public class SignInController {
     private void initialize() {
         passwordtxtfield.setVisible(false);
         // Attach event listeners to buttons
+        signIn.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+                try {
+                    handleSignIn();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         signIn.setOnAction(event -> {
             try {
                 handleSignIn();

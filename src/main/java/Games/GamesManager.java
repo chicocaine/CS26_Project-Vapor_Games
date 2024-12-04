@@ -91,7 +91,8 @@ public class GamesManager {
         }
     }
 
-    public ArrayList<Games> getAllGames () { 
+    public ArrayList<Games> getAllGames () {
+        GamesLoader();
         return this.game_list;
     }
 
@@ -471,4 +472,19 @@ public class GamesManager {
             System.err.println("Error removing the game from the database.");
         }
     }
+
+//    public static void main(String[] args) {
+//        GamesManager manager = new GamesManager();
+//        manager.GamesLoader();
+//        Games uploadgame = new Games();
+//        manager.addGame(uploadgame.initBloonsTD6());
+//        manager.addGame(uploadgame.initDontStarveTogether());
+//        manager.addGame(uploadgame.initPlantsVsZombies());
+//
+//        // Example usage
+//        ArrayList<Games> allGames = manager.getAllGames();
+//        for (Games game : allGames) {
+//            System.out.println(game);
+//        }
+//    }
 }
