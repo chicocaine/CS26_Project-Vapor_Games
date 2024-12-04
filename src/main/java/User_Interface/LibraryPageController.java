@@ -77,28 +77,7 @@ public class LibraryPageController {
     }
 
     private void initializeGameLists() {
-        HBox1List.add(new Game("Game 1", "10.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox1List.add(new Game("Game 2", "20.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox1List.add(new Game("Game 3", "15.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox1List.add(new Game("Game 4", "25.99", "/Image/SmallTileTestPicture.png", "Blank"));
 
-        HBox2List.add(new Game("Recommended Game 1", "12.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox2List.add(new Game("Recommended Game 2", "18.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox2List.add(new Game("Recommended Game 3", "22.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox2List.add(new Game("Recommended Game 4", "35.99", "/Image/SmallTileTestPicture.png", "Blank"));
-
-        HBox3List.add(new Game("Top Seller Game 1", "14.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox3List.add(new Game("Top Seller Game 2", "28.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox3List.add(new Game("Top Seller Game 3", "45.99", "/Image/SmallTileTestPicture.png", "Blank"));
-
-        HBox4List.add(new Game("Recommended Game 1", "12.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox4List.add(new Game("Recommended Game 2", "18.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox4List.add(new Game("Recommended Game 3", "22.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox4List.add(new Game("Recommended Game 4", "35.99", "/Image/SmallTileTestPicture.png", "Blank"));
-
-        HBox5List.add(new Game("Top Seller Game 1", "14.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox5List.add(new Game("Top Seller Game 2", "28.99", "/Image/SmallTileTestPicture.png", "Blank"));
-        HBox5List.add(new Game("Top Seller Game 3", "45.99", "/Image/SmallTileTestPicture.png", "Blank"));
     }
 
     public List<MediumGameTileController> getMediumGameTileControllers() {

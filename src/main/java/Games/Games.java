@@ -1,6 +1,7 @@
 package Games;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Games {
 
@@ -117,4 +118,19 @@ public class Games {
                 '}';
     }
 
+    public void InitGame(){
+        Games game = new Games(
+                -1,
+                "Terraria",
+                "May 16, 2011",
+                "Terraria is a 2011 action-adventure sandbox game developed by Re-Logic. The game was first released for Windows and has since been ported to other PC and console platforms. The game features exploration, crafting, building, painting, and combat with a variety of creatures in a procedurally generated 2D world",
+                48.55,
+                new ArrayList<>(Arrays.asList("Action", "Survival", "Sandbox")),
+                true,
+                "Image/uploads/game_images/Terraria_Card.jpg",
+                new ArrayList<>(Arrays.asList("Image/uploads/game_imagesTerraria_Showcase.webp",""))
+        );
+
+    }
 }
+
