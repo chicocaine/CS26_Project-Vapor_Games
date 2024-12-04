@@ -1,10 +1,10 @@
 package User_Interface;
 
-import Model.Game;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import Games.Games;
 
 public class GamePageController {
 
@@ -38,7 +38,12 @@ public class GamePageController {
     @FXML
     private Pane StorePage_Pane;
 
-    public void displayGameDetails(Game game) {
-
+    public void displayGameDetails(Games game) {
+        StorePageGameTitle_Label.setText(game.getGameTitle());
+        //StoreGameSubTitle_Label.setText(game.());
+        StoreGameDescription_Label.setText(game.getGameDescription());
+        GamePrice_Label.setText("AGS" + game.getGamePrice());
+        StoreGameThumbnail_Image.setImage(new javafx.scene.image.Image(game.getCardImageURL()));
+        StorePageGameMainPicture_Image.setImage(new javafx.scene.image.Image(game.getShowcaseImagesURL().get(0)));
     }
 }

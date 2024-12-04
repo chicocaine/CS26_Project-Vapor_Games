@@ -1,6 +1,5 @@
 package User_Interface;
 
-import Model.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -8,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import Games.Games;
 
 import java.io.IOException;
 
@@ -25,16 +25,16 @@ public class MediumGameTileController {
     @FXML
     private Label MediumGameTile_Price;
 
-    private Game game;
+    private Games game;
     private MainScreenController mainController; // Reference to the main screen controller
 
     // Setter for game details
-    public void setGameDetails(Game game) {
+    public void setGameDetails(Games game) {
         this.game = game;
         if (game != null) {
-            MediumGameTile_Name.setText(game.getTitle());
-            MediumGameTile_Price.setText(game.getPrice());
-            String imagePath = (game.getImagePath() != null && !game.getImagePath().isEmpty()) ? game.getImagePath() : "/images/default-image.png";
+            MediumGameTile_Name.setText(game.getGameTitle());
+            MediumGameTile_Price.setText("AGS" + game.getGamePrice());
+            String imagePath = (game.getShowcaseImagesURL() != null && !game.getShowcaseImagesURL().isEmpty()) ? String.valueOf(game.getShowcaseImagesURL()) : "/images/default-image.png";
             MediumGameTile_Image.setImage(new Image(imagePath));
         }
     }

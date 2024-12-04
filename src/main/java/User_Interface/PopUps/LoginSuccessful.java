@@ -23,6 +23,16 @@ public class LoginSuccessful {
 
     @FXML
     private void initialize() {
+        continueToStore.setOnKeyPressed(Key -> {
+    if (Key.getCode() == javafx.scene.input.KeyCode.ENTER) {
+        try {
+            proceedToDashboard();
+            System.out.println("continueToStore button clicked");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+});
         continueToStore.setOnAction(event -> {
             try {
                 proceedToDashboard();

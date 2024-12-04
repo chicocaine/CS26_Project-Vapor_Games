@@ -2,7 +2,6 @@ package User_Interface;
 
 import Games.Games;
 import Games.GamesManager;
-import Model.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
@@ -49,9 +48,9 @@ public class StorePageController {
     @FXML
     private HBox TopSeller_HBox;
 
-    private final List<Game> discoverGamesList = new ArrayList<>();
-    private final List<Game> recommendedGamesList = new ArrayList<>();
-    private final List<Game> topSellerGamesList = new ArrayList<>();
+    private final List<Games> discoverGamesList = new ArrayList<>();
+    private final List<Games> recommendedGamesList = new ArrayList<>();
+    private final List<Games> topSellerGamesList = new ArrayList<>();
 
     // Store references to all VGGameTileController instances
     private final List<GameTileController> gameTileControllers = new ArrayList<>();
@@ -63,11 +62,11 @@ public class StorePageController {
         populateGameTiles(TopSeller_HBox, topSellerGamesList);
     }
 
-    private void populateGameTiles(HBox hbox, List<Game> gamesList) {
+    private void populateGameTiles(HBox hbox, List<Games> gamesList) {
         hbox.getChildren().clear();
 
         for (int i = 0; i < Math.min(6, gamesList.size()); i++) {
-            Game game = gamesList.get(i);
+            Games game = gamesList.get(i);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameTile.fxml"));
                 Pane gameTilePane = loader.load();
@@ -110,12 +109,17 @@ public class StorePageController {
     }
 
 
-    private Game convertToGame(Games games) {
-        return new Game(
+    private Games convertToGame(Games games) {
+        return new Games(
+                games.getGameID(),
                 games.getGameTitle(),
-                String.format("%.2f", games.getGamePrice()),
+                games.getGameReleaseDate(),
+                games.getGameDescription(),
+                games.getGamePrice(),
+                games.getGenreList(),
+                games.isAvailable(),
                 games.getCardImageURL(),
-                games.getGameDescription()
+                games.getShowcaseImagesURL()
         );
     }
 //    public void setGameDetails(Game game) {

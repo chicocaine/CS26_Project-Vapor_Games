@@ -14,6 +14,17 @@ public class LoginUnsuccessful {
 
     @FXML
     private void initialize() {
+
+        goBack.setOnKeyPressed(Key -> {
+            if (Key.getCode() == javafx.scene.input.KeyCode.ENTER) {
+                try {
+                    setGoBack();
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         goBack.setOnAction(event -> {
             try {
                 setGoBack();

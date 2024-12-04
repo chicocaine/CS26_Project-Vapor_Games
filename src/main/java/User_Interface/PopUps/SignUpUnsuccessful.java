@@ -15,6 +15,15 @@ public class SignUpUnsuccessful {
 
     @FXML
     private void initialize() {
+        tryAgain.setOnKeyPressed(Key -> {
+            if (Key.getCode() == javafx.scene.input.KeyCode.ENTER) {
+                try {
+                    goback();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         tryAgain.setOnAction(event -> {
             try {
                 goback();

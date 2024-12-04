@@ -1,6 +1,5 @@
 package User_Interface;
 
-import Model.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
@@ -9,6 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import Games.Games;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,11 +36,11 @@ public class LibraryPageController {
     @FXML
     private Pane LibraryPageNext_Pane, LibraryPagePrevious_Pane, MainPage_Pane;
 
-    private final List<Game> HBox1List = new ArrayList<>();
-    private final List<Game> HBox2List = new ArrayList<>();
-    private final List<Game> HBox3List = new ArrayList<>();
-    private final List<Game> HBox4List = new ArrayList<>();
-    private final List<Game> HBox5List = new ArrayList<>();
+    private final List<Games> HBox1List = new ArrayList<>();
+    private final List<Games> HBox2List = new ArrayList<>();
+    private final List<Games> HBox3List = new ArrayList<>();
+    private final List<Games> HBox4List = new ArrayList<>();
+    private final List<Games> HBox5List = new ArrayList<>();
 
     // Store references to all VGGameTileController instances
     private final List<MediumGameTileController> gameTileControllers = new ArrayList<>();
@@ -54,11 +54,11 @@ public class LibraryPageController {
         populateGameTiles(HBox5, HBox5List);
     }
 
-    private void populateGameTiles(HBox hbox, List<Game> gamesList) {
+    private void populateGameTiles(HBox hbox, List<Games> gamesList) {
         hbox.getChildren().clear();
 
         for (int i = 0; i < Math.min(4, gamesList.size()); i++) {
-            Game game = gamesList.get(i);
+            Games game = gamesList.get(i);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MediumGameTile.fxml"));
                 Pane gameTilePane = loader.load();

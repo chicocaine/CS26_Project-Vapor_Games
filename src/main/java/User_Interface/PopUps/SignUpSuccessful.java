@@ -15,6 +15,16 @@ public class SignUpSuccessful {
 
     @FXML
     private void initialize() {
+        continueToLogin.setOnKeyPressed(Key -> {
+            if (Key.getCode() == javafx.scene.input.KeyCode.ENTER) {
+                try {
+                    proceedToLogin();
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         continueToLogin.setOnAction(event -> {
             try {
                 proceedToLogin();
