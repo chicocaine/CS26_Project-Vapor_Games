@@ -275,6 +275,18 @@ public class MainScreenController {
         System.out.println("[ERROR]: Unable to load WalletPage.fxml");
     }
 }
+    private void loadCartPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CartPage.fxml"));
+            Pane cartPagePane = loader.load();
+            setMainContent_Pane(cartPagePane);  // Set the main content to cart page
+
+            CartPageController cartPageController = loader.getController();
+            //cartPageController.setUserOnCart(currentUser);
+        } catch (IOException e) {
+            e.printStackTrace();  // Handle potential loading errors
+        }
+    }
 
 
     // === ACCOUNT INFO UPDATE ===
