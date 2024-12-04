@@ -1,6 +1,7 @@
 package User_Interface;
 
 import Accounts.User;
+import Transaction.CartManager;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +35,7 @@ public class MainScreenController {
     private Label AccountUser_Label, AccountUserLabelDropMenu;
 
     @FXML
-    private Pane BrowsePane_Button, CartButton_Pane, DiscoverButton_Pane, MainContent_Pane, ReturnButton_Pane, LogoutButton;
+    private Pane BrowsePane_Button, CartButton_Pane, MainContent_Pane, ReturnButton_Pane, LogoutButton;
 
     @FXML
     private HBox LibraryButton, StoreButton;
@@ -55,6 +56,13 @@ public class MainScreenController {
     public void setUser(User user) {
         this.currentUser = user;
 
+    }
+
+    private CartManager cartManager;  // Assuming CartManager is a class that you have
+
+    // Setter to initialize CartManager
+    public void setCartManager(CartManager cartManager) {
+        this.cartManager = cartManager;
     }
 
 
@@ -83,11 +91,11 @@ public class MainScreenController {
         } else if (source == LibraryButton) {
             handleLibraryButton();  // Handle library button click
         } else if (source == StoreButton) {
-            handleStoreButton();  // Handle the store button click
-        } else if (source == DiscoverButton_Pane) {
-            handleStoreOrDiscoverButton();  // Handle both store and discover buttons
+            handleStoreOrDiscoverButton();  // Handle the store button click
         } else if (source == SearchButton_Button) {
             handleSearchButton();  // Handle search button click
+        } else if (source == CartButton_Pane){
+            handleCartPage();
         }
     }
 
@@ -143,6 +151,10 @@ public class MainScreenController {
 
     private void handleAccountDropdown() {
         loadAccountPage();
+    }
+
+    private void handleCartPage(){
+        loadCartPage();
     }
 
     private void handleWalletDropDown(){
@@ -281,8 +293,9 @@ public class MainScreenController {
             Pane cartPagePane = loader.load();
             setMainContent_Pane(cartPagePane);  // Set the main content to cart page
 
+            // Access the controller for the loaded cart page
             CartPageController cartPageController = loader.getController();
-            //cartPageController.setUserOnCart(currentUser);
+            cartPageController.setUser(currentUser, cartManager);  // Pass currentUser and cartManager
         } catch (IOException e) {
             e.printStackTrace();  // Handle potential loading errors
         }
@@ -297,17 +310,6 @@ public class MainScreenController {
 
         String profileImagePath = "/Image/ProfileTestPicture.png";  // Replace with actual image path
         AccountPicture_Image.setImage(new Image(profileImagePath));  // Set profile image
-    }
-
-    // === GENERIC PAGE LOADING METHOD ===
-    public void loadPane(String fxmlFile) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Pane newPane = loader.load();
-            setMainContent_Pane(newPane);  // Set the main content to the new pane
-        } catch (IOException e) {
-            e.printStackTrace();  // Handle potential loading errors
-        }
     }
 
     // === FADE IN/OUT TRANSITIONS ===

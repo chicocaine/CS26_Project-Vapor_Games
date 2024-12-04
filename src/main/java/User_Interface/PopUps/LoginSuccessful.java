@@ -62,7 +62,6 @@ public class LoginSuccessful {
         mainController.setUserOnDashboard(currentUser);
         mainController.setUser(currentUser);
 
-
         stage.show();
     }
 

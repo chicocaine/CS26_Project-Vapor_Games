@@ -42,7 +42,7 @@ public class GamePageController {
         StorePageGameTitle_Label.setText(game.getGameTitle());
         //StoreGameSubTitle_Label.setText(game.());
         StoreGameDescription_Label.setText(game.getGameDescription());
-        GamePrice_Label.setText("AGS" + game.getGamePrice());
+        GamePrice_Label.setText(""+game.getGamePrice());
         StoreGameThumbnail_Image.setImage(new javafx.scene.image.Image(game.getCardImageURL()));
         StorePageGameMainPicture_Image.setImage(new javafx.scene.image.Image(game.getShowcaseImagesURL().get(0)));
     }
