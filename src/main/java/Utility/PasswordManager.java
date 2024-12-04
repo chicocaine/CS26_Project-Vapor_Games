@@ -3,7 +3,13 @@ package Utility;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Base64;
+
+import static Utility.DBConnectionPool.getConnection;
 
 public class PasswordManager {
 
@@ -94,4 +100,44 @@ public class PasswordManager {
         //boolean isValid = pwm.verifyPassword(password, hashedPassword);
        // System.out.println("Password valid: " + isValid);
     }
+    public String updatePassword(String oldPassword, String storedValue, String newPassword) {
+        // Verify the old password
+        if (verifyPassword(oldPassword, storedValue)) {
+            // Hash the new password and return it
+            return hashPassword(newPassword);
+        } else {
+            return null; // Old password does not match
+        }
+    }
+    public boolean updatePasswordInDatabase(String username, String newHashedPassword) {
+        String query = "UPDATE users SET password = ? WHERE username = ?";
+        try (Connection connection = DBConnectionPool.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, newHashedPassword);
+            preparedStatement.setString(2, username);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return rowsAffected > 0; // Returns true if the password was successfully updated
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false; // Returns false if there was an error while updating the password
+        }
+    }
+
+    public String getStoredPassword(String username) {
+        String query = "SELECT password FROM users WHERE username = ?";
+        try (Connection connection = DBConnectionPool.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("password");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

@@ -35,15 +35,10 @@
       <VBox layoutX="266.0" layoutY="338.0" prefWidth="330.0" spacing="5.0">
          <children>
             <Label styleClass="label-ACCOUNT_DETAILS" text="Password" />
-            <Label styleClass="label-SMALL" text="old password" />
+            <Label styleClass="label-SMALL" text="Current password" />
             <PasswordField fx:id="OldPassword_TextField" styleClass="textfield-CHANGEABLE" />
-            <Label styleClass="label-SMALL" text="new password" />
+            <Label styleClass="label-SMALL" text="New password" />
             <PasswordField fx:id="NewPassword_TextField" styleClass="textfield-CHANGEABLE" />
-            <Button fx:id="ChangePassword_Button" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" styleClass="button-CHANGE_PASSWORD" text="change password">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
          </children>
       </VBox>
       <ImageView fx:id="ChangeProfilePicture_Image" fitHeight="24.0" fitWidth="24.0" layoutX="200.0" layoutY="268.0" onMouseClicked="#HandlesButtonClicked" pickOnBounds="true" preserveRatio="true">
@@ -54,6 +49,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Button fx:id="ChangePassword_Button" layoutX="266.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" prefHeight="35.0" prefWidth="147.0" styleClass="button-CHANGE_PASSWORD" text="change password">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
    <styleClass>
       <String fx:value="background" />

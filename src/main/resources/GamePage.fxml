@@ -5,8 +5,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
-<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
+<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
    <children>
       <Label fx:id="StorePageGameTitle_Label" layoutX="34.0" layoutY="17.0" prefWidth="584.0" styleClass="GameTitle-Label" text="TERRARIA" />
       <Label fx:id="StoreGameSubTitle_Label" layoutX="34.0" layoutY="66.0" prefHeight="20.0" prefWidth="584.0" styleClass="GameSubTitle-Label" text="Re-Logic" />
@@ -35,8 +36,26 @@
       </Pane>
       <Pane layoutX="631.0" layoutY="322.0" prefHeight="68.0" prefWidth="250.0">
          <children>
-            <Label styleClass="GameGenre-Label" text="Genre" />
-            <Pane fx:id="GameGenreTags_Pane" layoutY="23.0" prefHeight="44.0" prefWidth="250.0" />
+            <Label layoutX="23.0" layoutY="-1.0" styleClass="GameGenre-Label" text="Genre" />
+            <Pane fx:id="GameGenreTags_Pane" layoutX="11.0" layoutY="23.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
+               <children>
+                  <Text fx:id="genreLabel0" fill="WHITE" layoutX="-3.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="115.0" />
+               </children></Pane>
+            <Pane fx:id="GameGenreTags_Pane1" layoutX="11.0" layoutY="46.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
+               <children>
+                  <Text fx:id="genreLabel1" fill="WHITE" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="109.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="GameGenreTags_Pane2" layoutX="141.0" layoutY="23.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
+               <children>
+                  <Text fx:id="genreLabel2" fill="WHITE" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="109.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="GameGenreTags_Pane11" layoutX="141.0" layoutY="46.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
+               <children>
+                  <Text fx:id="genreLabel3" fill="WHITE" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="109.0" />
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane layoutX="631.0" layoutY="438.0" prefHeight="125.0" prefWidth="250.0">

@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import Games.Games;
+import javafx.scene.text.Text;
 
 public class GamePageController {
 
@@ -34,6 +35,17 @@ public class GamePageController {
 
     @FXML
     private Label StorePageGameTitle_Label;
+    @FXML
+    private Text genreLabel0;
+
+    @FXML
+    private Text genreLabel1;
+
+    @FXML
+    private Text genreLabel2;
+
+    @FXML
+    private Text genreLabel3;
 
     @FXML
     private Pane StorePage_Pane;
@@ -45,5 +57,9 @@ public class GamePageController {
         GamePrice_Label.setText("AGS" + game.getGamePrice());
         StoreGameThumbnail_Image.setImage(new javafx.scene.image.Image(game.getCardImageURL()));
         StorePageGameMainPicture_Image.setImage(new javafx.scene.image.Image(game.getShowcaseImagesURL().get(0)));
+        genreLabel0.setText(game.getGenreList().get(0));
+        genreLabel1.setText(game.getGenreList().get(1));
+        genreLabel2.setText(game.getGenreList().get(2));
+        genreLabel3.setText(game.getGenreList().get(3));
     }
 }
