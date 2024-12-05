@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <Pane prefHeight="686.0" prefWidth="893.0" styleClass="background" stylesheets="@Stylesheet/WalletPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.WalletPageController">
    <children>
@@ -54,5 +55,8 @@
       <Label layoutX="124.0" layoutY="405.0" styleClass="label-SubHeader4" text="The Currency of Innovation and Play" />
       <Label layoutX="43.0" layoutY="434.0" prefHeight="130.0" prefWidth="460.0" styleClass="label-SubHeader5" text="Ags Coin is the official digital currency of Vapor Games, designed to power a vibrant virtual economy where players can purchase in-game assets and unlock premium content. It fosters creativity and enhances engagement by streamlining access to exclusive features. With Ags Coin, players seamlessly immerse themselves in an innovative gaming experience." wrapText="true" />
       <Label fx:id="test" layoutX="528.0" layoutY="326.0" textFill="WHITE" />
+      <Text fx:id="codeSuccess" fill="#00ff66" layoutX="66.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="prompSuccess" text="Code redeemed successfully! You have received your credit." visible="false" />
+      <Text fx:id="codeAlreadyRedeemed" fill="#ff0011" layoutX="65.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="prompSuccess" text="Error: This code has already been redeemed." visible="false" />
+      <Text fx:id="codeInvalid" fill="#ff0011" layoutX="63.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="prompSuccess" text="Error: Invalid code." visible="false" />
    </children>
 </Pane>

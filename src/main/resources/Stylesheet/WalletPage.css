@@ -76,3 +76,15 @@
     -font-family: 'Sora Regular';
     src: url('Fonts/Sora-Regular.ttf')
 }
+
+.prompSuccess{
+    -font-family: 'Sora Regular';
+    -fx-text-fill: #34db34;
+    -fx-font-size: 12px;
+}
+
+.prompFail{
+    -font-family: 'Sora Regular';
+    -fx-text-fill: #ce1329;
+    -fx-font-size: 12px;
+}
