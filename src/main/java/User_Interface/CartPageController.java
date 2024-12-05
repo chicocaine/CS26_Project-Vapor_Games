@@ -7,11 +7,14 @@ import Transaction.CartManager;
 import Accounts.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,8 +48,33 @@ public class CartPageController {
     }
 
     @FXML
-    void HandlesButtonClicked(MouseEvent event) {
-        // Handle button click (e.g., checkout)
+    void HandlesButtonClicked(MouseEvent event) throws IOException {
+        Object source = event.getSource();
+
+        if (source == CheckOut_Button){
+            OpenCheckOutPage();
+        }
+    }
+
+    @FXML
+    void OpenCheckOutPage() throws IOException {
+        // Load the FXML file
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/CheckOutPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1080, 760);
+
+        // Create a new stage
+        Stage newStage = new Stage();
+        newStage.setTitle("Vapor Games");
+        newStage.setScene(scene);
+        newStage.setResizable(false);
+        newStage.initStyle(StageStyle.UNDECORATED);
+
+        // Show the new stage
+        newStage.show();
+
+        // Pass the new stage to the controller
+        CheckOutPageController controller = fxmlLoader.getController();
+        controller.setStage(newStage);
     }
 
     @FXML

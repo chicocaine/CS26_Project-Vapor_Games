@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="760.0" prefWidth="1080.0" styleClass="background" stylesheets="@Stylesheet/CheckOutPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.CheckOutPageController">
    <children>
       <Pane layoutX="706.0" layoutY="114.0" styleClass="PS-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="734.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="13.0">
@@ -40,10 +39,13 @@
          </children>
       </Pane>
       <Pane layoutX="302.0" layoutY="324.0" styleClass="BLACKNIGGA" AnchorPane.bottomAnchor="747.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="28.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="695.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="1037.5238094329834" AnchorPane.topAnchor="41.0">
+      <ImageView fx:id="CloseOrReturn_Image" fitHeight="24.0" fitWidth="24.0" layoutX="28.0" layoutY="41.0" onMouseClicked="#HandlesMouseClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="695.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="1037.5238094329834" AnchorPane.topAnchor="41.0">
          <image>
             <Image url="@Image/ReturnIcon.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Separator layoutX="28.0" layoutY="107.0" prefHeight="3.0" prefWidth="668.0" styleClass="SEPERATOR" />
       <Label layoutX="28.0" layoutY="82.0" styleClass="SubHeader" text="CHECKOUT" AnchorPane.bottomAnchor="653.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="972.4761905670166" AnchorPane.topAnchor="82.0" />
