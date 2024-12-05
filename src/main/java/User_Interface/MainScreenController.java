@@ -302,7 +302,9 @@ public class MainScreenController {
             CartPageController cartPageController = loader.getController();
             User userSession = UserSession.getInstance().getCurrentUser();
             System.out.println("User on cart: " + userSession);
+            CartManager cartManager = new CartManager();
             cartPageController.setUser(userSession, cartManager);  // Pass currentUser and cartManager
+            cartPageController.initialize();
             //cartPageController.displayCart();
         } catch (IOException e) {
             e.printStackTrace();  // Handle potential loading errors

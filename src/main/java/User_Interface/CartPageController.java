@@ -42,6 +42,7 @@ public class CartPageController {
         this.currentUser = user;
         this.cartManager = cartManager;
         System.out.println("[INFO] User set in CartPageController: " + currentUser);
+        System.out.println("[INFO] CartManager set in CartPageController: " + cartManager);
     }
 
 
@@ -56,6 +57,7 @@ public class CartPageController {
         populateGameTiles(CartHBox_HBox, MyCart);
         totalCostPrice();
         System.out.println("[INFO] user CartPageController initialized. "+ currentUser);
+        System.out.println("[INFO] user CartPageController initialized. "+ cartManager);
     }
 
     private void totalCostPrice() {

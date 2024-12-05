@@ -24,7 +24,7 @@ public class Games {
         this.gameTitle = gameTitle;
         this.gameReleaseDate = gameReleaseDate;
         this.gameDescription = gameDescription;
-        this.gamePrice = gamePrice;
+        this.gamePrice = gamePrice /  6.9;
         this.genre = genre;
         this.isAvailable = isAvailable;
         this.cardImageURL = cardImageURL;
