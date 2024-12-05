@@ -1,31 +1,29 @@
 package User_Interface;
 
+import Accounts.User;
+import Accounts.UserSession;
+import Games.Games;
+import Transaction.CartManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.List;
 
 public class CheckOutPageController {
-
-    private Stage stage;
 
     @FXML
     private RadioButton AGSCoin_RadioButton;
 
     @FXML
     private Label AccountName_Label;
-
-    @FXML
-    private ImageView CloseOrReturn_Image;
 
     @FXML
     private Label CurrentBalance_Label;
@@ -39,48 +37,50 @@ public class CheckOutPageController {
     @FXML
     private Label TotalCost_Label;
 
-    // Handle mouse clicks
-    @FXML
-    void HandlesMouseClicked(MouseEvent event) throws IOException {
-        Object source = event.getSource();
+    private User currentUser = UserSession.getInstance().getCurrentUser();
+    private CartManager cartManager = new CartManager();
 
-        if (source == CloseOrReturn_Image) {
-            if (stage != null) {
-                stage.close();
-            } else {
-                System.err.println("Stage is not set!");
+    @FXML
+    private void initialize() {
+        loadUserInfo();
+        loadPurchaseSummary();
+    }
+
+    @FXML
+    void HandlesMouseClicked(MouseEvent event) {
+        // Handle mouse click events
+    }
+
+    public void loadUserInfo() {
+        AccountName_Label.setText(currentUser.getName());
+        CurrentBalance_Label.setText(String.valueOf(currentUser.getWallet().getBalance()));
+    }
+
+    public void loadPurchaseSummary() {
+        List<Games> cartItems = cartManager.getCart(currentUser);
+        PurchaseSummary_VBox.getChildren().clear();
+
+        double totalCost = 0.0;
+        for (Games game : cartItems) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/CheckOutPageTile.fxml"));
+                Pane gameTilePane = loader.load();
+                CheckOutPageTileController tileController = loader.getController();
+
+                tileController.CheckOutTileGameName_Label.setText(game.getGameTitle());
+                tileController.CheckOutGamePrice_Label.setText(String.format("%.2f", game.getGamePrice()));
+                // Set the game image if available
+                String imagepath = game.getCardImageURL();
+                tileController.GameCheckOutTile_Image.setImage(new Image(imagepath));
+
+                PurchaseSummary_VBox.getChildren().add(gameTilePane);
+                totalCost += game.getGamePrice();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("[ERROR] Failed to load checkout tile.");
             }
-        } else if (source == PlaceOrder_Button) {
-            stage.close();
-            PaymentSuccessPopUP();
         }
-    }
 
-    // Open payment success pop-up
-    @FXML
-    void PaymentSuccessPopUP() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PaymentSuccessPopUP.fxml"));
-        Scene scene1 = new Scene(fxmlLoader.load(), 423, 578);
-
-        // Create a new stage
-        Stage newStage1 = new Stage();
-        newStage1.setTitle("Vapor Games");
-        newStage1.setScene(scene1);
-        newStage1.setResizable(false);
-        newStage1.initStyle(StageStyle.UNDECORATED);
-
-        // Show the new stage
-        newStage1.show();
-
-        // Pass the new stage to the controller
-        PaymentSuccessPopUPController controller1 = fxmlLoader.getController();
-        controller1.setStage(newStage1);
-    }
-
-    //ADD FUNCTIONS WHERE IT POPULATE THE VBOX USING THE CHCEKOUTPAGETILE.FXML
-
-    // Set the current stage
-    public void setStage(Stage stage) {
-        this.stage = stage;
+        TotalCost_Label.setText(String.format("%.2f", totalCost));
     }
 }

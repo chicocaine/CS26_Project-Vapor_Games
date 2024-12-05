@@ -7,12 +7,12 @@ import javafx.scene.image.ImageView;
 public class CheckOutPageTileController {
 
     @FXML
-    private Label CheckOutGamePrice_Label;
+    public Label CheckOutGamePrice_Label;
 
     @FXML
-    private Label CheckOutTileGameName_Label;
+    public Label CheckOutTileGameName_Label;
 
     @FXML
-    private ImageView GameCheckOutTile_Image;
+    public ImageView GameCheckOutTile_Image;
 
 }

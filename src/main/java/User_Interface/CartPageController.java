@@ -7,6 +7,7 @@ import Transaction.CartManager;
 import Accounts.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,7 +15,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,33 +48,10 @@ public class CartPageController {
     }
 
     @FXML
-    void HandlesButtonClicked(MouseEvent event) throws IOException {
-        Object source = event.getSource();
-
-        if (source == CheckOut_Button){
-            OpenCheckOutPage();
+    void HandlesButtonClicked(MouseEvent event) {
+        if (event.getSource() == CheckOut_Button) {
+            loadCheckOutPage();
         }
-    }
-
-    @FXML
-    void OpenCheckOutPage() throws IOException {
-        // Load the FXML file
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/CheckOutPage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1080, 760);
-
-        // Create a new stage
-        Stage newStage = new Stage();
-        newStage.setTitle("Vapor Games");
-        newStage.setScene(scene);
-        newStage.setResizable(false);
-        newStage.initStyle(StageStyle.UNDECORATED);
-
-        // Show the new stage
-        newStage.show();
-
-        // Pass the new stage to the controller
-        CheckOutPageController controller = fxmlLoader.getController();
-        controller.setStage(newStage);
     }
 
     @FXML
@@ -133,5 +110,22 @@ public class CartPageController {
 
     public List<CartPageTileController> getCartPageTileControllers() {
         return gameTileControllers;
+    }
+
+    private void loadCheckOutPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CheckOutPage.fxml"));
+            Parent root = loader.load();
+
+            // Optionally, you can pass data to the CheckOutPageController here
+
+
+            Stage stage = (Stage) CheckOut_Button.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load checkout page.");
+        }
     }
 }
