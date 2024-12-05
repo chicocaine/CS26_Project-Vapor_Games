@@ -36,7 +36,7 @@ public class GameTileController {
         this.game = game;
         if (game != null) {
             HomePageDiscoverGameTitle_Label.setText(game.getGameTitle());
-            HomePageDiscoverGamePrice_Label.setText(toString().valueOf(game.getGamePrice()));
+            HomePageDiscoverGamePrice_Label.setText(String.format("%.2f",game.getGamePrice()));
             String imagePath = (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty()) ? game.getCardImageURL() : "/images/default-image.png";
             HomePageDiscoverGame_Image.setImage(new Image(imagePath));
         }

@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageTileController.java" afterDir="false" />
     </list>
@@ -216,7 +215,7 @@
       <workItem from="1733309748683" duration="9923000" />
       <workItem from="1733357310318" duration="3300000" />
       <workItem from="1733361125421" duration="4220000" />
-      <workItem from="1733370265824" duration="1061000" />
+      <workItem from="1733370265824" duration="1454000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />

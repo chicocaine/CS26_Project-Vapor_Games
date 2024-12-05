@@ -58,7 +58,8 @@ public class CartPageController {
 
     private void totalCostPrice() {
         if (currentUser != null && cartManager != null) {
-            TotalCostPrice_Label.setText(String.valueOf(cartManager.getTotalPrice(cartManager.getCart(currentUser))));
+            double totalPrice = cartManager.getTotalPrice(cartManager.getCart(currentUser));
+            TotalCostPrice_Label.setText(String.format("%.2f", totalPrice));
         }
     }
 
