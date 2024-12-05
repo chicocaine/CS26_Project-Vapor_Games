@@ -1,5 +1,6 @@
 package User_Interface;
 
+import Accounts.UserSession;
 import Games.Games;
 import Transaction.CartManager;
 import Accounts.User;
@@ -40,6 +41,7 @@ public class CartPageController {
     public void setUser(User user, CartManager cartManager) {
         this.currentUser = user;
         this.cartManager = cartManager;
+        System.out.println("[INFO] User set in CartPageController: " + currentUser);
     }
 
 
@@ -48,10 +50,12 @@ public class CartPageController {
         // Handle button click (e.g., checkout)
     }
 
+    @FXML
     public void initialize() {
         loadUserCart();
         populateGameTiles(CartHBox_HBox, MyCart);
         totalCostPrice();
+        System.out.println("[INFO] user CartPageController initialized. "+ currentUser);
     }
 
     private void totalCostPrice() {

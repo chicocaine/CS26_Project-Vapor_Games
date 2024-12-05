@@ -20,11 +20,30 @@ public class CartManager {
     public void addToCart(User user, Games game) {
         int userID = user.getUserID();
         int gameID = game.getGameID(); // Assuming Games class has getGameID()
+
+        String selectQuery = "SELECT * FROM cart_games WHERE userID = ? AND gameID = ?";
+
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(selectQuery)) {
+
+            stmt.setInt(1, userID);
+            stmt.setInt(2, gameID);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    System.out.println("Game already exists in the cart.");
+                    return;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     
-        String query = "INSERT INTO cart_games (userID, gameID) VALUES (?, ?)";
+        String insertQuery = "INSERT INTO cart_games (userID, gameID) VALUES (?, ?)";
     
         try (Connection conn = DBConnectionPool.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+             PreparedStatement stmt = conn.prepareStatement(insertQuery)) {
     
             stmt.setInt(1, userID);
             stmt.setInt(2, gameID);
@@ -44,7 +63,7 @@ public class CartManager {
     
     public void removeFromCart(User user, Games game) {
         int userID = user.getUserID();
-        int gameID = game.getGameID(); // Assuming Games class has getGameID()
+        int gameID = game.getGameID();
     
         String query = "DELETE FROM cart_games WHERE userID = ? AND gameID = ?";
     

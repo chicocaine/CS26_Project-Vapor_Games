@@ -1,6 +1,7 @@
 package User_Interface;
 
 import Accounts.User;
+import Accounts.UserSession;
 import Transaction.CartManager;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -299,7 +300,10 @@ public class MainScreenController {
 
             // Access the controller for the loaded cart page
             CartPageController cartPageController = loader.getController();
-            cartPageController.setUser(currentUser, cartManager);  // Pass currentUser and cartManager
+            User userSession = UserSession.getInstance().getCurrentUser();
+            System.out.println("User on cart: " + userSession);
+            cartPageController.setUser(userSession, cartManager);  // Pass currentUser and cartManager
+            //cartPageController.displayCart();
         } catch (IOException e) {
             e.printStackTrace();  // Handle potential loading errors
         }
