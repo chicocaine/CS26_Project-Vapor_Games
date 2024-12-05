@@ -1,5 +1,8 @@
 package User_Interface;
 
+import Accounts.User;
+import Accounts.UserSession;
+import Library.LibraryManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
@@ -36,17 +39,20 @@ public class LibraryPageController {
     @FXML
     private Pane LibraryPageNext_Pane, LibraryPagePrevious_Pane, MainPage_Pane;
 
-    private final List<Games> HBox1List = new ArrayList<>();
-    private final List<Games> HBox2List = new ArrayList<>();
-    private final List<Games> HBox3List = new ArrayList<>();
-    private final List<Games> HBox4List = new ArrayList<>();
-    private final List<Games> HBox5List = new ArrayList<>();
+    private List<Games> HBox1List = new ArrayList<>();
+    private List<Games> HBox2List = new ArrayList<>();
+    private List<Games> HBox3List = new ArrayList<>();
+    private List<Games> HBox4List = new ArrayList<>();
+    private List<Games> HBox5List = new ArrayList<>();
 
     // Store references to all VGGameTileController instances
     private final List<MediumGameTileController> gameTileControllers = new ArrayList<>();
 
+    private LibraryManager libraryManager = new LibraryManager();
+    private User currentUser = UserSession.getInstance().getCurrentUser();
+
     public void initialize() {
-        initializeGameLists();
+        loadUserLibrary();
         populateGameTiles(HBox1, HBox1List);
         populateGameTiles(HBox2, HBox2List);
         populateGameTiles(HBox3, HBox3List);
@@ -54,11 +60,23 @@ public class LibraryPageController {
         populateGameTiles(HBox5, HBox5List);
     }
 
+    private void loadUserLibrary() {
+        List<Games> userLibrary = libraryManager.getGameLibrary(currentUser);
+        int index = 0;
+        for (Games game : userLibrary) {
+            if (index % 5 == 0) HBox1List.add(game);
+            else if (index % 5 == 1) HBox2List.add(game);
+            else if (index % 5 == 2) HBox3List.add(game);
+            else if (index % 5 == 3) HBox4List.add(game);
+            else if (index % 5 == 4) HBox5List.add(game);
+            index++;
+        }
+    }
+
     private void populateGameTiles(HBox hbox, List<Games> gamesList) {
         hbox.getChildren().clear();
 
-        for (int i = 0; i < Math.min(4, gamesList.size()); i++) {
-            Games game = gamesList.get(i);
+        for (Games game : gamesList) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MediumGameTile.fxml"));
                 Pane gameTilePane = loader.load();
@@ -76,14 +94,9 @@ public class LibraryPageController {
         }
     }
 
-    private void initializeGameLists() {
-
-    }
-
     public List<MediumGameTileController> getMediumGameTileControllers() {
         return gameTileControllers;
     }
-
 
     @FXML
     void HandlesClickedButton(MouseEvent event) {
@@ -95,4 +108,3 @@ public class LibraryPageController {
         // Handle genre-related button clicks
     }
 }
-

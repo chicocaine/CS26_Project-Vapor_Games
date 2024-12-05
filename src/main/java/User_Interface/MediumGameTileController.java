@@ -33,9 +33,16 @@ public class MediumGameTileController {
         this.game = game;
         if (game != null) {
             MediumGameTile_Name.setText(game.getGameTitle());
-            MediumGameTile_Price.setText("AGS" + game.getGamePrice());
-            String imagePath = (game.getShowcaseImagesURL() != null && !game.getShowcaseImagesURL().isEmpty()) ? String.valueOf(game.getShowcaseImagesURL()) : "/images/default-image.png";
-            MediumGameTile_Image.setImage(new Image(imagePath));
+            double gamePrice = game.getGamePrice();
+            MediumGameTile_Price.setText(String.format("%.2f", game.getGamePrice()));
+            String imagePath = (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty()) ? game.getCardImageURL() : "/images/default-image.png";
+            System.out.println(imagePath);
+            try {
+                MediumGameTile_Image.setImage(new Image(imagePath, true));
+            } catch (Exception e) {
+                System.err.println("[ERROR] Failed to load image: " + imagePath);
+                MediumGameTile_Image.setImage(new Image("/images/default-image.png"));
+            }
         }
     }
 

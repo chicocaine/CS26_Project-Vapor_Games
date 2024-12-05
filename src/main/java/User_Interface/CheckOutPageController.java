@@ -3,7 +3,9 @@ package User_Interface;
 import Accounts.User;
 import Accounts.UserSession;
 import Games.Games;
+import Library.LibraryManager;
 import Transaction.CartManager;
+import Utility.DBConnectionPool;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +21,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class CheckOutPageController {
@@ -46,35 +51,26 @@ public class CheckOutPageController {
 
     private User currentUser = UserSession.getInstance().getCurrentUser();
     private CartManager cartManager = new CartManager();
+    private LibraryManager libraryManager = new LibraryManager();
 
     @FXML
     private void initialize() {
         loadUserInfo();
         loadPurchaseSummary();
+        PlaceOrder_Button.setOnAction(event -> placeOrder());
     }
-
-
 
     @FXML
     void HandlesMouseClicked(MouseEvent event) {
         if (event.getSource() == CloseOrReturn_Image) {
             try {
-                // Load the MainScreen.fxml
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
                 Parent root = loader.load();
-
-                // Get the current stage (the window)
                 Stage stage = (Stage) CloseOrReturn_Image.getScene().getWindow();
-
-                // Set the new scene (MainScreen) on the stage
                 stage.setScene(new Scene(root));
-
-                // Optionally, you can also get the controller of the MainScreen if you need to access it
                 MainScreenController mainScreenController = loader.getController();
-                // You can now interact with the MainScreenController if needed
                 mainScreenController.currentUser = currentUser;
                 mainScreenController.setUserOnDashboard(currentUser);
-
             } catch (IOException e) {
                 e.printStackTrace();
                 System.out.println("[ERROR] Failed to load MainScreen.");
@@ -100,7 +96,6 @@ public class CheckOutPageController {
 
                 tileController.CheckOutTileGameName_Label.setText(game.getGameTitle());
                 tileController.CheckOutGamePrice_Label.setText(String.format("%.2f", game.getGamePrice()));
-                // Set the game image if available
                 String imagepath = game.getCardImageURL();
                 tileController.GameCheckOutTile_Image.setImage(new Image(imagepath));
 
@@ -113,5 +108,40 @@ public class CheckOutPageController {
         }
 
         TotalCost_Label.setText(String.format("%.2f", totalCost));
+    }
+
+    private void placeOrder() {
+        List<Games> cartItems = cartManager.getCart(currentUser);
+        double totalCost = cartItems.stream().mapToDouble(Games::getGamePrice).sum();
+
+        if (currentUser.getWallet().getBalance() >= totalCost) {
+            try (Connection conn = DBConnectionPool.getConnection()) {
+                conn.setAutoCommit(false);
+
+                for (Games game : cartItems) {
+                    libraryManager.addGameToLibrary(currentUser, game);
+                }
+
+                String updateWalletQuery = "UPDATE VaporGames.users SET wallet = wallet - ? WHERE userID = ?";
+                try (PreparedStatement stmt = conn.prepareStatement(updateWalletQuery)) {
+                    stmt.setDouble(1, totalCost);
+                    stmt.setInt(2, currentUser.getUserID());
+                    stmt.executeUpdate();
+                }
+
+                conn.commit();
+                currentUser.getWallet().updateBalance(currentUser.getWallet().getBalance() - totalCost);
+                cartManager.clearCart(currentUser);
+                loadUserInfo();
+                loadPurchaseSummary();
+                System.out.println("Order placed successfully!");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("[ERROR] Failed to place order.");
+            }
+        } else {
+            System.out.println("Insufficient balance to place the order.");
+        }
     }
 }

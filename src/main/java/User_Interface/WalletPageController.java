@@ -51,7 +51,7 @@ public class WalletPageController {
 
     public void setUserOnWallet(User user) {
         if (user != null && user.getWallet() != null) {
-            WalletCurrentAGSCoin_Label.setText(String.valueOf(user.getWallet().getBalance()));
+            WalletCurrentAGSCoin_Label.setText(String.format("%.2f",user.getWallet().getBalance()));
             System.out.println(WalletCurrentAGSCoin_Label.getText());
         } else {
             WalletCurrentAGSCoin_Label.setText("test");
