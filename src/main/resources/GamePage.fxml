@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
+<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
    <children>
       <Label fx:id="StorePageGameTitle_Label" layoutX="34.0" layoutY="17.0" prefWidth="584.0" styleClass="GameTitle-Label" text="TERRARIA" />
       <Label fx:id="StoreGameSubTitle_Label" layoutX="34.0" layoutY="66.0" prefHeight="20.0" prefWidth="584.0" styleClass="GameSubTitle-Label" text="Re-Logic" />
@@ -60,8 +60,8 @@
       </Pane>
       <Pane layoutX="631.0" layoutY="438.0" prefHeight="125.0" prefWidth="250.0">
          <children>
-            <Label styleClass="GameTransactionPrice-Label" text="₱" />
-            <Label fx:id="GamePrice_Label" layoutX="19.0" prefHeight="25.0" prefWidth="231.0" styleClass="GameTransactionPrice-Label" text="400.00" />
+            <Label styleClass="GameTransactionPrice-Label" text="AGS" />
+            <Label fx:id="GamePrice_Label" layoutX="39.0" prefHeight="25.0" prefWidth="211.0" styleClass="GameTransactionPrice-Label" text="400.00" />
             <Pane fx:id="GameBuyNowButton_Pane" layoutY="25.0" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Pane">
                <children>
                   <Label alignment="CENTER" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Label" text="Buy Now" />

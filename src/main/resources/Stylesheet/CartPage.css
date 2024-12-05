@@ -4,6 +4,7 @@
 
 .background-tile{
     -fx-background-color: #323234;
+    -fx-background-radius: 4;
 }
 
 .header{
