@@ -1,3 +1,4 @@
+// src/main/java/User_Interface/CartPageController.java
 package User_Interface;
 
 import Accounts.UserSession;
@@ -21,7 +22,6 @@ public class CartPageController {
     private final List<Games> MyCart = new ArrayList<>();
     private final List<CartPageTileController> gameTileControllers = new ArrayList<>();
 
-    // Add a User reference here
     private User currentUser;
     private CartManager cartManager;
 
@@ -37,14 +37,12 @@ public class CartPageController {
     @FXML
     private Label TotalCostPrice_Label;
 
-    // Pass the User object and CartManager instance to this controller
     public void setUser(User user, CartManager cartManager) {
         this.currentUser = user;
         this.cartManager = cartManager;
         System.out.println("[INFO] User set in CartPageController: " + currentUser);
         System.out.println("[INFO] CartManager set in CartPageController: " + cartManager);
     }
-
 
     @FXML
     void HandlesButtonClicked(MouseEvent event) {
@@ -56,8 +54,6 @@ public class CartPageController {
         loadUserCart();
         populateGameTiles(CartHBox_HBox, MyCart);
         totalCostPrice();
-        System.out.println("[INFO] user CartPageController initialized. "+ currentUser);
-        System.out.println("[INFO] user CartPageController initialized. "+ cartManager);
     }
 
     private void totalCostPrice() {
@@ -68,6 +64,7 @@ public class CartPageController {
 
     private void populateGameTiles(VBox CartHBox_HBox, List<Games> gamesList) {
         CartHBox_HBox.getChildren().clear();
+        gameTileControllers.clear();
 
         for (int i = 0; i < Math.min(6, gamesList.size()); i++) {
             Games game = gamesList.get(i);
@@ -76,10 +73,13 @@ public class CartPageController {
                 Pane cartTilePane = loader.load();
                 CartPageTileController tileController = loader.getController();
 
-                // Store the tile controller for future reference
                 gameTileControllers.add(tileController);
 
                 tileController.setGameDetails(game);
+                tileController.setCartManager(cartManager);
+                tileController.setCurrentUser(currentUser);
+                tileController.setCartPageController(this);
+
                 CartHBox_HBox.getChildren().add(cartTilePane);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -89,25 +89,17 @@ public class CartPageController {
     }
 
     private void loadUserCart() {
-        // Use the cartManager to load the cart for the current currentUser
         if (currentUser != null && cartManager != null) {
-            MyCart.clear();  // Clear any existing items in MyCart
-            MyCart.addAll(cartManager.getCart(currentUser)); // Get cart for the currentUser and add it to MyCart
+            MyCart.clear();
+            MyCart.addAll(cartManager.getCart(currentUser));
+            StoreCreditsBalance_Label.setText(String.valueOf(currentUser.getWallet().getBalance()));
         }
     }
 
-    private Games convertToGame(Games games) {
-        return new Games(
-                games.getGameID(),
-                games.getGameTitle(),
-                games.getGameReleaseDate(),
-                games.getGameDescription(),
-                games.getGamePrice(),
-                games.getGenreList(),
-                games.isAvailable(),
-                games.getCardImageURL(),
-                games.getShowcaseImagesURL()
-        );
+    public void refreshCart() {
+        loadUserCart();
+        populateGameTiles(CartHBox_HBox, MyCart);
+        totalCostPrice();
     }
 
     public List<CartPageTileController> getCartPageTileControllers() {
