@@ -77,6 +77,8 @@ public class CheckOutPageController {
         controller1.setStage(newStage1);
     }
 
+    //ADD FUNCTIONS WHERE IT POPULATE THE VBOX USING THE CHCEKOUTPAGETILE.FXML
+
     // Set the current stage
     public void setStage(Stage stage) {
         this.stage = stage;

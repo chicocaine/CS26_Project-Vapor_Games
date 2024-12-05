@@ -107,6 +107,8 @@ public class MainScreenController {
             handleAccountDropdown();
         } else if (event.getSource() == WalletDropMenu){
             handleWalletDropDown();
+        } else if (event.getSource() == TransactionHistoryDropMenu){
+            handleTransactionHistoryDropMenu();
         }
     }
 
@@ -162,6 +164,10 @@ public class MainScreenController {
     private void handleWalletDropDown(){
         loadWalletPage();
     }
+
+    private void handleTransactionHistoryDropMenu(){
+        loadTransactionHistoryDropMenu();
+    };
 
     // === HELPER METHODS ===
     private void performSearch(String query) {
@@ -292,6 +298,20 @@ public class MainScreenController {
         System.out.println("[ERROR]: Unable to load WalletPage.fxml");
     }
 }
+
+    private void loadTransactionHistoryDropMenu() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/TransactionHistoryPage.fxml"));
+            Pane TransactionHistory = loader.load();
+            setMainContent_Pane(TransactionHistory);
+
+            TransactionHistoryPageController transactionHistoryPageController = loader.getController();
+            //transactionHistoryPageController.setUserOnWallet(currentUser);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void loadCartPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/CartPage.fxml"));

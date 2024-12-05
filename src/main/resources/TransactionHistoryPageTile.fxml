@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="837.0" styleClass="background" stylesheets="@Stylesheet/AccountPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.TransactionHistoryPageTileController">
+   <children>
+      <Separator prefWidth="200.0" />
+      <HBox prefWidth="837.0">
+         <children>
+            <Label fx:id="Date_Label" prefHeight="27.0" prefWidth="165.0" styleClass="label-SMALL" text="00/00/0000" />
+            <Label fx:id="OrderID_Label" prefHeight="27.0" prefWidth="214.0" styleClass="label-SMALL" text="00000001" />
+            <Label prefHeight="27.0" prefWidth="53.0" styleClass="label-SMALL" text="AGS" />
+            <Label fx:id="TotalPrice_Label" prefHeight="27.0" prefWidth="206.0" styleClass="label-SMALL" text="0000.00" />
+            <Button fx:id="DownloadReciept_Button" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" prefHeight="25.0" prefWidth="200.0" styleClass="Button-TH" text="Download Reciept">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

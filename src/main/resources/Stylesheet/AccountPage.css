@@ -48,6 +48,18 @@
     -fx-font-size: 16px;
 }
 
+.LabelTable-TH {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.Button-TH {
+    -fx-text-fill: #0084FF;
+    -fx-background-color: #181819;
+}
+
 @font-face {
     -font-family: 'Sora Bold';
     src: url(Fonts/Sora-Bold.ttf);
