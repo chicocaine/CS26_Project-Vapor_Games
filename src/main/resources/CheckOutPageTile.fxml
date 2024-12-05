@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane prefHeight="120.0" prefWidth="275.0" styleClass="Tile-BG" stylesheets="@Stylesheet/CheckOutPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.CheckOutPageTileController">
+   <children>
+      <ImageView fx:id="GameCheckOutTile_Image" fitHeight="120.0" fitWidth="87.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@Image/SmallTileTestPicture.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="CheckOutTileGameName_Label" layoutX="93.0" layoutY="5.0" prefHeight="25.0" prefWidth="177.0" styleClass="SubHeaderBold" text="Game Name" />
+      <Label layoutX="93.0" layoutY="30.0" prefHeight="25.0" prefWidth="35.0" styleClass="SubHeaderBold-Tile" text="AGS" />
+      <Label fx:id="CheckOutGamePrice_Label" layoutX="128.0" layoutY="30.0" prefHeight="25.0" prefWidth="142.0" styleClass="SubHeaderBold-Tile" text="0000.00" />
+   </children>
+</Pane>

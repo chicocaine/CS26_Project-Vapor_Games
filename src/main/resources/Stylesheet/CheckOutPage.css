@@ -1,0 +1,176 @@
+.background {
+    -fx-background-color: #FFFFFF;
+}
+.PS-background {
+    -fx-background-color: #9747FF;
+}
+
+.HeaderBold {
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.SubHeaderBold {
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.SubHeaderBold-Tile {
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.SubHeader {
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+}
+
+.SmallHeader {
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #000000;
+    -fx-font-size: 12px;
+}
+
+.SmallHeaderAGS {
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #000000;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 5 0 5;
+}
+
+.SubHeaderBold-Black {
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.PlaceOrder_Button {
+    -fx-background-color: #2A1447;
+    -fx-background-radius: 4;
+    -fx-font-family: 'Sora Bold';
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.BLACKNIGGA {
+    -fx-background-color: #000000;
+}
+
+.SEPERATOR {
+    -fx-background-color: #EBEBEB;
+    -fx-border-color: #EBEBEB;
+}
+
+.HBOX-AGS {
+    -fx-border-color: #D9D9D9;
+    -fx-border-radius: 15;
+ }
+
+/* General Styling for RadioButton */
+.radio-button {
+    /* Text color of the label associated with the RadioButton */
+    -fx-text-fill: #000000;
+
+    /* Font family for the label text */
+    -fx-font-family: 'Sora Bold';
+
+    /* Font size for the label text */
+    -fx-font-size: 14px;
+
+    /* Font weight for the label text (e.g., normal, bold) */
+    -fx-font-weight: bold;
+
+    -fx-padding: 5px;
+}
+
+/* Style for the ScrollPane */
+.scroll-pane {
+    -fx-background-color: #9747FF; /* Background color of the ScrollPane */
+}
+
+/* Style for the ScrollPane content */
+.scroll-pane .viewport {
+    -fx-background-color: #9747FF; /* Background color of the content area */
+}
+
+/* Style for the vertical scroll bar */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #9747FF; /* Background color of the vertical scrollbar */
+}
+
+/* Style for the horizontal scroll bar */
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #9747FF; /* Background color of the horizontal scrollbar */
+}
+
+/* Style for the scrollbar thumb */
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #882efd; /* Thumb color (the draggable part of the scrollbar) */
+}
+
+/* Style for the scrollbar track */
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: #9747FF; /* Background color of the TextArea */
+    -fx-border-color: #9747FF;      /* Border color */
+    -fx-border-width: 1;             /* Border thickness */
+    -fx-border-style: solid;
+}
+
+/* Styling the radio circle (unselected state) */
+.radio-button .radio {
+    /* Background color of the circle (radio toggle) */
+    -fx-background-color: white;
+
+    /* Border color of the radio circle */
+    -fx-border-color: #878787;
+
+    /* Border width of the radio circle */
+    -fx-border-width: 1px;
+
+    /* Border radius to make the circle perfectly round (ensure radius is large enough for a circle) */
+    -fx-border-radius: 10px;
+}
+
+/* Styling the radio circle when the RadioButton is selected */
+.radio-button:selected .radio {
+    /* Color of the dot inside the selected RadioButton */
+    -fx-mark-color: #000000;
+
+    /* Change the border color of the circle when selected */
+    -fx-border-color: #878787;
+}
+
+/* Optional: Change the alignment of the text and graphic in the RadioButton */
+.radio-button {
+    -fx-alignment: center-left; /* Align the text to the left of the RadioButton */
+}
+
+.AGSCOIN-BG {
+    -fx-background-color: #F9F9F9;
+    -fx-background-radius: 10;
+}
+
+.Tile-BG {
+    -fx-background-color: #9747FF;
+}
+
+
+@font-face {
+    -font-family: 'Sora Bold';
+    src: url('Fonts/Sora-Bold.ttf');
+}
+
+@font-face {
+    -font-family: 'Sora Regular';
+    src: url('Fonts/Sora-Regular.ttf')
+}

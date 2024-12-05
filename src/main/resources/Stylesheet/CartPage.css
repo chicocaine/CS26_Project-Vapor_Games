@@ -7,6 +7,16 @@
     -fx-background-radius: 4;
 }
 
+@font-face {
+    -font-family: 'Sora Bold';
+    src: url(Fonts/Sora-Bold.ttf);
+}
+
+@font-face {
+    -font-family: 'Sora Regular';
+    src: url('Fonts/Sora-Regular.ttf')
+}
+
 .header{
     -fx-font-family: 'Sora Bold';
     -fx-text-fill: #ffffff;
