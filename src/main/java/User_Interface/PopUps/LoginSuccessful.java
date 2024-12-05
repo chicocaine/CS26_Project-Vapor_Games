@@ -1,6 +1,7 @@
 package User_Interface.PopUps;
 
 import Accounts.User;
+import Accounts.UserSession;
 import User_Interface.AccountPageController;
 import User_Interface.MainScreenController;
 import User_Interface.WalletPageController;
@@ -21,6 +22,16 @@ public class LoginSuccessful {
 
     @FXML
     private Button continueToStore;
+
+    public void setUser(User user) {
+        this.currentUser = user;
+        UserSession.getInstance().setCurrentUser(user); // Set the current user in UserSession
+        System.out.println("User set in LoginSuccessful: " + currentUser);
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
 
     @FXML
     private void initialize() {
@@ -44,10 +55,7 @@ public class LoginSuccessful {
         });
     }
 
-    public void setUser(User user) {
-        this.currentUser = user;
-        System.out.println("User set in LoginSuccessful: " + currentUser);
-    }
+
 
     private void proceedToDashboard() throws IOException {
         Stage stage = (Stage) continueToStore.getScene().getWindow();
@@ -62,6 +70,7 @@ public class LoginSuccessful {
         MainScreenController mainController = fxmlLoader.getController();
         mainController.setUserOnDashboard(currentUser);
         mainController.setUser(currentUser);
+        System.out.println("User passed in main screen controller: "+ currentUser);
 
         stage.show();
     }

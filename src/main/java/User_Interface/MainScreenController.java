@@ -214,6 +214,7 @@ public class MainScreenController {
             StorePageController storePageController = loader.getController();
             for (GameTileController tileController : storePageController.getGameTileControllers()) {
                 tileController.setMainController(this);  // Set the main controller for each tile
+                //tileController.setCurrentUser(currentUser);
             }
 
         } catch (IOException e) {
