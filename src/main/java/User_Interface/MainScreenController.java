@@ -52,7 +52,7 @@ public class MainScreenController {
     @FXML
     private AnchorPane walletPageContainer; // Placeholder for wallet page content
 
-    private User currentUser;
+    public User currentUser;
 
     public void setUser(User user) {
         this.currentUser = user;
@@ -98,6 +98,8 @@ public class MainScreenController {
             handleSearchButton();  // Handle search button click
         } else if (source == CartButton_Pane){
             handleCartPage();
+        } else if (source == ReturnButton_Pane){
+            handleStoreOrDiscoverButton();
         }
     }
 

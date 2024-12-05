@@ -117,9 +117,6 @@ public class CartPageController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/CheckOutPage.fxml"));
             Parent root = loader.load();
 
-            // Optionally, you can pass data to the CheckOutPageController here
-
-
             Stage stage = (Stage) CheckOut_Button.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
