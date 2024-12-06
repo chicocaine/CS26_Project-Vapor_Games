@@ -8,39 +8,44 @@ import Utility.DateTime;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 public class Transaction {
 
-    CartManager cm = new CartManager();
+    private int transactionID;
     private ArrayList<Games> game_list;
     private User user;
     private boolean isConfirmed = false;
     private String transaction_date_time;
 
-    public void loadTransaction (User user) {
+    CartManager cm = new CartManager();
+
+    public void loadTransaction(User user) {
         this.game_list = cm.getCart(user);
         this.user = user;
     }
 
-    public ArrayList<Games> getGamesTransactionList () {
+    public ArrayList<Games> getGamesTransactionList() {
         return this.game_list;
     }
 
-    public double getTransactionTotalPrice () {
+    public double getTransactionTotalPrice() {
         return cm.getTotalPrice(this.game_list);
     }
 
-    public void recordTransaction () {
+    public void recordTransaction() {
         if (this.isConfirmed) {
             String query = "INSERT INTO transactions (userID, transaction_date, transaction_games, transaction_amount) VALUES (?, ?, ?, ?)";
 
             StringBuilder formattedGames = new StringBuilder();
             for (Games game : this.game_list) {
                 formattedGames.append(game.getGameTitle())
-                            .append(" (")
-                            .append(String.format("%.2f", game.getGamePrice()))
-                            .append("), ");
+                        .append(" (")
+                        .append(String.format("%.2f", game.getGamePrice()))
+                        .append("), ");
             }
 
             if (formattedGames.length() > 0) {
@@ -48,7 +53,7 @@ public class Transaction {
             }
 
             try (Connection conn = DBConnectionPool.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(query)) {
+                 PreparedStatement stmt = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
                 stmt.setInt(1, user.getUserID());
                 stmt.setString(2, this.transaction_date_time);
@@ -58,6 +63,10 @@ public class Transaction {
                 int rowsAffected = stmt.executeUpdate();
 
                 if (rowsAffected > 0) {
+                    ResultSet generatedKeys = stmt.getGeneratedKeys();
+                    if (generatedKeys.next()) {
+                        this.transactionID = generatedKeys.getInt(1);
+                    }
                     System.out.println("Transaction recorded successfully.");
                 } else {
                     System.out.println("Failed to record the transaction.");
@@ -71,12 +80,11 @@ public class Transaction {
         }
     }
 
-
-    public boolean confirmTransaction (boolean isConfirmed) {
+    public boolean confirmTransaction(boolean isConfirmed) {
         DateTime dt = new DateTime();
         UserManager um = new UserManager();
         UserManager.UserUpdates up = um.new UserUpdates();
-        
+
         user.updateBalance(0 - getTransactionTotalPrice());
         up.updateWalletBalance(this.user.getUserID(), user.getWallet().getBalance());
         this.isConfirmed = isConfirmed;
@@ -85,11 +93,49 @@ public class Transaction {
         return isConfirmed;
     }
 
-    public User getUser () {
+    public User getUser() {
         return this.user;
     }
 
-    public String getTransactionDate () {
+    public String getTransactionDate() {
         return this.transaction_date_time;
+    }
+
+    public int getTransactionID() {
+        return this.transactionID;
+    }
+
+    public static List<Transaction> getUserTransactions(User user) {
+        List<Transaction> transactions = new ArrayList<>();
+        String query = "SELECT * FROM transactions WHERE userID = ? ORDER BY transaction_date DESC";
+
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, user.getUserID());
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Transaction transaction = new Transaction();
+                transaction.transactionID = rs.getInt("transactionID");
+                transaction.user = user;
+                transaction.transaction_date_time = rs.getString("transaction_date");
+                transaction.isConfirmed = true; // Since it's already recorded in the database
+                transaction.game_list = parseGamesFromTransactionString(rs.getString("transaction_games"));
+                transactions.add(transaction);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return transactions;
+    }
+
+    private static ArrayList<Games> parseGamesFromTransactionString(String transactionGames) {
+        ArrayList<Games> gamesList = new ArrayList<>();
+        // Implement the logic to parse the games from the transaction string
+        // and add them to the gamesList
+        return gamesList;
     }
 }

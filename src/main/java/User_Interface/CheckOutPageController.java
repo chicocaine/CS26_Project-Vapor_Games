@@ -4,6 +4,7 @@ import Accounts.User;
 import Accounts.UserSession;
 import Games.Games;
 import Library.LibraryManager;
+import Transaction.Transaction;
 import Transaction.CartManager;
 import Utility.DBConnectionPool;
 import javafx.fxml.FXML;
@@ -135,6 +136,12 @@ public class CheckOutPageController {
                 loadUserInfo();
                 loadPurchaseSummary();
                 System.out.println("Order placed successfully!");
+
+                // Record the transaction
+                Transaction transaction = new Transaction();
+                transaction.loadTransaction(currentUser);
+                transaction.confirmTransaction(true);
+                transaction.recordTransaction();
 
             } catch (SQLException e) {
                 e.printStackTrace();
