@@ -64,8 +64,10 @@ public class WalletPageController {
         System.out.println("Current user in WalletPageController: " + currentUser);
         if (currentUser != null) {
             Redeem redeem = new Redeem(this);
-            redeem.redeemCode(WalletInputCode_TextField.getText(), currentUser);
-            refreshWallet();
+            boolean success = redeem.redeemCode(WalletInputCode_TextField.getText(), currentUser);
+            if (success) {
+                refreshWallet();
+            }
         }
     }
 

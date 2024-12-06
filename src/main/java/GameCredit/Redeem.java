@@ -16,7 +16,7 @@ public class Redeem {
         this.walletPageController = walletPageController;
     }
 
-    public void redeemCode(String code, User user) {
+    public boolean redeemCode(String code, User user) {
         String sqlCheck = "SELECT is_redeemed, credit_amount FROM VaporGames.game_credits WHERE code = ?";
         String sqlUpdate = "UPDATE VaporGames.game_credits SET is_redeemed = TRUE WHERE code = ?";
         String sqlUpdateWallet = "UPDATE VaporGames.users SET wallet = wallet + ? WHERE userID = ?";
@@ -48,13 +48,14 @@ public class Redeem {
 
                         System.out.println("Code redeemed successfully! You have received your credit.");
                         walletPageController.showNotification("Code redeemed successfully!", "success");
+                        return true;
                     } catch (SQLException e) {
                         conn.rollback(); // Rollback transaction on error
                         System.err.println("Error processing the redemption: " + e.getMessage());
                     }
                 } else {
                     System.out.println("Error: This code has already been redeemed.");
-                    walletPageController.showNotification("This code has already been redeemed.", "error");
+                    walletPageController.showNotification("This code has already been redeemed.", "alreadyRedeemed");
                 }
             } else {
                 System.out.println("Error: Invalid code.");
@@ -64,5 +65,6 @@ public class Redeem {
         } catch (SQLException e) {
             System.err.println("Error processing the redemption: " + e.getMessage());
         }
+        return false;
     }
 }
