@@ -100,7 +100,6 @@ public class Transaction {
     public String getTransactionDate() {
         return this.transaction_date_time;
     }
-
     public int getTransactionID() {
         return this.transactionID;
     }
