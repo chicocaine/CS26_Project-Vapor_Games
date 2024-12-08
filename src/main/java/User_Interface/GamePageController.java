@@ -65,7 +65,7 @@ public class GamePageController {
         this.currentGame = game;
         StorePageGameTitle_Label.setText(game.getGameTitle());
         StoreGameDescription_Label.setText(game.getGameDescription());
-        double price = Double.parseDouble(String.valueOf(game.getGamePrice()));
+        double price = Double.parseDouble(String.valueOf(game.getConvertedGamePrice()));
         GamePrice_Label.setText(String.format("%.2f", price));
         StoreGameThumbnail_Image.setImage(new javafx.scene.image.Image(game.getCardImageURL()));
         StorePageGameMainPicture_Image.setImage(new javafx.scene.image.Image(game.getShowcaseImagesURL().get(0)));

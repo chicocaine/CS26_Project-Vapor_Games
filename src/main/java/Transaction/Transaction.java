@@ -44,7 +44,7 @@ public class Transaction {
             for (Games game : this.game_list) {
                 formattedGames.append(game.getGameTitle())
                         .append(" (")
-                        .append(String.format("%.2f", game.getGamePrice()))
+                        .append(String.format("%.2f", game.getConvertedGamePrice()))
                         .append("), ");
             }
 
