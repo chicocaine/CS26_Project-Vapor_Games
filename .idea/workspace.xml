@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="pfp default photo location fixed to local dir, and transaction bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Transaction/CartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transaction/CartManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/GamePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/GamePageController.java" afterDir="false" />
+=======
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 411a42f558729b08f5f3be8cb3396b4c98aa1bd6
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +227,7 @@
       <workItem from="1733370265824" duration="2024000" />
       <workItem from="1733397866605" duration="10910000" />
       <workItem from="1733446086315" duration="803000" />
-      <workItem from="1733623501301" duration="1725000" />
+      <workItem from="1733623501301" duration="9895000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -296,7 +301,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Games/GamesManager.java</url>
           <line>93</line>
-          <properties class="Games.GamesManager">
+          <properties class="Games.GamesManager" method="getAllGames">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
