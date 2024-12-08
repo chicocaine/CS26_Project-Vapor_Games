@@ -84,15 +84,12 @@ public class GamePageController {
     }
 
     public void addToCart() {
-        if (currentUser != null && currentGame != null) {
-            CartManager cartmngr = new CartManager();
-            cartmngr.addToCart(currentUser, currentGame);
-            System.out.println("Game successfully added to the cart.");
-        } else if (currentGame == null) {
+        if (currentUser == null && currentGame == null) {
             System.err.println("[ERROR] Current game is null!");
-        } else {
-            System.err.println("[ERROR] Current user is null!");
+            return;
         }
+        CartManager cartmngr = new CartManager();
+        cartmngr.addToCart(currentUser, currentGame);
     }
 
     public void buyNow() {
