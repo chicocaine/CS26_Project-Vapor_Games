@@ -203,7 +203,7 @@ public class CartManager {
         for (Games x : game_list) {
             total_price += x.getGamePrice();
         }
-        return total_price;
+        return total_price / 6.9;
     }
 
 }

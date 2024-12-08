@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -135,6 +136,7 @@ public class CheckOutPageController {
                 cartManager.clearCart(currentUser);
                 loadUserInfo();
                 loadPurchaseSummary();
+                showPaymentSuccessPopup();
                 System.out.println("Order placed successfully!");
 
                 // Record the transaction
@@ -149,6 +151,20 @@ public class CheckOutPageController {
             }
         } else {
             System.out.println("Insufficient balance to place the order.");
+        }
+    }
+    private void showPaymentSuccessPopup() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/PaymentSuccessPopUP.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load payment success popup.");
         }
     }
 }
