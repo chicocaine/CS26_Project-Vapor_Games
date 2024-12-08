@@ -383,7 +383,7 @@ public class GamesManager {
                     gameStatement.setString(1, game.getGameTitle());
                     gameStatement.setString(2, game.getGameReleaseDate());
                     gameStatement.setString(3, game.getGameDescription());
-                    gameStatement.setDouble(4, game.getGamePrice());
+                    gameStatement.setDouble(4, game.getConvertedGamePrice());
                     gameStatement.setBoolean(5, game.isAvailable());
 
                     int rowsAffected = gameStatement.executeUpdate();

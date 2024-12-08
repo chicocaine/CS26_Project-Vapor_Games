@@ -33,8 +33,8 @@ public class MediumGameTileController {
         this.game = game;
         if (game != null) {
             MediumGameTile_Name.setText(game.getGameTitle());
-            double gamePrice = game.getGamePrice();
-            MediumGameTile_Price.setText(String.format("%.2f", game.getGamePrice()));
+            double gamePrice = game.getConvertedGamePrice();
+            MediumGameTile_Price.setText(String.format("%.2f", game.getConvertedGamePrice()));
             String imagePath = (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty()) ? game.getCardImageURL() : "/images/default-image.png";
             System.out.println(imagePath);
             try {

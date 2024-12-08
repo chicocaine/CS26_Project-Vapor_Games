@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -96,12 +97,12 @@ public class CheckOutPageController {
                 CheckOutPageTileController tileController = loader.getController();
 
                 tileController.CheckOutTileGameName_Label.setText(game.getGameTitle());
-                tileController.CheckOutGamePrice_Label.setText(String.format("%.2f", game.getGamePrice()));
+                tileController.CheckOutGamePrice_Label.setText(String.format("%.2f", game.getConvertedGamePrice()));
                 String imagepath = game.getCardImageURL();
                 tileController.GameCheckOutTile_Image.setImage(new Image(imagepath));
 
                 PurchaseSummary_VBox.getChildren().add(gameTilePane);
-                totalCost += game.getGamePrice();
+                totalCost += game.getConvertedGamePrice();
             } catch (IOException e) {
                 e.printStackTrace();
                 System.out.println("[ERROR] Failed to load checkout tile.");
@@ -113,7 +114,7 @@ public class CheckOutPageController {
 
     private void placeOrder() {
         List<Games> cartItems = cartManager.getCart(currentUser);
-        double totalCost = cartItems.stream().mapToDouble(Games::getGamePrice).sum();
+        double totalCost = cartItems.stream().mapToDouble(Games::getConvertedGamePrice).sum();
 
         if (currentUser.getWallet().getBalance() >= totalCost) {
             try (Connection conn = DBConnectionPool.getConnection()) {
@@ -134,6 +135,7 @@ public class CheckOutPageController {
                 currentUser.getWallet().setBalance(currentUser.getWallet().getBalance() - totalCost);
                 loadUserInfo();
                 loadPurchaseSummary();
+                showPaymentSuccessPopup();
                 System.out.println("Order placed successfully!");
 
                 // Record the transaction
@@ -150,6 +152,20 @@ public class CheckOutPageController {
             }
         } else {
             System.out.println("Insufficient balance to place the order.");
+        }
+    }
+    private void showPaymentSuccessPopup() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/PaymentSuccessPopUP.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load payment success popup.");
         }
     }
 }

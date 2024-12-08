@@ -7,8 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import Games.Games;
 import javafx.scene.text.Text;
+import Games.Games;
 
 public class GamePageController {
 
@@ -17,9 +17,6 @@ public class GamePageController {
 
     @FXML
     private Pane GameBuyNowButton_Pane;
-
-    @FXML
-    private Pane GameGenreTags_Pane;
 
     @FXML
     private Label GamePrice_Label;
@@ -38,6 +35,7 @@ public class GamePageController {
 
     @FXML
     private Label StorePageGameTitle_Label;
+
     @FXML
     private Text genreLabel0;
 
@@ -55,17 +53,19 @@ public class GamePageController {
 
     private User currentUser;
     private Games currentGame;
+    private MainScreenController mainScreenController;
 
     @FXML
-    private void initialize(){
+    private void initialize() {
         GameAddToCartButton_Pane.setOnMouseClicked(e -> addToCart());
-        GameBuyNowButton_Pane.setOnMouseClicked(e -> addToCart());
+        GameBuyNowButton_Pane.setOnMouseClicked(e -> buyNow());
     }
+
     public void displayGameDetails(Games game) {
         this.currentGame = game;
         StorePageGameTitle_Label.setText(game.getGameTitle());
         StoreGameDescription_Label.setText(game.getGameDescription());
-        double price = Double.parseDouble(String.valueOf(game.getGamePrice()));
+        double price = Double.parseDouble(String.valueOf(game.getConvertedGamePrice()));
         GamePrice_Label.setText(String.format("%.2f", price));
         StoreGameThumbnail_Image.setImage(new javafx.scene.image.Image(game.getCardImageURL()));
         StorePageGameMainPicture_Image.setImage(new javafx.scene.image.Image(game.getShowcaseImagesURL().get(0)));
@@ -79,15 +79,28 @@ public class GamePageController {
         this.currentUser = user;
     }
 
+    public void setMainScreenController(MainScreenController mainScreenController) {
+        this.mainScreenController = mainScreenController;
+    }
+
     public void addToCart() {
         if (currentUser != null && currentGame != null) {
             CartManager cartmngr = new CartManager();
             cartmngr.addToCart(currentUser, currentGame);
             System.out.println("Game successfully added to the cart.");
-        } else if(currentGame == null){
+        } else if (currentGame == null) {
             System.err.println("[ERROR] Current game is null!");
-        }else {
+        } else {
             System.err.println("[ERROR] Current user is null!");
+        }
+    }
+
+    public void buyNow() {
+        addToCart();
+        if (mainScreenController != null) {
+            mainScreenController.loadCartPage();
+        } else {
+            System.err.println("[ERROR] MainScreenController is not set!");
         }
     }
 }

@@ -201,7 +201,7 @@ public class CartManager {
     public double getTotalPrice (ArrayList<Games> game_list) {
         double total_price = 0;
         for (Games x : game_list) {
-            total_price += x.getGamePrice();
+            total_price += x.getConvertedGamePrice();
         }
         return total_price;
     }

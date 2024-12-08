@@ -44,9 +44,11 @@ public class CartPageTileController {
 
     public void setGameDetails(Games game) {
         this.game = game;
+        double gamePrice = game.getConvertedGamePrice();
+        System.out.println(gamePrice);
         if (game != null) {
             GameName_Label.setText(game.getGameTitle());
-            GameTilePrice_Label.setText(String.format("%.2f", game.getGamePrice()));
+            GameTilePrice_Label.setText(String.format("%.2f",gamePrice));
             String imagePath = (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty()) ? game.getCardImageURL() : "/images/default-image.png";
             GameTileImage_Image.setImage(new Image(imagePath));
         }

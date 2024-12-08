@@ -3,6 +3,7 @@ package User_Interface;
 import Accounts.User;
 import Accounts.UserSession;
 import Transaction.CartManager;
+import Games.Games;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -314,7 +315,7 @@ public class MainScreenController {
         }
     }
 
-    private void loadCartPage() {
+    public void loadCartPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/CartPage.fxml"));
             Pane cartPagePane = loader.load();
@@ -332,7 +333,21 @@ public class MainScreenController {
             e.printStackTrace();  // Handle potential loading errors
         }
     }
+    private void loadGamePage(Games game) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GamePage.fxml"));
+            Pane gamePagePane = loader.load();
+            setMainContent_Pane(gamePagePane);  // Set the main content to game page
 
+            GamePageController gamePageController = loader.getController();
+            gamePageController.setMainScreenController(this);  // Set the main screen controller
+            gamePageController.setCurrentUser(currentUser);  // Set the current user
+            gamePageController.displayGameDetails(game);  // Display game details
+
+        } catch (IOException e) {
+            e.printStackTrace();  // Handle potential loading errors
+        }
+    }
 
     // === ACCOUNT INFO UPDATE ===
     private void updateAccountInfo() {

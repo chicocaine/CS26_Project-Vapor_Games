@@ -24,7 +24,7 @@ public class Games {
         this.gameTitle = gameTitle;
         this.gameReleaseDate = gameReleaseDate;
         this.gameDescription = gameDescription;
-        this.gamePrice = gamePrice /  6.9;
+        this.gamePrice = gamePrice;
         this.genre = genre;
         this.isAvailable = isAvailable;
         this.cardImageURL = cardImageURL;
@@ -35,6 +35,10 @@ public class Games {
         this.gameID = gameID;
     }
 
+
+    public double getConvertedGamePrice() {
+        return gamePrice / 6.9;
+    }
     public void setGameTitle (String gameTitle) {
         this.gameTitle = gameTitle;
     }
