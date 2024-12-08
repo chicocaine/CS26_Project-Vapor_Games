@@ -81,7 +81,7 @@ public class CheckOutPageController {
 
     public void loadUserInfo() {
         AccountName_Label.setText(currentUser.getName());
-        CurrentBalance_Label.setText(String.valueOf(currentUser.getWallet().getBalance()));
+        CurrentBalance_Label.setText(String.format("%.2f",currentUser.getWallet().getBalance()));
     }
 
     public void loadPurchaseSummary() {
@@ -131,7 +131,7 @@ public class CheckOutPageController {
                 }
 
                 conn.commit();
-                currentUser.getWallet().updateBalance(currentUser.getWallet().getBalance() - totalCost);
+                currentUser.getWallet().setBalance(currentUser.getWallet().getBalance() - totalCost);
                 cartManager.clearCart(currentUser);
                 loadUserInfo();
                 loadPurchaseSummary();

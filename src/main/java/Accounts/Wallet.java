@@ -12,6 +12,13 @@ public class Wallet { // don't know how this works honestly
         this.balance += funds;
     }
 
+    public void decrementBalance (double funds) {
+        this.balance -= funds;
+    }
+
+    public void setBalance (double balance) {
+        this.balance = balance;
+    }
     public double getBalance () {
         return balance;
     }
