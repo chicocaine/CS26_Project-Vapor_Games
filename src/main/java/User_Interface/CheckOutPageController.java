@@ -69,18 +69,23 @@ public class CheckOutPageController {
     @FXML
     void HandlesMouseClicked(MouseEvent event) {
         if (event.getSource() == CloseOrReturn_Image) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) CloseOrReturn_Image.getScene().getWindow();
-                stage.setScene(new Scene(root));
-                MainScreenController mainScreenController = loader.getController();
-                mainScreenController.currentUser = currentUser;
-                mainScreenController.setUserOnDashboard(currentUser);
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("[ERROR] Failed to load MainScreen.");
-            }
+            loadMainScreen();
+        }
+    }
+
+    @FXML
+    void loadMainScreen(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) CloseOrReturn_Image.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            MainScreenController mainScreenController = loader.getController();
+            mainScreenController.currentUser = currentUser;
+            mainScreenController.setUserOnDashboard(currentUser);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load MainScreen.");
         }
     }
 
@@ -174,11 +179,23 @@ public class CheckOutPageController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/PaymentSuccessPopUP.fxml"));
             Parent root = loader.load();
+            PaymentSuccessPopUPController controller = loader.getController();
+
+            // Create a new stage for the payment success popup
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setResizable(false);
-            stage.initStyle(StageStyle.UTILITY);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.show();
+
+            controller.setOnPopupClosed(() -> {
+                if (controller.isBackToStoreClicked()) {
+                    loadMainScreen();
+                } else {
+                    System.out.println("Popup closed without clicking 'Back to Store'.");
+                }
+            });
+
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("[ERROR] Failed to load payment success popup.");

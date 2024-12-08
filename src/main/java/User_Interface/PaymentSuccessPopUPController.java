@@ -1,22 +1,13 @@
-// src/main/java/User_Interface/PaymentSuccessPopUPController.java
 package User_Interface;
 
 import Accounts.User;
 import Accounts.UserSession;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class PaymentSuccessPopUPController {
-
-    @FXML
-    private Stage stage;
 
     @FXML
     private Button BackToStore_Button;
@@ -26,39 +17,43 @@ public class PaymentSuccessPopUPController {
 
     public User currentUser = UserSession.getInstance().getCurrentUser();
 
+    private boolean ifBackToStoreClicked = false;
+
+    // Declare a callback to notify when the popup closes
+    private Runnable onPopupClosed;
+
+    public boolean isBackToStoreClicked() {
+        return ifBackToStoreClicked;
+    }
+
+    // Set the callback for when the popup closes
+    public void setOnPopupClosed(Runnable callback) {
+        this.onPopupClosed = callback;
+    }
+
     @FXML
-    void HandlesMouseClicked(MouseEvent event) {
+    void handleMouseClicked(MouseEvent event) {
         Object source = event.getSource();
 
         if (source == BackToStore_Button) {
-            try {
-                // Close the popup
-                Stage popupStage = (Stage) BackToStore_Button.getScene().getWindow();
-                popupStage.close();
-
-                // Close the checkout page
-                Stage checkoutStage = (Stage) stage.getOwner();
-                checkoutStage.close();
-
-                // Load and show the main screen
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
-                Parent root = loader.load();
-                Stage mainStage = new Stage();
-                mainStage.setScene(new Scene(root));
-                MainScreenController mainScreenController = loader.getController();
-                mainScreenController.setUser(currentUser);
-                mainScreenController.setUserOnDashboard(currentUser);
-                mainStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("[ERROR] Failed to load MainScreen.");
+            if (!ifBackToStoreClicked) {
+                ifBackToStoreClicked = true;
+                System.out.println("BackToStore_Button clicked. Current state: " + ifBackToStoreClicked);
+                closePopup();
             }
         } else if (source == DownloadReciept_Button) {
-            // ADD FUNCTIONS FOR RECEIPT
+            // ADD FUNCTIONS FOR RECEIPT if needed
         }
     }
 
-    public void setStage(Stage newStage) {
-        this.stage = newStage;
+    private void closePopup() {
+        System.out.println("Closing popup window.");
+        Stage stage = (Stage) BackToStore_Button.getScene().getWindow();
+        stage.close();
+
+        // Trigger the callback when the popup is closed
+        if (onPopupClosed != null) {
+            onPopupClosed.run();
+        }
     }
 }

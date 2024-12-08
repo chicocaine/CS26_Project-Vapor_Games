@@ -16,7 +16,7 @@
             <Font name="Arial" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="DownloadReciept_Button" layoutX="55.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#HandlesMouseClicked" prefHeight="45.36" prefWidth="317.22" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="Download Reciept" textFill="WHITE">
+      <Button fx:id="DownloadReciept_Button" layoutX="55.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#handleMouseClicked" prefHeight="45.36" prefWidth="317.22" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="Download Reciept" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -24,7 +24,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="BackToStore_Button" layoutX="55.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#HandlesMouseClicked" prefHeight="45.36" prefWidth="317.22" stylesheets="@Stylesheet/VGCredentials.css" text="Back to Store" textFill="WHITE">
+      <Button fx:id="BackToStore_Button" layoutX="55.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#handleMouseClicked" prefHeight="45.36" prefWidth="317.22" stylesheets="@Stylesheet/VGCredentials.css" text="Back to Store" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

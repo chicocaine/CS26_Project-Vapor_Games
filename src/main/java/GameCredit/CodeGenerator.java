@@ -39,6 +39,12 @@ public class CodeGenerator {
         return credit5000;
     }
 
+    public String code10000() {
+        String credit10000 = "ZND" + UUID.randomUUID().toString();
+        insertCode("10000", credit10000);
+        return credit10000;
+    }
+
     private void insertCode(String creditAmount, String code) {
         String sql = "INSERT INTO VaporGames.game_credits (credit_amount, code) VALUES (?, ?)";
 
@@ -64,6 +70,8 @@ public class CodeGenerator {
         System.out.println("Generated Code 500: " + generator.code500());
         System.out.println("Generated Code 1000: " + generator.code1000());
         System.out.println("Generated Code 5000: " + generator.code5000());
+        System.out.println("Generated Code 5000: " + generator.code10000());
+
 
         DBConnectionPool.close();
     }
