@@ -86,6 +86,7 @@ public class CheckOutPageController {
 
     public void loadUserInfo() {
         AccountName_Label.setText(currentUser.getName());
+        System.out.println(currentUser.getWallet().getBalance());
         CurrentBalance_Label.setText(String.format("%.2f",currentUser.getWallet().getBalance()));
     }
 
@@ -117,7 +118,6 @@ public class CheckOutPageController {
     }
 
     private void placeOrder() {
-
         // checks if a payment method is selected
         if (!isAGSCoinSelected) {
             System.out.println("No payment method selected.");
@@ -143,9 +143,6 @@ public class CheckOutPageController {
                 }
 
                 conn.commit();
-                currentUser.getWallet().setBalance(currentUser.getWallet().getBalance() - totalCost);
-                loadUserInfo();
-
                 System.out.println("Order placed successfully!");
 
                 // Record the transaction
@@ -158,9 +155,8 @@ public class CheckOutPageController {
 
                 // Refresh the purchase summary
                 loadPurchaseSummary();
+                loadUserInfo();
                 showPaymentSuccessPopup();
-
-                System.out.println("Order placed successfully!");
 
             } catch (SQLException e) {
                 e.printStackTrace();
