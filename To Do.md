@@ -14,4 +14,4 @@ Veto'ed:
 Select Payment Method Pop Up [Okay] ---> close the pop up when button is clicked //this is for the check out
 
 Remarks:
-Buy Now Button ---> Cart Page //?? dapat diretso na ni checkout
+Buy Now Button ---> redirect to checkout page
