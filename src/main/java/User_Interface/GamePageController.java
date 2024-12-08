@@ -1,14 +1,19 @@
-// src/main/java/User_Interface/GamePageController.java
 package User_Interface;
 
 import Accounts.User;
 import Transaction.CartManager;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import Games.Games;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class GamePageController {
 
@@ -53,7 +58,6 @@ public class GamePageController {
 
     private User currentUser;
     private Games currentGame;
-    private MainScreenController mainScreenController;
 
     @FXML
     private void initialize() {
@@ -79,10 +83,6 @@ public class GamePageController {
         this.currentUser = user;
     }
 
-    public void setMainScreenController(MainScreenController mainScreenController) {
-        this.mainScreenController = mainScreenController;
-    }
-
     public void addToCart() {
         if (currentUser == null && currentGame == null) {
             System.err.println("[ERROR] Current game is null!");
@@ -94,10 +94,20 @@ public class GamePageController {
 
     public void buyNow() {
         addToCart();
-        if (mainScreenController != null) {
-            mainScreenController.loadCartPage();
-        } else {
-            System.err.println("[ERROR] MainScreenController is not set!");
+        loadCheckOutPage();
+    }
+
+    private void loadCheckOutPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CheckOutPage.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) GameBuyNowButton_Pane.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load checkout page.");
         }
     }
 }
