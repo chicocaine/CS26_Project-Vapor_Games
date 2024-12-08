@@ -100,41 +100,7 @@ public class Transaction {
     public String getTransactionDate() {
         return this.transaction_date_time;
     }
-    public int getTransactionID() {
-        return this.transactionID;
-    }
 
-    public static List<Transaction> getUserTransactions(User user) {
-        List<Transaction> transactions = new ArrayList<>();
-        String query = "SELECT * FROM transactions WHERE userID = ? ORDER BY transaction_date DESC";
 
-        try (Connection conn = DBConnectionPool.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            stmt.setInt(1, user.getUserID());
-            ResultSet rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                Transaction transaction = new Transaction();
-                transaction.transactionID = rs.getInt("transactionID");
-                transaction.user = user;
-                transaction.transaction_date_time = rs.getString("transaction_date");
-                transaction.isConfirmed = true; // Since it's already recorded in the database
-                transaction.game_list = parseGamesFromTransactionString(rs.getString("transaction_games"));
-                transactions.add(transaction);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return transactions;
-    }
-
-    private static ArrayList<Games> parseGamesFromTransactionString(String transactionGames) {
-        ArrayList<Games> gamesList = new ArrayList<>();
-        // Implement the logic to parse the games from the transaction string
-        // and add them to the gamesList
-        return gamesList;
-    }
 }
