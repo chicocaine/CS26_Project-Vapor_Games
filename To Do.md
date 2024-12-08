@@ -11,7 +11,4 @@ Password Successfully Changed [Okay] ---> Close pop up, stay on the account page
 
 
 //BUGS TO FIX
-Game will be added to cart even if its already owned
-Bind payment option to place order
-Transaction Insertion in the DB
-When placing an order it deducts x2(? basta di mao iya i deduct) of the price
+Done
