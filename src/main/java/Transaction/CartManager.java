@@ -18,6 +18,12 @@ public class CartManager {
     public CartManager () { this.cart = new ArrayList<>(); }
 
     public void addToCart(User user, Games game) {
+
+        if (isGameInLibrary(user, game)) {
+            System.out.println("Game already exists in the library.");
+            return;
+        }
+
         int userID = user.getUserID();
         int gameID = game.getGameID();
 
@@ -51,6 +57,7 @@ public class CartManager {
             int rowsAffected = stmt.executeUpdate();
     
             if (rowsAffected > 0) {
+                System.out.println("real");
                 System.out.println("Game successfully added to the cart.");
             } else {
                 System.out.println("Failed to add game to the cart.");
@@ -204,6 +211,29 @@ public class CartManager {
             total_price += x.getConvertedGamePrice();
         }
         return total_price;
+    }
+
+    public boolean isGameInLibrary(User user, Games game) {
+        int userID = user.getUserID();
+        int gameID = game.getGameID();
+
+        String query = "SELECT * FROM libraries WHERE userID = ? AND gameID = ?";
+
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, userID);
+            stmt.setInt(2, gameID);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 }
