@@ -23,7 +23,7 @@
 .label-SMALL {
     -fx-text-fill: #ffffff;
     -fx-font-family: 'Sora Regular';
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
 }
 
 .textfield-CHANGEABLE {
@@ -68,4 +68,10 @@
 @font-face {
     -font-family: 'Sora Regular';
     src: url('Fonts/Sora-Regular.ttf')
+}
+
+.labelDate{
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 14px;
 }

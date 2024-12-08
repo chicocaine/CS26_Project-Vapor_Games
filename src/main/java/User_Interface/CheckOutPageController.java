@@ -134,8 +134,7 @@ public class CheckOutPageController {
                 conn.commit();
                 currentUser.getWallet().setBalance(currentUser.getWallet().getBalance() - totalCost);
                 loadUserInfo();
-                loadPurchaseSummary();
-                showPaymentSuccessPopup();
+
                 System.out.println("Order placed successfully!");
 
                 // Record the transaction
@@ -145,6 +144,12 @@ public class CheckOutPageController {
 
                 // Clear the cart for the user after transaction
                 cartManager.clearCart(currentUser);
+
+                // Refresh the purchase summary
+                loadPurchaseSummary();
+                showPaymentSuccessPopup();
+
+                System.out.println("Order placed successfully!");
 
             } catch (SQLException e) {
                 e.printStackTrace();

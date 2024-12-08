@@ -98,7 +98,7 @@ public class CartPageController {
         if (currentUser != null && cartManager != null) {
             MyCart.clear();
             MyCart.addAll(cartManager.getCart(currentUser));
-            StoreCreditsBalance_Label.setText(String.valueOf(currentUser.getWallet().getBalance()));
+            StoreCreditsBalance_Label.setText(String.format("%.2f",currentUser.getWallet().getBalance()));
         }
     }
 

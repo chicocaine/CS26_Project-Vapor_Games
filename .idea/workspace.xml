@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/TransactionHistoryPageTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/TransactionHistoryPageTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/AccountPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/AccountPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/TransactionHistoryPageTile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TransactionHistoryPageTile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

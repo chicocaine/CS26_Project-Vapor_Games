@@ -18,7 +18,7 @@ public class TransactionHistoryPageTileController {
     public void setTransactionDetails(String date, int orderId, double totalPrice) {
         Date_Label.setText(date);
         OrderID_Label.setText(String.valueOf(orderId));
-        TotalPrice_Label.setText(String.format("$%.2f", totalPrice));
+        TotalPrice_Label.setText(String.format("%.2f", totalPrice));
         //System.out.println("total price in transaction : "+String.format("$%.2f", totalPrice));
     }
     @FXML
