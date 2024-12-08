@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/uploads/profile_pics/15138552-b8eb-4e02-8f1b-30cc97d9b86a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transaction/CartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transaction/CartManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/SignUpController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +290,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Games/GamesManager.java</url>
           <line>93</line>
-          <properties class="Games.GamesManager" method="getAllGames">
+          <properties class="Games.GamesManager">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Paths;
 
 public class SignUpController {
 
@@ -94,7 +95,7 @@ public class SignUpController {
 
         // Set default profile photo
         // Use a relative path for portability
-        File defaultPhoto = new File("C:\\codes\\CS26\\CS26_Project-Vapor_Games\\src\\main\\resources\\Image\\ProfileTestPicture.png");
+        File defaultPhoto = Paths.get("src", "main", "resources", "Image", "ProfileTestPicture.png").toFile();
 
         // Register the user
         try {

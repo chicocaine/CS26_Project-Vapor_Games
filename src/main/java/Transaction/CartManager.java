@@ -13,13 +13,13 @@ import Utility.DBConnectionPool;
 
 public class CartManager {
 
-    private ArrayList<Games> cart = new ArrayList<>();
+    private ArrayList<Games> cart;
         
-    public CartManager () {}
+    public CartManager () { this.cart = new ArrayList<>(); }
 
     public void addToCart(User user, Games game) {
         int userID = user.getUserID();
-        int gameID = game.getGameID(); // Assuming Games class has getGameID()
+        int gameID = game.getGameID();
 
         String selectQuery = "SELECT * FROM cart_games WHERE userID = ? AND gameID = ?";
 

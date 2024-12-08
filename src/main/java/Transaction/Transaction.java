@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Transaction {
 
@@ -23,9 +24,10 @@ public class Transaction {
 
     CartManager cm = new CartManager();
 
-    public void loadTransaction(User user) {
-        this.game_list = cm.getCart(user);
+    public Transaction(User user) {
+        this.game_list = new ArrayList<>();
         this.user = user;
+        this.game_list = cm.getCart(user);
     }
 
     public ArrayList<Games> getGamesTransactionList() {
@@ -38,18 +40,18 @@ public class Transaction {
 
     public void recordTransaction() {
         if (this.isConfirmed) {
-            String query = "INSERT INTO transactions (userID, transaction_date, transaction_games, transaction_amount) VALUES (?, ?, ?, ?)";
 
-            StringBuilder formattedGames = new StringBuilder();
-            for (Games game : this.game_list) {
-                formattedGames.append(game.getGameTitle())
-                        .append(" (")
-                        .append(String.format("%.2f", game.getGamePrice()))
-                        .append("), ");
+            if (this.transaction_date_time == null || this.game_list == null || this.game_list.isEmpty()) {
+                System.out.println("Transaction date or game list is empty. Cannot record transaction.");
+                return;
             }
 
-            if (formattedGames.length() > 0) {
-                formattedGames.setLength(formattedGames.length() - 2);
+            String query = "INSERT INTO transactions (userID, transaction_date, transaction_games, transaction_amount) VALUES (?, ?, ?, ?)";
+
+            StringJoiner formattedGames = new StringJoiner(", ");
+
+            for (Games game : this.game_list) {
+                formattedGames.add(game.getGameTitle() + " (" + String.format("%.2f", game.getGamePrice()) + ")");
             }
 
             try (Connection conn = DBConnectionPool.getConnection();
