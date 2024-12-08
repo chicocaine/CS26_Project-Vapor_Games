@@ -60,8 +60,4 @@ public class MainProgramApplication extends Application {
         stage.setX(event.getScreenX() - xOffset);
         stage.setY(event.getScreenY() - yOffset);
     }
-
-    public static void main(String[] args) {
-        launch();
-    }
 }

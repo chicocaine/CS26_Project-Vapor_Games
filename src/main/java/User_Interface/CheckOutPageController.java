@@ -55,11 +55,15 @@ public class CheckOutPageController {
     private CartManager cartManager = new CartManager();
     private LibraryManager libraryManager = new LibraryManager();
 
+    private boolean isAGSCoinSelected;
+
     @FXML
     private void initialize() {
         loadUserInfo();
         loadPurchaseSummary();
+        this.isAGSCoinSelected = false;
         PlaceOrder_Button.setOnAction(event -> placeOrder());
+        AGSCoin_RadioButton.setOnAction(event -> handleAGSCoinSelection());
     }
 
     @FXML
@@ -113,6 +117,13 @@ public class CheckOutPageController {
     }
 
     private void placeOrder() {
+
+        // checks if a payment method is selected
+        if (!isAGSCoinSelected) {
+            System.out.println("No payment method selected.");
+            return;
+        }
+
         List<Games> cartItems = cartManager.getCart(currentUser);
         double totalCost = cartItems.stream().mapToDouble(Games::getConvertedGamePrice).sum();
 
@@ -168,4 +179,9 @@ public class CheckOutPageController {
             System.out.println("[ERROR] Failed to load payment success popup.");
         }
     }
+
+    private void handleAGSCoinSelection() {
+        this.isAGSCoinSelected = AGSCoin_RadioButton.isSelected();
+    }
+
 }
