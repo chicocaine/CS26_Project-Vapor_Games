@@ -58,11 +58,6 @@ public class MediumGameTileController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/GamePage.fxml"));
             Pane gamePagePane = loader.load();
 
-            // Get the game page controller and pass the game details
-            //VGGamePageController gamePageController = loader.getController();
-            //gamePageController.displayGameDetails(game);
-
-            // Update the MainContent_Pane via the main controller
             if (mainController != null) {
                 mainController.setMainContent_Pane(gamePagePane);
             } else {

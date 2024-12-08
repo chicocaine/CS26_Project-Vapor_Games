@@ -3,7 +3,6 @@ package User_Interface;
 import Accounts.User;
 import Accounts.UserSession;
 import Transaction.CartManager;
-import Games.Games;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -48,10 +46,7 @@ public class MainScreenController {
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
 
-    private boolean isDiscoverPage = false;  // Flag to track the current page state
-
-    @FXML
-    private AnchorPane walletPageContainer; // Placeholder for wallet page content
+    private boolean isDiscoverPage = false;
 
     public User currentUser;
 
@@ -59,27 +54,16 @@ public class MainScreenController {
         this.currentUser = user;
 
     }
-
-    private CartManager cartManager;  // Assuming CartManager is a class that you have
-
-    // Setter to initialize CartManager
-    public void setCartManager(CartManager cartManager) {
-        this.cartManager = cartManager;
-    }
-
-
-
     // === INITIALIZATION & SETUP ===
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
-    // This is the first function called when the controller is loaded
     @FXML
     public void initialize() {
-        LoadHomePage();  // Load the initial home page (store page)
-        highlightSelectedButton(LibraryButton, StoreButton, false, true);  // Highlight the StoreButton
-        updateAccountInfo();  // Set the user account info (e.g., username, profile image)
+        LoadHomePage();
+        highlightSelectedButton(LibraryButton, StoreButton, false, true);
+        updateAccountInfo();
     }
 
     // === BUTTON HANDLERS ===
@@ -88,15 +72,15 @@ public class MainScreenController {
         Object source = event.getSource();
 
         if (source == LogoutButton) {
-            handleLogout();  // Handle user logout
+            handleLogout();
         } else if (source == BrowsePane_Button) {
-            handleBrowseButton();  // Handle browsing
+            handleBrowseButton();
         } else if (source == LibraryButton) {
-            handleLibraryButton();  // Handle library button click
+            handleLibraryButton();
         } else if (source == StoreButton) {
-            handleStoreOrDiscoverButton();  // Handle the store button click
+            handleStoreOrDiscoverButton();
         } else if (source == SearchButton_Button) {
-            handleSearchButton();  // Handle search button click
+            handleSearchButton();
         } else if (source == CartButton_Pane){
             handleCartPage();
         } else if (source == ReturnButton_Pane){
@@ -123,36 +107,27 @@ public class MainScreenController {
         alert.setHeaderText("Are you sure you want to log out?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            System.exit(0);  // Exit the program
+            System.exit(0);
         }
     }
 
     private void handleLibraryButton() {
         if (!isLibraryButtonClicked) {
-            toggleButtonState(true, false);  // Set library button clicked state
-            highlightSelectedButton(LibraryButton, StoreButton, true, false);  // Highlight the LibraryButton
-            LoadLibraryPage();  // Load the library page
-        }
-    }
-
-    private void handleStoreButton() {
-        if (!isStoreButtonClicked) {
-            toggleButtonState(false, true);  // Set store button clicked state
-            highlightSelectedButton(LibraryButton, StoreButton, false, true);  // Highlight the StoreButton
-            LoadHomePage();  // Load the home page (store page)
+            toggleButtonState(true, false);
+            highlightSelectedButton(LibraryButton, StoreButton, true, false);
+            LoadLibraryPage();
         }
     }
 
     private void handleBrowseButton() {
-        LoadBrowsePage(SearchField_TextField.getText());  // Perform search and load browse page
-        SearchField_TextField.setText("");  // Clear the search field
+        LoadBrowsePage(SearchField_TextField.getText());
+        SearchField_TextField.setText("");
     }
-
 
     private void handleSearchButton() {
         String query = SearchField_TextField.getText();
         if (!query.isEmpty()) {
-            performSearch(query);  // Perform search if query is not empty
+            performSearch(query);
         }
     }
 
@@ -174,20 +149,18 @@ public class MainScreenController {
 
     // === HELPER METHODS ===
     private void performSearch(String query) {
-        handleBrowseButton();  // Handle search by calling browse button handler
+        handleBrowseButton();
     }
 
     private void toggleButtonState(boolean libraryState, boolean storeState) {
-        isLibraryButtonClicked = libraryState;  // Set the library button state
-        isStoreButtonClicked = storeState;  // Set the store button state
+        isLibraryButtonClicked = libraryState;
+        isStoreButtonClicked = storeState;
     }
 
     private void highlightSelectedButton(HBox library, HBox store, boolean isLibrary, boolean isStore) {
-        // Remove the highlight class from both buttons first
         library.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
         store.getStyleClass().remove("LNB_SelectionHBoxHighlighted");
 
-        // Now add the highlight class to the selected button
         if (isLibrary) {
             library.getStyleClass().add("LNB_SelectionHBoxHighlighted");
         } else if (isStore) {
@@ -198,19 +171,15 @@ public class MainScreenController {
 
     private void handleStoreOrDiscoverButton() {
         if (isDiscoverPage) {
-            // If currently on the discover page, switch to store
-            toggleButtonState(false, true);  // Update button states
-            highlightSelectedButton(LibraryButton, StoreButton, false, true);  // Highlight the StoreButton
-            LoadHomePage();  // Load store page
+            toggleButtonState(false, true);
+            highlightSelectedButton(LibraryButton, StoreButton, false, true);
+            LoadHomePage();
         } else {
-            // If currently on the store page, switch to discover
-            toggleButtonState(false, true);  // Set Store to true and Discover to false
-            highlightSelectedButton(LibraryButton, StoreButton, false, true);  // Highlight the Store button
-            LoadHomePage();  // Or load the discover page
+            toggleButtonState(false, true);
+            highlightSelectedButton(LibraryButton, StoreButton, false, true);
+            LoadHomePage();
         }
-
-        // Toggle the state to indicate which page is active
-        isDiscoverPage = !isDiscoverPage;  // Toggle the page flag
+        isDiscoverPage = !isDiscoverPage;
     }
 
     // === PAGE LOADING METHODS ===
@@ -218,17 +187,15 @@ public class MainScreenController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/StorePage.fxml"));
             Pane storePagePane = loader.load();
-            setMainContent_Pane(storePagePane);  // Set the main content to store page
+            setMainContent_Pane(storePagePane);
 
-            // Access the controller for the loaded page
             StorePageController storePageController = loader.getController();
             for (GameTileController tileController : storePageController.getGameTileControllers()) {
-                tileController.setMainController(this);  // Set the main controller for each tile
-                //tileController.setCurrentUser(currentUser);
+                tileController.setMainController(this);
             }
 
         } catch (IOException e) {
-            e.printStackTrace();  // Handle potential loading errors
+            e.printStackTrace();
         }
     }
 
@@ -236,20 +203,19 @@ public class MainScreenController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/BrowsePage.fxml"));
             Pane browsePagePane = loader.load();
-            setMainContent_Pane(browsePagePane);  // Set the main content to browse page
+            setMainContent_Pane(browsePagePane);
 
             BrowsePageController browsePageController = loader.getController();
             if (query != null && !query.isEmpty()) {
-                browsePageController.setSearchQuery(query);  // Pass search query to the browse page
+                browsePageController.setSearchQuery(query);
             }
 
-            // Set the main controller for each MediumGameTileController, if applicable
             for (MediumGameTileController tileController : browsePageController.getMediumGameTileControllers()) {
                 tileController.setMainController(this);
             }
 
         } catch (IOException e) {
-            e.printStackTrace();  // Handle potential loading errors
+            e.printStackTrace();
         }
     }
 
@@ -257,17 +223,16 @@ public class MainScreenController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/LibraryPage.fxml"));
             Pane libraryPagePane = loader.load();
-            setMainContent_Pane(libraryPagePane);  // Set the main content to library page
+            setMainContent_Pane(libraryPagePane);
 
             LibraryPageController libraryPageController = loader.getController();
 
-            // Set the main controller for each tile in the library page
             for (MediumGameTileController tileController : libraryPageController.getMediumGameTileControllers()) {
-                tileController.setMainController(this);  // Set the main controller for each tile
+                tileController.setMainController(this);
             }
 
         } catch (IOException e) {
-            e.printStackTrace();  // Handle potential loading errors
+            e.printStackTrace();
         }
     }
 
@@ -275,14 +240,14 @@ public class MainScreenController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/AccountPage.fxml"));
             Pane accountPagePane = loader.load();
-            setMainContent_Pane(accountPagePane);  // Set the main content to library page
+            setMainContent_Pane(accountPagePane);
 
             AccountPageController accountPageController = loader.getController();
             accountPageController.setUserOnProfile(currentUser);
             accountPageController.setUser(currentUser);
             System.out.println("sets user: " + currentUser);
         } catch (IOException e) {
-            e.printStackTrace();  // Handle potential loading errors
+            e.printStackTrace();
         }
     }
 
@@ -309,7 +274,6 @@ public class MainScreenController {
             setMainContent_Pane(TransactionHistory);
 
             TransactionHistoryPageController transactionHistoryPageController = loader.getController();
-            //transactionHistoryPageController.setUserOnWallet(currentUser);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -319,44 +283,28 @@ public class MainScreenController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/CartPage.fxml"));
             Pane cartPagePane = loader.load();
-            setMainContent_Pane(cartPagePane);  // Set the main content to cart page
+            setMainContent_Pane(cartPagePane);
 
-            // Access the controller for the loaded cart page
             CartPageController cartPageController = loader.getController();
             User userSession = UserSession.getInstance().getCurrentUser();
             System.out.println("User on cart: " + userSession);
             CartManager cartManager = new CartManager();
-            cartPageController.setUser(userSession, cartManager);  // Pass currentUser and cartManager
+            cartPageController.setUser(userSession, cartManager);
             cartPageController.initialize();
-            //cartPageController.displayCart();
-        } catch (IOException e) {
-            e.printStackTrace();  // Handle potential loading errors
-        }
-    }
-    private void loadGamePage(Games game) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GamePage.fxml"));
-            Pane gamePagePane = loader.load();
-            setMainContent_Pane(gamePagePane);  // Set the main content to game page
-
-            GamePageController gamePageController = loader.getController();
-            gamePageController.setMainScreenController(this);  // Set the main screen controller
-            gamePageController.setCurrentUser(currentUser);  // Set the current user
-            gamePageController.displayGameDetails(game);  // Display game details
 
         } catch (IOException e) {
-            e.printStackTrace();  // Handle potential loading errors
+            e.printStackTrace();
         }
     }
 
     // === ACCOUNT INFO UPDATE ===
     private void updateAccountInfo() {
-        String username = "march";  // Replace with actual username retrieval logic
+        String username = "march";
         AccountUser_Label.setText(username);
         AccountUserLabelDropMenu.setText(username);
 
-        String profileImagePath = "/Image/ProfileTestPicture.png";  // Replace with actual image path
-        AccountPicture_Image.setImage(new Image(profileImagePath));  // Set profile image
+        String profileImagePath = "/Image/ProfileTestPicture.png";
+        AccountPicture_Image.setImage(new Image(profileImagePath));
     }
 
     // === FADE IN/OUT TRANSITIONS ===
@@ -364,33 +312,29 @@ public class MainScreenController {
         Pane currentPane = (MainContent_Pane.getChildren().isEmpty()) ? null : (Pane) MainContent_Pane.getChildren().get(0);
 
         if (currentPane != null) {
-            // Fade out the current pane
             FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.2), currentPane);
-            fadeOut.setFromValue(1.0);  // Fully visible
-            fadeOut.setToValue(0.0);    // Fully transparent
+            fadeOut.setFromValue(1.0);
+            fadeOut.setToValue(0.0);
 
             fadeOut.setOnFinished(event -> {
-                // Remove the current pane and add the new one with opacity set to 0 initially
                 MainContent_Pane.getChildren().setAll(newPane);
-                newPane.setOpacity(0.0);  // Set the new pane as invisible initially
+                newPane.setOpacity(0.0);
 
-                // Fade in the new pane
                 FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), newPane);
-                fadeIn.setFromValue(0.0);  // Start fully transparent
-                fadeIn.setToValue(1.0);    // End fully visible
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
 
                 fadeIn.play();
             });
 
             fadeOut.play();
         } else {
-            // No current pane, directly show the new one with fade-in (initially invisible)
             MainContent_Pane.getChildren().setAll(newPane)  ;
-            newPane.setOpacity(0.0);  // Set the new pane as invisible initially
+            newPane.setOpacity(0.0);
 
             FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), newPane);
-            fadeIn.setFromValue(0.0);  // Start fully transparent
-            fadeIn.setToValue(1.0);    // End fully visible
+            fadeIn.setFromValue(0.0);
+            fadeIn.setToValue(1.0);
 
             fadeIn.play();
         }
@@ -400,12 +344,12 @@ public class MainScreenController {
     public void setUserOnDashboard(User user) {
         AccountUser_Label.setText(user.getUserName());
         AccountUserLabelDropMenu.setText(user.getUserName());
-        String profileImagePath = user.getPfpURL(); // Assuming User class has a method to get profile image path
+        String profileImagePath = user.getPfpURL();
         if (profileImagePath != null && !profileImagePath.isEmpty()) {
-            AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));//test image
+            AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));
         } else {
-            // Set a default profile image if the user does not have one
             AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));
         }
     }
+
 }
