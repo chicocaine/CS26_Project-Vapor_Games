@@ -133,17 +133,18 @@ public class CheckOutPageController {
 
                 conn.commit();
                 currentUser.getWallet().setBalance(currentUser.getWallet().getBalance() - totalCost);
-                cartManager.clearCart(currentUser);
                 loadUserInfo();
                 loadPurchaseSummary();
                 showPaymentSuccessPopup();
                 System.out.println("Order placed successfully!");
 
                 // Record the transaction
-                Transaction transaction = new Transaction();
-                transaction.loadTransaction(currentUser);
+                Transaction transaction = new Transaction(currentUser);
                 transaction.confirmTransaction(true);
                 transaction.recordTransaction();
+
+                // Clear the cart for the user after transaction
+                cartManager.clearCart(currentUser);
 
             } catch (SQLException e) {
                 e.printStackTrace();
