@@ -5,34 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cssdialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/VaporGames.-RuQZw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/credit.-aplrw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/487d1e2d-50d3-4680-b83b-f62bb32632d8/storage_v2/_src_/schema/test_db.Sws3qw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6d308c3-7d37-4dba-af16-25056adcd30e/storage_v2/_src_/schema/VaporGames.-RuQZw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6d308c3-7d37-4dba-af16-25056adcd30e/storage_v2/_src_/schema/credit.-aplrw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6d308c3-7d37-4dba-af16-25056adcd30e/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6d308c3-7d37-4dba-af16-25056adcd30e/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6d308c3-7d37-4dba-af16-25056adcd30e/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6d308c3-7d37-4dba-af16-25056adcd30e/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameCredit/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameCredit/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/PaymentSuccessPopUPController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PaymentSuccessPopUPController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PaymentSuccessPopUP.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaymentSuccessPopUP.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +69,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/chicocaine/CS26_Project-Vapor_Games.git&quot;,
-    &quot;accountId&quot;: &quot;4d5cba61-2175-4cb1-9ecb-3d23083271e5&quot;
+    &quot;accountId&quot;: &quot;3d24febc-cb48-4557-97ab-54c578c8b592&quot;
   }
 }</component>
   <component name="MarkdownSettingsMigration">
@@ -119,23 +94,21 @@
     "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:CodeGenerator.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
-    "Gradle.CS26_Project-Vapor_Games [:GameCredit.CodeGenerator.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:GamesManager.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:LoginController.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:MainLogin.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor": "Run",
-    "Gradle.CS26_Project-Vapor_Games [:User_Interface.MainLogin.main()].executor": "Run",
     "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
     "Kotlin script (Beta).build.gradle.kts.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Hanazono Archive/IdeaProjects/CS26_Project-Vapor_Games",
+    "last_opened_file_path": "C:/codes/CS26/CS26_Project-Vapor_Games/src/main/resources/Image",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -152,6 +125,9 @@
     "DatabaseDriversLRU": [
       "mysql_aurora_aws",
       "mysql"
+    ],
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\Hanazono Archive\\.gradle"
     ]
   }
 }]]></component>
@@ -169,20 +145,7 @@
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\FXML" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainLogin">
-    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GameCredit.CodeGenerator" />
-      <module name="CS26_Project-Vapor_Games.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="GameCredit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="MainLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="User_Interface.MainLogin" />
       <module name="CS26_Project-Vapor_Games.main" />
@@ -196,15 +159,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="CS26_Project-Vapor_Games" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Application.MainLogin" />
       </list>
     </recent_temporary>
@@ -212,8 +168,9 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -264,10 +221,6 @@
       <workItem from="1733397866605" duration="10910000" />
       <workItem from="1733446086315" duration="803000" />
       <workItem from="1733623501301" duration="9895000" />
-      <workItem from="1733638018698" duration="323000" />
-      <workItem from="1733638368931" duration="74000" />
-      <workItem from="1733638446716" duration="20000" />
-      <workItem from="1733638512564" duration="4933000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
