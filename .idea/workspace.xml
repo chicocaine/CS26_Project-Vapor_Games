@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/To Do.md" beforeDir="false" afterPath="$PROJECT_DIR$/To Do.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameCredit/Redeem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameCredit/Redeem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MediumGameTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MediumGameTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/StorePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/StorePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/BrowsePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrowsePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,12 +69,12 @@
     &quot;assignee&quot;: &quot;HanazonoArchive&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/chicocaine/CS26_Project-Vapor_Games.git&quot;,
-    &quot;accountId&quot;: &quot;3d24febc-cb48-4557-97ab-54c578c8b592&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/chicocaine/CS26_Project-Vapor_Games.git",
+    "accountId": "4d5cba61-2175-4cb1-9ecb-3d23083271e5"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -88,50 +90,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.VGMainProgramApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build CS26_Project-Vapor_Games.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:CodeGenerator.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:GamesManager.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:LoginController.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:MainLogin.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin script (Beta).build.gradle.kts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/codes/CS26/CS26_Project-Vapor_Games/src/main/resources/Image&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.VGMainProgramApplication.executor": "Run",
+    "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:CodeGenerator.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:GamesManager.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:LoginController.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:MainLogin.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:User_Interface.MainLogin.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
+    "Kotlin script (Beta).build.gradle.kts.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/codes/CS26/CS26_Project-Vapor_Games/src/main/resources/Image",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora_aws&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora_aws",
+      "mysql"
     ],
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\Hanazono Archive\\.gradle&quot;
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\Hanazono Archive\\.gradle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\codes\CS26\CS26_Project-Vapor_Games\src\main\resources\Image" />
@@ -169,9 +173,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -223,11 +226,8 @@
       <workItem from="1733446086315" duration="803000" />
       <workItem from="1733623501301" duration="9895000" />
       <workItem from="1733660069843" duration="1548000" />
-      <workItem from="1733666858462" duration="8184000" />
-      <workItem from="1733675382054" duration="106000" />
-      <workItem from="1733726607938" duration="344000" />
-      <workItem from="1733801710680" duration="328000" />
-      <workItem from="1733804111004" duration="4944000" />
+      <workItem from="1733666858462" duration="7661000" />
+      <workItem from="1733816946931" duration="4483000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
