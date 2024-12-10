@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/To Do.md" beforeDir="false" afterPath="$PROJECT_DIR$/To Do.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameCredit/Redeem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameCredit/Redeem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +225,8 @@
       <workItem from="1733675382054" duration="106000" />
       <workItem from="1733726607938" duration="344000" />
       <workItem from="1733801710680" duration="328000" />
-      <workItem from="1733804111004" duration="4944000" />
+      <workItem from="1733804111004" duration="5673000" />
+      <workItem from="1733814502053" duration="1802000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />

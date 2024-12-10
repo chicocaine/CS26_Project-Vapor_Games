@@ -117,15 +117,16 @@ public class Transaction {
             return;
         }
 
-        String query = "INSERT INTO transactions (userID, transaction_date, transaction_games, transaction_amount) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO transactions (userID, transaction_date, transaction_games,transaction_code, transaction_amount) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = DBConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             stmt.setInt(1, user.getUserID());
             stmt.setString(2, this.transaction_date_time);
-            stmt.setString(3, "Code Redemption: " + code);
-            stmt.setDouble(4, amount);
+            stmt.setString(3, "");
+            stmt.setString(4,  code);
+            stmt.setDouble(5, amount);
 
             int rowsAffected = stmt.executeUpdate();
 
