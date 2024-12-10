@@ -214,6 +214,8 @@ public class MainScreenController {
                 tileController.setMainController(this);
             }
 
+            browsePageController.setMainScreenController(this);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -329,7 +331,7 @@ public class MainScreenController {
 
             fadeOut.play();
         } else {
-            MainContent_Pane.getChildren().setAll(newPane)  ;
+            MainContent_Pane.getChildren().setAll(newPane);
             newPane.setOpacity(0.0);
 
             FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), newPane);
@@ -339,7 +341,6 @@ public class MainScreenController {
             fadeIn.play();
         }
     }
-
 
     public void setUserOnDashboard(User user) {
         AccountUser_Label.setText(user.getUserName());

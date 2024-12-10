@@ -22,17 +22,24 @@ import java.util.Map;
 public class BrowsePageController {
 
     private User CurrentUser = UserSession.getInstance().getCurrentUser();
+    private MainScreenController mainScreenController;
 
     private List<String> selectedGenres = new ArrayList<>();
     private Map<CheckBox, String> genreMap = new HashMap<>();
 
     @FXML
-    private CheckBox Action_Genre, Adventure_Genre, ArtGame_Genre, BattleRoyale_Genre, BoardGame_Genre,
-            BulletHell_Genre, BusinessSimulator_Genre, CardGame_Genre, Casual_Genre, CityBuilder_Genre,
-            CoOp_Genre, Comedy_Genre, DatingSimulator_Genre, Educational_Genre, FPS_Genre, Fighting_Genre,
-            HackAndSlash_Genre, Horror_Genre, IndieGame_Genre, InteractiveStory_Genre, LifeSimulator_Genre,
-            MMO_Genre, MOBA_Genre, Metroidvania_Genre, OpenWorld_Genre, Party_Genre, Platformer_Genre,
-            Puzzle_Genre, Racing_Genre, RealTimeStrategy_Genre;
+    private CheckBox Action_Genre, Adventure_Genre, ArtGame_Genre, BattleRoyale_Genre,
+            BoardGame_Genre, BulletHell_Genre, BusinessSimulator_Genre, CardGame_Genre,
+            Casual_Genre, CityBuilder_Genre, CoOp_Genre, Comedy_Genre, Crafting_Genre,
+            DatingSimulator_Genre, Educational_Genre, FPS_Genre, Fighting_Genre,
+            HackAndSlash_Genre, Horror_Genre, IdleGame_Genre, InteractiveStory_Genre,
+            LifeSimulator_Genre, MMO_Genre, MOBA_Genre, Metroidvania_Genre, Multiplayer_Genre,
+            Mystery_Genre, OpenWorld_Genre, Party_Genre, Platformer_Genre, Puzzle_Genre,
+            Racing_Genre, RealTimeStrategy_Genre, Rhythm_Genre, Roguelike_Genre, Roguelite_Genre,
+            RolePlaying_Genre, SandBox_Genre, Simulation_Genre, SinglePlayer_Genre, Sports_Genre,
+            Stealth_Genre, Strategy_Genre, SurvivalHorror_Genre, Survival_Genre, TacticalRPG_Genre,
+            TextAdventure_Genre, ThirdPersonShooter_Genre, TowerDefense_Genre, TurnBased_Genre,
+            TwoDimension_Genre, Tycoon_Genre, VisualNovel_Genre, Zombie_Genre, Shooter_Genre;
 
     @FXML
     private HBox HBox1, HBox2, HBox3, HBox4, HBox5;
@@ -77,22 +84,47 @@ public class BrowsePageController {
         genreMap.put(Comedy_Genre, "Comedy");
         genreMap.put(DatingSimulator_Genre, "Dating Simulator");
         genreMap.put(Educational_Genre, "Educational");
-        genreMap.put(FPS_Genre, "First-Person Shooter (FPS)");
         genreMap.put(Fighting_Genre, "Fighting");
+        genreMap.put(FPS_Genre, "First-Person Shooter (FPS)");
         genreMap.put(HackAndSlash_Genre, "Hack and Slash");
         genreMap.put(Horror_Genre, "Horror");
-        genreMap.put(IndieGame_Genre, "Idle Game");
+        genreMap.put(IdleGame_Genre, "Idle Game");
         genreMap.put(InteractiveStory_Genre, "Interactive Story");
         genreMap.put(LifeSimulator_Genre, "Life Simulation");
         genreMap.put(MMO_Genre, "Massively Multiplayer Online (MMO)");
-        genreMap.put(MOBA_Genre, "Multiplayer Online Battle Arena (MOBA)");
         genreMap.put(Metroidvania_Genre, "Metroidvania");
+        genreMap.put(MOBA_Genre, "Multiplayer Online Battle Arena (MOBA)");
+        genreMap.put(Mystery_Genre, "Mystery");
         genreMap.put(OpenWorld_Genre, "Open World");
         genreMap.put(Party_Genre, "Party");
         genreMap.put(Platformer_Genre, "Platformer");
         genreMap.put(Puzzle_Genre, "Puzzle");
         genreMap.put(Racing_Genre, "Racing");
         genreMap.put(RealTimeStrategy_Genre, "Real-Time Strategy (RTS)");
+        genreMap.put(Rhythm_Genre, "Rhythm");
+        genreMap.put(Roguelike_Genre, "Roguelike");
+        genreMap.put(Roguelite_Genre, "Roguelite");
+        genreMap.put(RolePlaying_Genre, "Role-Playing (RPG)");
+        genreMap.put(SandBox_Genre, "Sandbox");
+        genreMap.put(Shooter_Genre, "Shooter");
+        genreMap.put(Simulation_Genre, "Simulation");
+        genreMap.put(SinglePlayer_Genre, "Single Player");
+        genreMap.put(Sports_Genre, "Sports");
+        genreMap.put(Stealth_Genre, "Stealth");
+        genreMap.put(Strategy_Genre, "Strategy");
+        genreMap.put(Survival_Genre, "Survival");
+        genreMap.put(SurvivalHorror_Genre, "Survival Horror");
+        genreMap.put(TacticalRPG_Genre, "Tactical RPG");
+        genreMap.put(TextAdventure_Genre, "Text Adventure");
+        genreMap.put(ThirdPersonShooter_Genre, "Third-Person Shooter");
+        genreMap.put(TowerDefense_Genre, "Tower Defense");
+        genreMap.put(TurnBased_Genre, "Turn-Based Strategy");
+        genreMap.put(Tycoon_Genre, "Tycoon");
+        genreMap.put(VisualNovel_Genre, "Visual Novel");
+        genreMap.put(TwoDimension_Genre, "2D");
+        genreMap.put(Crafting_Genre, "Crafting");
+        genreMap.put(Multiplayer_Genre, "Multiplayer");
+        genreMap.put(Zombie_Genre, "Zombie");
 
         for (CheckBox checkBox : genreMap.keySet()) {
             checkBox.setOnAction(event -> updateSelectedGenres());
@@ -111,6 +143,30 @@ public class BrowsePageController {
         filterAndDisplayGamesByGenres();
     }
 
+    private void categorizeGames(List<Games> gamesList) {
+        // Clear existing lists
+        HBox1List.clear();
+        HBox2List.clear();
+        HBox3List.clear();
+        HBox4List.clear();
+        HBox5List.clear();
+
+        for (int i = 0; i < gamesList.size(); i++) {
+            Games game = gamesList.get(i);
+            if (i % 5 == 0) {
+                HBox1List.add(convertToGame(game)); // Convert to your Game model
+            } else if (i % 5 == 1) {
+                HBox2List.add(convertToGame(game));
+            } else if (i % 5 == 2) {
+                HBox3List.add(convertToGame(game));
+            } else if (i % 5 == 3) {
+                HBox4List.add(convertToGame(game));
+            } else {
+                HBox5List.add(convertToGame(game));
+            }
+        }
+    }
+
     private void filterAndDisplayGamesByGenres() {
         GamesManager gamesManager = new GamesManager();
         ArrayList<Games> filteredGames;
@@ -121,28 +177,7 @@ public class BrowsePageController {
             filteredGames = gamesManager.filterByGenre(new ArrayList<>(selectedGenres));
         }
 
-        // Clear existing lists
-        HBox1List.clear();
-        HBox2List.clear();
-        HBox3List.clear();
-        HBox4List.clear();
-        HBox5List.clear();
-
-        // Distribute filtered games into HBox lists
-        for (int i = 0; i < filteredGames.size(); i++) {
-            Games game = filteredGames.get(i);
-            if (i % 5 == 0) {
-                HBox1List.add(game);
-            } else if (i % 5 == 1) {
-                HBox2List.add(game);
-            } else if (i % 5 == 2) {
-                HBox3List.add(game);
-            } else if (i % 5 == 3) {
-                HBox4List.add(game);
-            } else {
-                HBox5List.add(game);
-            }
-        }
+        categorizeGames(filteredGames);
 
         // Repopulate HBoxes with filtered games
         populateGameTiles(HBox1, HBox1List);
@@ -166,6 +201,7 @@ public class BrowsePageController {
                 gameTileControllers.add(tileController);
 
                 tileController.setGameDetails(game);
+                tileController.setMainController(mainScreenController); // Set the main controller
                 hbox.getChildren().add(gameTilePane);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -183,22 +219,7 @@ public class BrowsePageController {
             return; // Exit to avoid further issues
         }
 
-        for (int i = 0; i < allGames.size(); i++) {
-            Games game = allGames.get(i);
-
-            // Categorize games based on indices or attributes
-            if (i % 5 == 0) {
-                HBox1List.add(convertToGame(game)); // Convert to your Game model
-            } else if (i % 5 == 1) {
-                HBox2List.add(convertToGame(game));
-            } else if (i % 5 == 2) {
-                HBox3List.add(convertToGame(game));
-            } else if (i % 5 == 3) {
-                HBox4List.add(convertToGame(game));
-            } else {
-                HBox5List.add(convertToGame(game));
-            }
-        }
+        categorizeGames(allGames);
     }
 
     private Games convertToGame(Games games) {
@@ -217,6 +238,10 @@ public class BrowsePageController {
 
     public List<MediumGameTileController> getMediumGameTileControllers() {
         return gameTileControllers;
+    }
+
+    public void setMainScreenController(MainScreenController mainScreenController) {
+        this.mainScreenController = mainScreenController;
     }
 
     // Event Handlers

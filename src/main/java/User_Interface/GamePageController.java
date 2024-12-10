@@ -67,25 +67,65 @@ public class GamePageController {
 
     public void displayGameDetails(Games game) {
         this.currentGame = game;
-        StorePageGameTitle_Label.setText(game.getGameTitle());
-        StoreGameDescription_Label.setText(game.getGameDescription());
-        double price = Double.parseDouble(String.valueOf(game.getConvertedGamePrice()));
-        GamePrice_Label.setText(String.format("%.2f", price));
-        StoreGameThumbnail_Image.setImage(new javafx.scene.image.Image(game.getCardImageURL()));
-        StorePageGameMainPicture_Image.setImage(new javafx.scene.image.Image(game.getShowcaseImagesURL().get(0)));
-        genreLabel0.setText(game.getGenreList().get(0));
-        genreLabel1.setText(game.getGenreList().get(1));
-        genreLabel2.setText(game.getGenreList().get(2));
-        genreLabel3.setText(game.getGenreList().get(3));
+        if (game != null) {
+            StorePageGameTitle_Label.setText(game.getGameTitle());
+            StoreGameDescription_Label.setText(game.getGameDescription());
+
+            double price = Double.parseDouble(String.valueOf(game.getConvertedGamePrice()));
+            GamePrice_Label.setText(String.format("%.2f", price));
+
+            // Handle Thumbnail Image
+            if (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty()) {
+                StoreGameThumbnail_Image.setImage(new javafx.scene.image.Image(game.getCardImageURL()));
+            } else {
+                System.err.println("[WARNING] Thumbnail image URL is empty.");
+            }
+
+            // Handle Main Showcase Image
+            if (game.getShowcaseImagesURL() != null && !game.getShowcaseImagesURL().isEmpty()) {
+                StorePageGameMainPicture_Image.setImage(new javafx.scene.image.Image(game.getShowcaseImagesURL().get(0)));
+            } else {
+                System.err.println("[WARNING] Showcase images list is empty.");
+            }
+
+            // Handle Genre Labels
+            if (game.getGenreList() != null) {
+                if (game.getGenreList().size() > 0) {
+                    genreLabel0.setText(game.getGenreList().get(0));
+                } else {
+                    genreLabel0.setText("");
+                }
+                if (game.getGenreList().size() > 1) {
+                    genreLabel1.setText(game.getGenreList().get(1));
+                } else {
+                    genreLabel1.setText("");
+                }
+                if (game.getGenreList().size() > 2) {
+                    genreLabel2.setText(game.getGenreList().get(2));
+                } else {
+                    genreLabel2.setText("");
+                }
+                if (game.getGenreList().size() > 3) {
+                    genreLabel3.setText(game.getGenreList().get(3));
+                } else {
+                    genreLabel3.setText("");
+                }
+            } else {
+                System.err.println("[WARNING] Genre list is null.");
+            }
+        } else {
+            System.err.println("[ERROR] Game is null!");
+        }
     }
+
 
     public void setCurrentUser(User user) {
         this.currentUser = user;
     }
 
     public void addToCart() {
-        if (currentUser == null && currentGame == null) {
-            System.err.println("[ERROR] Current game is null!");
+        if (currentUser == null || currentGame == null) {
+            System.err.println("[ERROR] Current user or game is null!");
             return;
         }
         CartManager cartmngr = new CartManager();

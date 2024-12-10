@@ -33,12 +33,18 @@ public class MediumGameTileController {
     public void setGameDetails(Games game) {
         this.game = game;
         if (game != null) {
-            MediumGameTile_Name.setText(game.getGameTitle());
+            MediumGameTile_Name.setText(game.getGameTitle() != null ? game.getGameTitle() : "Unknown Title");
             MediumGameTile_Price.setText(String.format("%.2f", game.getConvertedGamePrice()));
-            String imagePath = (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty()) ? game.getCardImageURL() : "/images/default-image.png";
+
+            String imagePath = (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty())
+                    ? game.getCardImageURL()
+                    : "/images/default-image.png";
             MediumGameTile_Image.setImage(new Image(imagePath));
+        } else {
+            System.err.println("[ERROR] Game object is null!");
         }
     }
+
 
     public void setMainController(MainScreenController mainController) {
         this.mainController = mainController;
