@@ -244,13 +244,58 @@ public class BrowsePageController {
         this.mainScreenController = mainScreenController;
     }
 
-    // Event Handlers
     @FXML
     void HandlesClickedButton(MouseEvent event) {
-        Object source = event.getSource();
+        if (event.getSource() == LibrarySearchButton_Image) {
+            String query = LibrarySearchField_TextField.getText();
+            String minPriceText = LibraryPriceSearchMinimum_TextField.getText();
+            String maxPriceText = LibraryPriceSearchMaximum_TextField.getText();
+            GamesManager gamesManager = new GamesManager();
+            ArrayList<Games> searchResults = new ArrayList<>();
 
-        if (source == LibrarySearchButton_Image) {
-            System.out.println(selectedGenres);
+            boolean hasQuery = query != null && !query.isEmpty();
+            boolean hasMinPrice = minPriceText != null && !minPriceText.isEmpty();
+            boolean hasMaxPrice = maxPriceText != null && !maxPriceText.isEmpty();
+
+            // Debugging statements
+            System.out.println("Query: " + query);
+            System.out.println("Min Price Text: " + minPriceText);
+            System.out.println("Max Price Text: " + maxPriceText);
+            System.out.println("Has Query: " + hasQuery);
+            System.out.println("Has Min Price: " + hasMinPrice);
+            System.out.println("Has Max Price: " + hasMaxPrice);
+
+            try {
+                if (hasQuery && hasMinPrice && hasMaxPrice) {
+                    double minPrice = Double.parseDouble(minPriceText) * 6.9;
+                    double maxPrice = Double.parseDouble(maxPriceText) * 6.9;
+                    System.out.println("Searching by title and price range...");
+                    searchResults = gamesManager.searchGamesByTitleAndPriceRange(query, minPrice, maxPrice);
+                } else if (hasQuery) {
+                    System.out.println("Searching by title...");
+                    searchResults = gamesManager.searchGames(query);
+                } else if (hasMinPrice && hasMaxPrice) {
+                    double minPrice = Double.parseDouble(minPriceText) * 6.9;
+                    double maxPrice = Double.parseDouble(maxPriceText) * 6.9;
+                    System.out.println("Filtering by price range...");
+                    searchResults = gamesManager.filterByPriceRange(minPrice, maxPrice);
+                    System.out.println(minPrice + " " + maxPrice);
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                System.err.println("Invalid price range input.");
+            }
+
+            System.out.println("Search Results: " + searchResults.size() + " games found.");
+
+            categorizeGames(searchResults);
+
+            // Repopulate HBoxes with search results
+            populateGameTiles(HBox1, HBox1List);
+            populateGameTiles(HBox2, HBox2List);
+            populateGameTiles(HBox3, HBox3List);
+            populateGameTiles(HBox4, HBox4List);
+            populateGameTiles(HBox5, HBox5List);
         }
     }
 
