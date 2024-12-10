@@ -1,5 +1,7 @@
 package User_Interface;
 
+import Accounts.User;
+import Accounts.UserSession;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
@@ -9,12 +11,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import Games.Games;
+import Games.GamesManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BrowsePageController {
+
+    private User CurrentUser = UserSession.getInstance().getCurrentUser();
+
+
 
     // Genre CheckBoxes
     @FXML private CheckBox Action_Genre, Adventure_Genre, Anime_Genre, Arcade_Genre, Atmospheric_Genre, Casual_Genre,
