@@ -1,6 +1,8 @@
 package GameCredit;
 
 import Accounts.User;
+import Accounts.UserSession;
+import Transaction.Transaction;
 import User_Interface.WalletPageController;
 import Utility.DBConnectionPool;
 
@@ -9,8 +11,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class Redeem {
     private WalletPageController walletPageController;
+    public User currentUser = UserSession.getInstance().getCurrentUser();
 
     public Redeem(WalletPageController walletPageController) {
         this.walletPageController = walletPageController;
@@ -45,6 +49,10 @@ public class Redeem {
                         updateWalletStmt.executeUpdate();
 
                         conn.commit(); // Commit transaction
+
+                        Transaction transaction = new Transaction(currentUser);
+                        transaction.confirmRedemption(true);
+                        transaction.recordRedeemTransaction(code,creditAmount);
 
                         System.out.println("Code redeemed successfully! You have received your credit.");
                         walletPageController.showNotification("Code redeemed successfully!", "success");

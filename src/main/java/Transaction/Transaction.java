@@ -94,6 +94,13 @@ public class Transaction {
 
         return isConfirmed;
     }
+    public boolean confirmRedemption(boolean isConfirmed){
+        DateTime dt = new DateTime();
+
+        this.isConfirmed = true;
+        this.transaction_date_time = dt.getDateTime();
+        return isConfirmed;
+    }
 
     public User getUser() {
         return this.user;
@@ -103,6 +110,42 @@ public class Transaction {
         return this.transaction_date_time;
     }
 
+  public void recordRedeemTransaction(String code, double amount) {
+    if (this.isConfirmed) {
+        if (this.transaction_date_time == null) {
+            System.out.println("Transaction date is empty. Cannot record redemption transaction.");
+            return;
+        }
+
+        String query = "INSERT INTO transactions (userID, transaction_date, transaction_games, transaction_amount) VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
+
+            stmt.setInt(1, user.getUserID());
+            stmt.setString(2, this.transaction_date_time);
+            stmt.setString(3, "Code Redemption: " + code);
+            stmt.setDouble(4, amount);
+
+            int rowsAffected = stmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                ResultSet generatedKeys = stmt.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    this.transactionID = generatedKeys.getInt(1);
+                }
+                System.out.println("Redemption transaction recorded successfully.");
+            } else {
+                System.out.println("Failed to record the redemption transaction.");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    } else {
+        System.out.println("Transaction is not confirmed. Cannot record redemption transaction.");
+    }
+}
 
 
 }

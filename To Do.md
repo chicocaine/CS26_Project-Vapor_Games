@@ -1,6 +1,6 @@
 //MAIN FEATURE NEEDED TO DO ASAP
 Handle FILTER on browse
-Implement Transaction on Code Redemption
+✅ Implement Transaction on Code Redemption - DONE 
 Browse Page :: add many many so many HBOX
 
 Design Done:
@@ -16,4 +16,4 @@ Veto'ed:
 Select Payment Method Pop Up [Okay] ---> close the pop up when button is clicked //this is for the check out
 
 Remarks:
-Buy Now Button ---> redirect to checkout page
+✅ Buy Now Button ---> redirect to checkout page
