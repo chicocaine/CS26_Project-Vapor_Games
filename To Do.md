@@ -1,5 +1,7 @@
-//BUGS TO FIX
-Done
+//MAIN FEATURE NEEDED TO DO ASAP
+Handle FILTER on browse
+Implement Transaction on Code Redemption
+Browse Page :: add many many so many HBOX
 
 Design Done:
 
