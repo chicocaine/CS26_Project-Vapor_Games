@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="" />
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Games/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/Games.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/Populate Games 1 - 10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/Populate Games 1 - 10.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -224,6 +229,7 @@
       <workItem from="1733801710680" duration="328000" />
       <workItem from="1733804111004" duration="5673000" />
       <workItem from="1733814502053" duration="2008000" />
+      <workItem from="1733900682981" duration="5178000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />

@@ -552,18 +552,28 @@ public class GamesManager {
         }
     }
 
-//    public static void main(String[] args) {
-//        GamesManager manager = new GamesManager();
-//        manager.GamesLoader();
-//        Games uploadgame = new Games();
-//        manager.addGame(uploadgame.initBloonsTD6());
-//        manager.addGame(uploadgame.initDontStarveTogether());
-//        manager.addGame(uploadgame.initPlantsVsZombies());
-//
-//        // Example usage
-//        ArrayList<Games> allGames = manager.getAllGames();
-//        for (Games game : allGames) {
-//            System.out.println(game);
-//        }
-//    }
+    public static void main(String[] args) {
+        GamesManager manager = new GamesManager();
+        manager.GamesLoader();
+        Games uploadgame = new Games();
+//        manager.addGame(uploadgame.initBallionaire());
+//        manager.addGame(uploadgame.initGenshinImpact());
+//        manager.addGame(uploadgame.initGuiltyGearStrive());
+//        manager.addGame(uploadgame.initHonkaiStarRail());
+//        manager.addGame(uploadgame.initTownscaper());
+//        manager.addGame(uploadgame.initIfMyHeartHadWings());
+//        manager.addGame(uploadgame.initNekoparaVol1());
+//        manager.addGame(uploadgame.initOrwellKeepingAnEyeOnYou());
+//        manager.addGame(uploadgame.initTheOuterWorlds());
+//        manager.addGame(uploadgame.initLeft4Dead2());
+//        manager.addGame(uploadgame.initEnterTheGungeon());
+//        manager.addGame(uploadgame.initDokiDokiLiteratureClub());
+//        manager.addGame(uploadgame.initSlayTheSpire());
+
+        // Example usage
+        ArrayList<Games> allGames = manager.getAllGames();
+        for (Games game : allGames) {
+            System.out.println(game);
+        }
+    }
 }
