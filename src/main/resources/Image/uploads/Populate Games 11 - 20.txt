@@ -1,0 +1,109 @@
+Game 11:
+gameID:
+gameTitle: Left 4 Dead 2
+gameReleaseDate: 17 Nov, 2009
+gameDescription: Set in the zombie apocalypse, Left 4 Dead 2 (L4D2) is the highly anticipated sequel to the award-winning Left 4 Dead, the #1 co-op game of 2008. This co-operative action horror FPS takes you and your friends through the cities, swamps and cemeteries of the Deep South, from Savannah to New Orleans
+gamePrice: 335
+genre: Zombie, Co-op, Multiplayer, Shooter
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/Left4Dead_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Left4Dead_Showcase.jpg
+
+Game 12:
+gameID:
+gameTitle: If My Heart Had Wings
+gameReleaseDate: 28 Jun, 2013
+gameDescription: An animated visual novel of a lovely and bittersweet tale of youth, you play as Aoi Minase in this romantic-comedy as he meets various young girls in his hometown and works together with them to revive their school’s glider-flying “Soaring Club” in order to realize their shared dream of flight.
+gamePrice: 419
+genre: Visual Novel, 2D
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/IF MY HEART HAD WINGS_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/IF MY HEART HAD WINGS_Showcase.jpg
+
+Game 13:
+gameID:
+gameTitle: Nekopara Vol. 1
+gameReleaseDate: 30 Dec, 2014
+gameDescription: What's NEKOPARA? Why, it's a cat paradise! Kashou Minaduki, the son of a long line of Japanese confection makers moved out to open his own shop "La Soleil" as a patisserie.
+gamePrice: 335
+genre: Visual Novel, 2D
+isAvailable:
+cardImageURL: src/main/resources/Image/uploads/game_images/Nekopara_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Nekopara_Showcase.jpg
+
+Game 14:
+gameID:
+gameTitle: Honkai Star Rail
+gameReleaseDate: 26 Apr, 2023
+gameDescription: Honkai: Star Rail is a new HoYoverse space fantasy RPG. Hop aboard the Astral Express and experience the galaxy's infinite wonders on this journey filled with adventure and thrills.
+gamePrice: 0
+genre: Adventure, RPG, Turn-Based Strategy
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/HSR_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/HSR_Showcase.jpg
+
+Game 15:
+gameID:
+gameTitle: Genshin Impact
+gameReleaseDate: 09 July, 2021
+gameDescription: Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds...
+gamePrice: 0
+genre: Adventure, Openworld, RPG
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/GenshinImpact_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/GenshinImpact_Showcase.jpg
+
+Game 16:
+gameID:
+gameTitle: The Outer Worlds
+gameReleaseDate: 08 March, 2023
+gameDescription: The Outer Worlds: Spacer’s Choice Edition is the ultimate way to play the award-winning RPG from Obsidian Entertainment and Private Division. Including the base game and all DLC, this remastered masterpiece is the absolute best version of The Outer Worlds.
+gamePrice: 2299
+genre: Action, RPG, Shooter
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/The Outer Worlds_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/The Outer Worlds_Showcase.jpg
+
+Game 17:
+gameID:
+gameTitle: Orwell: Keeping an Eye on You
+gameReleaseDate: 18 March, 2022
+gameDescription: Big Brother has arrived - and it’s you. Investigate the lives of citizens to find those responsible for a series of terror attacks. But, be warned, the information you supply will have consequences…
+gamePrice: 289.95
+genre: Simulation
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/ORWELL_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/ORWELL_Showcase.jpg
+
+Game 18:
+gameID:
+gameTitle: Guilty Gear Strive
+gameReleaseDate: 11 Jun, 2021
+gameDescription: The cutting-edge 2D/3D hybrid graphics pioneered in the Guilty Gear series have been raised to the next level in “GUILTY GEAR -STRIVE-“. The new artistic direction and improved character animations will go beyond anything you’ve seen before in a fighting game!
+gamePrice: 2046
+genre: 2D, Fighting
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/Guilty Gear_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Guilty Gear_Showcase.jpg
+
+Game 19:
+gameID:
+gameTitle: Townscaper
+gameReleaseDate: 27 Aug, 2021
+gameDescription: Instant town building toy
+gamePrice: 209.95
+genre: Sandbox
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/Townscraper_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Townscraper_Showcase.jpg
+
+Game 20:
+gameID:
+gameTitle: Ballionaire
+gameReleaseDate: 10 Dec, 2024
+gameDescription: BALLIONAIRE is a fast-paced, kinetic roguelike where strategy meets physics to create outrageous wealth! Find and exploit game-breaking synergies as you theorycraft your way to victory. Welcome to the autobonker genre!
+gamePrice: 424.0
+genre: Singleplayer, Roguelike, Turn-Based Strategy
+isAvailable:
+cardImageURL: src/main/resources/Image/uploads/game_images/Ballionaire_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Ballionaire_Showcase.jpg

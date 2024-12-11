@@ -1,0 +1,122 @@
+Format
+Game x:
+gameID:
+gameTitle:
+gameReleaseDate:
+gameDescription:
+gamePrice:
+genre:
+isAvailable:
+cardImageURL:
+showcaseImagesURL:
+
+Game 1:
+gameID: 
+gameTitle: Terraria
+gameReleaseDate: 16 May, 2011
+gameDescription: Terraria is a 2011 action-adventure sandbox game developed by Re-Logic. The game was first released for Windows and has since been ported to other PC and console platforms. The game features exploration, crafting, building, painting, and combat with a variety of creatures in a procedurally generated 2D world
+gamePrice: 335.00
+genre: Sandbox, Survival, 2D
+isAvailable: True
+cardImageURL: uploads/game_images/Terraria_Card.jpg
+showcaseImagesURL: uploads/game_images/Terraria_Showcase.webp
+
+Game 2:
+gameID: 
+gameTitle: Rust
+gameReleaseDate: 9 Feb, 2018
+gameDescription: The only aim in Rust is to survive. Everything wants you to die - the island’s wildlife and other inhabitants, the environment, other survivors. Do whatever it takes to last another night.
+gamePrice: 1049.95
+genre: Survival, Crafting, Multiplayer, Open World
+isAvailable: True
+cardImageURL: uploads/game_images/Rust_Card.jpg
+showcaseImagesURL: uploads/game_images/Rust_Showcase.jpg
+
+Game 3:
+gameID:
+gameTitle: Don't Starve Together
+gameReleaseDate: 22 APR, 2016
+gameDescription: Fight, Farm, Build and Explore Together in the standalone multiplayer expansion to the uncompromising wilderness survival game, Don't Starve.
+gamePrice: 389.95
+genre: Survival, Open World, Multiplayer
+isAvailable: True
+cardImageURL: uploads/game_images/DontStarveTogether_Card.jpg
+showcaseImagesURL: uploads/game_images/DontStarveTogether_Showcase.jpg
+
+Game 4:
+gameID: 
+gameTitle: Plants Vs Zombies
+gameReleaseDate: 6 May, 2009
+gameDescription: Zombies are invading your home, and the only defense is your arsenal of plants! Armed with an alien nursery-worth of zombie-zapping plants like peashooters and cherry bombs, you'll need to think fast and plant faster to stop dozens of types of zombies dead in their tracks.
+gamePrice: 165. 95
+genre: Tower Defense, Zombie, Strategy, Single player
+isAvailable: True
+cardImageURL: uploads/game_images/PVZ_Card.jpg
+showcaseImagesURL: uploads/game_images/PVZ_Showcase.webp
+
+Game 5:
+gameID: 
+gameTitle: Bloons TD 6
+gameReleaseDate: 18 Dec, 2018
+gameDescription: The Bloons are back and better than ever! Get ready for a massive 3D tower defense game designed to give you hours and hours of the best strategy gaming available.
+gamePrice: 379.95
+genre: Tower Defense, Strategy, Multiplayer, Single player
+isAvailable: True
+cardImageURL: uploads/game_images/BTD6_Card.jpg
+showcaseImagesURL: uploads/game_images/BTD6_Showcase.jpg
+
+Game 6:
+gameID:
+gameTitle: Doki-Doki Literature Club
+gameReleaseDate: 22 Sep, 2017
+gameDescription: The Literature Club is full of cute girls! Will you write the way into their heart? This game is not suitable for children or those who are easily disturbed.
+gamePrice: 0
+genre: Horror, Visual Novel
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/Doki-Doki_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Doki-Doku_Shocase.jpg
+
+Game 7:
+gameID:
+gameTitle: Slay the Spire
+gameReleaseDate: 23 Jan, 2019
+gameDescription: We fused card games and roguelikes together to make the best single player deckbuilder we could. Craft a unique deck, encounter bizarre creatures, discover relics of immense power, and Slay the Spire!
+gamePrice: 780
+genre: True
+isAvailable:
+cardImageURL: src/main/resources/Image/uploads/game_images/Slay the Spire_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Slay the Spire_Showcase.jpg
+
+Game 8:
+gameID:
+gameTitle: DeadCells
+gameReleaseDate: 7 Aug, 2018
+gameDescription: Dead Cells is a roguelite, metroidvania inspired, action-platformer. You'll explore a sprawling, ever-changing castle... assuming you’re able to fight your way past its keepers in 2D souls-lite combat. No checkpoints. Kill, die, learn, repeat.
+gamePrice:
+genre: Adventure, 2D, Metroidvania
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/DeadCells_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/DeadCells_Showcase.jpg
+
+Game 9:
+gameID:
+gameTitle: Enter the Gungeon
+gameReleaseDate: 5 Apr, 2016
+gameDescription: Enter the Gungeon is a bullet hell dungeon crawler following a band of misfits seeking to shoot, loot, dodge roll and table-flip their way to personal absolution by reaching the legendary Gungeon’s ultimate treasure: the gun that can kill the past.
+gamePrice: 970
+genre: Roguelike, Bullet Hell
+isAvailable:
+cardImageURL: src/main/resources/Image/uploads/game_images/Enter the Gungeon_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Enter the Gungeon_Showcase.jpg
+
+Game 10:
+gameID:
+gameTitle: Astroneer
+gameReleaseDate: 16 Dec, 2016
+gameDescription: Interact with strange new worlds in a unique and tactile way, molding the environment itself as if it were clay in your hands. Build your base, master resource management, automate your production lines, and more as you unravel the mysteries of the universe, alone or with friends.
+gamePrice: 910
+genre: Open World, Multiplayer
+isAvailable: True
+cardImageURL: src/main/resources/Image/uploads/game_images/Astroneer_Card.jpg
+showcaseImagesURL: src/main/resources/Image/uploads/game_images/Astroneer_Showcase.png
+
