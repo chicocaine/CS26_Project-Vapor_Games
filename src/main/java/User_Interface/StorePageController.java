@@ -122,16 +122,7 @@ public class StorePageController {
                 games.getShowcaseImagesURL()
         );
     }
-//    public void setGameDetails(Game game) {
-//        // Assuming the FXML file for the tile has the corresponding elements
-//        gameTitleLabel.setText(game.getTitle());
-//        gamePriceLabel.setText("₱" + game.getPrice());
-//        gameImageView.setImage(new Image(game.getImagePath())); // Load image
-//        gameDescriptionLabel.setText(game.getDescription());
-//    }
 
-
-    // Provide access to all tile controllers
     public List<GameTileController> getGameTileControllers() {
         return gameTileControllers;
     }

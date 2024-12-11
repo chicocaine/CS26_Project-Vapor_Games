@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="LibraryContent" stylesheets="@Stylesheet/BrowsePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.BrowsePageController">
+<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="LibraryContent" stylesheets="@Stylesheet/BrowsePage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.BrowsePageController">
    <children>
       <Pane layoutX="693.0" prefHeight="686.0" prefWidth="200.0">
          <children>
@@ -36,145 +36,323 @@
             <Label layoutX="97.0" layoutY="148.0" styleClass="SmallCaseText" text="-" />
             <TextField fx:id="LibraryPriceSearchMaximum_TextField" layoutX="114.0" layoutY="144.0" prefHeight="33.0" prefWidth="76.0" promptText="Expensive" styleClass="RNB_SearchField-TextField" />
             <Label layoutX="10.0" layoutY="188.0" styleClass="SmallCaseText" text="Genre" />
-            <GridPane layoutX="10.0" layoutY="213.0" prefWidth="180.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <CheckBox fx:id="Atmospheric_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Atmospheric" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Action_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Action" GridPane.columnIndex="1">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Horror_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Horror" GridPane.rowIndex="9">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Shooter_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Shooter" GridPane.columnIndex="1" GridPane.rowIndex="9">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Adventure_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Adventure" GridPane.rowIndex="1">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Casual_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Casual" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Strategy_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Strategy" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="RPG_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="RPG" GridPane.rowIndex="2">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="SPlayer_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="S-Player" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Simulation_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Simulation" GridPane.rowIndex="3">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="F2P_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="F2P" GridPane.rowIndex="4">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Fantasy_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Fantasy" GridPane.rowIndex="5">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Exploration_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Exploraton" GridPane.rowIndex="6">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Sports_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Sports" GridPane.rowIndex="7">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Arcade_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Arcade" GridPane.rowIndex="8">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="MPlayer_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="M-Player" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Indie_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Indie">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="MMO_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="MMO" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Cute_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Cute" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Anime_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Anime" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Retro_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Retro" GridPane.rowIndex="10">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="OpenWorld_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Open World" GridPane.rowIndex="11">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="PvE_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="PvE" GridPane.columnIndex="1" GridPane.rowIndex="10">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-                  <CheckBox fx:id="Dark_Genre" mnemonicParsing="false" onMouseClicked="#HandlesGenreClickedButton" text="Dark" GridPane.columnIndex="1" GridPane.rowIndex="11">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></CheckBox>
-               </children>
-            </GridPane>
-            <Pane fx:id="LibraryPagePrevious_Pane" layoutX="10.0" layoutY="625.0" onMouseClicked="#HandlesClickedButton" prefHeight="50.0" prefWidth="85.0" styleClass="NavigationPageButton">
-               <children>
-                  <Label alignment="CENTER" onMouseClicked="#HandlesClickedButton" prefHeight="50.0" prefWidth="85.0" styleClass="SmallCaseText" text="Previous">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Pane>
-            <Pane fx:id="LibraryPageNext_Pane" layoutX="105.0" layoutY="625.0" onMouseClicked="#HandlesClickedButton" prefHeight="50.0" prefWidth="85.0" styleClass="NavigationPageButton">
-               <children>
-                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="85.0" styleClass="SmallCaseText" text="Next" />
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Pane>
-            <Label layoutX="10.0" layoutY="595.0" styleClass="SmallCaseText" text="Page" />
+            <ScrollPane layoutX="3.0" layoutY="213.0" prefHeight="450.0" prefWidth="195.0">
+               <content>
+                  <GridPane prefWidth="180.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <CheckBox fx:id="Action_Genre" mnemonicParsing="false" text="Action">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Adventure_Genre" layoutX="10.0" layoutY="16.0" mnemonicParsing="false" text="Adventure" GridPane.columnIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="ArtGame_Genre" layoutX="100.0" layoutY="16.0" mnemonicParsing="false" text="Art Game" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="BattleRoyale_Genre" layoutX="10.0" layoutY="46.0" mnemonicParsing="false" text="Battle Royale" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="BoardGame_Genre" layoutX="100.0" layoutY="46.0" mnemonicParsing="false" text="Board Game" GridPane.rowIndex="2">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="BulletHell_Genre" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" text="Bullet Hell" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="BusinessSimulator_Genre" layoutX="100.0" layoutY="76.0" mnemonicParsing="false" text="Business Sim" GridPane.rowIndex="3">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="CardGame_Genre" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" text="Card Game" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Casual_Genre" layoutX="100.0" layoutY="106.0" mnemonicParsing="false" text="Casual" GridPane.rowIndex="4">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="CityBuilder_Genre" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" text="City Builder" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="CoOp_Genre" layoutX="100.0" layoutY="136.0" mnemonicParsing="false" text="Co-Op" GridPane.rowIndex="5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Comedy_Genre" layoutX="10.0" layoutY="166.0" mnemonicParsing="false" text="Comedy" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="DatingSimulator_Genre" layoutX="100.0" layoutY="166.0" mnemonicParsing="false" text="Dating Sim" GridPane.rowIndex="6">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Educational_Genre" layoutX="10.0" layoutY="196.0" mnemonicParsing="false" text="Educational" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Fighting_Genre" layoutX="100.0" layoutY="196.0" mnemonicParsing="false" text="Fighting" GridPane.rowIndex="7">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="FPS_Genre" layoutX="10.0" layoutY="226.0" mnemonicParsing="false" text="FPS" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="HackAndSlash_Genre" layoutX="100.0" layoutY="226.0" mnemonicParsing="false" text="Hack &amp; Slash" GridPane.rowIndex="8">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Horror_Genre" layoutX="10.0" layoutY="256.0" mnemonicParsing="false" text="Horror" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="IdleGame_Genre" layoutX="100.0" layoutY="256.0" mnemonicParsing="false" text="Idle Game" GridPane.rowIndex="9">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="InteractiveStory_Genre" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" text="Inter-Story" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="LifeSimulator_Genre" layoutX="100.0" layoutY="286.0" mnemonicParsing="false" text="Life Sim" GridPane.rowIndex="10">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="MMO_Genre" layoutX="10.0" layoutY="316.0" mnemonicParsing="false" text="MMO" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Metroidvania_Genre" layoutX="100.0" layoutY="316.0" mnemonicParsing="false" text="Metroidvania" GridPane.rowIndex="11">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="MOBA_Genre" layoutX="10.0" layoutY="346.0" mnemonicParsing="false" text="MOBA" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="OpenWorld_Genre" layoutX="100.0" layoutY="346.0" mnemonicParsing="false" text="Open World" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Party_Genre" layoutX="10.0" layoutY="376.0" mnemonicParsing="false" text="Party" GridPane.rowIndex="13">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Platformer_Genre" layoutX="100.0" layoutY="376.0" mnemonicParsing="false" text="Platformer" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Puzzle_Genre" layoutX="10.0" layoutY="406.0" mnemonicParsing="false" text="Puzzle" GridPane.rowIndex="14">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Racing_Genre" layoutX="100.0" layoutY="406.0" mnemonicParsing="false" text="Racing" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Mystery_Genre" layoutX="10.0" layoutY="376.0" mnemonicParsing="false" text="Mystery" GridPane.rowIndex="12">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Roguelike_Genre" layoutX="10.0" layoutY="436.0" mnemonicParsing="false" text="Roguelike" GridPane.rowIndex="16">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="RealTimeStrategy_Genre" layoutX="100.0" layoutY="436.0" mnemonicParsing="false" text="RTS" GridPane.rowIndex="15">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Rhythm_Genre" layoutX="100.0" layoutY="436.0" mnemonicParsing="false" text="Rhythm" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Roguelite_Genre" layoutX="10.0" layoutY="497.0" mnemonicParsing="false" text="Roguelite" GridPane.columnIndex="1" GridPane.rowIndex="16">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="RolePlaying_Genre" layoutX="10.0" layoutY="497.0" mnemonicParsing="false" text="Role-Playing" GridPane.rowIndex="17">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="SandBox_Genre" layoutX="100.0" layoutY="497.0" mnemonicParsing="false" text="Sandbox" GridPane.columnIndex="1" GridPane.rowIndex="17">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Simulation_Genre" layoutX="10.0" layoutY="527.0" mnemonicParsing="false" text="Simulation" GridPane.columnIndex="1" GridPane.rowIndex="18">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Sports_Genre" layoutX="100.0" layoutY="527.0" mnemonicParsing="false" text="Sports" GridPane.rowIndex="19">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Stealth_Genre" layoutX="10.0" layoutY="557.0" mnemonicParsing="false" text="Stealth" GridPane.columnIndex="1" GridPane.rowIndex="19">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Strategy_Genre" layoutX="100.0" layoutY="557.0" mnemonicParsing="false" text="Strategy" GridPane.rowIndex="20">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Survival_Genre" layoutX="10.0" layoutY="587.0" mnemonicParsing="false" text="Survival" GridPane.columnIndex="1" GridPane.rowIndex="20">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="SurvivalHorror_Genre" layoutX="100.0" layoutY="587.0" mnemonicParsing="false" text="Surv-Horror" GridPane.rowIndex="21">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="TacticalRPG_Genre" layoutX="10.0" layoutY="617.0" mnemonicParsing="false" text="Tactical RPG" GridPane.columnIndex="1" GridPane.rowIndex="21">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="TextAdventure_Genre" layoutX="100.0" layoutY="617.0" mnemonicParsing="false" text="Text Adven." GridPane.rowIndex="22">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="ThirdPersonShooter_Genre" layoutX="10.0" layoutY="647.0" mnemonicParsing="false" text="3rd Prsn Sh." GridPane.columnIndex="1" GridPane.rowIndex="22">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="TowerDefense_Genre" layoutX="100.0" layoutY="647.0" mnemonicParsing="false" text="Tower Def" GridPane.rowIndex="23">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="TurnBased_Genre" layoutX="10.0" layoutY="677.0" mnemonicParsing="false" text="Turn-Based" GridPane.columnIndex="1" GridPane.rowIndex="23">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Tycoon_Genre" layoutX="100.0" layoutY="677.0" mnemonicParsing="false" text="Tycoon" GridPane.rowIndex="24">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="VisualNovel_Genre" layoutX="10.0" layoutY="707.0" mnemonicParsing="false" text="Visual Novel" GridPane.columnIndex="1" GridPane.rowIndex="24">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="TwoDimension_Genre" layoutX="10.0" layoutY="737.0" mnemonicParsing="false" text="2D" GridPane.rowIndex="25">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Multiplayer_Genre" layoutX="10.0" layoutY="737.0" mnemonicParsing="false" text="Multiplayer" GridPane.rowIndex="26">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Crafting_Genre" layoutX="100.0" layoutY="737.0" mnemonicParsing="false" text="Crafting" GridPane.columnIndex="1" GridPane.rowIndex="25">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="SinglePlayer_Genre" layoutX="100.0" layoutY="767.0" mnemonicParsing="false" text="Single Player" GridPane.columnIndex="1" GridPane.rowIndex="26">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Zombie_Genre" layoutX="10.0" layoutY="767.0" mnemonicParsing="false" text="Zombie" GridPane.rowIndex="27">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="Shooter_Genre" layoutX="100.0" layoutY="526.0" mnemonicParsing="false" text="Shooter" GridPane.rowIndex="18">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </ScrollPane>
          </children></Pane>
       <ScrollPane prefHeight="686.0" prefWidth="693.0" styleClass="LibraryContent">
          <content>
