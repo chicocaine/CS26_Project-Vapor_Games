@@ -6,6 +6,7 @@ import Games.Games;
 import Library.LibraryManager;
 import Transaction.Transaction;
 import Transaction.CartManager;
+import User_Interface.PopUps.InsufficientBalance;
 import Utility.DBConnectionPool;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -170,6 +171,9 @@ public class CheckOutPageController {
             }
         } else {
             System.out.println("Insufficient balance to place the order.");
+            InsufficientBalance insufficientBalance = new InsufficientBalance();
+            insufficientBalance.setCheckoutStage((Stage) PlaceOrder_Button.getScene().getWindow());
+            insufficientBalance.showInsufficientBalancePopup();
         }
     }
     private void showPaymentSuccessPopup() {
