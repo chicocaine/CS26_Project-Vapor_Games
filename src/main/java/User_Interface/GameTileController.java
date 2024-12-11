@@ -36,7 +36,12 @@ public class GameTileController {
         this.game = game;
         if (game != null) {
             HomePageDiscoverGameTitle_Label.setText(game.getGameTitle());
-            HomePageDiscoverGamePrice_Label.setText(String.format("%.2f",game.getConvertedGamePrice()));
+            double price = game.getConvertedGamePrice();
+            if (price != 0.00) {
+                HomePageDiscoverGamePrice_Label.setText(String.format("%.2f", price));
+            } else {
+                HomePageDiscoverGamePrice_Label.setText("Free");
+            }
             String imagePath = (game.getCardImageURL() != null && !game.getCardImageURL().isEmpty()) ? game.getCardImageURL() : "/images/default-image.png";
             HomePageDiscoverGame_Image.setImage(new Image(imagePath));
         }
