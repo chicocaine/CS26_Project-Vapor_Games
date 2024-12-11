@@ -7,10 +7,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
+<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
    <children>
       <Label fx:id="StorePageGameTitle_Label" layoutX="34.0" layoutY="17.0" prefWidth="584.0" styleClass="GameTitle-Label" text="TERRARIA" />
-      <Label fx:id="StoreGameSubTitle_Label" layoutX="34.0" layoutY="66.0" prefHeight="20.0" prefWidth="584.0" styleClass="GameSubTitle-Label" text="Re-Logic" />
+      <Label fx:id="StoreGameSubTitle_Label" layoutX="34.0" layoutY="66.0" prefHeight="20.0" prefWidth="584.0" styleClass="GameSubTitle-Label" />
       <Pane layoutX="34.0" layoutY="86.0" prefHeight="300.0" prefWidth="584.0">
          <children>
             <ImageView fx:id="StorePageGameMainPicture_Image" fitHeight="300.0" fitWidth="584.0" pickOnBounds="true" preserveRatio="true">

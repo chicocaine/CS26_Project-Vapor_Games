@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="HomePage-Background" stylesheets="@Stylesheet/StorePage.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.StorePageController">
+<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="HomePage-Background" stylesheets="@Stylesheet/StorePage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.StorePageController">
    <children>
       <ScrollPane prefHeight="686.0" prefWidth="893.0">
          <content>
@@ -25,7 +25,7 @@
                            </cursor>
                         </ImageView>
                         <Label fx:id="FeaturedGameTitle_Label" layoutX="22.0" layoutY="56.0" prefHeight="53.0" prefWidth="450.0" styleClass="HomePageFeaturedGameTitle_Label" text="TERRARIA" />
-                        <Label fx:id="FeaturedGameSubTitle_Label" layoutX="22.0" layoutY="102.0" prefHeight="20.0" prefWidth="450.0" styleClass="HomePageFeaturedGameSubTitle_Label" text="Re-Logic" />
+                        <Label fx:id="FeaturedGameSubTitle_Label" layoutX="22.0" layoutY="102.0" prefHeight="20.0" prefWidth="450.0" styleClass="HomePageFeaturedGameSubTitle_Label" />
                         <Pane layoutX="22.0" layoutY="133.0" prefHeight="100.0" prefWidth="450.0">
                            <children>
                               <Label fx:id="FeaturedGameDescription_Label" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="450.0" styleClass="HomePageFeaturedGameDescription_Label" text="The very world is at your fingertips as you fight for survival, fortune, and glory. " wrapText="true" />
