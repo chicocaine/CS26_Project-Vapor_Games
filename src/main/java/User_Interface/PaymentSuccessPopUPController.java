@@ -2,10 +2,17 @@ package User_Interface;
 
 import Accounts.User;
 import Accounts.UserSession;
+import Transaction.Transaction;
+import Utility.DBConnectionPool;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class PaymentSuccessPopUPController {
 
@@ -42,7 +49,9 @@ public class PaymentSuccessPopUPController {
                 closePopup();
             }
         } else if (source == DownloadReciept_Button) {
-            // ADD FUNCTIONS FOR RECEIPT if needed
+            TransactionHistoryPageTileController cntrl = new TransactionHistoryPageTileController();
+            int transactionID = getTransactionIDByDateTime(UserSession.getInstance().getCurrentTransactionDate());
+            cntrl.downloadReceipt(transactionID);
         }
     }
 
@@ -56,4 +65,24 @@ public class PaymentSuccessPopUPController {
             onPopupClosed.run();
         }
     }
+    public int getTransactionIDByDateTime(String transactionDateTime) {
+    String query = "SELECT transactionID FROM transactions WHERE transaction_date = ?";
+    int transactionID = -1;
+
+    try (Connection conn = DBConnectionPool.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(query)) {
+
+        stmt.setString(1, transactionDateTime);
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            transactionID = rs.getInt("transactionID");
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return transactionID;
+}
 }

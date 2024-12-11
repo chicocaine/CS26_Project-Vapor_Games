@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="" />
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Accounts/UserSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Accounts/UserSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/PaymentSuccessPopUPController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PaymentSuccessPopUPController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/TransactionHistoryPageTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/TransactionHistoryPageTileController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

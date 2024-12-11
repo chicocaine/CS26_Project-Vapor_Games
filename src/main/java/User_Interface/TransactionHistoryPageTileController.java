@@ -41,10 +41,10 @@ public class TransactionHistoryPageTileController {
 
     @FXML
     private void HandlesButtonClicked(MouseEvent event) {
-        downloadReceipt();
+        downloadReceipt(Integer.parseInt(OrderID_Label.getText()));
     }
 
-    private void downloadReceipt() {
+    public void downloadReceipt(int transactionID) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save Receipt");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
@@ -52,7 +52,7 @@ public class TransactionHistoryPageTileController {
 
         if (file != null) {
             try (FileWriter fileWriter = new FileWriter(file)) {
-                String receiptContent = generateReceiptContent();
+                String receiptContent = generateReceiptContent(transactionID);
                 fileWriter.write(receiptContent);
                 System.out.println("Receipt saved successfully.");
             } catch (IOException e) {
@@ -62,15 +62,14 @@ public class TransactionHistoryPageTileController {
         }
     }
 
-    private String generateReceiptContent() {
-        int orderId = Integer.parseInt(OrderID_Label.getText());
+    private String generateReceiptContent(int transactionID) {
         StringBuilder receipt = new StringBuilder();
 
         try (Connection connection = DBConnectionPool.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
                      "SELECT * FROM transactions WHERE transactionID = ?")) {
 
-            preparedStatement.setInt(1, orderId);
+            preparedStatement.setInt(1, transactionID);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
@@ -86,7 +85,7 @@ public class TransactionHistoryPageTileController {
                 receipt.append("Online Purchase\n");
                 receipt.append("\"Powered by AGS COiN\"\n\n");
                 receipt.append(date).append("\n");
-                receipt.append("Order ID:\t").append(orderId).append("\n");
+                receipt.append("Order ID:\t").append(transactionID).append("\n");
                 receipt.append(String.format("User Name:\t%s\n\n", username));
                 receipt.append("ITEM\t\t\t  -\t\t-Price\n");
                 receipt.append("-----------------------------------------------------\n");
@@ -119,6 +118,7 @@ public class TransactionHistoryPageTileController {
 
         return receipt.toString();
     }
+
     private double getGamePrice(String gameTitle) {
         double price = 0.0;
         try (Connection connection = DBConnectionPool.getConnection();
@@ -135,5 +135,4 @@ public class TransactionHistoryPageTileController {
         }
         return price;
     }
-
 }

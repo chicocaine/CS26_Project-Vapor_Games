@@ -154,6 +154,7 @@ public class CheckOutPageController {
                 Transaction transaction = new Transaction(currentUser);
                 transaction.confirmTransaction(true);
                 transaction.recordTransaction();
+                UserSession.getInstance().setCurrentTransaction(transaction);
 
                 // Clear the cart for the user after transaction
                 cartManager.clearCart(currentUser);

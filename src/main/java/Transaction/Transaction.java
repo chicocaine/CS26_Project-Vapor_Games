@@ -46,8 +46,8 @@ public class Transaction {
                 return;
             }
 
-            String query = "INSERT INTO transactions (userID, transaction_date, transaction_games, transaction_amount) VALUES (?, ?, ?, ?)";
-
+            String query = "INSERT INTO transactions (userID, transaction_date, transaction_games, transaction_code, transaction_amount) VALUES (?, ?, ?, ?, ?)";
+            String code = "";
             StringJoiner formattedGames = new StringJoiner(", ");
 
             for (Games game : this.game_list) {
@@ -60,7 +60,8 @@ public class Transaction {
                 stmt.setInt(1, user.getUserID());
                 stmt.setString(2, this.transaction_date_time);
                 stmt.setString(3, formattedGames.toString());
-                stmt.setDouble(4, getTransactionTotalPrice());
+                stmt.setString(4, code);
+                stmt.setDouble(5, getTransactionTotalPrice());
 
                 int rowsAffected = stmt.executeUpdate();
 
@@ -91,6 +92,7 @@ public class Transaction {
         up.updateWalletBalance(this.user.getUserID(), user.getWallet().getBalance());
         this.isConfirmed = isConfirmed;
         this.transaction_date_time = dt.getDateTime();
+        setTransaction_date_time(this.transaction_date_time);
 
         return isConfirmed;
     }
@@ -108,6 +110,10 @@ public class Transaction {
 
     public String getTransactionDate() {
         return this.transaction_date_time;
+    }
+    public void setTransaction_date_time(String transactionDateTime){
+        this.transaction_date_time = transactionDateTime;
+
     }
 
   public void recordRedeemTransaction(String code, double amount) {
