@@ -1,5 +1,5 @@
 //MAIN FEATURE NEEDED TO DO ASAP
-Handle FILTER on browse
+✅Handle FILTER on browse
 ✅ Implement Transaction on Code Redemption - DONE 
 Browse Page :: add many many so many HBOX
 
