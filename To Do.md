@@ -10,7 +10,7 @@ Game Already Owned Pop Up [Continue To Library] ---> Redirect to Library when go
 Game Already on  Cart Pop Up [View My Cart | Continue Shopping] ---> Reirect to store page | Close the pop up
 Added to your Cart (Game Successfully Added to Cart ) [View My Cart | Continue Shopping]] ---> Redirect to Cart | Close pop up
 ✅Insufficient Balance Pop UP [Top Up | Cancel ] ---> Reidrect to Wallet | Close Pop Up
-Password Successfully Changed [Okay] ---> Close pop up, stay on the account page
+✅Password Successfully Changed [Okay] ---> Close pop up, stay on the account page
 
 Veto'ed:
 Select Payment Method Pop Up [Okay] ---> close the pop up when button is clicked //this is for the check out

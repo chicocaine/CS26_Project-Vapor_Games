@@ -3,12 +3,20 @@ package User_Interface;
 import Accounts.User;
 import Utility.PasswordManager;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
 
 
 public class AccountPageController {
@@ -119,17 +127,39 @@ public class AccountPageController {
                 boolean isUpdated = manager.updatePasswordInDatabase(user.getUserName(), newHashedPassword);
 
                 if (isUpdated) {
-                    showAlert("Password Changed", "Password has been changed successfully.", Alert.AlertType.INFORMATION);
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PasswordChangeSuccessPopUp.fxml"));
+                        Parent parent = fxmlLoader.load();
+                        Stage stage = new Stage();
+                        stage.setScene(new Scene(parent));
+                        stage.initStyle(StageStyle.UNDECORATED);
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.showAndWait();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     showAlert("Password Change Failed", "Failed to update password in the database.", Alert.AlertType.ERROR);
                 }
             } else {
-                showAlert("Password Change Failed", "Old password does not match.", Alert.AlertType.ERROR);
+                passFail();
             }
         } else {
-            showAlert("Password Change Failed", "Old password does not match.", Alert.AlertType.ERROR);
+            passFail();
         }
     }
-
+public void passFail(){
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PasswordChangeFailPopUp.fxml"));
+        Parent parent = fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
 
 }
