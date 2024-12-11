@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/InsufficientBalance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/wallet-add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InsufficientBalancePopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/profile_pics/35a1a519-fad6-4a31-a64a-97865867318c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/LogOutPopUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/To Do.md" beforeDir="false" afterPath="$PROJECT_DIR$/To Do.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGCredentials.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stylesheet/VGCredentials.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +232,7 @@
       <workItem from="1733814502053" duration="2008000" />
       <workItem from="1733900682981" duration="5471000" />
       <workItem from="1733906283508" duration="2660000" />
-      <workItem from="1733917593341" duration="4465000" />
+      <workItem from="1733917593341" duration="5587000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />

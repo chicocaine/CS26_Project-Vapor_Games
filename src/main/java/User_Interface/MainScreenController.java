@@ -6,6 +6,8 @@ import Transaction.CartManager;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import javafx.event.ActionEvent;
@@ -101,15 +104,20 @@ public class MainScreenController {
 
 
     // === HANDLE SPECIFIC BUTTON ACTIONS ===
-    private void handleLogout() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("Are you sure you want to log out?");
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            System.exit(0);
-        }
+ private void handleLogout() {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LogoutPopUp.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.out.println("[ERROR] Failed to load logout confirmation popup.");
     }
+}
 
     private void handleLibraryButton() {
         if (!isLibraryButtonClicked) {
