@@ -7,6 +7,7 @@ import Library.LibraryManager;
 import Transaction.Transaction;
 import Transaction.CartManager;
 import User_Interface.PopUps.InsufficientBalance;
+import User_Interface.PopUps.SelectPaymentMethod;
 import Utility.DBConnectionPool;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -130,7 +131,22 @@ public class CheckOutPageController {
     private void placeOrder() {
         // checks if a payment method is selected
         if (!isAGSCoinSelected) {
-            System.out.println("No payment method selected.");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/SelectPaymentMethodPopUp.fxml"));
+                Parent root = loader.load();
+
+                // Create a new stage for the payment success popup
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.setResizable(false);
+                stage.initStyle(StageStyle.UNDECORATED);
+                stage.show();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("[ERROR] Failed to load select payment popup.");
+            }
             return;
         }
 
