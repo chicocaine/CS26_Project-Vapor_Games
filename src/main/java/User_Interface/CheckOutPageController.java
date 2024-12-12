@@ -91,6 +91,22 @@ public class CheckOutPageController {
             MainScreenController mainScreenController = loader.getController();
             mainScreenController.currentUser = currentUser;
             mainScreenController.setUserOnDashboard(currentUser);
+//            mainScreenController.setTopUpWasClicked(TopUpWasClicked); // Pass the boolean
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load MainScreen.");
+        }
+    }
+    @FXML
+    void loadMainScreenwithWallet() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) CloseOrReturn_Image.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            MainScreenController mainScreenController = loader.getController();
+            mainScreenController.currentUser = currentUser;
+            mainScreenController.setUserOnDashboard(currentUser);
             mainScreenController.setTopUpWasClicked(TopUpWasClicked); // Pass the boolean
         } catch (IOException e) {
             e.printStackTrace();
@@ -211,7 +227,7 @@ public class CheckOutPageController {
             controller.setOnPopupClosed(() -> {
                 if (controller.isTopUpWasClicked()) {
                     TopUpWasClicked = true;
-                    loadMainScreen();
+                    loadMainScreenwithWallet();
                 } else {
                     System.out.println("Popup closed without clicking 'TopUP'.");
                 }
