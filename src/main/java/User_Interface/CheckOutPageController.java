@@ -52,6 +52,9 @@ public class CheckOutPageController {
     @FXML
     private Label TotalCost_Label;
 
+    @FXML
+    private Label label;
+
     private User currentUser = UserSession.getInstance().getCurrentUser();
     private CartManager cartManager = new CartManager();
     private LibraryManager libraryManager = new LibraryManager();
@@ -60,6 +63,7 @@ public class CheckOutPageController {
 
     @FXML
     private void initialize() {
+        label.setVisible(false);
         loadUserInfo();
         loadPurchaseSummary();
         this.isAGSCoinSelected = false;
@@ -206,5 +210,12 @@ public class CheckOutPageController {
     private void handleAGSCoinSelection() {
         this.isAGSCoinSelected = AGSCoin_RadioButton.isSelected();
     }
-
+public void closeCheckOutPage() {
+    Stage stage = (Stage) label.getScene().getWindow();
+    if (stage != null) {
+        stage.close();
+    } else {
+        System.out.println("[ERROR] Stage is null, cannot close checkout page.");
+    }
+}
 }

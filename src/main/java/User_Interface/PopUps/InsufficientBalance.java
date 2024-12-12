@@ -1,5 +1,6 @@
 package User_Interface.PopUps;
 
+import User_Interface.CheckOutPageController;
 import User_Interface.MainScreenController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,21 +25,31 @@ public class InsufficientBalance {
     private Stage checkoutStage;
 
 
-    @FXML
-    private void initialize() {
-        TopUP.setOnAction(event -> {
-            System.out.println("TopUP button clicked.");
-            redirectToWallet();
-        });
-        Okay.setOnAction(event -> {
-            System.out.println("Okay button clicked.");
-            closePopup();
-        });
-    }
+//    @FXML
+//    private void initialize() {
+//        TopUP.setOnAction(event -> {
+//            System.out.println("TopUP button clicked.");
+//            closePopup();
+//            CheckOutPageController checkoutController = new CheckOutPageController();
+//            checkoutController.closeCheckOutPage();
+//            redirectToWallet();
+//        });
+//        Okay.setOnAction(event -> {
+//            System.out.println("Okay button clicked.");
+//            closePopup();
+//        });
+//    }
 
     @FXML
     void handleMouseClicked(MouseEvent event) {
-        System.out.println("Okay button clicked.");
+        if (event.getSource() == Okay) {
+            closePopup();
+        } else if (event.getSource() == TopUP) {
+            closePopup();
+//            CheckOutPageController checkoutController = new CheckOutPageController();
+//            checkoutController.closeCheckOutPage();
+            redirectToWallet();
+        }
     }
     public void setOnPopupClosed(Runnable callback) {
         this.onPopupClosed = callback;
@@ -60,6 +71,7 @@ public void redirectToWallet() {
 
         // Close the current stage
         Stage currentStage = (Stage) Okay.getScene().getWindow();
+        currentStage.setScene(new Scene(walletRoot));
         currentStage.close();
 
         if (checkoutStage != null) {

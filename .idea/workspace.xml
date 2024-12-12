@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/PasswordFail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/PasswordSuccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/close-circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PasswordChangeFail.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PasswordChangeSuccessPopUp.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/profile_pics/7c9ddcd0-4445-4deb-bc61-9abcced18f13.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/AccountPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/AccountPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LogoutPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LogoutPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/InsufficientBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/InsufficientBalance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CheckOutPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CheckOutPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,6 +305,10 @@
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="29" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
