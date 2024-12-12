@@ -81,6 +81,7 @@ public class CheckOutPageController {
         }
     }
 
+    // This one
     @FXML
     void loadMainScreen() {
         try {
@@ -209,6 +210,7 @@ public class CheckOutPageController {
                 System.out.println("[ERROR] Failed to place order.");
             }
         } else {
+            // This One
             showInsufficientBalancePopup();
         }
     }

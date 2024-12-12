@@ -266,6 +266,7 @@ public class MainScreenController {
         }
     }
 
+    // And This One
     public void setTopUpWasClicked(boolean topUpWasClicked) {
         this.TopUpWasClicked = topUpWasClicked;
         if (TopUpWasClicked) {

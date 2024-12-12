@@ -356,14 +356,30 @@
          </children></Pane>
       <ScrollPane prefHeight="686.0" prefWidth="693.0" styleClass="LibraryContent">
          <content>
-            <Pane prefHeight="1350.0" prefWidth="678.0" styleClass="LibraryContent">
+            <Pane prefHeight="5350.0" prefWidth="678.0" styleClass="LibraryContent">
                <children>
                   <HBox fx:id="HBox1" layoutX="43.0" layoutY="22.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
                   <HBox fx:id="HBox2" layoutX="43.0" layoutY="287.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
                   <HBox fx:id="HBox3" layoutX="43.0" layoutY="552.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
                   <HBox fx:id="HBox4" layoutX="43.0" layoutY="818.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
                   <HBox fx:id="HBox5" layoutX="43.0" layoutY="1083.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
-               </children></Pane>
+                  <HBox fx:id="HBox6" layoutX="43.0" layoutY="1349.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox7" layoutX="43.0" layoutY="1614.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox8" layoutX="43.0" layoutY="1880.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox9" layoutX="43.0" layoutY="2145.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox10" layoutX="43.0" layoutY="2410.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox11" layoutX="43.0" layoutY="2675.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox12" layoutX="43.0" layoutY="2941.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox13" layoutX="43.0" layoutY="3206.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox14" layoutX="43.0" layoutY="3472.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox15" layoutX="43.0" layoutY="3737.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox16" layoutX="43.0" layoutY="4003.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox17" layoutX="43.0" layoutY="4268.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox18" layoutX="43.0" layoutY="4533.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox19" layoutX="43.0" layoutY="4799.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+                  <HBox fx:id="HBox20" layoutX="43.0" layoutY="5064.0" prefHeight="240.0" prefWidth="590.0" spacing="10.0" />
+               </children>
+            </Pane>
          </content>
       </ScrollPane>
    </children>
