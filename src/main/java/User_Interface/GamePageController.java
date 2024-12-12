@@ -3,6 +3,7 @@ package User_Interface;
 import Accounts.User;
 import Transaction.CartManager;
 import User_Interface.PopUps.AddedToCart;
+import User_Interface.PopUps.GameAlreadyOwned;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -61,6 +62,7 @@ public class GamePageController {
     private User currentUser;
     private Games currentGame;
     private boolean ViewCartWasClicked = false;
+    private boolean ViewLibraryWasClicked = false;
     @FXML
     private void initialize() {
         GameAddToCartButton_Pane.setOnMouseClicked(e -> addToCart());
@@ -77,6 +79,7 @@ public class GamePageController {
             mainScreenController.currentUser = currentUser;
             mainScreenController.setUserOnDashboard(currentUser);
             mainScreenController.setViewMyCartClicked(ViewCartWasClicked); // Pass the boolean
+            mainScreenController.setViewLibraryClicked(ViewLibraryWasClicked);
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("[ERROR] Failed to load MainScreen.");
@@ -149,16 +152,25 @@ public class GamePageController {
         CartManager cartmngr = new CartManager();
         if (cartmngr.isGameInCart(currentUser, currentGame)) {
             showGameAlreadyOnCart();
+        } else if (cartmngr.isGameInLibrary(currentUser,currentGame)) {
+            showGameAlreadyOwned();
         } else {
             cartmngr.addToCart(currentUser, currentGame);
             showAddedToCartPopup();
         }
     }
 
-    public void buyNow() {
-        addToCart();
+ public void buyNow() {
+    CartManager cartManager = new CartManager();
+    if (cartManager.isGameInLibrary(currentUser, currentGame)) {
+        showGameAlreadyOwned();
+    } else {
+        if (!cartManager.isGameInCart(currentUser, currentGame)) {
+            cartManager.addToCart(currentUser, currentGame);
+        }
         loadCheckOutPage();
     }
+}
 
     private void loadCheckOutPage() {
         try {
@@ -225,5 +237,33 @@ public class GamePageController {
             e.printStackTrace();
             System.out.println("[ERROR] Failed to load AddedToCart popup.");
         }
+    }
+
+    public void showGameAlreadyOwned(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameAlreadyOwnedPopUp.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+
+            GameAlreadyOwned controller = loader.getController();
+            controller.setOnPopupClosed(() -> {
+                if(controller.ifViewLibraryWasClicked()){
+                    ViewLibraryWasClicked = true;
+                    loadMainScreen();
+                } else {
+                    System.out.println("Popup closed without clicking 'View Cart'.");
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load AddedToCart popup.");
+        }
+
     }
 }

@@ -56,6 +56,7 @@ public class MainScreenController {
     private boolean TopUpWasClicked = false;
 
     private boolean viewMyCartClicked = false;
+    private boolean viewLibraryClicked = false;
 
     public void setUser(User user) {
         this.currentUser = user;
@@ -276,7 +277,12 @@ public class MainScreenController {
         if(viewMyCartClicked){
             loadCartPage();
         }
-
+    }
+    public void setViewLibraryClicked(boolean viewLibraryClicked){
+        this.viewLibraryClicked = viewLibraryClicked;
+        if(viewLibraryClicked){
+            LoadLibraryPage();
+        }
     }
 
     private void loadWalletPage() {
