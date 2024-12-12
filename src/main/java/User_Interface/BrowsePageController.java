@@ -42,7 +42,8 @@ public class BrowsePageController {
             TwoDimension_Genre, Tycoon_Genre, VisualNovel_Genre, Zombie_Genre, Shooter_Genre;
 
     @FXML
-    private HBox HBox1, HBox2, HBox3, HBox4, HBox5;
+    private HBox HBox1, HBox2, HBox3, HBox4, HBox5, HBox6, HBox7, HBox8, HBox9, HBox10,
+            HBox11, HBox12, HBox13, HBox14, HBox15, HBox16, HBox17, HBox18, HBox19, HBox20;
 
     @FXML
     private TextField LibraryPriceSearchMaximum_TextField, LibraryPriceSearchMinimum_TextField, LibrarySearchField_TextField;
@@ -53,22 +54,52 @@ public class BrowsePageController {
     @FXML
     private Pane MainPage_Pane;
 
-    private final List<Games> HBox1List = new ArrayList<>();
-    private final List<Games> HBox2List = new ArrayList<>();
-    private final List<Games> HBox3List = new ArrayList<>();
-    private final List<Games> HBox4List = new ArrayList<>();
-    private final List<Games> HBox5List = new ArrayList<>();
+    private final List<Games> HBoxList1 = new ArrayList<>();
+    private final List<Games> HBoxList2 = new ArrayList<>();
+    private final List<Games> HBoxList3 = new ArrayList<>();
+    private final List<Games> HBoxList4 = new ArrayList<>();
+    private final List<Games> HBoxList5 = new ArrayList<>();
+    private final List<Games> HBoxList6 = new ArrayList<>();
+    private final List<Games> HBoxList7 = new ArrayList<>();
+    private final List<Games> HBoxList8 = new ArrayList<>();
+    private final List<Games> HBoxList9 = new ArrayList<>();
+    private final List<Games> HBoxList10 = new ArrayList<>();
+    private final List<Games> HBoxList11 = new ArrayList<>();
+    private final List<Games> HBoxList12 = new ArrayList<>();
+    private final List<Games> HBoxList13 = new ArrayList<>();
+    private final List<Games> HBoxList14 = new ArrayList<>();
+    private final List<Games> HBoxList15 = new ArrayList<>();
+    private final List<Games> HBoxList16 = new ArrayList<>();
+    private final List<Games> HBoxList17 = new ArrayList<>();
+    private final List<Games> HBoxList18 = new ArrayList<>();
+    private final List<Games> HBoxList19 = new ArrayList<>();
+    private final List<Games> HBoxList20 = new ArrayList<>();
 
     // Store references to all MediumGameTileController instances
     private final List<MediumGameTileController> gameTileControllers = new ArrayList<>();
 
     public void initialize() {
         initializeGameLists();
-        populateGameTiles(HBox1, HBox1List);
-        populateGameTiles(HBox2, HBox2List);
-        populateGameTiles(HBox3, HBox3List);
-        populateGameTiles(HBox4, HBox4List);
-        populateGameTiles(HBox5, HBox5List);
+        populateGameTiles(HBox1, HBoxList1);
+        populateGameTiles(HBox2, HBoxList2);
+        populateGameTiles(HBox3, HBoxList3);
+        populateGameTiles(HBox4, HBoxList4);
+        populateGameTiles(HBox5, HBoxList5);
+        populateGameTiles(HBox6, HBoxList6);
+        populateGameTiles(HBox7, HBoxList7);
+        populateGameTiles(HBox8, HBoxList8);
+        populateGameTiles(HBox9, HBoxList9);
+        populateGameTiles(HBox10, HBoxList10);
+        populateGameTiles(HBox11, HBoxList11);
+        populateGameTiles(HBox12, HBoxList12);
+        populateGameTiles(HBox13, HBoxList13);
+        populateGameTiles(HBox14, HBoxList14);
+        populateGameTiles(HBox15, HBoxList15);
+        populateGameTiles(HBox16, HBoxList16);
+        populateGameTiles(HBox17, HBoxList17);
+        populateGameTiles(HBox18, HBoxList18);
+        populateGameTiles(HBox19, HBoxList19);
+        populateGameTiles(HBox20, HBoxList20);
 
         genreMap.put(Action_Genre, "Action");
         genreMap.put(Adventure_Genre, "Adventure");
@@ -145,24 +176,95 @@ public class BrowsePageController {
 
     private void categorizeGames(List<Games> gamesList) {
         // Clear existing lists
-        HBox1List.clear();
-        HBox2List.clear();
-        HBox3List.clear();
-        HBox4List.clear();
-        HBox5List.clear();
+        HBoxList1.clear();
+        HBoxList2.clear();
+        HBoxList3.clear();
+        HBoxList4.clear();
+        HBoxList5.clear();
+        HBoxList6.clear();
+        HBoxList7.clear();
+        HBoxList8.clear();
+        HBoxList9.clear();
+        HBoxList10.clear();
+        HBoxList11.clear();
+        HBoxList12.clear();
+        HBoxList13.clear();
+        HBoxList14.clear();
+        HBoxList15.clear();
+        HBoxList16.clear();
+        HBoxList17.clear();
+        HBoxList18.clear();
+        HBoxList19.clear();
+        HBoxList20.clear();
 
         for (int i = 0; i < gamesList.size(); i++) {
             Games game = gamesList.get(i);
-            if (i % 5 == 0) {
-                HBox1List.add(convertToGame(game)); // Convert to your Game model
-            } else if (i % 5 == 1) {
-                HBox2List.add(convertToGame(game));
-            } else if (i % 5 == 2) {
-                HBox3List.add(convertToGame(game));
-            } else if (i % 5 == 3) {
-                HBox4List.add(convertToGame(game));
-            } else {
-                HBox5List.add(convertToGame(game));
+            int hboxIndex = i / 4; // Determine which HBox to use
+
+            switch (hboxIndex) {
+                case 0:
+                    HBoxList1.add(convertToGame(game));
+                    break;
+                case 1:
+                    HBoxList2.add(convertToGame(game));
+                    break;
+                case 2:
+                    HBoxList3.add(convertToGame(game));
+                    break;
+                case 3:
+                    HBoxList4.add(convertToGame(game));
+                    break;
+                case 4:
+                    HBoxList5.add(convertToGame(game));
+                    break;
+                case 5:
+                    HBoxList6.add(convertToGame(game));
+                    break;
+                case 6:
+                    HBoxList7.add(convertToGame(game));
+                    break;
+                case 7:
+                    HBoxList8.add(convertToGame(game));
+                    break;
+                case 8:
+                    HBoxList9.add(convertToGame(game));
+                    break;
+                case 9:
+                    HBoxList10.add(convertToGame(game));
+                    break;
+                case 10:
+                    HBoxList11.add(convertToGame(game));
+                    break;
+                case 11:
+                    HBoxList12.add(convertToGame(game));
+                    break;
+                case 12:
+                    HBoxList13.add(convertToGame(game));
+                    break;
+                case 13:
+                    HBoxList14.add(convertToGame(game));
+                    break;
+                case 14:
+                    HBoxList15.add(convertToGame(game));
+                    break;
+                case 15:
+                    HBoxList16.add(convertToGame(game));
+                    break;
+                case 16:
+                    HBoxList17.add(convertToGame(game));
+                    break;
+                case 17:
+                    HBoxList18.add(convertToGame(game));
+                    break;
+                case 18:
+                    HBoxList19.add(convertToGame(game));
+                    break;
+                case 19:
+                    HBoxList20.add(convertToGame(game));
+                    break;
+                default:
+                    System.out.println("No more HBoxes available.");
+                    break;
             }
         }
     }
@@ -180,11 +282,26 @@ public class BrowsePageController {
         categorizeGames(filteredGames);
 
         // Repopulate HBoxes with filtered games
-        populateGameTiles(HBox1, HBox1List);
-        populateGameTiles(HBox2, HBox2List);
-        populateGameTiles(HBox3, HBox3List);
-        populateGameTiles(HBox4, HBox4List);
-        populateGameTiles(HBox5, HBox5List);
+        populateGameTiles(HBox1, HBoxList1);
+        populateGameTiles(HBox2, HBoxList2);
+        populateGameTiles(HBox3, HBoxList3);
+        populateGameTiles(HBox4, HBoxList4);
+        populateGameTiles(HBox5, HBoxList5);
+        populateGameTiles(HBox6, HBoxList6);
+        populateGameTiles(HBox7, HBoxList7);
+        populateGameTiles(HBox8, HBoxList8);
+        populateGameTiles(HBox9, HBoxList9);
+        populateGameTiles(HBox10, HBoxList10);
+        populateGameTiles(HBox11, HBoxList11);
+        populateGameTiles(HBox12, HBoxList12);
+        populateGameTiles(HBox13, HBoxList13);
+        populateGameTiles(HBox14, HBoxList14);
+        populateGameTiles(HBox15, HBoxList15);
+        populateGameTiles(HBox16, HBoxList16);
+        populateGameTiles(HBox17, HBoxList17);
+        populateGameTiles(HBox18, HBoxList18);
+        populateGameTiles(HBox19, HBoxList19);
+        populateGameTiles(HBox20, HBoxList20);
     }
 
     private void populateGameTiles(HBox hbox, List<Games> gamesList) {
@@ -291,11 +408,26 @@ public class BrowsePageController {
             categorizeGames(searchResults);
 
             // Repopulate HBoxes with search results
-            populateGameTiles(HBox1, HBox1List);
-            populateGameTiles(HBox2, HBox2List);
-            populateGameTiles(HBox3, HBox3List);
-            populateGameTiles(HBox4, HBox4List);
-            populateGameTiles(HBox5, HBox5List);
+            populateGameTiles(HBox1, HBoxList1);
+            populateGameTiles(HBox2, HBoxList2);
+            populateGameTiles(HBox3, HBoxList3);
+            populateGameTiles(HBox4, HBoxList4);
+            populateGameTiles(HBox5, HBoxList5);
+            populateGameTiles(HBox6, HBoxList6);
+            populateGameTiles(HBox7, HBoxList7);
+            populateGameTiles(HBox8, HBoxList8);
+            populateGameTiles(HBox9, HBoxList9);
+            populateGameTiles(HBox10, HBoxList10);
+            populateGameTiles(HBox11, HBoxList11);
+            populateGameTiles(HBox12, HBoxList12);
+            populateGameTiles(HBox13, HBoxList13);
+            populateGameTiles(HBox14, HBoxList14);
+            populateGameTiles(HBox15, HBoxList15);
+            populateGameTiles(HBox16, HBoxList16);
+            populateGameTiles(HBox17, HBoxList17);
+            populateGameTiles(HBox18, HBoxList18);
+            populateGameTiles(HBox19, HBoxList19);
+            populateGameTiles(HBox20, HBoxList20);
         }
     }
 

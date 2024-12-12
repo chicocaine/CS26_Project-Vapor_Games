@@ -1,7 +1,7 @@
 //MAIN FEATURE NEEDED TO DO ASAP
-✅Handle FILTER on browse
-✅ Implement Transaction on Code Redemption - DONE 
-Browse Page :: add many many so many HBOX
+✅ Handle FILTER on browse
+✅ Implement Transaction on Code Redemption - DONE
+✅ Browse Page :: add many many so many HBOX - DONE
 
 Design Done:
 
@@ -17,4 +17,4 @@ Remarks:
 ✅ Buy Now Button ---> redirect to checkout page
 
 Bugs
-checkout page wont close when top up now is clicked 
+checkout page wont close when top up now is clicked - FIXED
