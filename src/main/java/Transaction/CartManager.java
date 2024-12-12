@@ -235,5 +235,27 @@ public class CartManager {
 
         return false;
     }
+    public boolean isGameInCart(User user, Games game) {
+        int userID = user.getUserID();
+        int gameID = game.getGameID();
+
+        String query = "SELECT * FROM cart_games WHERE userID = ? AND gameID = ?";
+
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, userID);
+            stmt.setInt(2, gameID);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
 
 }

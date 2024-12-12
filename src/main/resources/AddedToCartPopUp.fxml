@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="612.0" style="-fx-border-color: #9747FF;" styleClass="Background" stylesheets="@Stylesheet/VGCredentials.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.PopUps.AddedToCart">
+   <children>
+      <Text fill="WHITE" layoutX="147.0" layoutY="-21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="signup" text="Added to your Cart!" textAlignment="CENTER" wrappingWidth="317.22" y="86.0">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="ViewCart" layoutX="107.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#handleMouseClicked" prefHeight="45.0" prefWidth="162.0" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="View My Cart" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="ContinueSopping" layoutX="342.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#handleMouseClicked" prefHeight="45.0" prefWidth="162.0" style="-fx-border-color: #9747FF;" stylesheets="@Stylesheet/VGCredentials.css" text="Continue Shopping" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="register" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fill="WHITE" layoutX="207.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Game is added to your cart!" />
+   </children>
+</AnchorPane>
