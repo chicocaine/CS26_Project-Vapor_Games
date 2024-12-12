@@ -56,6 +56,8 @@ public class CheckOutPageController {
     @FXML
     private Label label;
 
+    public boolean TopUpWasClicked = false;
+
     private User currentUser = UserSession.getInstance().getCurrentUser();
     private CartManager cartManager = new CartManager();
     private LibraryManager libraryManager = new LibraryManager();
@@ -80,7 +82,7 @@ public class CheckOutPageController {
     }
 
     @FXML
-    void loadMainScreen(){
+    void loadMainScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
             Parent root = loader.load();
@@ -89,6 +91,7 @@ public class CheckOutPageController {
             MainScreenController mainScreenController = loader.getController();
             mainScreenController.currentUser = currentUser;
             mainScreenController.setUserOnDashboard(currentUser);
+            mainScreenController.setTopUpWasClicked(TopUpWasClicked); // Pass the boolean
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("[ERROR] Failed to load MainScreen.");
@@ -190,12 +193,38 @@ public class CheckOutPageController {
                 System.out.println("[ERROR] Failed to place order.");
             }
         } else {
-            System.out.println("Insufficient balance to place the order.");
-            InsufficientBalance insufficientBalance = new InsufficientBalance();
-            insufficientBalance.setCheckoutStage((Stage) PlaceOrder_Button.getScene().getWindow());
-            insufficientBalance.showInsufficientBalancePopup();
+            showInsufficientBalancePopup();
         }
     }
+    private void showInsufficientBalancePopup() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/InsufficientBalancePopUp.fxml"));
+            Parent root = loader.load();
+            InsufficientBalance controller = loader.getController();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+
+            controller.setOnPopupClosed(() -> {
+                if (controller.isTopUpWasClicked()) {
+                    TopUpWasClicked = true;
+                    loadMainScreen();
+                } else {
+                    System.out.println("Popup closed without clicking 'TopUP'.");
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load Insufficient Balance popup.");
+        }
+    }
+
+
+
     private void showPaymentSuccessPopup() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/PaymentSuccessPopUP.fxml"));
@@ -211,7 +240,9 @@ public class CheckOutPageController {
 
             controller.setOnPopupClosed(() -> {
                 if (controller.isBackToStoreClicked()) {
+                    TopUpWasClicked = controller.isBackToStoreClicked();
                     loadMainScreen();
+                    System.out.println("[INFO] TopUpWasClicked: " + TopUpWasClicked + "PASSED IN CHECKOUTPAGECONTROLLER");
                 } else {
                     System.out.println("Popup closed without clicking 'Back to Store'.");
                 }
@@ -222,6 +253,8 @@ public class CheckOutPageController {
             System.out.println("[ERROR] Failed to load payment success popup.");
         }
     }
+
+
 
     private void handleAGSCoinSelection() {
         this.isAGSCoinSelected = AGSCoin_RadioButton.isSelected();

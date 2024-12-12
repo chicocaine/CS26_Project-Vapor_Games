@@ -53,6 +53,8 @@ public class MainScreenController {
 
     public User currentUser;
 
+    private boolean TopUpWasClicked = false;
+
     public void setUser(User user) {
         this.currentUser = user;
 
@@ -261,21 +263,27 @@ public class MainScreenController {
         }
     }
 
-    private void loadWalletPage() {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/WalletPage.fxml"));
-        Pane walletPagePane = loader.load();
-        setMainContent_Pane(walletPagePane);
-
-        WalletPageController walletPageController = loader.getController();
-        System.out.println("Setting user on wallet page" + currentUser.getWallet().getBalance());
-        walletPageController.setUserOnWallet(currentUser);
-        System.out.println("Wallet page loaded successfully.");
-    } catch (IOException e) {
-        e.printStackTrace();
-        System.out.println("[ERROR]: Unable to load WalletPage.fxml");
+    public void setTopUpWasClicked(boolean topUpWasClicked) {
+        this.TopUpWasClicked = topUpWasClicked;
+        if (TopUpWasClicked) {
+            loadWalletPage();
+        }
     }
-}
+
+    private void loadWalletPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/WalletPage.fxml"));
+            Pane walletPagePane = loader.load();
+            setMainContent_Pane(walletPagePane);
+
+            WalletPageController walletPageController = loader.getController();
+            walletPageController.setUserOnWallet(currentUser);
+            System.out.println("Wallet page loaded successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR]: Unable to load WalletPage.fxml");
+        }
+    }
 
     private void loadTransactionHistoryDropMenu() {
         try {
