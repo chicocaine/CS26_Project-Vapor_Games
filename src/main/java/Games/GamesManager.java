@@ -95,6 +95,79 @@ public class GamesManager {
         GamesLoader();
         return this.game_list;
     }
+    public ArrayList<Games> newGames(){
+        getGamesReleasedIn2024();
+        return  this.game_list;
+    }
+
+    public void getGamesReleasedIn2024() {
+        String query = """
+            SELECT
+                g.gameID,
+                g.gameTitle,
+                g.gameReleaseDate,
+                g.description,
+                g.price,
+                g.available,
+                img.imageURL AS pictureURL,
+                img.imageType AS imageType,
+                gen.genreName AS genreName
+            FROM
+                games g
+            LEFT JOIN
+                genre_games gg ON g.gameID = gg.gameID
+            LEFT JOIN
+                genres gen ON gg.genreID = gen.genreID
+            LEFT JOIN
+                game_images img ON g.gameID = img.gameID
+            WHERE
+                g.gameReleaseDate LIKE '%2024%'
+            ORDER BY
+                g.gameID, img.imageType;
+        """;
+
+        try (Connection connection = DBConnectionPool.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+
+            HashMap<Integer, Games> gamesMap = new HashMap<>();
+
+            while (resultSet.next()) {
+                int gameID = resultSet.getInt("gameID");
+                String title = resultSet.getString("gameTitle");
+                String releaseDate = resultSet.getString("gameReleaseDate");
+                String description = resultSet.getString("description");
+                double price = resultSet.getDouble("price");
+                boolean isAvailable = resultSet.getBoolean("available");
+                String imageType = resultSet.getString("imageType");
+                String imageURL = resultSet.getString("pictureURL");
+                String genreName = resultSet.getString("genreName");
+
+                Games game = gamesMap.getOrDefault(gameID,
+                        new Games(gameID, title, releaseDate, description, price, new ArrayList<>(), isAvailable, null, new ArrayList<>()));
+
+                if ("CARD".equalsIgnoreCase(imageType) && imageURL != null) {
+                    game.setCardImageURL(imageURL);
+                }
+
+                if ("SHOWCASE".equalsIgnoreCase(imageType) && imageURL != null) {
+                    game.getShowcaseImagesURL().add(imageURL);
+                }
+
+                if (genreName != null) {
+                    game.getGenreList().add(genreName);
+                }
+
+                gamesMap.put(gameID, game);
+            }
+
+            this.game_list = new ArrayList<>(gamesMap.values());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public ArrayList<Games> searchGames(String gameTitle) {
         ArrayList<Games> gameList = new ArrayList<>();
@@ -551,6 +624,9 @@ public class GamesManager {
             System.err.println("Error removing the game from the database.");
         }
     }
+
+
+
 
     public static void main(String[] args) {
         GamesManager manager = new GamesManager();

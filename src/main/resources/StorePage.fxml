@@ -57,13 +57,13 @@
                         <HBox fx:id="DiscoverSomethingNew_HBox" prefHeight="240.0" prefWidth="848.0" spacing="2.0" />
                      </children>
                   </Pane>
-                  <Label layoutX="15.0" layoutY="699.0" styleClass="HomePage-Label" text="TOP SELLER" />
+                  <Label layoutX="15.0" layoutY="699.0" styleClass="HomePage-Label" text="TOP SELLER" visible="false" />
                   <Pane layoutX="15.0" layoutY="735.0" prefHeight="250.0" prefWidth="848.0">
                      <children>
                         <HBox fx:id="TopSeller_HBox" prefHeight="240.0" prefWidth="848.0" spacing="2.0" />
                      </children>
                   </Pane>
-                  <Label layoutX="15.0" layoutY="988.0" styleClass="HomePage-Label" text="RECCOMENDED" />
+                  <Label layoutX="15.0" layoutY="988.0" styleClass="HomePage-Label" text="RECCOMENDED" visible="false" />
                   <Pane layoutX="15.0" layoutY="1024.0" prefHeight="250.0" prefWidth="848.0">
                      <children>
                         <HBox fx:id="Recommended_HBox" prefHeight="240.0" prefWidth="848.0" spacing="2.0" />

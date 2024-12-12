@@ -86,7 +86,8 @@ public class StorePageController {
 
     private void initializeGameLists() {
         GamesManager loader = new GamesManager();
-        ArrayList<Games> allGames = loader.getAllGames();
+        ArrayList<Games> allGames = loader.newGames();
+        System.out.println("new games"+allGames);
 
         if (allGames == null || allGames.isEmpty()) {
             System.err.println("[ERROR] GamesManager returned null or no games available.");

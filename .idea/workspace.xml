@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/User_Interface/PopUps/SelectPaymentMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CheckOutPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/StorePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/StorePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/StorePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/StorePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +234,7 @@
       <workItem from="1733906283508" duration="2660000" />
       <workItem from="1733917593341" duration="5859000" />
       <workItem from="1733927031113" duration="1748000" />
+      <workItem from="1733978976122" duration="2295000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -293,15 +295,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Games/GamesManager.java</url>
-          <line>93</line>
-          <properties class="Games.GamesManager" method="getAllGames">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
