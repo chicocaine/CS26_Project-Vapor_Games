@@ -17,10 +17,11 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-
 import javafx.event.ActionEvent;
+
 import java.io.IOException;
 import java.util.Optional;
+import java.util.Stack;
 
 public class MainScreenController {
 
@@ -45,6 +46,7 @@ public class MainScreenController {
 
     @FXML
     private TextField SearchField_TextField;
+
     @FXML
     private ImageView logo;
 
@@ -54,21 +56,20 @@ public class MainScreenController {
 
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
-
     private boolean isDiscoverPage = false;
 
     public User currentUser;
 
     private boolean TopUpWasClicked = false;
-
     private boolean viewMyCartClicked = false;
     private boolean viewLibraryClicked = false;
 
+    // === SET USER METHOD ===
     public void setUser(User user) {
         this.currentUser = user;
-
     }
-    // === INITIALIZATION & SETUP ===
+
+    // === INITIALIZATION ===
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -79,6 +80,7 @@ public class MainScreenController {
         highlightSelectedButton(LibraryButton, StoreButton, false, true);
         updateAccountInfo();
     }
+
     @FXML
     private void handleAccountUserLabelClick(MouseEvent event) {
         menuButton.show();
@@ -99,42 +101,41 @@ public class MainScreenController {
             handleStoreOrDiscoverButton();
         } else if (source == SearchButton_Button) {
             handleSearchButton();
-        } else if (source == CartButton_Pane){
+        } else if (source == CartButton_Pane) {
             handleCartPage();
-        } else if (source == ReturnButton_Pane){
-            handleStoreOrDiscoverButton();
-        }else if (source == logoPane){
+        } else if (source == ReturnButton_Pane) {
+            handleReturnButton();
+        } else if (source == logoPane) {
             handleStoreOrDiscoverButton();
         }
     }
 
     @FXML
     void HandlesDropMenuAction(ActionEvent event) {
-        if (event.getSource() == AccountDropMenu){
+        if (event.getSource() == AccountDropMenu) {
             handleAccountDropdown();
-        } else if (event.getSource() == WalletDropMenu){
+        } else if (event.getSource() == WalletDropMenu) {
             handleWalletDropDown();
-        } else if (event.getSource() == TransactionHistoryDropMenu){
+        } else if (event.getSource() == TransactionHistoryDropMenu) {
             handleTransactionHistoryDropMenu();
         }
     }
 
-
     // === HANDLE SPECIFIC BUTTON ACTIONS ===
- private void handleLogout() {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LogoutPopUp.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
-        System.out.println("[ERROR] Failed to load logout confirmation popup.");
+    private void handleLogout() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/LogoutPopUp.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load logout confirmation popup.");
+        }
     }
-}
 
     private void handleLibraryButton() {
         if (!isLibraryButtonClicked) {
@@ -160,17 +161,22 @@ public class MainScreenController {
         loadAccountPage();
     }
 
-    private void handleCartPage(){
+    private void handleCartPage() {
         loadCartPage();
     }
 
-    private void handleWalletDropDown(){
+    private void handleWalletDropDown() {
         loadWalletPage();
     }
 
-    private void handleTransactionHistoryDropMenu(){
+    private void handleTransactionHistoryDropMenu() {
         loadTransactionHistoryDropMenu();
-    };
+    }
+
+    @FXML
+    private void handleReturnButton() {
+
+    }
 
     // === HELPER METHODS ===
     private void performSearch(String query) {
@@ -192,7 +198,6 @@ public class MainScreenController {
             store.getStyleClass().add("LNB_SelectionHBoxHighlighted");
         }
     }
-
 
     private void handleStoreOrDiscoverButton() {
         if (isDiscoverPage) {
@@ -278,22 +283,23 @@ public class MainScreenController {
         }
     }
 
-    // And This One
     public void setTopUpWasClicked(boolean topUpWasClicked) {
         this.TopUpWasClicked = topUpWasClicked;
         if (TopUpWasClicked) {
             loadWalletPage();
         }
     }
-    public void setViewMyCartClicked(boolean viewMyCartClicked){
+
+    public void setViewMyCartClicked(boolean viewMyCartClicked) {
         this.viewMyCartClicked = viewMyCartClicked;
-        if(viewMyCartClicked){
+        if (viewMyCartClicked) {
             loadCartPage();
         }
     }
-    public void setViewLibraryClicked(boolean viewLibraryClicked){
+
+    public void setViewLibraryClicked(boolean viewLibraryClicked) {
         this.viewLibraryClicked = viewLibraryClicked;
-        if(viewLibraryClicked){
+        if (viewLibraryClicked) {
             LoadLibraryPage();
         }
     }
@@ -316,8 +322,8 @@ public class MainScreenController {
     private void loadTransactionHistoryDropMenu() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/TransactionHistoryPage.fxml"));
-            Pane TransactionHistory = loader.load();
-            setMainContent_Pane(TransactionHistory);
+            Pane transactionHistory = loader.load();
+            setMainContent_Pane(transactionHistory);
 
             TransactionHistoryPageController transactionHistoryPageController = loader.getController();
         } catch (IOException e) {
@@ -345,7 +351,7 @@ public class MainScreenController {
 
     // === ACCOUNT INFO UPDATE ===
     private void updateAccountInfo() {
-        String username = "march";
+        String username = "Loading...";
         AccountUser_Label.setText(username);
         AccountUserLabelDropMenu.setText(username);
 
@@ -353,7 +359,6 @@ public class MainScreenController {
         AccountPicture_Image.setImage(new Image(profileImagePath));
     }
 
-    // === FADE IN/OUT TRANSITIONS ===
     public void setMainContent_Pane(Pane newPane) {
         Pane currentPane = (MainContent_Pane.getChildren().isEmpty()) ? null : (Pane) MainContent_Pane.getChildren().get(0);
 
@@ -396,5 +401,4 @@ public class MainScreenController {
             AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));
         }
     }
-
 }
