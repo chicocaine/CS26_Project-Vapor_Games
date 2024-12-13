@@ -58,7 +58,7 @@ public class User extends Account_Interface{
     }
     
     public void updateBalance(double changeOfBalance) {
-        this.wallet.updateBalance(changeOfBalance);
+        this.wallet.updatedBalance(changeOfBalance);
     }
 
 }

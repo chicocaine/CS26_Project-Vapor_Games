@@ -5,43 +5,55 @@ import Utility.DBConnectionPool;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.UUID;
+import java.util.Random;
 
 public class CodeGenerator {
 
+    private static final String ALPHANUMERIC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private static final int CODE_LENGTH = 10;
+    private final Random random = new Random();
+
+    private String generateCode() {
+        StringBuilder code = new StringBuilder(CODE_LENGTH);
+        for (int i = 0; i < CODE_LENGTH; i++) {
+            code.append(ALPHANUMERIC.charAt(random.nextInt(ALPHANUMERIC.length())));
+        }
+        return code.toString();
+    }
+
     public String code100() {
-        String credit100 = "ASY" + UUID.randomUUID().toString();
-        insertCode("100", credit100);
+        String credit100 = generateCode();
+        insertCode("100", "AGS"+credit100);
         return credit100;
     }
 
     public String code250() {
-        String credit250 = "DGL" + UUID.randomUUID().toString();
-        insertCode("250", credit250);
+        String credit250 = generateCode();
+        insertCode("250", "DGL"+credit250);
         return credit250;
     }
 
     public String code500() {
-        String credit500 = "DHL" + UUID.randomUUID().toString();
-        insertCode("500", credit500);
+        String credit500 = generateCode();
+        insertCode("500", "DHL"+credit500);
         return credit500;
     }
 
     public String code1000() {
-        String credit1000 = "PLM" + UUID.randomUUID().toString();
-        insertCode("1000", credit1000);
+        String credit1000 = generateCode();
+        insertCode("1000", "PLM"+credit1000);
         return credit1000;
     }
 
     public String code5000() {
-        String credit5000 = "PCY" + UUID.randomUUID().toString();
-        insertCode("5000", credit5000);
+        String credit5000 = generateCode();
+        insertCode("5000", "PCY"+credit5000);
         return credit5000;
     }
 
     public String code10000() {
-        String credit10000 = "ZND" + UUID.randomUUID().toString();
-        insertCode("10000", credit10000);
+        String credit10000 = generateCode();
+        insertCode("10000", "STG"+credit10000);
         return credit10000;
     }
 
@@ -61,7 +73,6 @@ public class CodeGenerator {
         }
     }
 
-
     public static void main(String[] args) {
         CodeGenerator generator = new CodeGenerator();
 
@@ -70,8 +81,7 @@ public class CodeGenerator {
         System.out.println("Generated Code 500: " + generator.code500());
         System.out.println("Generated Code 1000: " + generator.code1000());
         System.out.println("Generated Code 5000: " + generator.code5000());
-        System.out.println("Generated Code 5000: " + generator.code10000());
-
+        System.out.println("Generated Code 10000: " + generator.code10000());
 
         DBConnectionPool.close();
     }

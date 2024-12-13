@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/BrowsePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Accounts/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Accounts/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameCredit/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameCredit/CodeGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +235,7 @@
       <workItem from="1733927031113" duration="1748000" />
       <workItem from="1733978976122" duration="10433000" />
       <workItem from="1734047026037" duration="1553000" />
-      <workItem from="1734058616419" duration="6206000" />
+      <workItem from="1734058616419" duration="8631000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />

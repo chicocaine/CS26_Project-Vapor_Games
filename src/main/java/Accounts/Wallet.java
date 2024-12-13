@@ -9,6 +9,10 @@ public class Wallet { // don't know how this works honestly
     }
 
     public void updateBalance (double funds) {
+        this.balance = funds;
+    }
+
+    public void updatedBalance (double funds) {
         this.balance += funds;
     }
 
