@@ -38,13 +38,15 @@ public class MainScreenController {
     private Label AccountUser_Label, AccountUserLabelDropMenu;
 
     @FXML
-    private Pane BrowsePane_Button, CartButton_Pane, MainContent_Pane, ReturnButton_Pane, LogoutButton;
+    private Pane BrowsePane_Button, CartButton_Pane, MainContent_Pane, ReturnButton_Pane, LogoutButton, logoPane;
 
     @FXML
     private HBox LibraryButton, StoreButton;
 
     @FXML
     private TextField SearchField_TextField;
+    @FXML
+    private ImageView logo;
 
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
@@ -92,6 +94,8 @@ public class MainScreenController {
         } else if (source == CartButton_Pane){
             handleCartPage();
         } else if (source == ReturnButton_Pane){
+            handleStoreOrDiscoverButton();
+        }else if (source == logoPane){
             handleStoreOrDiscoverButton();
         }
     }

@@ -13,14 +13,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1080.0" stylesheets="@Stylesheet/MainScreen.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.MainScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1080.0" stylesheets="@Stylesheet/MainScreen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.MainScreenController">
    <children>
       <Pane layoutX="30.0" layoutY="40.0" styleClass="LeftNagivationBar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="893.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="55.0" fitWidth="158.0" layoutX="13.0" layoutY="15.0">
-               <image>
-                  <Image url="@Image/Logo.png" />
-               </image></ImageView>
             <HBox fx:id="StoreButton" alignment="CENTER" layoutX="13.0" layoutY="86.0" onMouseClicked="#HandlesClickedButton" prefHeight="53.0" prefWidth="161.0" styleClass="LNB_SelectionHBox">
                <children>
                   <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
@@ -65,10 +61,20 @@
                         <Image url="@Image/signout.png" />
                      </image>
                   </ImageView>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
                </children>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+            </Pane>
+            <Pane fx:id="logoPane" layoutX="15.0" layoutY="15.0" onMouseClicked="#HandlesClickedButton" prefHeight="55.0" prefWidth="158.0">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="55.0" fitWidth="158.0">
+                     <image>
+                        <Image url="@Image/Logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
             </Pane>
          </children>
       </Pane>
