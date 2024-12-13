@@ -27,5 +27,9 @@ UX REFINEMENTS
 ✅Add the number of items in the cart in the icon in the navbar
 
 ADJUSTMENTS
-- Bold Letter in Header is just too bold (Lower the font size)
-- ADD ICONS IN CART and WALLET
+✅Bold Letter in Header is just too bold (Lower the font size)
+✅ADD ICONS IN CART and WALLET
+
+GAME PICTURES FIXED
+- [/] 1. Astroneer
+- [ ] 2. Ballionaire
