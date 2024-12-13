@@ -98,14 +98,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <children>
-                  <Label alignment="CENTER" layoutY="-5.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button-Bold" text="Browse" />
+                  <Label alignment="CENTER" layoutY="-4.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button-Bold" text="Browse" />
                </children>
             </Pane>
-            <HBox fx:id="CartButton_Pane" layoutX="616.0" layoutY="27.0" onMouseClicked="#HandlesClickedButton" prefHeight="17.0" prefWidth="83.0">
+            <Pane fx:id="CartButton_Pane" layoutX="616.0" layoutY="31.0" onMouseClicked="#HandlesClickedButton" prefHeight="17.0" prefWidth="83.0">
                <children>
-                  <Label fx:id="CartNumber_Label" alignment="CENTER" prefHeight="25.0" prefWidth="85.0" styleClass="TNB_Selection-Button-Bold" text="Cart (0)" />
+                  <Label fx:id="CartNumber_Label" alignment="CENTER" layoutX="-1.0" layoutY="-4.0" prefHeight="25.0" prefWidth="85.0" styleClass="TNB_Selection-Button-Bold" text="Cart (0)">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </children>
-            </HBox>
+            </Pane>
             <HBox alignment="CENTER" layoutX="707.0" layoutY="21.0" prefHeight="36.0">
                <children>
                   <Pane prefHeight="36.0" prefWidth="36.0">
@@ -149,6 +152,15 @@
                   </MenuButton>
                </children>
             </HBox>
+            <Pane fx:id="BalanceButton_Pane" layoutX="469.0" layoutY="31.0" onMouseClicked="#HandlesClickedButton" prefHeight="17.0" prefWidth="118.0">
+               <children>
+                  <Label fx:id="UserBalance_Label" alignment="CENTER" layoutY="-4.0" prefHeight="25.0" prefWidth="118.0" styleClass="TNB_Selection-Button-Bold" text="AGS 0000.00">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane fx:id="MainContent_Pane" layoutX="847.0" layoutY="527.0" styleClass="MainContent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0" />

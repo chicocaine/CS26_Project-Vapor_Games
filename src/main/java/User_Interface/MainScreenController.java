@@ -39,13 +39,13 @@ public class MainScreenController {
     private ImageView AccountPicture_Image, SearchButton_Button;
 
     @FXML
-    private Label AccountUser_Label, AccountUserLabelDropMenu, CartNumber_Label;
+    private Label AccountUser_Label, AccountUserLabelDropMenu, CartNumber_Label, UserBalance_Label;
 
     @FXML
-    private Pane BrowsePane_Button, MainContent_Pane, LogoutButton, logoPane;
+    private Pane BrowsePane_Button, MainContent_Pane, LogoutButton, logoPane, CartButton_Pane, BalanceButton_Pane;
 
     @FXML
-    private HBox LibraryButton, StoreButton, CartButton_Pane;
+    private HBox LibraryButton, StoreButton;
 
     @FXML
     private TextField SearchField_TextField;
@@ -109,6 +109,8 @@ public class MainScreenController {
             handleCartPage();
         } else if (source == logoPane) {
             handleStoreOrDiscoverButton();
+        } else if (source == BalanceButton_Pane) {
+            handleWalletDropDown();
         }
     }
 
@@ -402,6 +404,7 @@ public class MainScreenController {
 
         CartManager cartManager = new CartManager();
         CartNumber_Label.setText(("Cart" + " (" +cartManager.getTotalGamesInCart(currentUser1)+")"));
+        UserBalance_Label.setText(String.format("AGS: %.2f", user.getWallet().getBalance()));
         if (profileImagePath != null && !profileImagePath.isEmpty()) {
             AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));
         } else {
