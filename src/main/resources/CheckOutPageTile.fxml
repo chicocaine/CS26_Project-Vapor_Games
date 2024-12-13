@@ -5,10 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-
 <Pane prefHeight="120.0" prefWidth="275.0" styleClass="Tile-BG" stylesheets="@Stylesheet/CheckOutPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.CheckOutPageTileController">
    <children>
-      <ImageView fx:id="GameCheckOutTile_Image" fitHeight="120.0" fitWidth="87.0" pickOnBounds="true" smooth="false">
+      <ImageView fx:id="GameCheckOutTile_Image" fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@Image/SmallTileTestPicture.png" />
          </image>

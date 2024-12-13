@@ -36,6 +36,14 @@
     -fx-padding: 0 5 0 5;
 }
 
+.GameTransactionPrice-Label-Bold {
+    -fx-text-fill: #FEFEFE;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 5 0 5;
+}
+
 .GameTransactionBuyNow-Pane {
     -fx-background-color: #9747FF;
 }

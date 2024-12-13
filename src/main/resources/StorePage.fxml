@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="HomePage-Background" stylesheets="@Stylesheet/StorePage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.StorePageController">
+<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="HomePage-Background" stylesheets="@Stylesheet/StorePage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.StorePageController">
    <children>
       <ScrollPane prefHeight="686.0" prefWidth="893.0">
          <content>
             <Pane prefHeight="1300.0" prefWidth="878.0" styleClass="HomePage-Background">
                <children>
-                  <Pane fx:id="HomePageFeaturedGame_Pane" layoutX="26.0" layoutY="39.0" prefHeight="317.0" prefWidth="825.0">
+                  <Pane fx:id="HomePageFeaturedGame_Pane" layoutX="111.0" layoutY="33.0" prefHeight="369.0" prefWidth="656.0">
                      <children>
-                        <ImageView fx:id="HomePageFeaturedGame_Picture" fitHeight="317.0" fitWidth="825.0" pickOnBounds="true">
+                        <ImageView fx:id="HomePageFeaturedGame_Picture" fitHeight="369.0" fitWidth="656.0" pickOnBounds="true">
                            <image>
                               <Image url="@Image/ImagePlaceHolder.png" />
                            </image>
@@ -24,15 +24,15 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </ImageView>
-                        <Pane fx:id="linearGradientPane" layoutX="-1.0" prefHeight="318.0" prefWidth="826.0" />
+                        <Pane fx:id="linearGradientPane" prefHeight="369.0" prefWidth="656.0" />
                         <Label fx:id="FeaturedGameTitle_Label" layoutX="22.0" layoutY="56.0" prefHeight="53.0" prefWidth="450.0" styleClass="HomePageFeaturedGameTitle_Label" text="TERRARIA" visible="false" />
-                        <Label fx:id="FeaturedGameSubTitle_Label" layoutX="22.0" layoutY="102.0" prefHeight="20.0" prefWidth="450.0" styleClass="HomePageFeaturedGameSubTitle_Label" />
-                        <Pane layoutX="22.0" layoutY="133.0" prefHeight="100.0" prefWidth="450.0">
+                        <Label fx:id="FeaturedGameSubTitle_Label" layoutX="22.0" layoutY="167.0" prefHeight="20.0" prefWidth="450.0" styleClass="HomePageFeaturedGameSubTitle_Label" />
+                        <Pane layoutX="22.0" layoutY="198.0" prefHeight="100.0" prefWidth="450.0">
                            <children>
                               <Label fx:id="FeaturedGameDescription_Label" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="450.0" styleClass="HomePageFeaturedGameDescription_Label" text="The very world is at your fingertips as you fight for survival, fortune, and glory. " visible="false" wrapText="true" />
                            </children>
                         </Pane>
-                        <Pane layoutX="22.0" layoutY="233.0" prefHeight="63.0" prefWidth="125.0">
+                        <Pane layoutX="22.0" layoutY="283.0" prefHeight="63.0" prefWidth="125.0">
                            <children>
                               <Pane fx:id="HomePageFeaturedGameBuyNow_Pane" layoutY="28.0" prefHeight="35.0" prefWidth="125.0" styleClass="HomePageFeaturedGameTransaction_Pane">
                                  <children>
@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Label layoutX="28.0" layoutY="14.0" styleClass="HomePage-Label" text="FEATURED GAME" />
+                  <Label layoutX="117.0" layoutY="8.0" styleClass="HomePage-Label" text="FEATURED GAME" />
                   <Label layoutX="15.0" layoutY="411.0" styleClass="HomePage-Label" text="DISCOVER SOMETHING NEW" />
                   <Pane layoutX="15.0" layoutY="447.0" prefHeight="250.0" prefWidth="848.0">
                      <children>

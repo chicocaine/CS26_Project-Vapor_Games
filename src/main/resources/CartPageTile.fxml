@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <Pane prefHeight="135.0" prefWidth="535.0" styleClass="background-tile" stylesheets="@Stylesheet/CartPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.CartPageTileController">
    <children>
-      <ImageView fx:id="GameTileImage_Image" fitHeight="115.0" fitWidth="85.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+      <ImageView fx:id="GameTileImage_Image" fitHeight="115.0" fitWidth="77.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@Image/SmallTileTestPicture.png" />
          </image>

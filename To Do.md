@@ -26,4 +26,6 @@ UX REFINEMENTS
 ✅Add current wallet balance to the header 
 ✅Add the number of items in the cart in the icon in the navbar
 
-
+ADJUSTMENTS
+- Bold Letter in Header is just too bold (Lower the font size)
+- ADD ICONS IN CART and WALLET

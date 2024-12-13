@@ -6,11 +6,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="MediumGameTile" onMouseClicked="#HandlesButtonClicked" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane" stylesheets="@Stylesheet/LibraryPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.MediumGameTileController">
+<Pane fx:id="MediumGameTile" onMouseClicked="#HandlesButtonClicked" prefHeight="240.0" prefWidth="140.0" styleClass="HomePageDiscoverGameTile_Pane" stylesheets="@Stylesheet/LibraryPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.MediumGameTileController">
    <children>
-      <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
+      <Pane layoutX="7.0" layoutY="7.0" prefHeight="190.0" prefWidth="127.0">
          <children>
-            <ImageView fx:id="MediumGameTile_Image" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
+            <ImageView fx:id="MediumGameTile_Image" fitHeight="190.0" fitWidth="127.0" pickOnBounds="true">
                <image>
                   <Image url="@Image/SmallTileTestPicture.png" />
                </image>
