@@ -172,7 +172,7 @@ public class GamePageController {
     }
 }
 
-    private void loadCheckOutPage() {
+    public void loadCheckOutPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/CheckOutPage.fxml"));
             Parent root = loader.load();

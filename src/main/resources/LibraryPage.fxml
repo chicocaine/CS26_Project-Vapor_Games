@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
@@ -18,17 +14,6 @@
                   <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="14.0" prefHeight="53.0">
                      <children>
                         <Label styleClass="LibraryTitle" text="Library" />
-                        <ImageView fx:id="RefreshLibrary_Image" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#HandlesClickedButton" pickOnBounds="true">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <image>
-                              <Image url="@Image/Refresh.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
                      </children>
                   </HBox>
                   <HBox fx:id="HBox1" layoutX="44.0" layoutY="67.0" prefHeight="240.0" prefWidth="805.0" spacing="10.0" />
