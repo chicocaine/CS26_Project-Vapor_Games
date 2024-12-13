@@ -19,7 +19,7 @@
             <Font name="Arial" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="inputEmail" layoutX="55.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="317.22" promptText="Email Address" style="-fx-background-color: #181819; -fx-border-color: #FFFFFF;" styleClass="field" stylesheets="@Stylesheet/VGCredentials.css" />
+      <TextField fx:id="inputEmail" layoutX="55.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="317.22" promptText="Username" style="-fx-background-color: #181819; -fx-border-color: #FFFFFF;" styleClass="field" stylesheets="@Stylesheet/VGCredentials.css" />
       <PasswordField fx:id="inputPassword" layoutX="55.0" layoutY="232.0" prefHeight="41.0" prefWidth="317.22" promptText="Enter Password" styleClass="field" />
       <Button fx:id="signIn" layoutX="55.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="45.36" prefWidth="317.22" styleClass="Button" stylesheets="@Stylesheet/VGCredentials.css" text="Sign in" textFill="WHITE">
          <font>

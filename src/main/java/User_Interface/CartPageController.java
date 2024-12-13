@@ -59,6 +59,10 @@ public class CartPageController {
         loadUserCart();
         populateGameTiles(CartHBox_HBox, MyCart);
         totalCostPrice();
+        updateCheckOutButtonState();
+    }
+    private void updateCheckOutButtonState() {
+        CheckOut_Button.setDisable(MyCart.isEmpty());
     }
 
     private void totalCostPrice() {
@@ -98,7 +102,8 @@ public class CartPageController {
         if (currentUser != null && cartManager != null) {
             MyCart.clear();
             MyCart.addAll(cartManager.getCart(currentUser));
-            StoreCreditsBalance_Label.setText(String.format("%.2f",currentUser.getWallet().getBalance()));
+            StoreCreditsBalance_Label.setText(String.format("%.2f", currentUser.getWallet().getBalance()));
+            updateCheckOutButtonState();
         }
     }
 
@@ -106,6 +111,7 @@ public class CartPageController {
         loadUserCart();
         populateGameTiles(CartHBox_HBox, MyCart);
         totalCostPrice();
+        updateCheckOutButtonState();
     }
 
     public List<CartPageTileController> getCartPageTileControllers() {

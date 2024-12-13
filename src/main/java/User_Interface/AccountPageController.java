@@ -115,6 +115,11 @@ public class AccountPageController {
             NewPassword_TextField.setText("New Password");
         }
     }
+    private void clearPasswordFields() {
+        OldPassword_TextField.clear();
+        NewPassword_TextField.clear();
+    }
+
     public void verifyPassChange(User user) {
         PasswordManager manager = new PasswordManager();
         String storedPassword = manager.getStoredPassword(user.getUserName());
@@ -138,6 +143,7 @@ public class AccountPageController {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    clearPasswordFields(); // Clear password fields after successful update
                 } else {
                     showAlert("Password Change Failed", "Failed to update password in the database.", Alert.AlertType.ERROR);
                 }
@@ -147,6 +153,7 @@ public class AccountPageController {
         } else {
             passFail();
         }
+        clearPasswordFields(); // Clear password fields after verification attempt
     }
 public void passFail(){
     try {
