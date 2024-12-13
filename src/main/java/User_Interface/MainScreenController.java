@@ -20,8 +20,6 @@ import javafx.util.Duration;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
-import java.util.Optional;
-import java.util.Stack;
 
 public class MainScreenController {
 
@@ -39,7 +37,7 @@ public class MainScreenController {
     private Label AccountUser_Label, AccountUserLabelDropMenu;
 
     @FXML
-    private Pane BrowsePane_Button, CartButton_Pane, MainContent_Pane, ReturnButton_Pane, LogoutButton, logoPane;
+    private Pane BrowsePane_Button, CartButton_Pane, MainContent_Pane, LogoutButton, logoPane;
 
     @FXML
     private HBox LibraryButton, StoreButton;
@@ -103,8 +101,6 @@ public class MainScreenController {
             handleSearchButton();
         } else if (source == CartButton_Pane) {
             handleCartPage();
-        } else if (source == ReturnButton_Pane) {
-            handleReturnButton();
         } else if (source == logoPane) {
             handleStoreOrDiscoverButton();
         }
@@ -171,11 +167,6 @@ public class MainScreenController {
 
     private void handleTransactionHistoryDropMenu() {
         loadTransactionHistoryDropMenu();
-    }
-
-    @FXML
-    private void handleReturnButton() {
-
     }
 
     // === HELPER METHODS ===

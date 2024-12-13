@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1080.0" stylesheets="@Stylesheet/MainScreen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.MainScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1080.0" stylesheets="@Stylesheet/MainScreen.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.MainScreenController">
    <children>
       <Pane layoutX="30.0" layoutY="40.0" styleClass="LeftNagivationBar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="893.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -80,7 +80,7 @@
       </Pane>
       <Pane styleClass="TopNavigationBar" AnchorPane.bottomAnchor="686.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox layoutX="66.0" layoutY="23.0" prefHeight="29.0" prefWidth="306.0" styleClass="TNB_SearchBar">
+            <HBox layoutX="25.0" layoutY="24.0" prefHeight="29.0" prefWidth="306.0" styleClass="TNB_SearchBar">
                <children>
                   <TextField fx:id="SearchField_TextField" layoutX="66.0" layoutY="23.0" prefHeight="29.0" prefWidth="273.0" promptText="Search" styleClass="TNB_SearchBar-TF" />
                   <ImageView fx:id="SearchButton_Button" fitHeight="29.0" fitWidth="29.0" onMouseClicked="#HandlesClickedButton" pickOnBounds="true" preserveRatio="true">
@@ -93,19 +93,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <Pane fx:id="ReturnButton_Pane" layoutX="29.0" layoutY="24.0" onMouseClicked="#HandlesClickedButton" prefHeight="25.0" prefWidth="25.0">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Image/ReturnIcon.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Pane>
-            <Pane fx:id="BrowsePane_Button" layoutX="399.0" layoutY="31.0" onMouseClicked="#HandlesClickedButton" prefHeight="17.0" prefWidth="83.0">
+            <Pane fx:id="BrowsePane_Button" layoutX="348.0" layoutY="31.0" onMouseClicked="#HandlesClickedButton" prefHeight="17.0" prefWidth="83.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

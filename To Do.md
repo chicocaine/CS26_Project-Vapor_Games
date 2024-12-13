@@ -19,9 +19,9 @@ Remarks:
 Bugs
 ✅checkout page wont close when top up now is clicked 
 
-UX REFINEMENTS 
-- Sign Up/Sign In - dili pa dapat ma click ditso ang text fields kay mawala ang prompt text thus the user wont know what is the field for
-- Back button - should return to the previous page rather than the home screen
+UX REFINEMENTS
+✅Sign Up/Sign In - dilipa dapat ma click ditso ang text fields kay mawala ang prompt text thus the user wont know what is the field for - ALTERNATIVE WAS INITIATED
+✅Back button z- should return to the previous page rather than the home screen - REMOVED!
 ✅Search button - automatically search the game after passing to the browse page, do not let the user click it twice in the browse page 
 - Add current wallet balance to the header 
 - Add the number of items in the cart in the icon in the navbar
