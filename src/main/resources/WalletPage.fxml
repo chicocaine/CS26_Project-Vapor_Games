@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -11,12 +12,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<Pane prefHeight="686.0" prefWidth="893.0" styleClass="background" stylesheets="@Stylesheet/WalletPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.WalletPageController">
+<Pane prefHeight="686.0" prefWidth="893.0" styleClass="background" stylesheets="@Stylesheet/WalletPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.WalletPageController">
    <children>
       <Label layoutX="28.0" layoutY="34.0" styleClass="label-Header" text="Wallet / Agscoin" />
       <Label layoutX="66.0" layoutY="89.0" styleClass="label-SubHeader2" text="Input Code" />
       <TextField fx:id="WalletInputCode_TextField" layoutX="66.0" layoutY="117.0" prefWidth="330.0" promptText="xxxxxxxxxxxxxxxxxxxxxxxx" styleClass="inputCode-TextField" />
-      <Button fx:id="WalletInputCodeButton_Button" layoutX="404.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" prefHeight="29.0" prefWidth="88.0" styleClass="inputCode-Button" text="Redeem" />
+      <Button fx:id="WalletInputCodeButton_Button" layoutX="404.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" prefHeight="29.0" prefWidth="88.0" styleClass="inputCode-Button" text="Redeem">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <VBox layoutX="601.0" layoutY="101.0" prefHeight="80.0" prefWidth="266.0" styleClass="balance-VBox">
          <children>
             <Pane prefHeight="30.0" styleClass="balance-Pane">

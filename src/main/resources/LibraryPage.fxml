@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="LibraryContent" stylesheets="@Stylesheet/LibraryPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.LibraryPageController">
+<Pane fx:id="MainPage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="LibraryContent" stylesheets="@Stylesheet/LibraryPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.LibraryPageController">
    <children>
       <ScrollPane prefHeight="686.0" prefWidth="893.0" styleClass="LibraryContent">
          <content>
-            <Pane prefHeight="1400.0" prefWidth="893.0" styleClass="LibraryContent">
+            <Pane prefHeight="1400.0" prefWidth="878.0" styleClass="LibraryContent">
                <children>
                   <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="14.0" prefHeight="53.0">
                      <children>
