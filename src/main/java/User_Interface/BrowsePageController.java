@@ -276,7 +276,7 @@ public class BrowsePageController {
         if (selectedGenres.isEmpty()) {
             filteredGames = gamesManager.getAllGames();
         } else {
-            filteredGames = gamesManager.filterByGenre(new ArrayList<>(selectedGenres));
+            filteredGames = gamesManager.filterByGenresIntersection(new ArrayList<>(selectedGenres));
         }
 
         categorizeGames(filteredGames);

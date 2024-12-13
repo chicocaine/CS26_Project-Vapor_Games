@@ -652,4 +652,16 @@ public class GamesManager {
             System.out.println(game);
         }
     }
+    public ArrayList<Games> filterByGenresIntersection(List<String> selectedGenres) {
+        ArrayList<Games> allGames = getAllGames();
+        ArrayList<Games> filteredGames = new ArrayList<>();
+
+        for (Games game : allGames) {
+            if (game.getGenreList().containsAll(selectedGenres)) {
+                filteredGames.add(game);
+            }
+        }
+
+        return filteredGames;
+    }
 }
