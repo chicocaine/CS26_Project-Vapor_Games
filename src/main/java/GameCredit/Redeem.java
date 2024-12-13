@@ -21,8 +21,8 @@ public class Redeem {
     }
 
     public boolean redeemCode(String code, User user) {
-        String sqlCheck = "SELECT is_redeemed, credit_amount FROM VaporGames.game_credits WHERE code = ?";
-        String sqlUpdate = "UPDATE VaporGames.game_credits SET is_redeemed = TRUE WHERE code = ?";
+        String sqlCheck = "SELECT is_redeemed, credit_amount FROM VaporGames.game_credits WHERE code = TRIM(?)";
+        String sqlUpdate = "UPDATE VaporGames.game_credits SET is_redeemed = TRUE WHERE code = TRIM(?)";
         String sqlUpdateWallet = "UPDATE VaporGames.users SET wallet = wallet + ? WHERE userID = ?";
 
         try (Connection conn = DBConnectionPool.getConnection();

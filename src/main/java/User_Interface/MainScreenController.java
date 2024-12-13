@@ -48,6 +48,10 @@ public class MainScreenController {
     @FXML
     private ImageView logo;
 
+    @FXML
+    private MenuButton menuButton;
+
+
     private boolean isLibraryButtonClicked = false;
     private boolean isStoreButtonClicked = true;
 
@@ -74,6 +78,10 @@ public class MainScreenController {
         LoadHomePage();
         highlightSelectedButton(LibraryButton, StoreButton, false, true);
         updateAccountInfo();
+    }
+    @FXML
+    private void handleAccountUserLabelClick(MouseEvent event) {
+        menuButton.show();
     }
 
     // === BUTTON HANDLERS ===
