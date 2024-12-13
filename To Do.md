@@ -24,6 +24,6 @@ UX REFINEMENTS
 ✅Back button z- should return to the previous page rather than the home screen - REMOVED!
 ✅Search button - automatically search the game after passing to the browse page, do not let the user click it twice in the browse page 
 - Add current wallet balance to the header 
-- Add the number of items in the cart in the icon in the navbar
+✅Add the number of items in the cart in the icon in the navbar
 
 

@@ -54,6 +54,7 @@ public class GamePageController {
 
     private User currentUser;
     private Games currentGame;
+    private boolean ContinueShoppingWasClicked = false;
     private boolean ViewCartWasClicked = false;
     private boolean ViewLibraryWasClicked = false;
     @FXML
@@ -71,6 +72,7 @@ public class GamePageController {
             MainScreenController mainScreenController = loader.getController();
             mainScreenController.currentUser = currentUser;
             mainScreenController.setUserOnDashboard(currentUser);
+            mainScreenController.setContinueShoppingClicked(ContinueShoppingWasClicked); // Pass the boolean
             mainScreenController.setViewMyCartClicked(ViewCartWasClicked); // Pass the boolean
             mainScreenController.setViewLibraryClicked(ViewLibraryWasClicked);
         } catch (IOException e) {
@@ -181,6 +183,12 @@ public class GamePageController {
                 } else {
                     System.out.println("Popup closed without clicking 'View Cart'.");
                 }
+                if (controller.isContinueShoppingWasClicked()) {
+                    ContinueShoppingWasClicked = true;
+                    loadMainScreen();
+                } else {
+                    System.out.println("Popup closed without clicking 'Continue Shopping'.");
+                }
             });
 
         } catch (IOException e) {
@@ -207,6 +215,12 @@ public class GamePageController {
                     loadMainScreen();
                 } else {
                     System.out.println("Popup closed without clicking 'View Cart'.");
+                }
+                if (controller.isContinueShoppingWasClicked()) {
+                    ContinueShoppingWasClicked = true;
+                    loadMainScreen();
+                } else {
+                    System.out.println("Popup closed without clicking 'Continue Shopping'.");
                 }
             });
 

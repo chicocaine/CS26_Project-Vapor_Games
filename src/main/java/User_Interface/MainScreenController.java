@@ -2,6 +2,7 @@ package User_Interface;
 
 import Accounts.User;
 import Accounts.UserSession;
+import Games.GamesManager;
 import Transaction.CartManager;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -25,6 +26,10 @@ public class MainScreenController {
 
     private Stage stage;
 
+    private GamesManager gamesManager;
+
+    private User currentUser1 = UserSession.getInstance().getCurrentUser();
+
     // === UI COMPONENTS ===
 
     @FXML
@@ -34,13 +39,13 @@ public class MainScreenController {
     private ImageView AccountPicture_Image, SearchButton_Button;
 
     @FXML
-    private Label AccountUser_Label, AccountUserLabelDropMenu;
+    private Label AccountUser_Label, AccountUserLabelDropMenu, CartNumber_Label;
 
     @FXML
-    private Pane BrowsePane_Button, CartButton_Pane, MainContent_Pane, LogoutButton, logoPane;
+    private Pane BrowsePane_Button, MainContent_Pane, LogoutButton, logoPane;
 
     @FXML
-    private HBox LibraryButton, StoreButton;
+    private HBox LibraryButton, StoreButton, CartButton_Pane;
 
     @FXML
     private TextField SearchField_TextField;
@@ -60,6 +65,7 @@ public class MainScreenController {
 
     private boolean TopUpWasClicked = false;
     private boolean viewMyCartClicked = false;
+    private boolean continueShoppingClicked = false;
     private boolean viewLibraryClicked = false;
 
     // === SET USER METHOD ===
@@ -281,6 +287,13 @@ public class MainScreenController {
         }
     }
 
+    public void setContinueShoppingClicked(boolean continueShoppingClicked) {
+        this.continueShoppingClicked = continueShoppingClicked;
+        if (continueShoppingClicked) {
+            LoadBrowsePage("");
+        }
+    }
+
     public void setViewMyCartClicked(boolean viewMyCartClicked) {
         this.viewMyCartClicked = viewMyCartClicked;
         if (viewMyCartClicked) {
@@ -386,6 +399,9 @@ public class MainScreenController {
         AccountUser_Label.setText(user.getUserName());
         AccountUserLabelDropMenu.setText(user.getUserName());
         String profileImagePath = user.getPfpURL();
+
+        CartManager cartManager = new CartManager();
+        CartNumber_Label.setText(("Cart" + " (" +cartManager.getTotalGamesInCart(currentUser1)+")"));
         if (profileImagePath != null && !profileImagePath.isEmpty()) {
             AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));
         } else {

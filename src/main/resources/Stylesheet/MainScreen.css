@@ -65,7 +65,18 @@
     -fx-font-size: 16px;
 }
 
+.TNB_Selection-Button-Bold {
+    -fx-text-fill: #A5A5AA;
+    -fx-font-family: 'Sora Regular';
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
 .TNB_Selection-Button:hover {
+    -fx-text-fill: #D7D3D3;
+}
+
+.TNB_Selection-Button-Bold:hover {
     -fx-text-fill: #D7D3D3;
 }
 

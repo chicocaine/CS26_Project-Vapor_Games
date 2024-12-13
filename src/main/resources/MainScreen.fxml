@@ -98,17 +98,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <children>
-                  <Label alignment="CENTER" layoutY="-5.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button" text="Browse" />
+                  <Label alignment="CENTER" layoutY="-5.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button-Bold" text="Browse" />
                </children>
             </Pane>
-            <Pane fx:id="CartButton_Pane" layoutX="616.0" layoutY="30.0" onMouseClicked="#HandlesClickedButton" prefHeight="17.0" prefWidth="83.0">
+            <HBox fx:id="CartButton_Pane" layoutX="616.0" layoutY="27.0" onMouseClicked="#HandlesClickedButton" prefHeight="17.0" prefWidth="83.0">
                <children>
-                  <Label alignment="CENTER" layoutY="-4.0" prefHeight="17.0" prefWidth="83.0" styleClass="TNB_Selection-Button" text="Cart" />
+                  <Label fx:id="CartNumber_Label" alignment="CENTER" prefHeight="25.0" prefWidth="85.0" styleClass="TNB_Selection-Button-Bold" text="Cart (0)" />
                </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Pane>
+            </HBox>
             <HBox alignment="CENTER" layoutX="707.0" layoutY="21.0" prefHeight="36.0">
                <children>
                   <Pane prefHeight="36.0" prefWidth="36.0">

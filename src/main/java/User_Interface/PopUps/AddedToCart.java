@@ -17,8 +17,12 @@ public class AddedToCart {
     private Runnable onPopupClosed;
     public User currentUser = UserSession.getInstance().getCurrentUser();
     private Runnable onPopUpClosed;
+    private boolean ifContinueShoppingWasClicked = false;
     private boolean ifViewMyCartWasClicked = false;
 
+    public boolean isContinueShoppingWasClicked(){
+        return ifContinueShoppingWasClicked;
+    }
     public boolean isViewMyCartWasClicked(){
         return ifViewMyCartWasClicked;
     }
@@ -36,7 +40,11 @@ public class AddedToCart {
                 closePopup();
             }
         } else if(source == ContinueSopping){
-            closePopup();
+            if(!ifContinueShoppingWasClicked) {
+                ifContinueShoppingWasClicked = true;
+                System.out.println("Continue Shopping clicked. Current state: " + ifContinueShoppingWasClicked);
+                closePopup();
+            }
         }
     }
     private void closePopup() {
@@ -50,7 +58,5 @@ public class AddedToCart {
         }
 
     }
-
-
 
 }

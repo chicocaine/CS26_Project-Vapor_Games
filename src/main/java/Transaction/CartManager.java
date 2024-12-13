@@ -17,6 +17,29 @@ public class CartManager {
         
     public CartManager () { this.cart = new ArrayList<>(); }
 
+    public int getTotalGamesInCart(User user) {
+        int userID = user.getUserID();
+        String query = "SELECT COUNT(*) AS total FROM cart_games WHERE userID = ?";
+        int totalGames = 0;
+
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, userID);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    totalGames = rs.getInt("total");
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return totalGames;
+    }
+
     public void addToCart(User user, Games game) {
 
         if (isGameInLibrary(user, game)) {
