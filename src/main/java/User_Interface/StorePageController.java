@@ -70,7 +70,7 @@ public class StorePageController {
     @FXML
     private Pane linearGradientPane;
     // Store references to all VGGameTileController instances
-    private final List<GameTileController> gameTileControllers = new ArrayList<>();
+    private final List<MediumGameTileController> gameTileControllers = new ArrayList<>();
 
     public void initialize() {
         initializeGameLists();
@@ -89,9 +89,9 @@ public class StorePageController {
         for (int i = 0; i < Math.min(6, gamesList.size()); i++) {
             Games game = gamesList.get(i);
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameTile.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/MediumGameTile.fxml"));
                 Pane gameTilePane = loader.load();
-                GameTileController tileController = loader.getController();
+                MediumGameTileController tileController = loader.getController();
 
                 // Store the tile controller for future reference
                 gameTileControllers.add(tileController);
@@ -145,7 +145,7 @@ public class StorePageController {
         );
     }
 
-    public List<GameTileController> getGameTileControllers() {
+    public List<MediumGameTileController> getGameTileControllers() {
         return gameTileControllers;
     }
 

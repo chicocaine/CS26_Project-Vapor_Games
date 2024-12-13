@@ -207,7 +207,7 @@ public class MainScreenController {
             setMainContent_Pane(storePagePane);
 
             StorePageController storePageController = loader.getController();
-            for (GameTileController tileController : storePageController.getGameTileControllers()) {
+            for (MediumGameTileController tileController : storePageController.getGameTileControllers()) {
                 tileController.setMainController(this);
             }
 

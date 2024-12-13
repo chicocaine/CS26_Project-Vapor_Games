@@ -51,25 +51,25 @@ public class GameTileController {
         this.mainController = mainController;
     }
 
-    @FXML
-    void HandlesButtonClicked(MouseEvent event) throws IOException {
-        if (event.getSource() == GameMediumTile) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GamePage.fxml"));
-            Pane gamePagePane = loader.load();
-
-            GamePageController gamePageController = loader.getController();
-            gamePageController.displayGameDetails(game);
-
-            // Get the current user from UserSession
-            User currentUser = UserSession.getInstance().getCurrentUser();
-            System.out.println("Current user in GameTileController: " + currentUser);
-            gamePageController.setCurrentUser(currentUser);
-
-            if (mainController != null) {
-                mainController.setMainContent_Pane(gamePagePane);
-            } else {
-                System.err.println("[ERROR] Main controller reference is null!");
-            }
-        }
-    }
+//    @FXML
+//    void HandlesButtonClicked(MouseEvent event) throws IOException {
+//        if (event.getSource() == GameMediumTile) {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GamePage.fxml"));
+//            Pane gamePagePane = loader.load();
+//
+//            GamePageController gamePageController = loader.getController();
+//            gamePageController.displayGameDetails(game);
+//
+//            // Get the current user from UserSession
+//            User currentUser = UserSession.getInstance().getCurrentUser();
+//            System.out.println("Current user in GameTileController: " + currentUser);
+//            gamePageController.setCurrentUser(currentUser);
+//
+//            if (mainController != null) {
+//                mainController.setMainContent_Pane(gamePagePane);
+//            } else {
+//                System.err.println("[ERROR] Main controller reference is null!");
+//            }
+//        }
+//    }
 }

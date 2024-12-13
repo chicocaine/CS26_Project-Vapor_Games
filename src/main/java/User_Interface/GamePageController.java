@@ -17,6 +17,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class GamePageController {
 
@@ -45,19 +48,9 @@ public class GamePageController {
     private Label StorePageGameTitle_Label;
 
     @FXML
-    private Text genreLabel0;
-
-    @FXML
-    private Text genreLabel1;
-
-    @FXML
-    private Text genreLabel2;
-
-    @FXML
-    private Text genreLabel3;
-
-    @FXML
     private Pane StorePage_Pane;
+    @FXML
+    private Text genreText;
 
     private User currentUser;
     private Games currentGame;
@@ -111,26 +104,10 @@ public class GamePageController {
 
             // Handle Genre Labels
             if (game.getGenreList() != null) {
-                if (game.getGenreList().size() > 0) {
-                    genreLabel0.setText(game.getGenreList().get(0));
-                } else {
-                    genreLabel0.setText("");
-                }
-                if (game.getGenreList().size() > 1) {
-                    genreLabel1.setText(game.getGenreList().get(1));
-                } else {
-                    genreLabel1.setText("");
-                }
-                if (game.getGenreList().size() > 2) {
-                    genreLabel2.setText(game.getGenreList().get(2));
-                } else {
-                    genreLabel2.setText("");
-                }
-                if (game.getGenreList().size() > 3) {
-                    genreLabel3.setText(game.getGenreList().get(3));
-                } else {
-                    genreLabel3.setText("");
-                }
+                List<String> genreList = game.getGenreList();
+                Set<String> uniqueGenres = new HashSet<>(genreList);
+                String genres = String.join(", ", uniqueGenres);
+                genreText.setText(genres);
             } else {
                 System.err.println("[WARNING] Genre list is null.");
             }

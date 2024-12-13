@@ -37,25 +37,7 @@
       <Pane layoutX="631.0" layoutY="322.0" prefHeight="68.0" prefWidth="250.0">
          <children>
             <Label layoutX="23.0" layoutY="-1.0" styleClass="GameGenre-Label" text="Genre" />
-            <Pane fx:id="GameGenreTags_Pane" layoutX="11.0" layoutY="23.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
-               <children>
-                  <Text fx:id="genreLabel0" fill="WHITE" layoutX="-3.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="115.0" />
-               </children></Pane>
-            <Pane fx:id="GameGenreTags_Pane1" layoutX="11.0" layoutY="46.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
-               <children>
-                  <Text fx:id="genreLabel1" fill="WHITE" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="109.0" />
-               </children>
-            </Pane>
-            <Pane fx:id="GameGenreTags_Pane2" layoutX="141.0" layoutY="23.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
-               <children>
-                  <Text fx:id="genreLabel2" fill="WHITE" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="109.0" />
-               </children>
-            </Pane>
-            <Pane fx:id="GameGenreTags_Pane11" layoutX="141.0" layoutY="46.0" prefHeight="20.0" prefWidth="109.0" styleClass="genrePanel">
-               <children>
-                  <Text fx:id="genreLabel3" fill="WHITE" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Test" textAlignment="CENTER" wrappingWidth="109.0" />
-               </children>
-            </Pane>
+            <Text fx:id="genreText" fill="WHITE" layoutX="29.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Text" wrappingWidth="211.0" />
          </children>
       </Pane>
       <Pane layoutX="631.0" layoutY="438.0" prefHeight="125.0" prefWidth="250.0">

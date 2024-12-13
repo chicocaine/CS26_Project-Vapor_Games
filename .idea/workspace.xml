@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/AccountPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/AccountPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/CartPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/GamePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/GamePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/GameTileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/GameTileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/StorePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/StorePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GamePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GamePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +238,7 @@
       <workItem from="1733927031113" duration="1748000" />
       <workItem from="1733978976122" duration="10433000" />
       <workItem from="1734047026037" duration="1553000" />
-      <workItem from="1734058616419" duration="3419000" />
+      <workItem from="1734058616419" duration="5907000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
