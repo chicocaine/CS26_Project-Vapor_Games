@@ -29,9 +29,9 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="34.0" layoutY="443.0" prefHeight="213.0" prefWidth="584.0">
+      <Pane layoutX="34.0" layoutY="443.0" prefHeight="213.0" prefWidth="612.0">
          <children>
-            <Label fx:id="StoreGameDescription_Label" alignment="TOP_LEFT" prefHeight="250.0" prefWidth="584.0" styleClass="GameDescription-Label" text="The very world is at your fingertips as you fight for survival, fortune, and glory. Delve deep into cavernous expanses, seek out ever-greater foes to test your mettle in combat, or construct your own city - In the World of Terraria, the choice is yours! Blending elements of classic action games with the freedom of sandbox-style creativity, Terraria is a unique gaming experience where both the journey and the destination are as unique as the players themselves!" textAlignment="JUSTIFY" wrapText="true" />
+            <Label fx:id="StoreGameDescription_Label" alignment="TOP_LEFT" prefHeight="213.0" prefWidth="612.0" styleClass="GameDescription-Label" text="The very world is at your fingertips as you fight for survival, fortune, and glory. Delve deep into cavernous expanses, seek out ever-greater foes to test your mettle in combat, or construct your own city - In the World of Terraria, the choice is yours! Blending elements of classic action games with the freedom of sandbox-style creativity, Terraria is a unique gaming experience where both the journey and the destination are as unique as the players themselves!" textAlignment="JUSTIFY" wrapText="true" />
          </children>
       </Pane>
       <Pane layoutX="631.0" layoutY="322.0" prefHeight="68.0" prefWidth="250.0">
@@ -40,13 +40,13 @@
             <Text fx:id="genreText" fill="WHITE" layoutX="29.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GameGenre-Label" text="Text" wrappingWidth="211.0" />
          </children>
       </Pane>
-      <Pane layoutX="631.0" layoutY="438.0" prefHeight="125.0" prefWidth="250.0">
+      <Pane layoutX="655.0" layoutY="438.0" prefHeight="125.0" prefWidth="226.0">
          <children>
             <Label alignment="CENTER" prefHeight="25.0" prefWidth="49.0" styleClass="GameTransactionPrice-Label-Bold" text="AGS" />
-            <Label fx:id="GamePrice_Label" layoutX="49.0" prefHeight="25.0" prefWidth="201.0" styleClass="GameTransactionPrice-Label-Bold" text="400.00" />
+            <Label fx:id="GamePrice_Label" layoutX="52.0" prefHeight="25.0" prefWidth="198.0" styleClass="GameTransactionPrice-Label-Bold" text="400.00" />
             <Pane fx:id="GameBuyNowButton_Pane" layoutY="25.0" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Pane">
                <children>
-                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Label" text="Buy Now" />
+                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="235.0" styleClass="GameTransactionBuyNow-Label" text="Buy Now" />
                </children>
                <cursor>
                   <Cursor fx:constant="HAND" />
