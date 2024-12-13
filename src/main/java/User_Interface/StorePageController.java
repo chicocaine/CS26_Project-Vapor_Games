@@ -181,7 +181,7 @@ public class StorePageController {
         }
 
         if (cartManager.isGameInLibrary(currentUser, featuredGame)) {
-            showGameAlreadyOwnedPopup();
+            showGameAlreadyOwnedPopup(); // CHANGE THIS POPUP
         } else {
             if (!cartManager.isGameInCart(currentUser, featuredGame)) {
                 cartManager.addToCart(currentUser, featuredGame);
