@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
+    <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="ADDED ImageCropperPOWERED_BY_AGSCOIN.java">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/To Do.md" beforeDir="false" afterPath="$PROJECT_DIR$/To Do.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/ImageCropperPOWERED_BY_AGSCOIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/ImageCropperPOWERED_BY_AGSCOIN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/BTD6_Card.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/BTD6_Card.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/BTD6_Showcase.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/BTD6_Showcase.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Ballionaire_Card.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Ballionaire_Card.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Ballionaire_Showcase.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Ballionaire_Showcase.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/DeadCells_Card.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/DeadCells_Card.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/DeadCells_Showcase.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/DeadCells_Showcase.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Doki-Doki_Card.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Doki-Doki_Card.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Doki-Doku_Shocase.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Image/uploads/game_images/Doki-Doku_Shocase.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,12 +76,15 @@
     &quot;assignee&quot;: &quot;HanazonoArchive&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/chicocaine/CS26_Project-Vapor_Games.git&quot;,
-    &quot;accountId&quot;: &quot;3d24febc-cb48-4557-97ab-54c578c8b592&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/chicocaine/CS26_Project-Vapor_Games.git",
+    "accountId": "4d5cba61-2175-4cb1-9ecb-3d23083271e5"
   }
-}</component>
+}]]></component>
+  <component name="KotlinScriptingSettings">
+    <option name="suppressDefinitionsCheck" value="true" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -88,66 +100,81 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.VGMainProgramApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build CS26_Project-Vapor_Games.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:CodeGenerator.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:GamesManager.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:LoginController.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:MainLogin.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin script (Beta).build.gradle.kts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/codes/CS26/CS26_Project-Vapor_Games/src/main/resources/Image/uploads/game_images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.VGMainProgramApplication.executor": "Run",
+    "Gradle.Build CS26_Project-Vapor_Games.executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:CodeGenerator.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:DBConnectionTest.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:GamesManager.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:ImageCropper.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:LoginController.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:MainLogin.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:MainProgramApplication.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:Redeem.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:User_Interface.ImageCropperPOWERED_BY_AGSCOIN.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:User_Interface.MainLogin.main()].executor": "Run",
+    "Gradle.CS26_Project-Vapor_Games [:VGMainProgramApplication.main()].executor": "Run",
+    "Kotlin script (Beta).build.gradle.kts.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Hanazono Archive/IdeaProjects/CS26_Project-Vapor_Games/src/main/resources/Image/uploads/game_images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora_aws&quot;,
-      &quot;mysql&quot;
-    ],
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\Hanazono Archive\\.gradle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora_aws",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image\uploads\game_images" />
+      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
       <recent name="C:\codes\CS26\CS26_Project-Vapor_Games\src\main\resources\Image\uploads\game_images" />
       <recent name="C:\codes\CS26\CS26_Project-Vapor_Games\src\main\resources\Image" />
-      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\codes\CS26\CS26_Project-Vapor_Games\src\main\resources\Image" />
+      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image\uploads\game_images" />
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Image" />
+      <recent name="C:\codes\CS26\CS26_Project-Vapor_Games\src\main\resources\Image" />
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources" />
       <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\Fonts" />
-      <recent name="C:\Users\Hanazono Archive\IdeaProjects\CS26_Project-Vapor_Games\src\main\resources\FXML" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainLogin">
+    <configuration name="ImageCropperPOWERED_BY_AGSCOIN" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="User_Interface.ImageCropperPOWERED_BY_AGSCOIN" />
+      <module name="CS26_Project-Vapor_Games.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="User_Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="User_Interface.MainLogin" />
       <module name="CS26_Project-Vapor_Games.main" />
@@ -163,6 +190,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ImageCropperPOWERED_BY_AGSCOIN" />
         <item itemvalue="Application.MainLogin" />
       </list>
     </recent_temporary>
@@ -170,9 +198,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -234,9 +261,8 @@
       <workItem from="1733906283508" duration="2660000" />
       <workItem from="1733917593341" duration="5859000" />
       <workItem from="1733927031113" duration="1748000" />
-      <workItem from="1733978976122" duration="10433000" />
-      <workItem from="1734047026037" duration="1553000" />
-      <workItem from="1734058616419" duration="11591000" />
+      <workItem from="1733978976122" duration="2295000" />
+      <workItem from="1734156676382" duration="2591000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />
@@ -262,7 +288,95 @@
       <option name="project" value="LOCAL" />
       <updated>1732016202646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SEARCH BUTTON DONE!">
+      <option name="closed" value="true" />
+      <created>1734084962063</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734084962063</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Small Updates">
+      <option name="closed" value="true" />
+      <created>1734085192326</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734085192326</updated>
+    </task>
+    <task id="LOCAL-00006" summary="UI REFINEMENTS PART 1">
+      <option name="closed" value="true" />
+      <created>1734088656203</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734088656203</updated>
+    </task>
+    <task id="LOCAL-00007" summary="UI REFINEMENTS PART 2">
+      <option name="closed" value="true" />
+      <created>1734096080250</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734096080250</updated>
+    </task>
+    <task id="LOCAL-00008" summary="FINAL REFINEMENT!">
+      <option name="closed" value="true" />
+      <created>1734096741452</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734096741452</updated>
+    </task>
+    <task id="LOCAL-00009" summary="RATIO CHANGE TO COMMON.&#10;SMALL TILE: 2:3 RATIO&#10;BANNER: 16:9 RATIO">
+      <option name="closed" value="true" />
+      <created>1734098409466</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734098409466</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Small Fix">
+      <option name="closed" value="true" />
+      <created>1734098853416</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1734098853416</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Icons Added!">
+      <option name="closed" value="true" />
+      <created>1734099350681</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1734099350681</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Small Fixes">
+      <option name="closed" value="true" />
+      <created>1734100905477</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1734100905477</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ADDED ImageCropperPOWERED_BY_AGSCOIN.java">
+      <option name="closed" value="true" />
+      <created>1734102447060</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734102447060</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ADDED ImageCropperPOWERED_BY_AGSCOIN.java">
+      <option name="closed" value="true" />
+      <created>1734102631874</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734102631874</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +398,17 @@
     <MESSAGE value="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Second Installment of My JavaFX, Adding some components nothing else&#10;&#10;set the JDK to 22 Zulu Community Please...." />
     <MESSAGE value="Third Installment of My JavaFX, Added Game Store Page&#10;&#10;set the JDK to 22 Zulu Community Please...." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="SEARCH BUTTON DONE!" />
+    <MESSAGE value="Small Updates" />
+    <MESSAGE value="UI REFINEMENTS PART 1" />
+    <MESSAGE value="UI REFINEMENTS PART 2" />
+    <MESSAGE value="FINAL REFINEMENT!" />
+    <MESSAGE value="RATIO CHANGE TO COMMON.&#10;SMALL TILE: 2:3 RATIO&#10;BANNER: 16:9 RATIO" />
+    <MESSAGE value="Small Fix" />
+    <MESSAGE value="Icons Added!" />
+    <MESSAGE value="Small Fixes" />
+    <MESSAGE value="ADDED ImageCropperPOWERED_BY_AGSCOIN.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADDED ImageCropperPOWERED_BY_AGSCOIN.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -32,4 +32,7 @@ ADJUSTMENTS
 
 GAME PICTURES FIXED
 - [/] 1. Astroneer
-- [ ] 2. Ballionaire
+- [/] 2. Ballionaire
+- [/] 3. BTD6
+- [/] 4. Dead Cells
+- [/] 5. Doki Doki Literature Club

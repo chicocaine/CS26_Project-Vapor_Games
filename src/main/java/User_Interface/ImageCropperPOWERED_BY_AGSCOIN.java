@@ -1,5 +1,4 @@
 package User_Interface;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -59,13 +58,16 @@ public class ImageCropperPOWERED_BY_AGSCOIN {
     }
 
     private void loadImage() {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Image files", "jpg", "png"));
+        JFileChooser fileChooser = new JFileChooser(new File(System.getProperty("user.home") + "/Downloads"));
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Image files", "jpg", "png", "webp"));
 
         if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
             try {
                 inputFile = fileChooser.getSelectedFile();
                 inputImage = ImageIO.read(inputFile);
+                if (inputImage == null) {
+                    throw new IllegalArgumentException("Unsupported image format. Ensure WebP support is configured.");
+                }
                 previewImage = inputImage;
                 updatePreview();
             } catch (Exception e) {

@@ -40,6 +40,9 @@ dependencies {
     implementation("org.slf4j:slf4j-simple:2.0.9")
     implementation("com.zaxxer:HikariCP:6.2.0")
 
+    implementation("com.twelvemonkeys.imageio:imageio-core:3.12.0")
+    implementation("com.twelvemonkeys.imageio:imageio-webp:3.12.0")
+
     implementation("org.controlsfx:controlsfx:11.1.2")
     implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
         exclude(group = "org.openjfx")
