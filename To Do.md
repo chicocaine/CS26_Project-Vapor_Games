@@ -30,6 +30,9 @@ ADJUSTMENTS
 ✅Bold Letter in Header is just too bold (Lower the font size)
 ✅ADD ICONS IN CART and WALLET
 
+FAT JAR (POWERED BY SHADOWJAR)
+CHECK THE BUILD.GRADLE FILE FOR THE SHADOWJAR CONFIGURATION
+
 GAME PICTURES FIXED
 - [/] 1. Astroneer
 - [/] 2. Ballionaire

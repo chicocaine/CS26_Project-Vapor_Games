@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.8.10"
+    id("com.gradleup.shadow") version "9.0.0-beta4" // Plugin for creating a fat jar
     id("java")
     id("application")
     id("org.javamodularity.moduleplugin") version "1.8.12"
@@ -27,7 +28,7 @@ tasks.withType<JavaCompile> {
 
 application {
     mainModule = "User_Interface"
-    mainClass.set("User_Interface.VGMainProgramApplication")
+    mainClass.set("User_Interface.MainLogin") // Set it to the Entry Point Java File
 }
 
 javafx {
@@ -64,7 +65,6 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
-
 }
 
 tasks.test {
@@ -89,3 +89,20 @@ jlink {
         name = "app"
     }
 }
+
+// Shadow plugin configuration
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    archiveClassifier.set("all")
+    manifest {
+        attributes["Main-Class"] = "User_Interface.MainLogin"  // Put the Entry Point Java File Here!
+    }
+    mergeServiceFiles() // Handles service loader configuration files
+}
+
+// Ensure the shadowJar task runs when building
+tasks.build {
+    dependsOn(tasks.shadowJar)
+}
+
+// After this run the Command Line Command: ./gradlew build
+// Check the build project in the build/libs folder
