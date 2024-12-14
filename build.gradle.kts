@@ -104,5 +104,5 @@ tasks.build {
     dependsOn(tasks.shadowJar)
 }
 
-// After this run the Command Line Command: ./gradlew build
+// After this run the Command Line Command: ./gradlew build or ./gradlew shadowJar
 // Check the build project in the build/libs folder
