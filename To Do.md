@@ -26,4 +26,16 @@ UX REFINEMENTS
 ✅Add current wallet balance to the header 
 ✅Add the number of items in the cart in the icon in the navbar
 
+ADJUSTMENTS
+✅Bold Letter in Header is just too bold (Lower the font size)
+✅ADD ICONS IN CART and WALLET
 
+FAT JAR (POWERED BY SHADOWJAR)
+CHECK THE BUILD.GRADLE FILE FOR THE SHADOWJAR CONFIGURATION
+
+GAME PICTURES FIXED
+- [/] 1. Astroneer
+- [/] 2. Ballionaire
+- [/] 3. BTD6
+- [/] 4. Dead Cells
+- [/] 5. Doki Doki Literature Club

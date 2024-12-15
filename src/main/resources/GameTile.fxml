@@ -8,9 +8,9 @@
 
 <Pane fx:id="GameMediumTile" onMouseClicked="#HandlesButtonClicked" prefHeight="240.0" prefWidth="140.0" styleClass="GameTile" stylesheets="@Stylesheet/StorePage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GameTileController">
    <children>
-      <Pane layoutX="5.0" layoutY="3.0" prefHeight="190.0" prefWidth="130.0">
+      <Pane layoutX="7.0" layoutY="7.0" prefHeight="190.0" prefWidth="127.0">
          <children>
-            <ImageView fx:id="HomePageDiscoverGame_Image" fitHeight="190.0" fitWidth="130.0" pickOnBounds="true">
+            <ImageView fx:id="HomePageDiscoverGame_Image" fitHeight="190.0" fitWidth="127.0" pickOnBounds="true">
                <image>
                   <Image url="@Image/SmallTileTestPicture.png" />
                </image>
