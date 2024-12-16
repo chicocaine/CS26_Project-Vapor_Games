@@ -73,6 +73,7 @@ public class MainScreenController implements  PageController{
     private boolean viewMyCartClicked = false;
     private boolean continueShoppingClicked = false;
     private boolean viewLibraryClicked = false;
+    private boolean needsRefresh = false;
 
     // === SET USER METHOD ===
     public void setUser(User user) {
@@ -313,6 +314,13 @@ public class MainScreenController implements  PageController{
         this.viewLibraryClicked = viewLibraryClicked;
         if (viewLibraryClicked) {
             LoadLibraryPage();
+        }
+    }
+
+    public void setWalletPageRefresh(boolean needsRefresh) {
+        this.needsRefresh = needsRefresh;
+        if (needsRefresh) {
+            loadWalletPage();
         }
     }
 

@@ -3,15 +3,23 @@ package User_Interface;
 import Accounts.User;
 import Accounts.UserSession;
 import GameCredit.Redeem;
+import Games.Games;
 import Utility.DBConnectionPool;
+import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,6 +46,11 @@ public class WalletPageController implements PageController {
 
     @FXML
     public Text codeSuccess;
+
+    private boolean needsRefresh = false;
+
+    private User currentUser = UserSession.getInstance().getCurrentUser();
+    private Games currentGame;
 
     @FXML
     public void initialize() {
@@ -66,7 +79,13 @@ public class WalletPageController implements PageController {
             Redeem redeem = new Redeem(this);
             boolean success = redeem.redeemCode(WalletInputCode_TextField.getText(), currentUser);
             if (success) {
-                refreshWallet();
+                codeSuccess.setText("Code Redeemed Successfully (Page will Reload in 5 Seconds)");
+                codeSuccess.setVisible(true);
+                PauseTransition pause = new PauseTransition(Duration.seconds(10));
+                pause.setOnFinished(event -> refreshWallet());
+                pause.play();
+            } else {
+                showNotification("Code is Invalid or Already Redeemed", "error");
             }
         }
     }
@@ -78,8 +97,36 @@ public class WalletPageController implements PageController {
             User updatedUser = fetchUpdatedUser(currentUser.getUserID());
             if (updatedUser != null) {
                 UserSession.getInstance().setCurrentUser(updatedUser);
-                Platform.runLater(() -> setUserOnWallet(updatedUser));
+                needsRefresh = true;
+                Platform.runLater(() -> {
+                    setUserOnWallet(updatedUser);
+                    if (needsRefresh) {
+                        needsRefresh = false;
+                        reloadWalletPage();
+                    }
+                });
             }
+        }
+    }
+
+    private void reloadWalletPage() {
+        loadMainScreen();
+    }
+
+    @FXML
+    void loadMainScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) WalletCurrentAGSCoin_Label.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            MainScreenController mainScreenController = loader.getController();
+            mainScreenController.currentUser = currentUser;
+            mainScreenController.setUserOnDashboard(currentUser);
+            mainScreenController.setWalletPageRefresh(needsRefresh);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("[ERROR] Failed to load MainScreen.");
         }
     }
 
