@@ -75,6 +75,7 @@ public class TransactionHistoryPageTileController {
             if (resultSet.next()) {
                 String date = resultSet.getString("transaction_date");
                 String games = resultSet.getString("transaction_games");
+                String code = resultSet.getString("transaction_code");
                 double totalPrice = resultSet.getDouble("transaction_amount");
                 String username = currentUser.getUserName();
 
@@ -90,18 +91,22 @@ public class TransactionHistoryPageTileController {
                 receipt.append("ITEM\t\t\t  -\t\t-Price\n");
                 receipt.append("-----------------------------------------------------\n");
 
-                String[] gameItems = games.split(",");
-                for (String game : gameItems) {
-                    String gameTitle = game.trim().replaceAll("\\(.*\\)", "");
-                    double gamePrice = getGamePrice(gameTitle);
-                    receipt.append(String.format("%-25s", gameTitle))
-                            .append(" - \t\t- ")                         //
-                            .append(String.format("%.2f", gamePrice / 6.9))
-                            .append(" ags\n");
+                if (code != null && !code.isEmpty()) {
+                    receipt.append("Code Redemption ").append("\n");
+                } else {
+                    String[] gameItems = games.split(",");
+                    for (String game : gameItems) {
+                        String gameTitle = game.trim().replaceAll("\\(.*\\)", "");
+                        double gamePrice = getGamePrice(gameTitle);
+                        receipt.append(String.format("%-25s", gameTitle))
+                                .append(" - \t\t- ")
+                                .append(String.format("%.2f", gamePrice / 6.9))
+                                .append(" ags\n");
+                    }
                 }
 
-                receipt.append("\n  ***\t\t\t\t  Total: ").append(String.format("%.2f", totalPrice)) // Format total price
-                        .append(" ags\n\n"); // Add newline after total
+                receipt.append("\n  ***\t\t\t\t  Total: ").append(String.format("%.2f", totalPrice))
+                        .append(" ags\n\n");
 
                 receipt.append("------------------------------------------------------\n");
                 receipt.append("Paid By:\t\t\tAGS COiN\n\n");
