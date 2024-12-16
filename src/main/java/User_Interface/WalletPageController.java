@@ -72,7 +72,7 @@ public class WalletPageController implements PageController {
         WalletInputCode_TextField.clear();
     }
 
-    public void processCode() {
+    private void processCode() {
         User currentUser = UserSession.getInstance().getCurrentUser();
         System.out.println("Current user in WalletPageController: " + currentUser);
         if (currentUser != null) {
