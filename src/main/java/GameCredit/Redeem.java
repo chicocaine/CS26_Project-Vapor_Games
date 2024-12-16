@@ -3,6 +3,7 @@ package GameCredit;
 import Accounts.User;
 import Accounts.UserSession;
 import Transaction.Transaction;
+import User_Interface.PageController;
 import User_Interface.WalletPageController;
 import Utility.DBConnectionPool;
 
@@ -11,13 +12,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 public class Redeem {
-    private WalletPageController walletPageController;
+    private PageController pageController;
+
+
     public User currentUser = UserSession.getInstance().getCurrentUser();
 
-    public Redeem(WalletPageController walletPageController) {
-        this.walletPageController = walletPageController;
+    public Redeem(PageController pageController) {
+        this.pageController = pageController;
     }
 
     public boolean redeemCode(String code, User user) {
@@ -52,10 +54,11 @@ public class Redeem {
 
                         Transaction transaction = new Transaction(currentUser);
                         transaction.confirmRedemption(true);
-                        transaction.recordRedeemTransaction(code,creditAmount);
+                        transaction.recordRedeemTransaction(code, creditAmount);
 
                         System.out.println("Code redeemed successfully! You have received your credit.");
-                        walletPageController.showNotification("Code redeemed successfully!", "success");
+                        pageController.showNotification("Code redeemed successfully!", "success");
+                        pageController.refreshWallet();
                         return true;
                     } catch (SQLException e) {
                         conn.rollback(); // Rollback transaction on error
@@ -63,11 +66,11 @@ public class Redeem {
                     }
                 } else {
                     System.out.println("Error: This code has already been redeemed.");
-                    walletPageController.showNotification("This code has already been redeemed.", "alreadyRedeemed");
+                    pageController.showNotification("This code has already been redeemed.", "alreadyRedeemed");
                 }
             } else {
                 System.out.println("Error: Invalid code.");
-                walletPageController.showNotification("Invalid code.", "error");
+                pageController.showNotification("Invalid code.", "error");
             }
 
         } catch (SQLException e) {

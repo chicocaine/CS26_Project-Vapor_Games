@@ -4,7 +4,9 @@ import Accounts.User;
 import Accounts.UserSession;
 import Games.GamesManager;
 import Transaction.CartManager;
+import Utility.DBConnectionPool;
 import javafx.animation.FadeTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,8 +23,12 @@ import javafx.util.Duration;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class MainScreenController {
+public class MainScreenController implements  PageController{
 
     private Stage stage;
 
@@ -410,5 +416,32 @@ public class MainScreenController {
         } else {
             AccountPicture_Image.setImage(new Image("/Image/ProfileTestPicture.png"));
         }
+    }
+
+    @Override
+    public void refreshWallet() {
+        User currentUser = UserSession.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            double newBalance = getUpdatedBalanceFromDatabase(currentUser.getUserID());
+            Platform.runLater(() -> UserBalance_Label.setText(String.format("Balance: %.2f AGS", newBalance)));
+        }
+    }
+    private double getUpdatedBalanceFromDatabase(int userId) {
+        String sql = "SELECT wallet FROM VaporGames.users WHERE userID = ?";
+        try (Connection conn = DBConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getDouble("wallet");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
+    }
+
+    @Override
+    public void showNotification(String message, String type) {
     }
 }

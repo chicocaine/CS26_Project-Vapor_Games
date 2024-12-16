@@ -17,7 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class WalletPageController {
+public class WalletPageController implements PageController {
 
     @FXML
     private Label WalletCurrentAGSCoin_Label;
@@ -51,7 +51,7 @@ public class WalletPageController {
 
     public void setUserOnWallet(User user) {
         if (user != null && user.getWallet() != null) {
-            WalletCurrentAGSCoin_Label.setText(String.format("%.2f",user.getWallet().getBalance()));
+            WalletCurrentAGSCoin_Label.setText(String.format("%.2f", user.getWallet().getBalance()));
             System.out.println(WalletCurrentAGSCoin_Label.getText());
         } else {
             WalletCurrentAGSCoin_Label.setText("test");
@@ -71,7 +71,8 @@ public class WalletPageController {
         }
     }
 
-    private void refreshWallet() {
+    @Override
+    public void refreshWallet() {
         User currentUser = UserSession.getInstance().getCurrentUser();
         if (currentUser != null) {
             User updatedUser = fetchUpdatedUser(currentUser.getUserID());
@@ -99,6 +100,7 @@ public class WalletPageController {
         return null;
     }
 
+    @Override
     public void showNotification(String message, String type) {
         Platform.runLater(() -> {
             codeSuccess.setVisible(false);

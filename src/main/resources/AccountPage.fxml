@@ -41,14 +41,6 @@
             <PasswordField fx:id="NewPassword_TextField" styleClass="textfield-CHANGEABLE" />
          </children>
       </VBox>
-      <ImageView fx:id="ChangeProfilePicture_Image" fitHeight="24.0" fitWidth="24.0" layoutX="200.0" layoutY="268.0" onMouseClicked="#HandlesButtonClicked" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/ChangeProfilePicButton.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
       <Button fx:id="ChangePassword_Button" layoutX="266.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#HandlesButtonClicked" prefHeight="35.0" prefWidth="147.0" styleClass="button-CHANGE_PASSWORD" text="change password">
          <cursor>
             <Cursor fx:constant="HAND" />
