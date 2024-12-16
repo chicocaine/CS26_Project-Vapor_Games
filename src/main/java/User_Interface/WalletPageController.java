@@ -79,9 +79,9 @@ public class WalletPageController implements PageController {
             Redeem redeem = new Redeem(this);
             boolean success = redeem.redeemCode(WalletInputCode_TextField.getText(), currentUser);
             if (success) {
-                codeSuccess.setText("Code Redeemed Successfully (Page will Reload in 5 Seconds)");
+                codeSuccess.setText("Code Redeemed Successfully (Page will Reload in 3 Seconds)");
                 codeSuccess.setVisible(true);
-                PauseTransition pause = new PauseTransition(Duration.seconds(10));
+                PauseTransition pause = new PauseTransition(Duration.seconds(5));
                 pause.setOnFinished(event -> refreshWallet());
                 pause.play();
             } else {

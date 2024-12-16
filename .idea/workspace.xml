@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="27f91c52-3387-460c-ada9-6a7a7cee470a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Games/GamesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User_Interface/WalletPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User_Interface/WalletPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +241,7 @@
       <workItem from="1734096760426" duration="3842000" />
       <workItem from="1734322036212" duration="1291000" />
       <workItem from="1734360057546" duration="1295000" />
-      <workItem from="1734361463787" duration="11420000" />
+      <workItem from="1734361463787" duration="13211000" />
     </task>
     <task id="LOCAL-00001" summary="First Installment of My JavaFX, just lost a cup of my braincells on debugging, but it works now.&#10;&#10;set the JDK to 22 Zulu Community Please....">
       <option name="closed" value="true" />

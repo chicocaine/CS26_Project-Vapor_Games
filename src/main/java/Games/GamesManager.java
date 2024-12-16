@@ -121,7 +121,7 @@ public class GamesManager {
             LEFT JOIN
                 game_images img ON g.gameID = img.gameID
             WHERE
-                g.gameReleaseDate LIKE '%2024%'
+                g.gameReleaseDate LIKE '%2023%' OR g.gameReleaseDate LIKE '%2024%' OR g.gameReleaseDate LIKE '%2022%'            
             ORDER BY
                 g.gameID, img.imageType;
         """;
