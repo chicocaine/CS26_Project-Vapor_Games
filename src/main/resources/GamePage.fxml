@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
+<Pane fx:id="StorePage_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="893.0" styleClass="StorePage-Background" stylesheets="@Stylesheet/GamePage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.GamePageController">
    <children>
       <Label fx:id="StorePageGameTitle_Label" layoutX="34.0" layoutY="17.0" prefWidth="584.0" styleClass="GameTitle-Label" text="TERRARIA" />
       <Label fx:id="StoreGameSubTitle_Label" layoutX="34.0" layoutY="66.0" prefHeight="20.0" prefWidth="584.0" styleClass="GameSubTitle-Label" />
@@ -42,19 +42,19 @@
       </Pane>
       <Pane layoutX="655.0" layoutY="438.0" prefHeight="125.0" prefWidth="226.0">
          <children>
-            <Label alignment="CENTER" prefHeight="25.0" prefWidth="49.0" styleClass="GameTransactionPrice-Label-Bold" text="AGS" />
-            <Label fx:id="GamePrice_Label" layoutX="52.0" prefHeight="25.0" prefWidth="198.0" styleClass="GameTransactionPrice-Label-Bold" text="400.00" />
-            <Pane fx:id="GameBuyNowButton_Pane" layoutY="25.0" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Pane">
+            <Label alignment="CENTER" layoutX="14.0" prefHeight="25.0" prefWidth="42.0" styleClass="GameTransactionPrice-Label-Bold" text="AGS" />
+            <Label fx:id="GamePrice_Label" layoutX="50.0" prefHeight="25.0" prefWidth="202.0" styleClass="GameTransactionPrice-Label-Bold" text="400.00" />
+            <Pane fx:id="GameBuyNowButton_Pane" layoutX="14.0" layoutY="25.0" prefHeight="35.0" prefWidth="193.0" styleClass="GameTransactionBuyNow-Pane">
                <children>
-                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="235.0" styleClass="GameTransactionBuyNow-Label" text="Buy Now" />
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="193.0" styleClass="GameTransactionBuyNow-Label" text="Buy Now" />
                </children>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Pane>
-            <Pane fx:id="GameAddToCartButton_Pane" layoutY="80.0" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionAddToCart-Pane">
+            <Pane fx:id="GameAddToCartButton_Pane" layoutX="14.0" layoutY="76.0" prefHeight="35.0" prefWidth="193.0" styleClass="GameTransactionAddToCart-Pane">
                <children>
-                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="250.0" styleClass="GameTransactionBuyNow-Label" text="Add to Cart" />
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="193.0" styleClass="GameTransactionBuyNow-Label" text="Add to Cart" />
                </children>
                <cursor>
                   <Cursor fx:constant="HAND" />

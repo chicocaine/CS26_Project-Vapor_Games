@@ -39,7 +39,7 @@
 .GameTransactionPrice-Label-Bold {
     -fx-text-fill: #FEFEFE;
     -fx-font-family: 'Sora Regular';
-    -fx-font-size: 15px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-padding: 0 5 0 5;
 }
@@ -51,7 +51,7 @@
 .GameTransactionBuyNow-Label {
     -fx-text-fill: #FEFEFE;
     -fx-font-family: 'Sora Bold';
-    -fx-font-size: 20px;
+    -fx-font-size: 12px;
     -fx-font-weight: bold; /* Ensures the text is bold */
 }
 
