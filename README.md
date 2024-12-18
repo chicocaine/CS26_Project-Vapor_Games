@@ -24,8 +24,6 @@ Type `\connect <user>@<ip-address>:<port>` to connect MySQL Server
 
 **If Successfully Connected it will show this**
 
-![img_2.png](img_2.png)
-
 ## MySQL Database (IntelliJ IDEA)
 
 Open `Database` and Add MySQL Database in `Data Source`
